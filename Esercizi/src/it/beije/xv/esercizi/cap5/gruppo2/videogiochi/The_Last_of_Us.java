@@ -11,6 +11,7 @@ public class The_Last_of_Us extends Survivals implements Singleplayer, Offline {
 		name = "The Last of Us";
 		year = "2013";
 		rating = 9.7;
+		maxNumPlayers = 1;
 		singleplayer = isSingleplayer();
 		offline = isOffline();
 	}

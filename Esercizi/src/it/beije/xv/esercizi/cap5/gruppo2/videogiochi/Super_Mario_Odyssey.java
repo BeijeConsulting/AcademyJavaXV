@@ -10,6 +10,7 @@ public class Super_Mario_Odyssey extends Action_Adventure implements Singleplaye
 		name = "Super Mario Odyssey";
 		year = "2017";
 		rating = 9.1;
+		maxNumPlayers = 2;
 		multiplayer = isMultiplayer();
 		singleplayer = isSingleplayer();
 		offline = isOffline();

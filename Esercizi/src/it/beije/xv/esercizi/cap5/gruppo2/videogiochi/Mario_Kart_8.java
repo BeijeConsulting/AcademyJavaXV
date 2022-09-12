@@ -11,6 +11,7 @@ public class Mario_Kart_8 extends Sports implements Singleplayer, Multiplayer, O
 		name = "Mario Kart 8";
 		year = "2017";
 		rating = 8.7;
+		maxNumPlayers = 4;
 		multiplayer = isMultiplayer();
 		singleplayer = isSingleplayer();
 		online = isOnline();

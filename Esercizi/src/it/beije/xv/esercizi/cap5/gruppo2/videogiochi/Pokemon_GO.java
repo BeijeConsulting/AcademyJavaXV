@@ -11,6 +11,7 @@ public class Pokemon_GO extends Action_Adventure implements Singleplayer, Multip
 		name = "Pokemon GO";
 		year = "2016";
 		rating = 6.5;
+		maxNumPlayers = 3;
 		multiplayer = isMultiplayer();
 		singleplayer = isSingleplayer();
 		online = isOnline();

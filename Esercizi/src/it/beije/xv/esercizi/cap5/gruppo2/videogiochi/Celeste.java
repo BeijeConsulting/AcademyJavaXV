@@ -9,6 +9,7 @@ public class Celeste extends Platform implements Singleplayer, Offline {
 		name = "Celeste";
 		year = "2018";
 		rating = 8.6;
+		maxNumPlayers = 1;
 		singleplayer = isSingleplayer();
 		offline = isOffline();
 	}

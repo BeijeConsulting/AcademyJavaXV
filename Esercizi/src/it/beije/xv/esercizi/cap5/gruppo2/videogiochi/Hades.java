@@ -9,6 +9,7 @@ public class Hades extends Roguelikes implements Singleplayer, Offline {
 		name = "Hades";
 		year = "2018";
 		rating = 8.9;
+		maxNumPlayers = 1;
 		singleplayer = isSingleplayer();
 		offline = isOffline();
 	}

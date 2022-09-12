@@ -10,6 +10,7 @@ public class Cuphead extends Platform implements Singleplayer, Multiplayer, Offl
 		name = "Cuphead";
 		year = "2017";
 		rating = 8.7;
+		maxNumPlayers = 2;
 		singleplayer = isSingleplayer();
 		multiplayer = isMultiplayer();
 		offline = isOffline();

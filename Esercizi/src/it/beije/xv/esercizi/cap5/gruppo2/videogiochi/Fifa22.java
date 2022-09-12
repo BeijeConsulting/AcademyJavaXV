@@ -11,6 +11,7 @@ public class Fifa22 extends Sports implements Singleplayer, Multiplayer, Online,
 		name = "Fifa 22";
 		year = "2021";
 		rating = 5.2;
+		maxNumPlayers = 4;
 		multiplayer = isMultiplayer();
 		singleplayer = isSingleplayer();
 		online = isOnline();

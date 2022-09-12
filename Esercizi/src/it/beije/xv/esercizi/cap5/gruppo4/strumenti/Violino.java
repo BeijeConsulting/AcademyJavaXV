@@ -1,11 +1,15 @@
 package it.beije.xv.esercizi.cap5.gruppo4.strumenti;
 
+
 public class Violino extends StrumentoACorda implements HasFiddleStick, Accordato{
+	
 	boolean fiddleStick;
 	
 	public  Violino() {
 		nome = "Violino";
 		dimensione = "Medio-piccolo";
+		materiale = "Acero";
+		numeroCorde = 4;
 		this.fiddleStick = hasStick();
 	}
 	
@@ -15,10 +19,8 @@ public class Violino extends StrumentoACorda implements HasFiddleStick, Accordat
 	}
 	
 	public void getInfo() {
-		System.out.println(nome);
-		System.out.println(dimensione);
-		System.out.println("Archetto: " + this.fiddleStick);
-		System.out.println("Accordato: " + isAccordato());
+		super.getInfo();
+		System.out.println("\tArchetto: " + this.fiddleStick);
 		System.out.println();
 	}
 	

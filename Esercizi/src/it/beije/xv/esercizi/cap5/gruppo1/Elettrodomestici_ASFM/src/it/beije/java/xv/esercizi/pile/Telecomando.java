@@ -1,5 +1,3 @@
-//DA FINIRE
-
 package it.beije.java.xv.esercizi.pile;
 
 import java.util.Random;
@@ -8,36 +6,42 @@ import it.beije.java.xv.esercizi.Elettrodomestici.ElettroPile;
 
 public class Telecomando extends ElettroPile {
 	
+	private String name;
 	private boolean inserita;
+	private boolean on;
 	
-	@Override
 	public boolean isInserita() {
 		inserita = new Random().nextInt(2) == 1;
 		return inserita;
 	}
 
-	@Override
 	public boolean isOn() {
-		// TODO Auto-generated method stub
-		return false;
+		if( !isInserita() )
+			return false;
+		return on;
 	}
 
-	@Override
+
 	public void setName(String name) {
-		// TODO Auto-generated method stub
+		this.name = name;
 		
 	}
 
-	@Override
+
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.name;
 	}
 
-	@Override
+
 	public void setIsOn(boolean on) {
-		// TODO Auto-generated method stub
-		
+		if( isInserita() ) 
+			on = true;
+		else
+			on = false;
 	}
-
+	
+	public int raggioAzione() {
+		return new Random().nextInt(0, 21);  
+	}
+	
 }

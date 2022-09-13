@@ -1,37 +1,52 @@
-//DA FINIRE
+
 package it.beije.java.xv.esercizi.pile;
+import java.util.Random;
+
 import it.beije.java.xv.esercizi.Elettrodomestici.ElettroPile;
 
 public class Soffiatore extends ElettroPile {
-
-	@Override
-	public boolean isInserita() {
-		// TODO Auto-generated method stub
-		return false;
+	
+	private String name;
+	private boolean inserita;
+	private boolean on;
+	
+	
+	public Soffiatore(String name) {
+		this.name = name;
 	}
+	
+	public boolean isInserita() {
+		inserita = new Random().nextInt(2) == 1;
+		return inserita;
+	}
+
 
 	@Override
 	public boolean isOn() {
-		// TODO Auto-generated method stub
-		return false;
+		if( !isInserita() )
+			return false;
+		return on;
 	}
 
-	@Override
+
 	public void setName(String name) {
-		// TODO Auto-generated method stub
-
+		this.name = name;
 	}
 
-	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.name;
 	}
 
-	@Override
-	public void setIsOn() {
-		// TODO Auto-generated method stub
-
+	
+	public void setIsOn(boolean on) {
+		if( isInserita() ) 
+			on = true;
+		else
+			on = false;
+	}
+	
+	public int getPotenza() {
+		return new Random().nextInt(2500, 3001); 
 	}
 
 }

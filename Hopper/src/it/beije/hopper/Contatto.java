@@ -45,7 +45,7 @@ public class Contatto {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{ cognom : ").append(this.cognome)
+				.append("{ cognome : ").append(this.cognome)
 				.append(", nome : ").append(this.nome)
 				.append(", telefono : ").append(this.telefono)
 				.append(", email : ").append(this.email)

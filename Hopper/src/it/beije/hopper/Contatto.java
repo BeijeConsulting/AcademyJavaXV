@@ -53,4 +53,8 @@ public class Contatto {
 		
 		return builder.toString();
 	}
+	
+	public static void main(String[] args) {
+		System.out.println("ciao");
+	}
 }

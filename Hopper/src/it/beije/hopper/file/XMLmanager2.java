@@ -33,14 +33,15 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import it.beije.hopper.Contatto;
 
 
-public class XMLmanager {
+public class XMLmanager2 {
+
+	static List<Contatto> contatti = new ArrayList<Contatto>();
 
 	public static List<Element> getChildElements(Element element) {
 		List<Element> childElements = new ArrayList<Element>();
@@ -55,8 +56,6 @@ public class XMLmanager {
 
 	public static List<Contatto> readRubricaXML(String path) {
 
-		List<Contatto> contatti = new ArrayList<Contatto>();
-		
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = null;
 		Document document = null;
@@ -67,9 +66,6 @@ public class XMLmanager {
 			
 			Element element = document.getDocumentElement();
 			System.out.println("DocumentElement : " + element.getNodeName());
-			
-//			NodeList contatti = element.getElementsByTagName("contatto");
-//			System.out.println("num contatti : " + contatti.getLength());
 
 			NodeList nodeList = element.getChildNodes();
 			System.out.println("tot nodi : " + nodeList.getLength());
@@ -109,14 +105,10 @@ public class XMLmanager {
 				contatti.add(contatto);
 			}
 			
-		} catch (ParserConfigurationException pcEx) {
+		} catch (ParserConfigurationException | IOException | SAXException pcEx) {
 			pcEx.printStackTrace();
-		} catch (IOException ioEx) {
-			ioEx.printStackTrace();
-		} catch (SAXException saxEx) {
-			saxEx.printStackTrace();
 		}
-		
+
 		return contatti;
 	}
 	
@@ -127,61 +119,36 @@ public class XMLmanager {
 		
 		Document doc = documentBuilder.newDocument();
 
-		Element contatti = doc.createElement("contatti");
-		doc.appendChild(contatti);//root element
+		Element element = doc.createElement("contatti");
+		doc.appendChild(element);//root element
+		for(Contatto contatto: contatti)
 		{
-			Element contatto = doc.createElement("contatto");
-			contatto.setAttribute("eta", "25");
+			Element element1 = doc.createElement("contatto");
+			element1.setAttribute("eta", "25");
 			
 			Element cognome = doc.createElement("cognome");
-			cognome.setTextContent("Marrone");//<cognome>Marrone</cognome>
-			contatto.appendChild(cognome);
+			cognome.setTextContent(contatto.getCognome());//<cognome>Marrone</cognome>
+			element1.appendChild(cognome);
 	
 			Element nome = doc.createElement("nome");
-			nome.setTextContent("Emma");//<nome>Emma</nome>
-			contatto.appendChild(nome);
+			nome.setTextContent(contatto.getNome());//<nome>Emma</nome>
+			element1.appendChild(nome);
 	
 			Element telefono = doc.createElement("telefono");
-			telefono.setTextContent("432423");
-			contatto.appendChild(telefono);
+			telefono.setTextContent(contatto.getTelefono());
+			element1.appendChild(telefono);
 	
 			Element email = doc.createElement("email");
-			email.setTextContent("emma@marrone.it");
-			contatto.appendChild(email);
+			email.setTextContent(contatto.getEmail());
+			element1.appendChild(email);
 	
 			Element note = doc.createElement("note");
-			note.setTextContent("la nota cantante");
-			contatto.appendChild(note);
+			note.setTextContent(contatto.getNote());
+			element1.appendChild(note);
 			
-			contatti.appendChild(contatto);
+			element.appendChild(element1);
 		}
-		{
-			Element contatto = doc.createElement("contatto");
-			contatto.setAttribute("eta", "78");
-			
-			Element cognome = doc.createElement("cognome");
-			cognome.setTextContent("Morandi");
-			contatto.appendChild(cognome);
-	
-			Element nome = doc.createElement("nome");
-			nome.setTextContent("Gianni");
-			contatto.appendChild(nome);
-	
-			Element telefono = doc.createElement("telefono");
-			telefono.setTextContent("432425233");
-			contatto.appendChild(telefono);
-	
-			Element email = doc.createElement("email");
-			email.setTextContent("gianni@morandi.it");
-			contatto.appendChild(email);
-	
-			Element note = doc.createElement("note");
-			note.setTextContent("il noto cantante");
-			contatto.appendChild(note);
-			
-			contatti.appendChild(contatto);
-		}
-		System.out.println("contatti : " + contatti.getElementsByTagName("contatto").getLength());
+		System.out.println("contatti : " + element.getElementsByTagName("contatto").getLength());
 		
 		// write the content into xml file
 		TransformerFactory transformerFactory = TransformerFactory.newInstance();

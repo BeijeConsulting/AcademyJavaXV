@@ -10,7 +10,7 @@ import java.util.Collections;
 public class ReadDirectory {
 
 	public static File[] readDirectory(String path) throws IOException {
-		System.out.println("a");
+		System.out.println("b");
 		File file = new File(path);
 		File[] listaFile;
 		listaFile = file.listFiles();

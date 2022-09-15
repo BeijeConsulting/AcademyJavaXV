@@ -12,6 +12,8 @@ import java.util.StringTokenizer;
 
 import it.beije.hopper.Contatto;
 
+
+
 public class CSVmanager {
 
 	public static List<Contatto> readRubrica(String path) {

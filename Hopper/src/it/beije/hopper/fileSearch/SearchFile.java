@@ -7,15 +7,28 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class SearchFile {
-
+	
 	public static void main(String[] args) {
 		
-		File file =new File("C:\\Users\\andre\\OneDrive\\Documents\\Università\\PA");
+		Scanner in=new Scanner(System.in);
+
+		System.out.println("Inserire il path della directory: ");
+		String path=in.nextLine();
+		file(path);
 		
-		if(!file.exists())
+	}
+
+	public static void file(String path) {
+		
+		File file =new File(path);
+		
+		if(!file.exists()) {
+			System.out.println("Il path non esiste!");
 			System.exit(0);
+		}
 		
 		
 		if(file.isDirectory()){

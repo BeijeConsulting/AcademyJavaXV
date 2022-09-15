@@ -18,30 +18,51 @@ public class Rubriche {
 		File nome= new File("C:\\Users\\andre\\OneDrive\\Documents\\Beije\\Programming\\MyStuff\\RubricaEsercizioFile\\rubrica - nome.csv");
 		File tel= new File("C:\\Users\\andre\\OneDrive\\Documents\\Beije\\Programming\\MyStuff\\RubricaEsercizioFile\\rubrica - tel.csv");
 		
+		createReader(rubrica);
+		
+	}
+	
+	public static void createReader(File file) {
 		File f = new File("C:\\Users\\andre\\OneDrive\\Documents\\Beije\\Programming\\MyStuff\\RubricaEsercizioFile\\text.csv");
+		FileReader reader=null;
+		
 		try {
-			if (f.createNewFile())
+			if (f.createNewFile()) {
 				System.out.println("File created");
-			else  
+			}
+			else{
 				System.out.println("File already exists");
+			}			
+			reader=new FileReader(file);	
+			writeFile(f,reader);
+		}catch(IOException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				reader.close();
+			}catch(IOException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+	
+	
+	public static void writeFile(File file,FileReader reader) {
+		try{
 			
-			FileReader rubricaFileReader=new FileReader(rubrica);
-			BufferedReader rubricaBufferedReader=new BufferedReader(rubricaFileReader);
-			
-			FileWriter write=new FileWriter(f);
-			
+			BufferedReader buffered=new BufferedReader(reader);
+			FileWriter write=new FileWriter(file);
+		
 			int c = 0;
 			List<String> rows = new ArrayList<String>();
-			
-			while (rubricaBufferedReader.ready()) {
-				rows.add(rubricaBufferedReader.readLine());
+		
+			while (buffered.ready()) {
+				rows.add(buffered.readLine());
 				write.write(rows.get(c++)+"\n");
 			}
 		}catch(IOException e) {
 			e.printStackTrace();
 		}
-		
 	}
-	
 
 }

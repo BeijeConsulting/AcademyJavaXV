@@ -34,11 +34,13 @@ public class ReadFile {
             file = new File(path + "filename.txt");
             if (file.createNewFile()) {
                 System.out.println("File created: " + file.getName());
-
+                writer = new FileWriter(file.getPath());
             } else {
                 System.out.println("File already exists.");
+                file.delete();
+                createNewFile(path);
             }
-            writer = new FileWriter(file.getPath());
+
         } catch (IOException e) {
             System.out.println("An error occurred.");
             e.printStackTrace();

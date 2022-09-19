@@ -81,6 +81,9 @@ public class XMLmanager {
 				}
 			}
 			
+			
+			
+			
 			Contatto contatto = null;
 			NodeList tags = null;
 			for (Element el : elements) {
@@ -99,6 +102,8 @@ public class XMLmanager {
 				
 				tags = el.getElementsByTagName("note");
 				contatto.setNote(tags.getLength() > 0 ? tags.item(0).getTextContent() : null);
+				
+				
 				
 				System.out.println("COGNOME : " + contatto.getCognome());
 				System.out.println("NOME : " + contatto.getNome());
@@ -203,7 +208,7 @@ public class XMLmanager {
 	public static void main(String[] args) throws Exception {
 		
 		//readRubricaXML("/temp/rubrica.xml");
-		writeXML("/temp/new_rubrica.xml");
+		//writeXML("/temp/new_rubrica.xml");
 		
 	}
 

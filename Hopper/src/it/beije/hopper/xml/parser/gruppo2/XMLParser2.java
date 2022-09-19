@@ -58,10 +58,12 @@ public class XMLParser2 {
                 }
 
                 if (rows.get(i).contains("<!--")) {
-                    while (!rows.get(i).contains("-->")) {
-                        rows.remove(i++);
+
+                    while (!rows.get(i).endsWith("-->")) {
+                        rows.remove(rows.get(i));
+
                     }
-                    rows.remove(i);
+
                 }
             }
 
@@ -71,8 +73,7 @@ public class XMLParser2 {
             }
 
 
-            xmlElement.setRoot(rows.get(1).split(" ", 3)[0].substring(1));
-            char apex = '"';
+            xmlElement.setRoot(rows.get(1).split(" ", 3)[0].substring(1).replace(">", ""));
 
             for (int i = 2; i < rows.size() - 1; i++) {
 
@@ -123,7 +124,7 @@ public class XMLParser2 {
     }
 
     public static void main(String... args) {
-        XmlElement e = readXML("C:\\Users\\emanu\\Desktop\\test_parser3.xml"); // path del xml
+        XmlElement e = readXML("C:\\Users\\emanu\\Desktop\\test_parser4.xml"); // path del xml
         System.out.println(e.getRoot());
         System.out.println(e.getElementsByTagName("nome"));
 

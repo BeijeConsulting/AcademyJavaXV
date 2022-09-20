@@ -93,7 +93,7 @@ public class XMLParser {
 						//if it doesn't match the string in container
 						//Then there was an issue with XML FORMATTING <Tag1> ...</differentTag1>
 						//System.out.println("|" + container.toString() +"| == |" + currNode.getTag() + "|");
-						//Dos not work??
+						//Does not work??
 						if( !(container.toString()).equals(currNode.getTag())) {
 							System.out.println("---------------------------- ----------- ---- ");
 							System.out.println("Need to add error handling - mismatched tag");

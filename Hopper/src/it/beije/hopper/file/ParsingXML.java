@@ -7,7 +7,7 @@ import java.util.*;
 public class ParsingXML {
 
     public static void main(String[] args) throws IOException {
-        String path = "C:\\Users\\Raffaele\\Desktop\\AcademyJavaXV\\Hopper\\src\\it\\beije\\hopper\\file\\test_parser1.xml";
+        String path = "C:\\Users\\Raffaele\\Desktop\\AcademyJavaXV\\Hopper\\src\\it\\beije\\hopper\\file\\tests\\test_parser1.xml";
         parse(path);
     }
 

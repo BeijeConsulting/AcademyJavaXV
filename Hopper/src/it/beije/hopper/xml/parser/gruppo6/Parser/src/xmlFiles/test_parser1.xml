@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<contatti>
-	<contatto>
+<contatti >
+	<contatto attributeone="one" attributethree="three">
 		<nome>Pippo</nome>
 		<cognome>Pluto</cognome>
 		<telefono>3331234567</telefono>

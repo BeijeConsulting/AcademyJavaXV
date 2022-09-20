@@ -17,22 +17,71 @@ public class XMLParser {
 	
 	
 	public static void main(String[] args) {
-		String xmlStringDocument = XMLloadFile("C:\\Users\\Michael Angelo\\eclipse-workspace\\Beija-Java\\XMLParser\\src\\xmlFiles\\test_parser2.xml");
+		
+		String xmlStringDocument = XMLloadFile("C:\\Users\\Michael Angelo\\eclipse-workspace\\Beija-Java\\HopperGIthub\\AcademyJavaXV\\Hopper\\src\\it\\beije\\hopper\\xml\\parser\\gruppo6\\Parser\\src\\xmlFiles\\test_parser1.xml");
 	
 		System.out.println(xmlStringDocument);
 		XMLdocument document = XML_load(xmlStringDocument);
-		System.out.println("--------------");
-		XMLnode root = document.getRoot();
 		
-	
+		
+		System.out.println("--------- ----  ------------ ---- ----  ------------");
+		XMLnode root = document.getRoot();
+		System.out.println("Document root tag: " + root.getTag());
+		
+		System.out.println("------------- - ----  ------------- ----  ------------");
+		System.out.println("Still needs to be done.");
+		
+		
+		System.out.println("--------- ----  ------------ ---- ----  ------------");
+		System.out.println("Roots children are: ");
+		for( XMLnode rootChild: root.getChildren() ) {
+			System.out.println("> tag: " + rootChild.getTag()  + " inner Text: " + rootChild.getInnerText() );
+			
+		}
+		
+		System.out.println("--------- ----  ------------ ---- ----  ------------");
+		XMLnode rootChild = root.getChild(0);
+		System.out.println("Child tag name: " + rootChild.getTag() + "\nChild parent tag: " + rootChild.getParent().getTag());
+		System.out.println("Child's inner node and inner text:");
+		for( XMLnode childOfChild: rootChild.getChildren() ) {
+			System.out.println(" >" + childOfChild.getTag() + ": " + childOfChild.getInnerText()+"");
+		}
+		
+		System.out.println("------ Second Child -----");
+		XMLnode rootChild2 = root.getChild(1);
+		System.out.println("Child tag name: " + rootChild2.getTag() + "\nChild parent tag: " + rootChild2.getParent().getTag());
+		System.out.println("Child's inner node and inner text:");
+		for( XMLnode childOfChild: rootChild2.getChildren() ) {
+			System.out.println(" >" + childOfChild.getTag() + ": " + childOfChild.getInnerText()+"");
+		}
+		
 		/*
-			<root>
-				<inner> childOfRoot <--- root.getChild(0)
-					<more>Some text!</more> childOfChildOfRoot <--- childOfRoot.getChild(0)
-				</inner>
-				<another>This is another node</another> <---- root.getChild(1)
-			</root>
+		<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+		<contatti >
+			<contatto attributeone="one" attributethree="three">
+				<nome>Pippo</nome>
+				<cognome>Pluto</cognome>
+				<telefono>3331234567</telefono>
+				<email>pippo@pluto.net</email>
+			</contatto>
+			<contatto>
+				<nome>Paolino</nome>
+				<cognome>Paperino</cognome>
+				<telefono>00423803243423</telefono>
+			</contatto>
+		</contatti>
 		*/
+	
+		
+		/*
+		<root>
+			<inner> childOfRoot <--- root.getChild(0)
+				<more>Some text!</more> childOfChildOfRoot <--- childOfRoot.getChild(0)
+			</inner>
+			<another>This is another node</another> <---- root.getChild(1)
+		</root>
+	*/
+		
 		
 		
 	}

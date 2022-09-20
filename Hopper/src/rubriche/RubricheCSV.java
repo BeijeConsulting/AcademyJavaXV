@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Rubriche {
+public class RubricheCSV {
 
 	public static void main(String args[]){
 		

@@ -1,4 +1,4 @@
-package it.beije.hopper;
+package rubriche;
 
 public class Contatto {
 	

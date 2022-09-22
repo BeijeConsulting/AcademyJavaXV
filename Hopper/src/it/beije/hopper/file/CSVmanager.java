@@ -6,11 +6,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.StringTokenizer;
 
-import it.beije.hopper.Contatto;
+import rubriche.Contatto;
 
 public class CSVmanager {
 

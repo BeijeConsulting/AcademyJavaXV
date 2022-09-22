@@ -8,6 +8,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import it.beije.hopper.rubrica.CSVmanagerMod;
+
 public class RubricaJDBC {
 
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {

@@ -1,20 +1,13 @@
-package it.beije.hopper.file;
-
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.StringTokenizer;
+package it.beije.hopper.rubrica;
 
 import it.beije.hopper.Contatto;
 
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
-public class CSVmanager {
+public class CSVmanagerMod {
 
 	public static List<Contatto> readRubrica(String path) {
 		File file = new File(path);
@@ -25,7 +18,7 @@ public class CSVmanager {
 		
 		FileReader fileReader = null;
 		
-		List<Contatto> contatti = new ArrayList<>();
+		List<Contatto> contatti = new ArrayList<Contatto>();
 		try {
 			fileReader = new FileReader(file);
 //			while (fileReader.ready()) {
@@ -42,21 +35,29 @@ public class CSVmanager {
 			
 			Contatto contatto = null;
 			for (String row : rows) {
+//				StringTokenizer tokenizer = new StringTokenizer(row, ";");
+//				System.out.println("COGNOME : " + tokenizer.nextToken());
+//				System.out.println("NOME : " + tokenizer.nextToken());
+//				System.out.println("TELEFONO : " + tokenizer.nextToken());
+//				System.out.println("EMAIL : " + tokenizer.nextToken());
+//				System.out.println("NOTE : " + tokenizer.nextToken());
 				
 				String[] cols = row.split(";");
-
-
+//				for (String col : cols) {
+//					System.out.println(col);
+//				}
+				
 				contatto = new Contatto();
 				contatto.setCognome(cols[0]);
 				contatto.setNome(cols[1]);
 				contatto.setTelefono(cols[2]);
 				contatto.setEmail(cols[3]);
 				contatto.setNote(cols[4]);
-//				System.out.println("COGNOME : " + contatto.getCognome());
-//				System.out.println("NOME : " + contatto.getNome());
-//				System.out.println("TELEFONO : " + contatto.getTelefono());
-//				System.out.println("EMAIL : " + contatto.getEmail());
-//				System.out.println("NOTE : " + contatto.getNote());
+				System.out.println("COGNOME : " + contatto.getCognome());
+				System.out.println("NOME : " + contatto.getNome());
+				System.out.println("TELEFONO : " + contatto.getTelefono());
+				System.out.println("EMAIL : " + contatto.getEmail());
+				System.out.println("NOTE : " + contatto.getNote());
 				
 				contatti.add(contatto);
 			}
@@ -106,9 +107,6 @@ public class CSVmanager {
 		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 
 		List<Contatto> contatti = readRubrica("C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\rubrichecsv\\rubrica - test.csv");
-		for( Contatto contatto : contatti ){
-			System.out.println(contatto);
-		}
 	}
 
 

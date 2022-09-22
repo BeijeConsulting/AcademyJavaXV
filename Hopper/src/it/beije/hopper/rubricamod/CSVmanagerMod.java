@@ -1,4 +1,4 @@
-package it.beije.hopper.rubrica;
+package it.beije.hopper.rubricamod;
 
 import it.beije.hopper.Contatto;
 
@@ -35,17 +35,10 @@ public class CSVmanagerMod {
 			
 			Contatto contatto = null;
 			for (String row : rows) {
-//				StringTokenizer tokenizer = new StringTokenizer(row, ";");
-//				System.out.println("COGNOME : " + tokenizer.nextToken());
-//				System.out.println("NOME : " + tokenizer.nextToken());
-//				System.out.println("TELEFONO : " + tokenizer.nextToken());
-//				System.out.println("EMAIL : " + tokenizer.nextToken());
-//				System.out.println("NOTE : " + tokenizer.nextToken());
+
 				
 				String[] cols = row.split(";");
-//				for (String col : cols) {
-//					System.out.println(col);
-//				}
+
 				
 				contatto = new Contatto();
 				contatto.setCognome(cols[0]);
@@ -53,12 +46,12 @@ public class CSVmanagerMod {
 				contatto.setTelefono(cols[2]);
 				contatto.setEmail(cols[3]);
 				contatto.setNote(cols[4]);
-				System.out.println("COGNOME : " + contatto.getCognome());
-				System.out.println("NOME : " + contatto.getNome());
-				System.out.println("TELEFONO : " + contatto.getTelefono());
-				System.out.println("EMAIL : " + contatto.getEmail());
-				System.out.println("NOTE : " + contatto.getNote());
-				
+//				System.out.println("COGNOME : " + contatto.getCognome());
+//				System.out.println("NOME : " + contatto.getNome());
+//				System.out.println("TELEFONO : " + contatto.getTelefono());
+//				System.out.println("EMAIL : " + contatto.getEmail());
+//				System.out.println("NOTE : " + contatto.getNote());
+//
 				contatti.add(contatto);
 			}
 		} catch (IOException e) {
@@ -102,11 +95,17 @@ public class CSVmanagerMod {
 
 	}
 
+
 	public static void main(String[] args) throws IOException {
 		//List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
 		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 
-		List<Contatto> contatti = readRubrica("C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\rubrichecsv\\rubrica - test.csv");
+		String folderIn = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - test.csv";
+		String folderOut = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\rubricamod\\outputfiles\\csv\\";
+		List<Contatto> contatti = readRubrica(folderIn);
+
+		writeRubrica(contatti, folderOut+"output.csv");
+
 	}
 
 

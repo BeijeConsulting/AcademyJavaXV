@@ -1,4 +1,4 @@
-package it.beije.hopper.file.eserciziolettura;
+package it.beije.hopper.esercizioletturafile;
 
 
 import java.io.BufferedWriter;

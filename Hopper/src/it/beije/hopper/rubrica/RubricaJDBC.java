@@ -13,7 +13,7 @@ public class RubricaJDBC {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "FilippoBassani");
 	}
 
 	public static void main(String[] args) {
@@ -35,12 +35,14 @@ public class RubricaJDBC {
 			statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
 
 			//UPDATE
+			/*
 			int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
 			System.out.println("updated rows : " + r);
 
 			//DELETE
 			r = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
 			System.out.println("deleted rows : " + r);
+			*/
 
 			//SELECT
 			rs = statement.executeQuery("SELECT * FROM rubrica");

@@ -43,11 +43,11 @@ public class Contatto {
 	}
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{ cognome : ").append(this.cognome)
-				.append(", nome : ").append(this.nome)
-				.append(", telefono : ").append(this.telefono)
-				.append(", email : ").append(this.email).append(" }");
-//				.append(", note : ").append(this.note).append(" }");
+				.append("{Cognome: ").append(this.cognome)
+				.append(", Nome: ").append(this.nome)
+				.append(", Telefono: ").append(this.telefono)
+				.append(", E-Mail: ").append(this.email)
+			    .append(", Note: ").append(this.note).append("}");
 		
 		return builder.toString();
 	}

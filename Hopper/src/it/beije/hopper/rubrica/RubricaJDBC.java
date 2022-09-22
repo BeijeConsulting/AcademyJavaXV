@@ -20,10 +20,7 @@ public class RubricaJDBC {
 		
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "cirillo");
 	}
-public ArrayList<Contatto> getLista () {
-	ArrayList<Contatto> lista = new ArrayList<>();
-	return lista;
-}
+
 	public static void main(String[] args) {
 
 		Connection connection = null;

@@ -9,6 +9,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class RubricaJDBC {
+	
+	public static final String QUERY_INSERT = "INSERT INTO rubrica (nome, cognome, telefono, email, note) VALUES (?, ?, ?, ?, ?)";
 
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -20,6 +22,7 @@ public class RubricaJDBC {
 
 		Connection connection = null;
 		Statement statement = null;
+		PreparedStatement preparedStatement = null;
 		ResultSet rs = null;
 		
 		try {
@@ -32,17 +35,23 @@ public class RubricaJDBC {
 			//INSERT
 			String cognome = "Verdi";
 			String nome = "Pippo";
-			statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
+			//statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
+			preparedStatement = connection.prepareStatement(QUERY_INSERT);
+			preparedStatement.setString(1, cognome);
+			preparedStatement.setString(2, nome);
+			preparedStatement.setString(3, "12412412");
+			preparedStatement.setString(4, "l@l.it");
+			preparedStatement.setString(5, "addio");
+			preparedStatement.executeUpdate();
+	
+//			//UPDATE
+		//	int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
+		//	System.out.println("updated rows : " + r1);
 
-			//UPDATE
-			/*
-			int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
-			System.out.println("updated rows : " + r);
+		//DELETE
+		//	r1 = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
+		//	System.out.println("deleted rows : " + r1);
 
-			//DELETE
-			r = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
-			System.out.println("deleted rows : " + r);
-			*/
 
 			//SELECT
 			rs = statement.executeQuery("SELECT * FROM rubrica");

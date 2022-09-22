@@ -10,6 +10,7 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< HEAD
 		<buildCommand>
 			<name>org.eclipse.wst.common.project.facet.core.builder</name>
 			<arguments>
@@ -18,6 +19,10 @@
 	</buildSpec>
 	<natures>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
+=======
+	</buildSpec>
+	<natures>
+>>>>>>> branch 'main' of git@github.com:BeijeConsulting/AcademyJavaXV.git
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
 </projectDescription>

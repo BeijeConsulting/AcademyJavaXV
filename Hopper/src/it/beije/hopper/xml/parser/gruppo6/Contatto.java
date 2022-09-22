@@ -1,6 +1,7 @@
-package it.beije.hopper;
+package it.beije.hopper.xml.parser.gruppo6;
 
 public class Contatto {
+	
 	private String cognome;
 	private String nome;
 	private String telefono;
@@ -41,6 +42,7 @@ public class Contatto {
 	public void setNote(String note) {
 		this.note = note;
 	}
+	
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
 				.append("{ cognome : ").append(this.cognome)

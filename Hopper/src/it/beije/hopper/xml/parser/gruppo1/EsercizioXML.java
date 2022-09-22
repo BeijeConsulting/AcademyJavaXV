@@ -23,14 +23,8 @@ getAttribute(String attribute) //torna il valore dell'attributo specificato
 
 package it.beije.hopper.xml.parser.gruppo1;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import it.beije.hopper.Contatto;
 
 public class EsercizioXML {
 	

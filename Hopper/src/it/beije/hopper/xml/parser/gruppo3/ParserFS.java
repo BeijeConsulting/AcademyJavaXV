@@ -1,13 +1,10 @@
 package it.beije.hopper.xml.parser.gruppo3;
 
-import it.beije.hopper.Contatto;
-
 import java.io.*;
-import java.sql.Array;
 import java.util.*;
 
 
-public class Prova {
+public class ParserFS {
 
     public static void main(String[] args) throws IOException {
 

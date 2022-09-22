@@ -1,4 +1,5 @@
 package it.beije.hopper.file;
+import it.beije.hopper.Contatto;
 /*
 <?xml version="1.0" encoding="UTF-8"?>
 <rubrica>
@@ -33,11 +34,8 @@ import javax.xml.transform.stream.StreamResult;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
-import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
-import it.beije.hopper.Contatto;
 
 
 public class XMLmanager {

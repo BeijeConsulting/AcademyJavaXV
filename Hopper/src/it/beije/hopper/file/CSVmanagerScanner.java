@@ -1,15 +1,14 @@
 package it.beije.hopper.file;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.*;
-
 import it.beije.hopper.Contatto;
 
-public class CSVmanager {
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class CSVmanagerScanner {
 
     public static List<Contatto> readRubrica(String path) {
         File file = new File(path);
@@ -151,8 +150,8 @@ public class CSVmanager {
         Scanner scanner = new Scanner(System.in);  // Create a Scanner object
         System.out.println("Inserisci opzione: \n1/ Inserisci nuovo contatto nella rubrica \n2/ Vedi la rubrica completa \n3/ Cerca tramite referenza \n4/ Esci dal sistema ");
 
-        String userName = scanner.nextLine();  // Read user input
-        switch (userName) {
+        String line = scanner.nextLine();  // Read user input
+        switch (line) {
             case "1": {
                 List<Contatto> contattoList = new ArrayList<>();
                 do {

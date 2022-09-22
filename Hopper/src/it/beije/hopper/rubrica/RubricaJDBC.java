@@ -15,7 +15,7 @@ public class RubricaJDBC {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "root");
 	}
 
 	public static void main(String[] args) {
@@ -71,12 +71,11 @@ public class RubricaJDBC {
 				System.out.println("NOTE : " + rs.getString("note"));
 			}	
 
-		} catch (ClassNotFoundException cnfEx) {
+		} catch (ClassNotFoundException | SQLException cnfEx) {
 			cnfEx.printStackTrace();
-		} catch (SQLException sqlEx) {
-			sqlEx.printStackTrace();
 		} finally {
 			try {
+				assert rs != null;
 				rs.close();
 				statement.close();
 				connection.close();

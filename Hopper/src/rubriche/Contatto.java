@@ -42,14 +42,11 @@ public class Contatto {
 		this.note = note;
 	}
 	public String toString() {
-		StringBuilder builder = new StringBuilder()
-				.append("{ cognome : ").append(this.cognome)
-				.append(", nome : ").append(this.nome)
-				.append(", telefono : ").append(this.telefono)
-				.append(", email : ").append(this.email)
-				.append(", note : ").append(this.note).append(" }");
-		
-		return builder.toString();
+		return "{ cognome : " + this.cognome +
+				", nome : " + this.nome +
+				", telefono : " + this.telefono +
+				", email : " + this.email +
+				", note : " + this.note + " }";
 	}
 	
 }

@@ -1,6 +1,6 @@
 package it.beije.hopper.xml.parser.gruppo3;
 
-import it.beije.hopper.Contatto;
+import rubriche.Contatto;
 
 import java.io.*;
 import java.sql.Array;

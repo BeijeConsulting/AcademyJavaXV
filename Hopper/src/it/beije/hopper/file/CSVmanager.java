@@ -55,12 +55,12 @@ public class CSVmanager {
 				contatto.setNome(cols[1]);
 				contatto.setTelefono(cols[2]);
 				contatto.setEmail(cols[3]);
-				contatto.setNote(cols[4]);
+				//contatto.setNote(cols[4]);
 				System.out.println("COGNOME : " + contatto.getCognome());
 				System.out.println("NOME : " + contatto.getNome());
 				System.out.println("TELEFONO : " + contatto.getTelefono());
 				System.out.println("EMAIL : " + contatto.getEmail());
-				System.out.println("NOTE : " + contatto.getNote());
+				//System.out.println("NOTE : " + contatto.getNote());
 				
 				contatti.add(contatto);
 			}
@@ -106,8 +106,8 @@ public class CSVmanager {
 	}
 
 	public static void main(String[] args) throws IOException {
-		List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
-		writeRubrica(contatti, "/temp/hopper_rubrica.csv");
+		List<Contatto> contatti = readRubrica("C:\\Users\\andre\\OneDrive\\Documents\\Beije\\Programming\\MyStuff\\RubricaEsercizioFile\\rubrica - cognome.csv");
+		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 	}
 
 

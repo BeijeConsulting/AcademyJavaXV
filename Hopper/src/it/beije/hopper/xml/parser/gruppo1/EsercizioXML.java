@@ -30,7 +30,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.beije.hopper.Contatto;
+import rubriche.Contatto;
 
 public class EsercizioXML {
 	

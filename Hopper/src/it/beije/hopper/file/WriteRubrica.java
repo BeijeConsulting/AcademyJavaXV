@@ -64,7 +64,7 @@ public class WriteRubrica {
 	}
 
 	public Contatto cercaContatto(String nome) throws IOException {
-		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("/test/rubrica.csv", ";"));
+		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("C:/test/rubrica.csv", ";"));
 		Contatto contatto = new Contatto();
 		for (int i = 0; i < contatti.size(); i++) {
 			if (contatti.get(i).getNome().equalsIgnoreCase(nome)) {
@@ -75,7 +75,7 @@ public class WriteRubrica {
 	}
 
 	public void inserisciContatto(String cognome, String nome, String telefono, String email) throws IOException {
-		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("/test/rubrica.csv", ";"));
+		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("C:/test/rubrica.csv", ";"));
 		FileWriter fileWriter = new FileWriter("/test/nuovarubrica.csv", true);
 		Contatto contatto = new Contatto();
 		contatto.setNome(nome);
@@ -97,16 +97,16 @@ public class WriteRubrica {
 	}
 	
 	public void eliminaContatto(String numeroTelefono) throws IOException {
-		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("/test/rubrica.csv", ";"));
+		List<Contatto> contatti = new ArrayList<Contatto>(loadRubricaFromCSV("C:/test/rubrica.csv", ";"));
 		FileWriter fileWriter = new FileWriter("/test/nuovarubrica.csv", true);
 		Contatto contatto = new Contatto();
 		
 	}
 
 	public static void main(String[] args) throws IOException {
-		WriteRubrica.loadRubricaFromCSV("/test/rubrica.csv", ";");
-		List<Contatto> contatti = loadRubricaFromCSV("/test/rubrica.csv", ";");
-		WriteRubrica.writeRubrica(contatti, "/test/nuovarubrica.csv");
+		WriteRubrica.loadRubricaFromCSV("C:/test/rubrica.csv", ";");
+		List<Contatto> contatti = loadRubricaFromCSV("C:/test/rubrica.csv", ";");
+		WriteRubrica.writeRubrica(contatti, "C:/test/nuovarubrica.csv");
 	}
 
 }

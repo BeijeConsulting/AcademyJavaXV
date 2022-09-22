@@ -14,7 +14,7 @@ public class TestRubrica {
 		System.out.println("Cosa vuoi fare? " + "0 - cerca contatto" + "1 - Inserisci contatto");
 
 		WriteRubrica writeRubrica = new WriteRubrica();
-		String path = "/test/rubrica.csv";
+		String path = "C:/test/rubrica.csv";
 		String sep = ";";
 		List<Contatto> contatti = new ArrayList<Contatto>(WriteRubrica.loadRubricaFromCSV(path, sep));
 		String scelta = scanner.nextLine();

@@ -1,5 +1,7 @@
 package it.beije.hopper.rubrica;
 
+import it.beije.hopper.Contatto;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -7,15 +9,19 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class RubricaJDBC {
 
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "cirillo");
 	}
-
+public ArrayList<Contatto> getLista () {
+	ArrayList<Contatto> lista = new ArrayList<>();
+	return lista;
+}
 	public static void main(String[] args) {
 
 		Connection connection = null;

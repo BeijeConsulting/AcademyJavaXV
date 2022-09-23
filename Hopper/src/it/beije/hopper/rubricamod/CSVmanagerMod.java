@@ -38,7 +38,6 @@ public class CSVmanagerMod {
 
 				
 				String[] cols = row.split(";");
-
 				
 				contatto = new Contatto();
 				contatto.setCognome(cols[0]);

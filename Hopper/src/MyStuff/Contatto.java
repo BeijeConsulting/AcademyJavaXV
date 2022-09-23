@@ -1,4 +1,4 @@
-package rubriche;
+package MyStuff;
 
 public class Contatto {
 	private String cognome;

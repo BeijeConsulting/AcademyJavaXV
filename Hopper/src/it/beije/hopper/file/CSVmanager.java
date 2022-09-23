@@ -8,7 +8,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import rubriche.Contatto;
+import MyStuff.Contatto;
 
 public class CSVmanager {
 

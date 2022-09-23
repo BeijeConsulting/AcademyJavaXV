@@ -29,10 +29,10 @@ public class RubricaJDBC {
 			System.out.println("connection : " + connection);
 			System.out.println("connection open? " + !connection.isClosed());
 
-			statement = connection.createStatement();
+			//statement = connection.createStatement();
 
 			//INSERT
-			String cognome = "Verdi";
+			/*String cognome = "Verdi";
 			String nome = "Pippo";
 			//statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
 			preparedStatement = connection.prepareStatement(QUERY_INSERT);
@@ -64,7 +64,7 @@ public class RubricaJDBC {
 				System.out.println("NOME : " + rs.getString("nome"));
 				System.out.println("TELEFONO : " + rs.getString("telefono"));
 				System.out.println("EMAIL : " + rs.getString("email"));
-				System.out.println("NOTE : " + rs.getString("note"));
+				System.out.println("NOTE : " + rs.getString("note"));*/
 			}catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
 		    } catch (SQLException sqlEx) {

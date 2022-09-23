@@ -13,17 +13,17 @@ public class Connector {
 	private static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "Andrea1.");
 	}
 	
-	private static final int n = 10;
+	private static final int n = 151;
 	private static Connection[] connections = new Connection[n];
 	
 	public static Connection getAvailableConnection() throws ClassNotFoundException, SQLException {
 			
 		for (int i = 0; i < n; i++) {
 			if (connections[i] == null || connections[i].isClosed()) {
-				connections[i] = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+				connections[i] = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "Andrea1.");
 				
 				System.out.println("return " + i);
 				

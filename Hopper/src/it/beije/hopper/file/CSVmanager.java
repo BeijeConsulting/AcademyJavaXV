@@ -108,8 +108,8 @@ public class CSVmanager {
 	}
 
 	public static void main(String[] args) throws IOException {
-		List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
-		writeRubrica(contatti, "/temp/hopper_rubrica.csv");
+		List<Contatto> contatti = readRubrica("/Users/filippobassani/Desktop/csv/rubrica - tel.csv");
+		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 	}
 
 

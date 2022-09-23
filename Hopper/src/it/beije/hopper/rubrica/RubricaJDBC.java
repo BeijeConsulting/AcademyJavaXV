@@ -33,16 +33,16 @@ public class RubricaJDBC {
 			statement = connection.createStatement();
 
 			//INSERT
-			String cognome = "Verdi";
-			String nome = "Pippo";
+			//String cognome = "Verdi";
+			//String nome = "Pippo";
 			//statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
-			preparedStatement = connection.prepareStatement(QUERY_INSERT);
-			preparedStatement.setString(1, cognome);
-			preparedStatement.setString(2, nome);
-			preparedStatement.setString(3, "12412412");
-			preparedStatement.setString(4, "l@l.it");
-			preparedStatement.setString(5, "addio");
-			preparedStatement.executeUpdate();
+			//preparedStatement = connection.prepareStatement(QUERY_INSERT);
+			//preparedStatement.setString(1, cognome);
+			//preparedStatement.setString(2, nome);
+			//preparedStatement.setString(3, "12412412");
+			//preparedStatement.setString(4, "l@l.it");
+			//preparedStatement.setString(5, "addio");
+			//preparedStatement.executeUpdate();
 	
 //			//UPDATE
 		//	int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");

@@ -27,7 +27,7 @@ public class RubricaCSV {
         ArrayList<Contatto> listaContatti = new ArrayList<>();
         ResultSet rs = null;
         try {
-            connection = RubricaJDBC.getConnection();
+            connection = RubricaCSV.getConnection();
             statement = connection.createStatement();
 
             rs = statement.executeQuery("SELECT * FROM rubrica WHERE nome, cognome, telefono, email, note IS NOT NULL;");
@@ -61,8 +61,9 @@ public class RubricaCSV {
             throw new RuntimeException(e);
         }
     }
-        public static void main(String[] args) throws IOException, SQLException {
-    RubricaCSV.writeRubrica();
+
+    public static void main(String[] args) throws IOException, SQLException {
+        RubricaCSV.writeRubrica();
         Connection connection = null;
         Statement statement = null;
         PreparedStatement preparedStatement = null;
@@ -79,7 +80,7 @@ public class RubricaCSV {
             listaContatti.add(contatto);
         }
         try {
-            connection = RubricaJDBC.getConnection();
+            connection = RubricaCSV.getConnection();
             statement = connection.createStatement();
 
             // Inserisci contatti all'interno del DB

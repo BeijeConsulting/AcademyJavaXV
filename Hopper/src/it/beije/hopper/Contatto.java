@@ -6,7 +6,9 @@ public class Contatto {
 	private String telefono;
 	private String email;
 	private String note;
-	
+
+	private String id;
+
 	public String getCognome() {
 		return cognome;
 	}
@@ -20,7 +22,15 @@ public class Contatto {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 	public String getTelefono() {
 		return telefono;
 	}
@@ -43,11 +53,12 @@ public class Contatto {
 	}
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{Cognome: ").append(this.cognome)
+				.append("{ID: ").append(this.id)
+				.append(", Cognome: ").append(this.cognome)
 				.append(", Nome: ").append(this.nome)
 				.append(", Telefono: ").append(this.telefono)
 				.append(", E-Mail: ").append(this.email)
-			    .append(", Note: ").append(this.note).append("}");
+			    .append(", Note: ").append(this.note).append("}\n");
 		
 		return builder.toString();
 	}

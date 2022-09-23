@@ -26,7 +26,7 @@ public class RubricaJDBC {
 			System.out.println("connection : " + connection);
 			System.out.println("connection open? " + !connection.isClosed());
 
-/*			statement = connection.createStatement();
+			statement = connection.createStatement();
 
 			//INSERT
 			String cognome = "Verdi";
@@ -40,13 +40,13 @@ public class RubricaJDBC {
 			preparedStatement.setString(5, "addio");
 			preparedStatement.executeUpdate();
 
-//			//UPDATE
-//			int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
-//			System.out.println("updated rows : " + r);
-//
-//			//DELETE
-//			r = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
-//			System.out.println("deleted rows : " + r);
+			//UPDATE
+			int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
+			System.out.println("updated rows : " + r);
+
+			//DELETE
+			r = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
+			System.out.println("deleted rows : " + r);
 
 			//SELECT
 			rs = statement.executeQuery("SELECT * FROM rubrica");
@@ -65,20 +65,20 @@ public class RubricaJDBC {
 				System.out.println("TELEFONO : " + rs.getString("telefono"));
 				System.out.println("EMAIL : " + rs.getString("email"));
 				System.out.println("NOTE : " + rs.getString("note"));
-			}	*/
+			}
 
 		} catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
 		} catch (SQLException sqlEx) {
 			sqlEx.printStackTrace();
 		} finally {
-//			try {
-//				rs.close();
-//				statement.close();
-//				connection.close();
-//			} catch (SQLException sqlEx) {
-//				sqlEx.printStackTrace();
-//			}
+			try {
+				rs.close();
+				statement.close();
+				connection.close();
+			} catch (SQLException sqlEx) {
+			sqlEx.printStackTrace();
+			}
 		}
 
 	}

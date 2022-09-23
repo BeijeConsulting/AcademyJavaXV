@@ -13,7 +13,7 @@ public class RubricaJDBC {
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "cavagna");
 	}
 
 	public static void main(String[] args) {
@@ -30,8 +30,8 @@ public class RubricaJDBC {
 			statement = connection.createStatement();
 
 			//INSERT
-			String cognome = "Verdi";
-			String nome = "Pippo";
+			String cognome = "Cavagna";
+			String nome = "Stefano";
 			statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
 
 			//UPDATE

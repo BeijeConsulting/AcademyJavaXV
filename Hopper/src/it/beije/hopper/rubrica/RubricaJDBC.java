@@ -12,11 +12,13 @@ public class RubricaJDBC {
 	
 	public static final String QUERY_INSERT = "INSERT INTO rubrica (nome, cognome, telefono, email, note) VALUES (?, ?, ?, ?, ?)";
 
+
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "FilippoBassani");
 	}
+
 
 	public static void main(String[] args) {
 
@@ -28,6 +30,7 @@ public class RubricaJDBC {
 		try {
 			connection = RubricaJDBC.getConnection();
 
+			System.out.println("connection : " + connection);
 			System.out.println("connection open? " + !connection.isClosed());
 
 			statement = connection.createStatement();

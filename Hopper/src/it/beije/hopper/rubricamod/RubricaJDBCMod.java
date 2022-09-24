@@ -34,19 +34,22 @@ public class RubricaJDBCMod {
 		List<Contatto> contatti = null;
 		String path = null;
 		if( writeToDB ){
+
 			///READ CSV FILES (to DB)
 			String pathToFileCSV =  "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - test.csv";
 			contatti = CSVmanagerMod.readRubrica(pathToFileCSV);
 			System.out.println(contatti);
 			System.out.println();
-			//XML FILES to DB
+
+			//To be done
+//			//XML FILES to DB
 //			String pathToFile = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\xml\\test_parser.xml";
 //			contatti = XMLmanagerMod.readRubricaXML(pathToFile);
 
 		}else{
 			path = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\rubricamod\\outputfiles\\csv\\output.cvs";
 			contatti = new ArrayList<>();
-			System.out.println(contatti);
+			//System.out.println(contatti);
 			try{
 				CSVmanagerMod.writeRubrica(contatti, path);
 			}catch(IOException ioe){
@@ -114,6 +117,7 @@ public class RubricaJDBCMod {
 			sqlEx.printStackTrace();
 		} finally {
 			try {
+
 				if( rs != null ) rs.close();
 				statement.close();
 				connection.close();

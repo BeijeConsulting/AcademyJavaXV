@@ -95,7 +95,7 @@ public class XMLmanagerMod {
 		return contatti;
 	}
 	
-	public static void writeXML(String path) throws Exception {
+	public static void writeXML(String path, ArrayList<Contatto> contattiList ) throws Exception {
 		
 		DocumentBuilderFactory documentBuilderFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder documentBuilder = documentBuilderFactory.newDocumentBuilder();
@@ -104,58 +104,43 @@ public class XMLmanagerMod {
 
 		Element contatti = doc.createElement("contatti");
 		doc.appendChild(contatti);//root element
-		{
+
+		for( Contatto cont : contattiList ){
 			Element contatto = doc.createElement("contatto");
-			contatto.setAttribute("eta", "25");
-			
+			//contatto.setAttribute("eta", "25");
+			//contatto.setAttribute("eta", cont.getCognome());
+
 			Element cognome = doc.createElement("cognome");
-			cognome.setTextContent("Marrone");//<cognome>Marrone</cognome>
+			//cognome.setTextContent("Marrone");//<cognome>Marrone</cognome>
+			cognome.setTextContent(cont.getCognome());
 			contatto.appendChild(cognome);
-	
+
 			Element nome = doc.createElement("nome");
-			nome.setTextContent("Emma");//<nome>Emma</nome>
+			//nome.setTextContent("Emma");//<nome>Emma</nome>
+			nome.setTextContent(cont.getNome());
 			contatto.appendChild(nome);
-	
+
 			Element telefono = doc.createElement("telefono");
-			telefono.setTextContent("432423");
+			//telefono.setTextContent("432423");
+			telefono.setTextContent(cont.getTelefono());
 			contatto.appendChild(telefono);
-	
+
 			Element email = doc.createElement("email");
-			email.setTextContent("emma@marrone.it");
+			//email.setTextContent("emma@marrone.it");
+			email.setTextContent(cont.getEmail());
 			contatto.appendChild(email);
-	
+
 			Element note = doc.createElement("note");
-			note.setTextContent("la nota cantante");
+			//note.setTextContent("la nota cantante");
+			note.setTextContent(cont.getNote());
 			contatto.appendChild(note);
-			
+
 			contatti.appendChild(contatto);
 		}
-		{
-			Element contatto = doc.createElement("contatto");
-			contatto.setAttribute("eta", "78");
-			
-			Element cognome = doc.createElement("cognome");
-			cognome.setTextContent("Morandi");
-			contatto.appendChild(cognome);
-	
-			Element nome = doc.createElement("nome");
-			nome.setTextContent("Gianni");
-			contatto.appendChild(nome);
-	
-			Element telefono = doc.createElement("telefono");
-			telefono.setTextContent("432425233");
-			contatto.appendChild(telefono);
-	
-			Element email = doc.createElement("email");
-			email.setTextContent("gianni@morandi.it");
-			contatto.appendChild(email);
-	
-			Element note = doc.createElement("note");
-			note.setTextContent("il noto cantante");
-			contatto.appendChild(note);
-			
-			contatti.appendChild(contatto);
-		}
+
+
+
+
 		System.out.println("contatti : " + contatti.getElementsByTagName("contatto").getLength());
 		
 		// write the content into xml file
@@ -177,8 +162,9 @@ public class XMLmanagerMod {
 
 	public static void main(String[] args) throws Exception {
 		String pathToXml = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\xml\\test_parser.xml";
-		readRubricaXML(pathToXml);
-		//writeXML("/temp/new_rubrica.xml");
+		ArrayList<Contatto> contatti = (ArrayList<Contatto>) readRubricaXML(pathToXml);
+		String outputPath = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\output\\testouput.xml";
+		writeXML(outputPath, contatti);
 		
 	}
 

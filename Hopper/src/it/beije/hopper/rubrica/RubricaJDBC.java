@@ -9,40 +9,36 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 public class RubricaJDBC {
+	
+	public static final String QUERY_INSERT = "INSERT INTO rubrica (nome, cognome, telefono, email, note) VALUES (?, ?, ?, ?, ?)";
 
-    public static final String QUERY_INSERT = "INSERT INTO rubrica (nome, cognome, telefono, email, note) VALUES (?, ?, ?, ?, ?)";
 
-    public static Connection getConnection() throws ClassNotFoundException, SQLException {
-        Class.forName("com.mysql.cj.jdbc.Driver");
+	public static void main(String[] args) {
 
-        return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
-    }
+		Connection connection = null;
+		Statement statement = null;
+		PreparedStatement preparedStatement = null;
+		ResultSet rs = null;
+		
+		try {
+			connection = Connector.getAvailableConnection();
 
-    public static void main(String[] args) {
+			System.out.println("connection : " + connection);
+			System.out.println("connection open? " + !connection.isClosed());
 
-        Connection connection = null;
-        Statement statement = null;
-        PreparedStatement preparedStatement = null;
-        ResultSet rs = null;
+/*			statement = connection.createStatement();
 
-        try {
-            connection = RubricaJDBC.getConnection();
-
-            System.out.println("connection open? " + !connection.isClosed());
-
-            statement = connection.createStatement();
-
-            //INSERT
-            String cognome = "Verdi";
-            String nome = "Pippo";
-            //statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
-            preparedStatement = connection.prepareStatement(QUERY_INSERT);
-            preparedStatement.setString(1, cognome);
-            preparedStatement.setString(2, nome);
-            preparedStatement.setString(3, "12412412");
-            preparedStatement.setString(4, "l@l.it");
-            preparedStatement.setString(5, "addio");
-            preparedStatement.executeUpdate();
+			//INSERT
+			String cognome = "Verdi";
+			String nome = "Pippo";
+			//statement.executeUpdate("INSERT INTO rubrica VALUES (null, '" + cognome + "', '" + nome + "', '325235252', 'r.bianchi@beije.it', 'ciao ciao')");
+			preparedStatement = connection.prepareStatement(QUERY_INSERT);
+			preparedStatement.setString(1, cognome);
+			preparedStatement.setString(2, nome);
+			preparedStatement.setString(3, "12412412");
+			preparedStatement.setString(4, "l@l.it");
+			preparedStatement.setString(5, "addio");
+			preparedStatement.executeUpdate();
 
 //			//UPDATE
 //			int r = statement.executeUpdate("UPDATE rubrica SET note = 'erano note' WHERE id < 10");
@@ -52,39 +48,39 @@ public class RubricaJDBC {
 //			r = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = 'Roberta'");
 //			System.out.println("deleted rows : " + r);
 
-            //SELECT
-            rs = statement.executeQuery("SELECT * FROM rubrica");
+			//SELECT
+			rs = statement.executeQuery("SELECT * FROM rubrica");
 
-            while (rs.next()) {
-                //			System.out.println("ID : " + rs.getInt(1));
-                //			System.out.println("COGNOME : " + rs.getString(2));
-                //			System.out.println("NOME : " + rs.getString(3));
-                //			System.out.println("TELEFONO : " + rs.getString(4));
-                //			System.out.println("EMAIL : " + rs.getString(5));
-                //			System.out.println("NOTE : " + rs.getString(6));
+			while (rs.next()) {
+				//			System.out.println("ID : " + rs.getInt(1));
+				//			System.out.println("COGNOME : " + rs.getString(2));
+				//			System.out.println("NOME : " + rs.getString(3));
+				//			System.out.println("TELEFONO : " + rs.getString(4));
+				//			System.out.println("EMAIL : " + rs.getString(5));
+				//			System.out.println("NOTE : " + rs.getString(6));
 
-                System.out.println("ID : " + rs.getInt("id"));
-                System.out.println("COGNOME : " + rs.getString("cognome"));
-                System.out.println("NOME : " + rs.getString("nome"));
-                System.out.println("TELEFONO : " + rs.getString("telefono"));
-                System.out.println("EMAIL : " + rs.getString("email"));
-                System.out.println("NOTE : " + rs.getString("note"));
-            }
+				System.out.println("ID : " + rs.getInt("id"));
+				System.out.println("COGNOME : " + rs.getString("cognome"));
+				System.out.println("NOME : " + rs.getString("nome"));
+				System.out.println("TELEFONO : " + rs.getString("telefono"));
+				System.out.println("EMAIL : " + rs.getString("email"));
+				System.out.println("NOTE : " + rs.getString("note"));
+			}	*/
 
-        } catch (ClassNotFoundException cnfEx) {
-            cnfEx.printStackTrace();
-        } catch (SQLException sqlEx) {
-            sqlEx.printStackTrace();
-        } finally {
-            try {
-                rs.close();
-                statement.close();
-                connection.close();
-            } catch (SQLException sqlEx) {
-                sqlEx.printStackTrace();
-            }
-        }
+		} catch (ClassNotFoundException cnfEx) {
+			cnfEx.printStackTrace();
+		} catch (SQLException sqlEx) {
+			sqlEx.printStackTrace();
+		} finally {
+//			try {
+//				rs.close();
+//				statement.close();
+//				connection.close();
+//			} catch (SQLException sqlEx) {
+//				sqlEx.printStackTrace();
+//			}
+		}
 
-    }
+	}
 
 }

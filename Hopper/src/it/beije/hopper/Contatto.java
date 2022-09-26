@@ -1,4 +1,4 @@
-package MyStuff;
+package it.beije.hopper;
 
 public class Contatto {
 	private String cognome;

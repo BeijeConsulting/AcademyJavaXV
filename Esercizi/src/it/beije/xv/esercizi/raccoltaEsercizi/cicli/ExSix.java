@@ -1,4 +1,4 @@
-package it.beije.java.xv.esercizi.cicli;
+package it.beije.xv.esercizi.raccoltaEsercizi.cicli;
 
 
 /**

@@ -1,4 +1,4 @@
-package it.beije.java.xv.esercizi.cicli;
+package it.beije.xv.esercizi.raccoltaEsercizi.cicli;
 
 //7 Scrivere un programma che stampi i primi 100 elementi della successione di Fibonacci.
 public class ExSeven {

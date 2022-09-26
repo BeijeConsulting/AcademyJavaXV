@@ -1,4 +1,4 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.codefromtests;
+package it.beije.xv.esercizi.codetestsOCA.codefromtests;
 
 public class Main {
 

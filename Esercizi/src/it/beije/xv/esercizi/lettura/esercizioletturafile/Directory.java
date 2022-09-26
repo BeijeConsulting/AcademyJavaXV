@@ -1,4 +1,4 @@
-package it.beije.hopper.esercizioletturafile;
+package it.beije.xv.esercizi.lettura.esercizioletturafile;
 
 import java.io.File;
 import java.util.ArrayList;

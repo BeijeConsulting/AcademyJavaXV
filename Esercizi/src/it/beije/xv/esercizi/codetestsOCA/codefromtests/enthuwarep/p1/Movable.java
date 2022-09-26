@@ -1,4 +1,4 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.codefromtests.enthuwarep.p1;
+package it.beije.xv.esercizi.codetestsOCA.codefromtests.enthuwarep.p1;
 
 public interface Movable {
 	int location = 0;

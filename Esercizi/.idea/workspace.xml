@@ -2,8 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJDBCMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJDBCMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/XMLmanagerMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/XMLmanagerMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/TestEL/InstanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/TestEL/InstanceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/BlueCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/BlueCar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p1/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p1/Movable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p2/Donkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p2/Donkey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/px/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/px/TestClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/differentStringTwo/StringTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/differentStringTwo/StringTwo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/format/DateTimeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/format/DateTimeDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca/TraditionalSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca/TraditionalSearch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Directory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Reader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFive.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFour.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExOne.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSeven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSeven.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSevenEight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSevenEight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExThree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExTwo.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +30,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2F7yOZ5MEZTV4ixLv4N0CnYw4ss" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -23,13 +44,33 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\codetestsOCA\lambdas\oca" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\codetestsOCA" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\lettura" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\raccoltaEsercizi\cicli" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\raccoltaEsercizi" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.differentStringTwo" />
+      <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.one" />
+      <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.format" />
+      <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
+      <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.lambdas.oca.capitolo3" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -39,7 +80,9 @@
       <option name="presentableId" value="Default" />
       <updated>1663857386097</updated>
       <workItem from="1663857387400" duration="19000" />
-      <workItem from="1664004873197" duration="36000" />
+      <workItem from="1664004873197" duration="1431000" />
+      <workItem from="1664171446947" duration="135000" />
+      <workItem from="1664175860882" duration="1808000" />
     </task>
     <servers />
   </component>

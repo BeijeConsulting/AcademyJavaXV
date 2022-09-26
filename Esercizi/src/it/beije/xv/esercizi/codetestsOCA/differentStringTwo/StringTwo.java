@@ -1,7 +1,7 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.differentStringTwo;
+package it.beije.xv.esercizi.codetestsOCA.differentStringTwo;
 
 
-import it.beije.xv.esercizi.codetestsOCA.lambdas.oca.one.StringOne;
+import it.beije.xv.esercizi.codetestsOCA.one.StringOne;
 
 public class StringTwo {
 	public String str2 ="abc";

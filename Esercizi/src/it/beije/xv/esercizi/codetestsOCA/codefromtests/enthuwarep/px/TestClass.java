@@ -1,4 +1,4 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.codefromtests.enthuwarep.px;
+package it.beije.xv.esercizi.codetestsOCA.codefromtests.enthuwarep.px;
 
 
 /*

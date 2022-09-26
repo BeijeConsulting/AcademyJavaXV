@@ -1,4 +1,4 @@
-package it.beije.java.xv.esercizi.cicli;
+package it.beije.xv.esercizi.raccoltaEsercizi.cicli;
 
 //Scrivere un programma che stampi le tabellina del numero dato come argomento
 public class ExThree {

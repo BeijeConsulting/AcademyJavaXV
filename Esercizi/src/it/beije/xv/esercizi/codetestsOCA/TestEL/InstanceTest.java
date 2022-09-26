@@ -1,4 +1,4 @@
-package TestEL;
+package it.beije.xv.esercizi.codetestsOCA.TestEL;
 
 public class InstanceTest {
 

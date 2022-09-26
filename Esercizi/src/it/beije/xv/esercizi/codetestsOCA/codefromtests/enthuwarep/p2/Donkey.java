@@ -1,4 +1,4 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.codefromtests.enthuwarep.p2;
+package it.beije.xv.esercizi.codetestsOCA.codefromtests.enthuwarep.p2;
 
 import codefromtests.enthuwarep.p1.Movable;
 

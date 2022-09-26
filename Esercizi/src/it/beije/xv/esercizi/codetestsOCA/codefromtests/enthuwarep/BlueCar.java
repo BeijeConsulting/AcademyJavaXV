@@ -1,4 +1,4 @@
-package it.beije.xv.esercizi.codetestsOCA.lambdas.oca.codefromtests.enthuwarep;
+package it.beije.xv.esercizi.codetestsOCA.codefromtests.enthuwarep;
 
 abstract class Car {
     static { System.out.print("1"); }

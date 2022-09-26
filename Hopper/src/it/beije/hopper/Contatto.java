@@ -1,11 +1,21 @@
 package it.beije.hopper;
 
 public class Contatto {
+	
+	private int id;
 	private String cognome;
 	private String nome;
 	private String telefono;
 	private String email;
 	private String note;
+	
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
 	
 	public String getCognome() {
 		return cognome;
@@ -42,11 +52,15 @@ public class Contatto {
 		this.note = note;
 	}
 	public String toString() {
-		return "{ cognome : " + this.cognome +
-				", nome : " + this.nome +
-				", telefono : " + this.telefono +
-				", email : " + this.email +
-				", note : " + this.note + " }";
+		StringBuilder builder = new StringBuilder()
+				.append("{ id : ").append(this.id)
+				.append(", cognome : ").append(this.cognome)
+				.append(", nome : ").append(this.nome)
+				.append(", telefono : ").append(this.telefono)
+				.append(", email : ").append(this.email)
+				.append(", note : ").append(this.note).append(" }");
+		
+		return builder.toString();
 	}
 	
 }

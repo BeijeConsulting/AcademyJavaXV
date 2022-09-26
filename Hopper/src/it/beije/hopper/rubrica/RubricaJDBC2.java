@@ -27,7 +27,7 @@ public class RubricaJDBC2 {
 
             Scanner scanner = new Scanner(System.in);  // Create a Scanner object
             System.out.println("\n\n\tInserisci opzione: \n1/ Inserisci nuovo contatto nella rubrica \n2/ Vedi la rubrica completa \n3/ Cerca tramite referenza \n4/ Esci dal sistema ");
-            connection = RubricaJDBC.getConnection();
+            connection = Connector.getAvailableConnection();
             List<Contatto> contattoList = new ArrayList<>();
             statement = connection.createStatement();
             String line = scanner.nextLine();  // Read user input

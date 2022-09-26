@@ -17,7 +17,7 @@ public class HBMsessionFactory {
 		if (sessionFactory == null) {
 			System.out.println("creo SessionFactory...");
 			
-			Configuration configuration = new Configuration().configure()
+			Configuration configuration = new Configuration().configure("hibernate.cfg.xml")
 					.addAnnotatedClass(Contatto.class);
 
 			sessionFactory = configuration.buildSessionFactory();

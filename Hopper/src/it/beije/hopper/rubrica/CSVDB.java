@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.beije.hopper.Contatto;
-import it.beije.hopper.xml.parser.gruppo1.VostroOggettoDocumento;
+
 
 public class CSVDB {
 	

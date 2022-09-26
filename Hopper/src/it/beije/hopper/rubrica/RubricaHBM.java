@@ -71,7 +71,7 @@ public class RubricaHBM {
 	public static void main(String[] args) {
 		
 		testHBM();
-		testHBM();
+		
 	}
 
 }

@@ -1,5 +1,7 @@
 package it.beije.hopper.rubrica;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,8 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
+import it.beije.hopper.Contatto;
 
 public class DbScanner {
+	
 	
 	public static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
@@ -16,7 +20,10 @@ public class DbScanner {
 		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "FilippoBassani");
 	}
 
-	public static void main(String[] args) {		
+	
+	
+	
+	public static void main(String[] args) throws IOException {		
 
 		
 		Connection connection = null;
@@ -31,13 +38,20 @@ public class DbScanner {
 
 			
 			//SCANNER
-			System.out.println("Premi 'I' per inserire, 'U' per modificare, 'D' per cancellare, 'S' per vedere il db, 'Dup' per vedere i duplicati");
+			System.out.println("Premi 'I' per inserire, 'U' per modificare, 'D' per cancellare, 'S' per vedere il db,");
+			System.out.println("'Dup' per vedere i duplicati, 'C' per cercare il contatto, 'Un' per unire i duplicati");
+
 			Scanner modifiche = new Scanner(System.in);
 			String st = modifiche.next();
 			
-			
 			statement = connection.createStatement();
 
+		
+			
+			
+			
+			
+			
 			//INSERT
 			if(st.equals("I")) {
 				System.out.println("inserisci i dati");
@@ -70,7 +84,7 @@ public class DbScanner {
 				switch(cosa) {
 				case "C":	System.out.println("Cognome: ");
 							String cognome= update.nextLine();	
-							int r = statement.executeUpdate("UPDATE rubrica SET cognome = '"+ cognome +"' WHERE id ='"+ id +"'");
+							int c = statement.executeUpdate("UPDATE rubrica SET cognome = '"+ cognome +"' WHERE id ='"+ id +"'");
 				
 				case "N": 	System.out.println("Nome: ");
 							String nome= update.nextLine();	
@@ -86,9 +100,9 @@ public class DbScanner {
 				
 				case "Note": 	System.out.println("Note: ");
 								String note= update.nextLine();	
-								int f = statement.executeUpdate("UPDATE rubrica SET note = '"+ note +"' WHERE id ='"+ id +"'");
+								int not = statement.executeUpdate("UPDATE rubrica SET note = '"+ note +"' WHERE id ='"+ id +"'");
 				}
-				
+				update.close();
 			}
 			
 			
@@ -108,7 +122,7 @@ public class DbScanner {
 				String email= delete.nextLine();
 				System.out.print("Note: ");
 				String note= delete.nextLine();
-				 int r1 = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = '" + cognome + "' OR nome = '" + nome + "' OR telefono = '" + telefono + "'OR email = '" + email + "' OR note = '" + note + "'  ");
+				 int del = statement.executeUpdate("DELETE FROM rubrica WHERE cognome = '" + cognome + "' OR nome = '" + nome + "' OR telefono = '" + telefono + "'OR email = '" + email + "' OR note = '" + note + "'  ");
 			
 				delete.close();
 			}
@@ -120,7 +134,20 @@ public class DbScanner {
 			
 			//SELECT
 			if(st.equals("S")) {
-			rs = statement.executeQuery("SELECT * FROM rubrica");
+				System.out.println("Ordinati per nome o cognome? 'N', 'C'");
+				Scanner ordine = new Scanner(System.in);
+				String or= ordine.nextLine();
+				switch(or) {
+				
+				case "N": rs = statement.executeQuery("SELECT * FROM rubrica ORDER BY nome");
+				break;
+				
+				case "C": rs = statement.executeQuery("SELECT * FROM rubrica ORDER BY cognome");
+				break;
+				
+				default: rs = statement.executeQuery("SELECT * FROM rubrica");
+				break;
+				}
 
 			while (rs.next()) {
 				System.out.println("ID : " + rs.getInt("id"));
@@ -132,28 +159,59 @@ public class DbScanner {
 			}		
 			}
 			
-			
+			//CERCA CONTATTO
+			if(st.equals("C")) {
+				System.out.println("inserisci i parametri di ricerca");
+				Scanner cerca = new Scanner(System.in);	
+				System.out.print("Cognome: ");
+				String cognome= cerca.nextLine();
+				System.out.print("Nome: ");
+				String nome= cerca.nextLine();
+				System.out.print("Telefono: ");
+				String telefono= cerca.nextLine();
+				System.out.print("Email: ");
+				String email= cerca.nextLine();
+				System.out.print("Note: ");
+				String note= cerca.nextLine();
+				ResultSet cer = statement.executeQuery("SELECT * FROM rubrica WHERE cognome = '" + cognome + "' OR nome = '" + nome + "' OR telefono = '" + telefono + "'OR email = '" + email + "' OR note = '" + note + "'");
+				while (cer.next()) {
+					System.out.println("ID : " + cer.getInt("id"));
+					System.out.println("COGNOME : " + cer.getString("cognome"));
+					System.out.println("NOME : " + cer.getString("nome"));
+					System.out.println("TELEFONO : " + cer.getString("telefono"));
+					System.out.println("EMAIL : " + cer.getString("email"));
+					System.out.println("NOTE : " + cer.getString("note"));
+				}
+				cerca.close();
+			}
 			
 			
 			// DUPLICATI
 			if(st.equals("Dup")) {
-				 ResultSet r1 = statement.executeQuery("Select cognome, nome, telefono, email, note, count(*) FROM rubrica GROUP BY cognome, nome, telefono, email, note  HAVING count(*)>1 ");
+				 ResultSet dup = statement.executeQuery("Select cognome, nome, telefono, email, note, count(*) FROM rubrica GROUP BY cognome, nome, telefono, email, note  HAVING count(*)>1 ");
 				
-				 while (r1.next()) {
-						System.out.print(r1.getString("cognome"));
-						System.out.print(" " + r1.getString("nome"));
-						System.out.print(" " + r1.getString("telefono"));
-						System.out.print(" " + r1.getString("email"));
-						System.out.println(" " + r1.getString("note"));
+				 while (dup.next()) {
+						System.out.print(dup.getString("cognome"));
+						System.out.print(" " + dup.getString("nome"));
+						System.out.print(" " + dup.getString("telefono"));
+						System.out.print(" " + dup.getString("email"));
+						System.out.println(" " + dup.getString("note"));
 					}
 				 
 			}
 			
 			
-			//ELIMINA I DUPLICATI
-			//if(st.equals("El")) {
-			//	 int r2 = statement.executeUpdate("DELETE FROM (SELECT  ROW_NUMBER() OVER (PARTITION BY  cognome, nome, telefono, email, note ) AS DupRank FROM rubrica) WHERE DupRank > 1 ");	 
-			//}
+			//UNISCI I DUPLICATI
+			if(st.equals("Un")) {
+				ResultSet un = statement.executeQuery(" SELECT DISTINCT cognome, nome, telefono, email, note FROM rubrica ");	
+				 while (un.next()) {
+						System.out.print(un.getString("cognome"));
+						System.out.print(" " + un.getString("nome"));
+						System.out.print(" " + un.getString("telefono"));
+						System.out.print(" " + un.getString("email"));
+						System.out.println(" " + un.getString("note"));
+					}
+			}
 			
 			
 			

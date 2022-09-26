@@ -49,7 +49,7 @@ public class JDBCMetodi {
 			//writeDB();
 			//readFromDB();
 			//writeDBtoCSV();
-			writeCSVtoDB();
+			//writeCSVtoDB();
 
 		} catch (ClassNotFoundException cnfEx) {
 			cnfEx.printStackTrace();
@@ -154,8 +154,8 @@ public class JDBCMetodi {
 			
 			try {
 				preparedStatement = connection.prepareStatement(QUERY_INSERT);
-				preparedStatement.setString(1, arr[0]);
-				preparedStatement.setString(2, arr[1]);
+				preparedStatement.setString(1, arr[1]);		//invertiti perchè mi sono sbagliato sopra
+				preparedStatement.setString(2, arr[0]);		//
 				preparedStatement.setString(3, arr[2]);
 				preparedStatement.setString(4, arr[3]);
 				preparedStatement.setString(5, arr[4]);

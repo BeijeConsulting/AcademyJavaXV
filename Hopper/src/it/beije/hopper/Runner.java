@@ -14,7 +14,7 @@ public class Runner {
 //		System.out.println(s + " - " + s.risorsa--);
 		
 		int n = 0;
-		while (n++ <= 10) {
+		while (n++ <= 151) {
 			System.out.print(n + " - ");
 			RubricaJDBC.main(new String[0]);
 		}

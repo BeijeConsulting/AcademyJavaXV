@@ -32,7 +32,7 @@ public class MaxConnessioni {
 				sqlEx.printStackTrace();
 			} finally {
 				try {
-					//rs.close();
+					rs.close();
 					try {
 						statement.close();
 					} catch (Exception e) {

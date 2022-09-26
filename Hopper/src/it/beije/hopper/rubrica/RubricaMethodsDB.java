@@ -32,7 +32,7 @@ public class RubricaMethodsDB {
                 contatto.setTelefono(rs.getString("telefono"));
                 contatto.setEmail(rs.getString("email"));
                 contatto.setNote(rs.getString("note"));
-                contatto.setId(rs.getString("id"));
+                contatto.setId(rs.getInt("id"));
                 listaContatti.add(contatto);
             }
             System.out.println(listaContatti);

@@ -7,7 +7,7 @@ public class Contatto {
 	private String email;
 	private String note;
 
-	private String id;
+	private int id;
 
 	public String getCognome() {
 		return cognome;
@@ -23,11 +23,11 @@ public class Contatto {
 		this.nome = nome;
 	}
 
-	public String getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

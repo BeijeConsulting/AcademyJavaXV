@@ -1,23 +1,5 @@
 package it.beije.hopper.file;
 import it.beije.hopper.Contatto;
-/*
-<?xml version="1.0" encoding="UTF-8"?>
-<rubrica>
-    <contatto eta="30">
-		<nome>Mario</nome>
-		<cognome>Rossi</cognome>
-		<telefono>3337658390</telefono>
-		<email>mario.rossi@tim.it</email>
-		<note>compagno di squadra</note>
-	</contatto>
-	<contatto eta="35">
-		<nome>Claudio</nome>
-		<cognome>Bianchi</cognome>
-		<telefono>3352672537</telefono>
-		<email>claudio.white@virgilio.it</email>
-	</contatto>
-</rubrica>
-*/
 
 import java.io.File;
 import java.io.IOException;
@@ -103,6 +85,7 @@ public class XMLmanager {
 				System.out.println("TELEFONO : " + contatto.getTelefono());
 				System.out.println("EMAIL : " + contatto.getEmail());
 				System.out.println("NOTE : " + contatto.getNote());
+				System.out.println("\n");
 				
 				contatti.add(contatto);
 			}

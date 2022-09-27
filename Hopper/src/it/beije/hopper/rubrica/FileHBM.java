@@ -16,9 +16,9 @@ import it.beije.hopper.Contatto;
 
 public class FileHBM {
 	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
+		
 		Scanner scanner = new Scanner(System.in);
-
-
+		
 		inserimento();
 
 		String in = scanner.nextLine();
@@ -37,15 +37,18 @@ public class FileHBM {
 				removeDB(Integer.parseInt(id));
 			} else if (in.equalsIgnoreCase("aggiungi")) {
 				initializeWrite();
-			} else {
+			} else if(in.equalsIgnoreCase("ricerca"))
+					select();					
+			else {
 				System.out.println("Inserimento non valido");
 				inserimento();
 				in = scanner.nextLine();
 				continue LOOP;
 			}
-			System.out.println("");inserimento();
-			in=scanner.nextLine();
-			
+			System.out.println("");
+			inserimento();
+			in = scanner.nextLine();
+
 		}
 		System.out.println("Programma terminato!");
 		scanner.close();
@@ -266,12 +269,51 @@ public class FileHBM {
 	}
 
 	public static void inserimento() {
-		
+
 		System.out.println("Inserire cosa voler fare: ");
 		System.out.println("Per stampare il Database digitare stampa");
 		System.out.println("Per aggiornare il Database digitare aggiorna");
 		System.out.println("Per eliminare un contatto dal Database digitare elimina");
 		System.out.println("Per aggiungere un contatto nel Database digitare aggiungi");
+		System.out.println("Per ricercare contatti nel Database digitare ricerca");
 		System.out.println("Per uscire digitare exit");
+	}
+
+	public static void select() {
+		Session session = HBMsessionFactory.openSession();
+		Transaction transaction = session.beginTransaction();
+		
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("Inserire la colonna da ricercare: Nome, cognome, email, telefono: ");
+		String in=scanner.nextLine();
+		
+		Query<Contatto> query=null;
+		
+		if(in.equalsIgnoreCase("nome")) {
+			System.out.print("\nInserire nome:");
+			in=scanner.nextLine();
+			query = session.createQuery("SELECT c FROM Contatto as c WHERE nome='" + in + "'");
+		}
+		else if(in.equalsIgnoreCase("cognome")) {
+			System.out.print("\nInserire cognome:");
+			in=scanner.nextLine();
+			query = session.createQuery("SELECT c FROM Contatto as c WHERE cognome='" + in + "'");
+		}
+		else if(in.equalsIgnoreCase("email")) {
+			System.out.print("\nInserire email:");
+			in=scanner.nextLine();
+			query = session.createQuery("SELECT c FROM Contatto as c WHERE email='" + in + "'");
+		}
+		else if(in.equalsIgnoreCase("telefono")) {
+			System.out.print("\nInserire telefono:");
+			in=scanner.nextLine();
+			query = session.createQuery("SELECT c FROM Contatto as c WHERE telefono='" + in + "'");
+		}
+		
+		List<Contatto> contatti = query.getResultList();
+
+		for (Contatto c : contatti) {
+			System.out.println(c);
+		}
 	}
 }

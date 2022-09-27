@@ -29,24 +29,24 @@ public class RubricaHBM {
 		Contatto contatto = null;
 		
 		//INSERT
-//		contatto = new Contatto();
-//		contatto.setCognome("Delle Serre");
-//		contatto.setNome("Emanuele");
-//		contatto.setEmail("e.delleserre@beije.it");
-//		
-//		System.out.println("contatto PRE : " + contatto);
-//		session.save(contatto);
-//		System.out.println("contatto POST : " + contatto);
+		contatto = new Contatto();
+		contatto.setCognome("Delle Serre");
+		contatto.setNome("Emanuele");
+		contatto.setEmail("e.delleserre@beije.it");
 
-		//SELECT HQL
-		Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
-		//Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c WHERE cognome = 'Bianchi'");
-		List<Contatto> contatti = query.getResultList();
-		for (Contatto c : contatti) {
-			System.out.println(c);
-			if (c.getId() == 21) contatto = c;
-		}
-		System.out.println(contatti.size());
+		System.out.println("contatto PRE : " + contatto);
+		session.save(contatto);
+		System.out.println("contatto POST : " + contatto);
+
+//		//SELECT HQL
+//		Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
+//		//Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c WHERE cognome = 'Bianchi'");
+//		List<Contatto> contatti = query.getResultList();
+//		for (Contatto c : contatti) {
+//			System.out.println(c);
+//			if (c.getId() == 21) contatto = c;
+//		}
+//		System.out.println(contatti.size());
 		
 		
 		//UPDATE

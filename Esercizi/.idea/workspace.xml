@@ -1,28 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/TestEL/InstanceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/TestEL/InstanceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/BlueCar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/BlueCar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p1/Movable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p1/Movable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p2/Donkey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p2/Donkey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/px/TestClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/px/TestClass.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/differentStringTwo/StringTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/differentStringTwo/StringTwo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/format/DateTimeDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/format/DateTimeDemo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca/TraditionalSearch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca/TraditionalSearch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Directory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Directory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Reader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lettura/esercizioletturafile/Reader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFive.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFive.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFour.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExFour.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExOne.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExOne.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSeven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSeven.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSevenEight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSevenEight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExSix.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExThree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExThree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExTwo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/cicli/ExTwo.java" afterDir="false" />
-    </list>
+    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,8 +61,23 @@
       <workItem from="1663857387400" duration="19000" />
       <workItem from="1664004873197" duration="1431000" />
       <workItem from="1664171446947" duration="135000" />
-      <workItem from="1664175860882" duration="1808000" />
+      <workItem from="1664175860882" duration="1926000" />
     </task>
+    <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
+      <created>1664184716686</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1664184716686</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed more exercises from exercise folder">
+      <created>1664184729122</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664184729122</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -99,5 +93,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fixed more exercises from exercise folder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed more exercises from exercise folder" />
   </component>
 </project>

@@ -3,8 +3,6 @@ package it.beije.hopper.rubrica;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Connector {
 	
@@ -13,7 +11,7 @@ public class Connector {
 	private static Connection getConnection() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		
-		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+		return DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "123Password");
 	}
 	
 	private static final int n = 10;
@@ -23,7 +21,7 @@ public class Connector {
 			
 		for (int i = 0; i < n; i++) {
 			if (connections[i] == null || connections[i].isClosed()) {
-				connections[i] = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "beije");
+				connections[i] = DriverManager.getConnection("jdbc:mysql://localhost:3306/hopper?serverTimezone=CET", "root", "123Password");
 				
 				System.out.println("return " + i);
 				

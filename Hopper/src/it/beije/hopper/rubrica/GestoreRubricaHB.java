@@ -2,14 +2,17 @@ package it.beije.hopper.rubrica;
 
 import it.beije.hopper.Contatto;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import java.sql.Array;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class GestoreRubricaHB {
     public static void main(String[] args) throws SQLException, ClassNotFoundException {
+        System.out.println("Cosa vuoi fare? \n 0 - lista contatti \n 1 - inserisci contatto \n 2 - cerca contatto \n 3 - elimina contatto \n 4 - modifica contatto");
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Cosa vuoi fare? \n 0 - lista contatti \n 1 - inserisci contatto \n 2 - cerca contatto \n 3 - elimina contatto");
         String scelta = scanner.nextLine();
 
         switch (scelta) {
@@ -66,6 +69,10 @@ public class GestoreRubricaHB {
                 System.out.println("Inserisci il nuovo valore:");
                 String nuovoValore = scanner.nextLine();
                 RubricaMethodsDB.modificaContattoDB(id, campo, nuovoValore);
+                break;
+            }
+            default: {
+                System.out.println("inserisci un valore valido");
                 break;
             }
         }

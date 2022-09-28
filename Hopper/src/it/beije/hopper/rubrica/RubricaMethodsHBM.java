@@ -40,7 +40,7 @@ public class RubricaMethodsHBM {
     }
 
 
-    public static ArrayList<Contatto> cercaContattoHBM(String nome) {
+    public static ArrayList<Contatto> cercaContattoHBM(String valore) {
         Contatto contatto;
         Session session = HBMsessionFactory.openSession();
         Transaction transaction = session.beginTransaction();
@@ -50,7 +50,7 @@ public class RubricaMethodsHBM {
         List<Contatto> contatti = query.getResultList();
 
         for (Contatto c : contatti) {
-            if (c.getNome().equalsIgnoreCase(nome)) {
+            if (c.getNome().equalsIgnoreCase(valore) || c.getCognome().equalsIgnoreCase(valore) || c.getTelefono().equalsIgnoreCase(valore) || c.getEmail().equalsIgnoreCase(valore) || c.getNote().equalsIgnoreCase(valore)) {
                 trovati.add(c);
             }
         }
@@ -65,8 +65,8 @@ public class RubricaMethodsHBM {
         session.save(contatto);
         transaction.commit();
         session.close();
-
     }
+
 
     public static void modificaContattoHBM(String campo, int id, String valore) throws ClassNotFoundException, SQLException {
             }
@@ -77,4 +77,5 @@ public class RubricaMethodsHBM {
         transaction.commit();
         session.close();
     }
+
 }

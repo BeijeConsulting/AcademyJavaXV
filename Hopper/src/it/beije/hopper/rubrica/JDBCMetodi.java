@@ -46,9 +46,9 @@ public class JDBCMetodi {
 			System.out.println("connection open? " + !connection.isClosed());
 			statement = connection.createStatement();
 
-			//writeDB();
+			//writeDBusingJDBC();
 			//readFromDB();
-			//writeDBtoCSV();
+			writeDBtoCSV();
 			//writeCSVtoDB();
 
 		} catch (ClassNotFoundException cnfEx) {
@@ -72,7 +72,7 @@ public class JDBCMetodi {
 
 	}
 	
-	public static void writeDB()
+	public static void writeDBusingJDBC()
 	{
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Inserire Nome: ");		
@@ -129,7 +129,8 @@ public class JDBCMetodi {
 		{
 			
 			StringBuilder s = new StringBuilder();
-			s.append(rs.getString("cognome")).append(rs.getString("nome")).append(rs.getString("telefono")).append(rs.getString("email")).append(rs.getString("note")).append("\n");
+			s.append(rs.getString("cognome")).append(";").append(rs.getString("nome")).append(";").append(rs.getString("telefono")).append(";")
+			.append(rs.getString("email")).append(";").append(rs.getString("note")).append(";").append("\n");
 			String str = s.toString();
 			fileWriter.write(str);
 			
@@ -141,7 +142,7 @@ public class JDBCMetodi {
 	{
 		FileReader fileReader = new FileReader(pathFile);
 		BufferedReader bufferedReader = new BufferedReader(fileReader);
-		String[] arr = null;
+		String[] arr;
 		
 		rs = statement.executeQuery("SELECT * FROM rubrica");
 

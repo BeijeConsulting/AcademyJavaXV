@@ -12,18 +12,9 @@ import java.util.Scanner;
 
 public class RubricaHibernate2 {
 
-    public static final String QUERY_INSERT = "INSERT INTO rubrica (nome, cognome, telefono, email, note) VALUES (?, ?, ?, ?, ?)";
-    Connection connection = null;
-    Statement statement = null;
-    PreparedStatement preparedStatement = null;
-    ResultSet rs = null;
-
     public static Session getConnection() {
         Session session = HBMsessionFactory.openSession();
         System.out.println("session is open? " + session.isOpen());
-
-//		Transaction transaction = session.getTransaction();
-//		transaction.begin();
         Transaction transaction = session.beginTransaction();
         return session;
     }

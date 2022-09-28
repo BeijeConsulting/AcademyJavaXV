@@ -1,4 +1,4 @@
-package it.beije.hopper.rubricamod;
+package it.beije.hopper.rubricamod.fileMod;
 
 import it.beije.hopper.Contatto;
 

@@ -1,6 +1,7 @@
 package it.beije.hopper.rubricamod;
 
 import it.beije.hopper.Contatto;
+import it.beije.hopper.rubricamod.fileMod.CSVmanagerMod;
 
 
 import java.io.IOException;

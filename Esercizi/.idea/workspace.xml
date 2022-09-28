@@ -2,55 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.classpath" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jsch.core.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.navigator.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.urischeme.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.16.3.20211002-1029.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.intro/introstate" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/version.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.project" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo1/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo2/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo3/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/Esercizi/it/beije/xv/esercizi/cap5/gruppo4/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestEL/InstanceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TestEL/Wrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/TestEL/Wrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/array/Contains.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/raccoltaEsercizi/array/Contains.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/Hopper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/Hopper.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

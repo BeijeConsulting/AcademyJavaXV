@@ -35,29 +35,15 @@ public class CSVmanagerScanner {
 
             Contatto contatto = null;
             for (String row : rows) {
-//				StringTokenizer tokenizer = new StringTokenizer(row, ";");
-//				System.out.println("COGNOME : " + tokenizer.nextToken());
-//				System.out.println("NOME : " + tokenizer.nextToken());
-//				System.out.println("TELEFONO : " + tokenizer.nextToken());
-//				System.out.println("EMAIL : " + tokenizer.nextToken());
-//				System.out.println("NOTE : " + tokenizer.nextToken());
 
                 String[] cols = row.split(";");
-//				for (String col : cols) {
-//					System.out.println(col);
-//				}
 
                 contatto = new Contatto();
                 contatto.setCognome(cols[0]);
                 contatto.setNome(cols[1]);
                 contatto.setTelefono(cols[2]);
                 contatto.setEmail(cols[3]);
-                contatto.setNote(cols[4]);/*
-                System.out.println("COGNOME : " + contatto.getCognome());
-                System.out.println("NOME : " + contatto.getNome());
-                System.out.println("TELEFONO : " + contatto.getTelefono());
-                System.out.println("EMAIL : " + contatto.getEmail());
-                System.out.println("NOTE : " + contatto.getNote());*/
+                contatto.setNote(cols[4]);
 
                 contatti.add(contatto);
             }
@@ -65,6 +51,7 @@ public class CSVmanagerScanner {
             e.printStackTrace();
         } finally {
             try {
+                assert fileReader != null;
                 fileReader.close();
             } catch (IOException inner) {
                 inner.printStackTrace();

@@ -27,7 +27,7 @@ public class Contains {
 		return false;
 	}
 	
-	DA FINIRE
+	//DA FINIRE
 	private boolean equals(Object e1, Object e2 ) {
 		if( e1 == e2 ) return true;
 		

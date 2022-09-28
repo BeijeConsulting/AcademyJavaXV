@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/capitolo5/abstractclass/example1/testdefault/Test.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/codefromtests/enthuwarep/p2/Donkey.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/lambdas/oca/TraditionalSearch.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Elettrodomestici/ElettroCorrente.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Aspirapolvere.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Lavatrice.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/pile/Soffiatore.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/pile/Telecomando.java" />
+      <file url="file://$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/capitolo5/classdesign/polymorphism/polymorphisandmethodoverriding/Gorilla.java" />
+    </excludeFromCompile>
+  </component>
+</project>

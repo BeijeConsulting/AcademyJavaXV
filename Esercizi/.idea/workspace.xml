@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder" />
+    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,7 +35,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi/src",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi/src/it/beije/xv/esercizi/TestEL",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -42,10 +45,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\TestEL" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi" />
       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src" />
       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\codetestsOCA\lambdas\oca" />
       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\codetestsOCA" />
-      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\lettura" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\raccoltaEsercizi\cicli" />
@@ -120,6 +124,7 @@
       <workItem from="1664171446947" duration="135000" />
       <workItem from="1664175860882" duration="1926000" />
       <workItem from="1664340475226" duration="1630000" />
+      <workItem from="1664380278148" duration="727000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

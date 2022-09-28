@@ -90,24 +90,30 @@ public class RubricaJPAMod {
 		entityManager.close();
 	}
 
+	///FILE utility methods
+	public static void insertContattiFile(List<Contatto> contatti, EntityManager entityManager){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
 
-//	public static void insertContattiFile(List<Contatto> contatti, EntityManager entityManager){
-//		for( Contatto contatto: contatti){
-//
-//		}
-//
-//		entityManager.persist(newContatto);
-//
-//
-//		if( scanner.nextLine().equalsIgnoreCase("yes")){
-//			entityTransaction.commit();
-//			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +" added.");
-//		}else{
-//			entityTransaction.rollback();
-//			System.out.println("Insertion cancelled.");
-//		}
-//	}
+		for( Contatto contatto: contatti){
+			entityManager.persist(contatto);
+		}
 
+
+
+
+
+		if( scanner.nextLine().equalsIgnoreCase("yes")){
+			entityTransaction.commit();
+			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +" added.");
+		}else{
+			entityTransaction.rollback();
+			System.out.println("Insertion cancelled.");
+		}
+	}
+
+
+	/// CLI methods ///////////////////////////////////
 	//inserisci nuovo contatto ()
 	public static void insertNewContatto(EntityManager entityManager, Scanner scanner){
 

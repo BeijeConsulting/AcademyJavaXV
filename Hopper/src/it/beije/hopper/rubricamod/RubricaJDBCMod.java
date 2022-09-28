@@ -45,7 +45,7 @@ public class RubricaJDBCMod {
 		if( writeToDB ){ //FILE TO DB
 
 			///READ CSV FILES (to DB)
-//			String pathToFileCSV =  "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - test.csv";
+//			String pathToFileCSV =  "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - testSecond.csv";
 //			contatti = CSVmanagerMod.readRubrica(pathToFileCSV);
 //			System.out.println(contatti);
 //			System.out.println();

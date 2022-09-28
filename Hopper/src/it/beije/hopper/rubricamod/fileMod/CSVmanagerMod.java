@@ -99,11 +99,12 @@ public class CSVmanagerMod {
 		//List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
 		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 
-		String folderIn = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - test.csv";
-		String folderOut = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\rubricamod\\outputfiles\\csv\\";
-		List<Contatto> contatti = readRubrica(folderIn);
-
-		writeRubrica(contatti, folderOut+"output.csv");
+//		String folderIn = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - testSecond.csv";
+//		String folderOut = "C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\rubricamod\\outputfiles\\csv\\";
+		List<Contatto> contatti = readRubrica("src/testFile_CSV_XML/rubrichecsv/rubrica - test.csv");
+		System.out.println("CONTATTI TEST FILE:");
+		System.out.println(contatti);
+		//writeRubrica(contatti, folderOut+"output.csv");
 
 	}
 

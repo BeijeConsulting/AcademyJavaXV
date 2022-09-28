@@ -1,8 +1,11 @@
 Implementate metodi analoghi a questi:
-public List<Contatto> loadRubricaFromCSV(String pathFile, String separator) {...}
+public List<Contatto> loadRubricaFromCSV(String pathFile, String separator) {...} (DONE --> readRubrica)
+
+public void writeRubricaCSV(List<Contatto> contatti, String pathFile, String separator) {...}(DONE)
+
 public List<Contatto> loadRubricaFromXML(String pathFile) {...}
-public void writeRubricaCSV(List<Contatto> contatti, String pathFile, String separator) {...}
 public void writeRubricaXML(List<Contatto> contatti, String pathFile) {...}
+
 naturalmente lascio a voi la gestione di eventuali eccezioni.
 Dopo i metodi base per la scrittura, fate in modo che se indicate un file xml o csv già esistente,
 i nuovi contatti non vadano a sovrascrivere quelli già presenti, bensì vengano aggiunti in coda
@@ -21,7 +24,7 @@ inserisci nuovo contatto (JPA)
 modifica contatto  (JPA)
 cancella contatto (JPA)
 trova contatti duplicati (JPA)
-unisci contatti duplicati ()
+unisci contatti duplicati (JPA circa..)
 
 La rubrica deve essere memorizzata su DB e devo esserci la possibilità di importare ed
 esportare contatti da/in file XML e CSV

@@ -1,4 +1,4 @@
-package TestEL;
+package it.beije.xv.esercizi.TestEL;
 
 public class Wrapper {
     public static void main(String[] args){

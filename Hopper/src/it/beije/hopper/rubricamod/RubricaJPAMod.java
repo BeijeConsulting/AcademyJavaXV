@@ -6,17 +6,33 @@ import javax.persistence.*;
 import java.util.List;
 import java.util.Scanner;
 
+import it.beije.hopper.rubricamod.fileMod.CSVmanagerMod;
 
 public class RubricaJPAMod {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		jpaSession(scanner);
+		System.out.println("Choose.... \n(1): Load data from a file to db\n(2): Export data from DB to file\n(3): CLI application");
+		Integer decision = Integer.valueOf(scanner.nextLine());
+		if( decision == 1 ){
+			System.out.println("Load data from File to DB...");
+			System.out.print("Enter file path: ");
+			String path = "src/testFile_CSV_XML/rubrichecsv/rubrica - test.csv";
+			//scanner.nextLine();
+			List<Contatto> contatti = CSVmanagerMod.readRubrica(path);
+
+		}else if( decision == 2){
+
+		}else if( decision == 3){
+			jpaSessionTerminalApp(scanner);
+		}
+
+
 
 	}
 
 
-	public static void jpaSession(Scanner scanner){
+	public static void jpaSessionTerminalApp(Scanner scanner){
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
@@ -74,6 +90,23 @@ public class RubricaJPAMod {
 		entityManager.close();
 	}
 
+
+//	public static void insertContattiFile(List<Contatto> contatti, EntityManager entityManager){
+//		for( Contatto contatto: contatti){
+//
+//		}
+//
+//		entityManager.persist(newContatto);
+//
+//
+//		if( scanner.nextLine().equalsIgnoreCase("yes")){
+//			entityTransaction.commit();
+//			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +" added.");
+//		}else{
+//			entityTransaction.rollback();
+//			System.out.println("Insertion cancelled.");
+//		}
+//	}
 
 	//inserisci nuovo contatto ()
 	public static void insertNewContatto(EntityManager entityManager, Scanner scanner){

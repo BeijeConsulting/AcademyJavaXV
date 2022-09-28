@@ -105,7 +105,7 @@ public class CSVmanager {
 		//List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
 		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 
-		List<Contatto> contatti = readRubrica("C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - test.csv");
+		List<Contatto> contatti = readRubrica("C:\\Users\\Michael Angelo\\IdeaProjects\\Beije-Academy-pt2\\Hopper\\src\\it\\beije\\hopper\\testFile_CSV_XML\\rubrichecsv\\rubrica - testSecond.csv");
 		for( Contatto contatto : contatti ){
 			System.out.println(contatto);
 		}

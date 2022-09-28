@@ -1,5 +1,6 @@
 package it.beije.hopper.rubrica;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Scanner;
 
@@ -22,11 +23,11 @@ public class RubricaHBMScanner {
 		Transaction transaction = session.beginTransaction();
 		
 		Contatto contatto = null;
+		Contatto contattoD = null;
 		int idsc = 0;
 		
 		//SCANNER
 		System.out.println("Premi 'I' per inserire, 'U' per modificare, 'D' per cancellare, 'S' per vedere il db,");
-		System.out.println("'Dup' per vedere i duplicati, 'C' per cercare il contatto, 'Un' per unire i duplicati");
 		
 		Scanner modifiche = new Scanner(System.in);
 		String st = modifiche.next();
@@ -62,20 +63,32 @@ public class RubricaHBMScanner {
 		}
 		
 		
-		//SELECT HQL
-		System.out.println("id contatto");
-		Scanner scan = new Scanner(System.in);
-		int scanner= scan.nextInt();
+		//SE DIVERSO DA SELECT E INSERT CHIEDI ID
+				if (!st.equals("S") && !st.equals("I")) {
+					Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
+					List<Contatto> contatti = query.getResultList();
+					for (Contatto c : contatti) {
+						System.out.println(c);
+					}
+					System.out.println("id contatto");
+					Scanner scan = new Scanner(System.in);
+					int scanner= scan.nextInt();
+					idsc=scanner;
+					}
 		
-		idsc=scanner;
+		//SELECT HQL
+		
 		Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
 		List<Contatto> contatti = query.getResultList();
 		for (Contatto c : contatti) {
+			if (st.equals("S") || st.equals("I") ) {
 			System.out.println(c);
-			
+			}
 			if (c.getId() == idsc) contatto = c;
 		}
 		System.out.println(contatti.size());
+		
+
 		
 		
 		//UPDATE
@@ -99,7 +112,7 @@ public class RubricaHBMScanner {
 		contatto.setCognome(cognome);
 		contatto.setEmail(email);
 		contatto.setTelefono(telefono);
-		System.out.println("contatto PRE update : " + contatto);
+		//System.out.println("contatto PRE update : " + contatto);
 		session.save(contatto);
 		System.out.println("contatto POST update : " + contatto);
 		}
@@ -115,7 +128,12 @@ public class RubricaHBMScanner {
 		
 		session.close();
 		
+		
+		
+		
 	}
+	
+		
 	
 	public static void main(String[] args) {
 		

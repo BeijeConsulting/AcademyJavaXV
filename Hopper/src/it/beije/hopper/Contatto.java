@@ -1,11 +1,10 @@
 package it.beije.hopper;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Cascade;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Entity
@@ -31,14 +30,14 @@ public class Contatto {
 
 	@Column(name = "note")
 	private String note;
-	
-	
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
+
 	
 	public String getCognome() {
 		return cognome;
@@ -74,15 +73,17 @@ public class Contatto {
 	public void setNote(String note) {
 		this.note = note;
 	}
+
+
+	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder()
-				.append("{ id : ").append(this.id)
-				.append(", cognome : ").append(this.cognome)
-				.append(", nome : ").append(this.nome)
-				.append(", telefono : ").append(this.telefono)
-				.append(", email : ").append(this.email)
-				.append(", note : ").append(this.note).append(" }");
-		
-		return builder.toString();
+		return "Contatto{" +
+				"id=" + id +
+				", cognome='" + cognome + '\'' +
+				", nome='" + nome + '\'' +
+				", telefono='" + telefono + '\'' +
+				", email='" + email + '\'' +
+				", note='" + note + '\'' +
+				'}';
 	}
 }

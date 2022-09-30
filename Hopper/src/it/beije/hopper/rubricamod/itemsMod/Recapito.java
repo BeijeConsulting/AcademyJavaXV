@@ -1,0 +1,76 @@
+package it.beije.hopper.rubricamod.itemsMod;
+
+import javax.persistence.*;
+
+@Entity
+@Table(name = "recapiti")
+public class Recapito {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
+
+    @Column(name = "rubrica_id")
+    private int rubrica_id;
+
+    @Column(name = "recapito")
+    private String recapito;
+
+    @Column(name = "tipo")
+    private char tipo;
+
+    @Column(name = "descrizione")
+    private String descrizione;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getRubrica_id() {
+        return rubrica_id;
+    }
+
+    public void setRubrica_id(int rubrica_id) {
+        this.rubrica_id = rubrica_id;
+    }
+
+    public String getRecapito() {
+        return recapito;
+    }
+
+    public void setRecapito(String recapito) {
+        this.recapito = recapito;
+    }
+
+    public char getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(char tipo) {
+        this.tipo = tipo;
+    }
+
+    public String getDescrizione() {
+        return descrizione;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder()
+                .append("{ id : ").append(this.id)
+                .append(", rubrica_id : ").append(this.rubrica_id)
+                .append(", recapito : ").append(this.recapito)
+                .append(", tipo : ").append(this.tipo)
+                .append(", descrizione : ").append(this.descrizione).append(" }");
+
+        return builder.toString();
+    }
+}

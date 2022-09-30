@@ -1,17 +1,18 @@
 package it.beije.hopper.rubricamod;
 
-import it.beije.hopper.Contatto; //TODO: replace with ContattoMod
+import it.beije.hopper.Contatto;
+import it.beije.hopper.rubricamod.fileMod.CSVmanagerMod;
 
-
-import javax.persistence.*;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
-import it.beije.hopper.rubricamod.fileMod.CSVmanagerMod;
-
 //TODO: need to manage deletion, find and update when user is searching by id... (Name is not always present).
-public class RubricaJPAMod {
+public class RubricaJPAMod_2 {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);

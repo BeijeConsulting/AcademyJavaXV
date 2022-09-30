@@ -3,6 +3,7 @@ package it.beije.hopper.rubricamod;
 import it.beije.hopper.Contatto;
 
 import javax.persistence.*;
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -12,16 +13,23 @@ public class RubricaJPAMod {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Choose.... \n(1): Load data from a file to db\n(2): Export data from DB to file\n(3): CLI application");
+		System.out.println("Choose.... \n(1): Load data (from a file to db)\n(2): Export data (from DB to file)\n(3): CLI application");
 		Integer decision = Integer.valueOf(scanner.nextLine());
 		if( decision == 1 ){
 			System.out.println("Load data from File to DB...");
 			System.out.print("Enter file path: ");
-			String path = "src/testFile_CSV_XML/rubrichecsv/rubrica - test.csv";
+			String path = "src/testFile_CSV_XML/rubrichecsv/rubrica - cognomeReduced.csv";
 			//scanner.nextLine();
 			List<Contatto> contatti = CSVmanagerMod.readRubrica(path);
-
+			System.out.println(contatti);
+			jpaSessionImport(contatti);
 		}else if( decision == 2){
+			System.out.println("Load data from DB to File...");
+			System.out.print("Enter file path: ");
+			String path = "src/testFile_CSV_XML/output/rubrica-output.csv";
+			//(List<Contatto> contatti, String path)
+			//CSVmanagerMod.writeRubrica();
+			jpaSessionExportData(path);
 
 		}else if( decision == 3){
 			jpaSessionTerminalApp(scanner);
@@ -31,13 +39,77 @@ public class RubricaJPAMod {
 
 	}
 
+	//exports data from db to file
+	public static void jpaSessionExportData(String path){
+		//List<Contatto> selectJPA(EntityManager entityManager, String query)
 
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+//		EntityTransaction entityTransaction = entityManager.getTransaction();
+
+		List<Contatto> contatti = selectJPA(entityManager, "SELECT e FROM Contatto e");
+		try{
+			CSVmanagerMod.writeRubrica(contatti, path);
+		}catch(IOException ioe){
+			System.out.println("Error with path " + path); //TODO
+			ioe.printStackTrace();
+			ioe.getMessage();
+		}
+
+		entityManager.close();
+		entityManagerFactory.close();
+	}
+
+	public static void jpaSessionImport(List<Contatto> contatti) {
+
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+		for( Contatto contatto: contatti){
+//			System.out.println("DATA: " + contatto);
+			entityManager.persist(contatto);
+
+		}
+		entityTransaction.commit();
+		entityManager.close();
+		entityManagerFactory.close();
+		return;
+	}
 	public static void jpaSessionTerminalApp(Scanner scanner){
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 		//Contatto contatto = null;
+		System.out.println("Terminal Session starting....");
+		System.out.println("Select\n(1): Insert\n(2): Delete\n(3): Find\n(4): Show all\n(5): Modify contact");
+		int decision = 99;
+
+		do{
+			decision = Integer.valueOf(scanner.nextLine());
+			if( decision == 1 ){
+				insertNewContatto(entityManager, scanner);
+
+			}else if( decision == 2 ){
+				deleteContatto(entityManager, scanner);
+
+			}else if( decision == 3){
+				findContatto(entityManager,scanner);
+
+			}else if( decision == 4){
+				showAllContatto( entityManager, scanner);
+
+				//modify
+			}else if( decision == 5){
+				updateJPA(entityManager,  scanner);
+
+			}else{
+				System.out.println("Option not available.");
+			}
+		}while( decision > 5);
+
 
 
 //		insertNewContatto(entityManager, scanner);
@@ -87,10 +159,12 @@ public class RubricaJPAMod {
 //		entityTransaction.commit();
 //		//entityTransaction.rollback();
 //
-		entityManager.close();
+
 	}
 
-	///FILE utility methods
+
+	///FILE --> DB utility
+	//takes an arrayList and transfers the data to DB
 	public static void insertContattiFile(List<Contatto> contatti, EntityManager entityManager){
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -99,17 +173,9 @@ public class RubricaJPAMod {
 			entityManager.persist(contatto);
 		}
 
-
-
-
-
-		if( scanner.nextLine().equalsIgnoreCase("yes")){
-			entityTransaction.commit();
-			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +" added.");
-		}else{
-			entityTransaction.rollback();
-			System.out.println("Insertion cancelled.");
-		}
+		entityTransaction.commit();
+		//entityTransaction.rollback();
+		return;
 	}
 
 
@@ -243,8 +309,8 @@ public class RubricaJPAMod {
 
 	/////////////////////////
 	//modifica contatto
-	public static void updateJPA(EntityManager entityManager,String query, Scanner scanner){
-		query ="SELECT e FROM Contatto e";//TODO modify
+	public static void updateJPA(EntityManager entityManager, Scanner scanner){
+		String query ="SELECT e FROM Contatto e";//TODO modify
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 
@@ -255,8 +321,6 @@ public class RubricaJPAMod {
 
 		//extract Contatto based on criteria
 		Contatto contatto = selectJPASpecific( entityManager, query, modifyData );
-
-
 
 		System.out.println("Modifying " + contatto.getNome() + " "
 				+ contatto.getCognome() + " with id:" + contatto.getId() );

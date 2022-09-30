@@ -3,8 +3,13 @@ public List<Contatto> loadRubricaFromCSV(String pathFile, String separator) {...
 
 public void writeRubricaCSV(List<Contatto> contatti, String pathFile, String separator) {...}(DONE)
 
+
+
+
 public List<Contatto> loadRubricaFromXML(String pathFile) {...}
 public void writeRubricaXML(List<Contatto> contatti, String pathFile) {...}
+
+
 
 naturalmente lascio a voi la gestione di eventuali eccezioni.
 Dopo i metodi base per la scrittura, fate in modo che se indicate un file xml o csv già esistente,

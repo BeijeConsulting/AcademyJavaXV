@@ -1,6 +1,7 @@
 package it.beije.hopper.rubrica;
 
 import it.beije.hopper.Contatto;
+import it.beije.hopper.Recapito;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -26,6 +27,18 @@ public class RubricaMethodsJPA {
         entityTransaction.begin();
         entityManager.persist(contatto);
         entityTransaction.commit();
+    }
+
+    public static void newInserisciContattoJPA(Contatto contatto, ArrayList<Recapito> recapiti) {
+        entityTransaction.begin();
+        entityManager.persist(contatto);
+        entityTransaction.commit();
+        for (Recapito r : recapiti) {
+            r.setRubrica_id(contatto.getId());
+            entityTransaction.begin();
+            entityManager.persist(r);
+            entityTransaction.commit();
+        }
     }
 
     public static ArrayList<Contatto> cercaContattoJPA(String valore) {
@@ -93,4 +106,5 @@ public class RubricaMethodsJPA {
         entityManager.remove(contatto);
         entityTransaction.commit();
     }
+
 }

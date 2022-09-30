@@ -1,6 +1,7 @@
 package it.beije.hopper.rubrica;
 
 import it.beije.hopper.Contatto;
+import it.beije.hopper.Recapito;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -66,7 +67,6 @@ public class RubricaMethodsHBM {
         transaction.commit();
         session.close();
     }
-
 
     public static void modificaContattoHBM(String campo, int id, String valore) throws ClassNotFoundException, SQLException {
             }

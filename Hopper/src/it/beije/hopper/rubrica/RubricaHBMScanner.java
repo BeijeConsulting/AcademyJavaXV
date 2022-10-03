@@ -5,6 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.hibernate.query.Query;
+
+import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -61,6 +64,9 @@ public class RubricaHBMScanner {
 			session.save(contatto);
 //		System.out.println("contatto POST : " + contatto);
 		}
+		
+		
+		
 		
 		
 		//SE DIVERSO DA SELECT E INSERT CHIEDI ID
@@ -125,6 +131,13 @@ public class RubricaHBMScanner {
 		}
 		transaction.commit();
 		//transaction.rollback();
+		
+		
+		
+		
+
+		
+		
 		
 		session.close();
 		

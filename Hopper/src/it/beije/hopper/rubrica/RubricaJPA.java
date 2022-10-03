@@ -9,22 +9,29 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
 import javax.persistence.Query;
 
+import com.mysql.cj.x.protobuf.MysqlxNotice.Warning.Level;
+
 import it.beije.hopper.Contatto;
 import it.beije.hopper.ecommerce.Order;
 
 
 public class RubricaJPA {
 
-	public static void main(String[] args) {
-
+	public static void main(String[] args) {	
+		
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		
 		Contatto contatto = null;
 		
 		//SELECT c FROM Contatto as c WHERE id = X
+
 //		contatto = entityManager.find(Contatto.class, 39);
 //		System.out.println("contatto : " + contatto);
+
+		contatto = entityManager.find(Contatto.class, 4);
+		System.out.println("contatto : " + contatto);
+
 		
 		int orderId = 1;
 		Order order = entityManager.find(Order.class, orderId);

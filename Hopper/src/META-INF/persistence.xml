@@ -3,10 +3,15 @@
 	<persistence-unit name="hopper">
 
 		<class>it.beije.hopper.Contatto</class>
+
 		<class>it.beije.hopper.ecommerce.Item</class>
 		<class>it.beije.hopper.ecommerce.Order</class>
 		<class>it.beije.hopper.ecommerce.Product</class>
 		<class>it.beije.hopper.ecommerce.User</class>
+
+		<class>it.beije.hopper.Recapiti</class>
+		
+
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>

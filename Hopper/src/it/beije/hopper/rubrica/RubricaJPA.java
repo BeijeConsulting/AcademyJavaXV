@@ -21,7 +21,7 @@ public class RubricaJPA {
 		Contatto contatto = null;
 		
 		//SELECT c FROM Contatto as c WHERE id = X
-		contatto = entityManager.find(Contatto.class, 1);
+		contatto = entityManager.find(Contatto.class, 39);
 		System.out.println("contatto : " + contatto);
 		
 		

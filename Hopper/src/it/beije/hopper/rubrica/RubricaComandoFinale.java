@@ -15,6 +15,7 @@ import java.util.Scanner;
 import static it.beije.hopper.rubrica.RubricaHibernate.*;
 import static it.beije.hopper.rubrica.JDBCMetodi.*;
 
+
 public class RubricaComandoFinale {
 		static String st;
 		static String pathFile = "C:\\Users\\caste\\OneDrive\\Desktop\\BeijeAcademy\\Rubrica\\RubricaScanner\\rubrica.csv";
@@ -23,14 +24,17 @@ public class RubricaComandoFinale {
 		
 	
 		public static void main(String[] args) throws IOException, SQLException {
-			
-		refresh();	
+		
+		
+		refresh();
 		menu();
+		
 
 	}
 	
 	public static void menu() throws IOException, SQLException
 	{
+		
 		 
 		while(st!="0")
 		{
@@ -43,8 +47,9 @@ public class RubricaComandoFinale {
 				switch(st)
 					{
 						case "1":
-						{
+						{							
 							readDB();
+							
 							break;
 						}
 						case "2":
@@ -54,7 +59,7 @@ public class RubricaComandoFinale {
 						}
 						case "3":
 						{
-							searchID();
+							search();
 							break;
 						}
 						case "4":

@@ -48,7 +48,7 @@ public class JDBCMetodi {
 
 			//writeDBusingJDBC();
 			//readFromDB();
-			writeDBtoCSV();
+			//writeDBtoCSV();
 			//writeCSVtoDB();
 
 		} catch (ClassNotFoundException cnfEx) {

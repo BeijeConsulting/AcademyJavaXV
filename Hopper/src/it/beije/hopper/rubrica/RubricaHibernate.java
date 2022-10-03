@@ -1,14 +1,23 @@
 package it.beije.hopper.rubrica;
 
+import static it.beije.hopper.rubrica.JDBCMetodi.writeCSVtoDB;
+
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
+
+
 
 import it.beije.hopper.Contatto;
 
@@ -17,11 +26,12 @@ public class RubricaHibernate {
 	static String pathFile = "C:\\Users\\caste\\OneDrive\\Desktop\\BeijeAcademy\\Rubrica\\RubricaScanner\\rubrica.csv";
 	static File file = new File(pathFile);
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, SQLException {
 
 		//writeDB();
 		//deleteFromDB();
 		//updateContatto();
+		//fromCSVtoDB();
 	}
 	
 	
@@ -139,24 +149,73 @@ public class RubricaHibernate {
 		Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");
 		//Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c WHERE cognome = 'Bianchi'");
 		List<Contatto> contatti = query.getResultList();
-		for (Contatto c : contatti) 
-			System.out.println(c);
+		
+		System.out.println("Vuoi i dati ordinati per nome (1) o per cognome (2)?");
+		Scanner s = new Scanner(System.in);
+		String risposta = s.nextLine();
+		
+		if (risposta.equals("1"))
+		{
+			Query<Contatto> q1 = session.createQuery("SELECT c FROM Contatto as c");
+			contatti = q1.getResultList();
+			for (Contatto c : contatti) 
+				System.out.println(c);
+		}
+		if (risposta.equals("2"))
+		{
+			Query<Contatto> q2 = session.createQuery("SELECT c FROM Contatto as c ORDER BY c.cognome");
+			contatti = q2.getResultList();
+			for (Contatto c : contatti) 
+				System.out.println(c);
+		}
+		
+		
 					
 	}
 	
-	public static void searchID()
+	public static void search()
 	{
 		Session session = HBMsessionFactory.openSession();	
 		Transaction transaction = session.beginTransaction();
 		Scanner scanner = new Scanner(System.in);
-		System.out.println("Inserire ID del contatto cercato: ");		
-		int id =Integer.parseInt(scanner.nextLine());
+		System.out.println("Vuoi cercare tramite Nome(1), Cognome(2) o Note(3)?");
+		String scelta = scanner.next();
 		
 		Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");
 		List<Contatto> contatti = query.getResultList();
-		for (Contatto c : contatti)
-			if(id == c.getId())
-				System.out.println(c);
+		
+		switch (scelta)
+		{
+			case "1": 
+				{
+					System.out.println("Inserire Nome desiderato ");
+					String n = scanner.next();
+					for (Contatto c: contatti)
+						if (n.equals(c.getNome()))
+							System.out.println(c);
+				}
+			case "2": 
+			{
+				System.out.println("Inserire Cognome desiderato ");
+				String n = scanner.next();
+				for (Contatto c: contatti)
+					if (n.equals(c.getCognome()))
+						System.out.println(c);
+			}
+			case "3": 
+			{
+				System.out.println("Inserire Note desiderato ");
+				String n = scanner.next();
+				for (Contatto c: contatti)
+					if (n.equals(c.getNote()))
+						System.out.println(c);
+			}
+					
+			
+				
+		}
+		
+
 	}
 	
 	public static void toCSV() throws IOException								//schifosino
@@ -174,5 +233,64 @@ public class RubricaHibernate {
 		fileWriter.flush();
 			
 	}
+	
+	public static void fromCSVtoDB() throws IOException
+	{
+		Contatto contatto = null;
+		FileReader fileReader = new FileReader(pathFile);
+		BufferedReader bufferedReader = new BufferedReader(fileReader);
+		String[] arr = null;
+		String linea = null;
+		List<String> lista = new ArrayList();
+		Session session = HBMsessionFactory.openSession();	
+		Transaction transaction = session.beginTransaction();
+		
+		
+			while (bufferedReader.ready())
+			{			
+				String l = bufferedReader.readLine();
+				lista.add(l);
+			}
+			
+			for (int i = 0; i<lista.size(); i++)
+			{
+				linea = lista.get(i).toString();
+				arr = linea.split(";");					//ho i 5 campi della stringa corrente
+				
+				contatto = new Contatto();
+				contatto.setCognome(arr[0]);
+				contatto.setNome(arr[1]);
+				contatto.setEmail(arr[2]);
+				contatto.setTelefono(arr[3]);
+				contatto.setNote(arr[4]);
+								
+				Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");
+				List<Contatto> contatti = query.getResultList();
+				boolean isDuplicate = false;
+				for (Contatto c : contatti)
+				{
+					if (c.getNome().equals(arr[0]) && c.getCognome().equals(arr[1]) &&c.getEmail().equals(arr[3]) &&c.getTelefono().equals(arr[2]) &&c.getNote().equals(arr[4]))
+					{
+						isDuplicate = true;
+						
+					}
+					System.out.println(isDuplicate);
+				}
+							
+			
+			
+			
+				if (isDuplicate == false)
+				{
+					session.save(contatto);	
+					transaction.commit();
+				}
+			}
+				
+			
+			session.close();
+	
+	}
+	
 	
 	}

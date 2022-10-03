@@ -87,4 +87,29 @@ public class Contatto {
 		
 		return builder.toString();
 	}
+	
+	public boolean isEmpy() {
+		
+		if(this.getId() < 0) return false;
+		if(this.getCognome() != null) return false;
+		if(this.getNome() != null) return false;
+		if(this.getTelefono() != null) return false;
+		if(this.getEmail() != null) return false;
+		if(this.getNote() != null) return false;
+		
+		return true;
+	}
+	
+	public Contatto returnCopy() {
+		Contatto contatto = new Contatto();
+		
+		contatto.setId( this.getId() );
+		contatto.setCognome( this.getCognome() );
+		contatto.setNome( this.getNome() );
+		contatto.setTelefono( this.getTelefono() );
+		contatto.setEmail( this.getEmail() );
+		contatto.setNote( this.getNote() );
+		
+		return contatto;
+	}
 }

@@ -2,11 +2,9 @@ package it.beije.hopper.rubricamod;
 
 import it.beije.hopper.Contatto;
 import it.beije.hopper.rubricamod.fileMod.CSVmanagerMod;
+import it.beije.hopper.rubricamod.itemsMod.Recapito;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
@@ -15,10 +13,22 @@ import java.util.Scanner;
 public class RubricaJPAMod_2 {
 
 	public static void main(String[] args) {
+
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+
+		System.out.println( entityManager.find(Contatto.class, 600));
+
+
+		entityManager.close();
+		entityManagerFactory.close();
+
+
 		Scanner scanner = new Scanner(System.in);
 
 		while(true){
-			System.out.println("Rubrica Manager (JPA):)");
+			System.out.println("Rubrica Manager 2.0 (JPA):)");
 			System.out.println("(1): Load data (from a file to db)\n(2): Export data (from DB to file)\n(3): CLI application\n(4): exit application");
 			Integer decision = Integer.valueOf(scanner.nextLine());
 			if( decision == 1 ){
@@ -39,15 +49,16 @@ public class RubricaJPAMod_2 {
 			}else if( decision == 3){
 				jpaSessionTerminalApp(scanner);
 			}else{
-				System.out.println("Exiting Rubrica Manager...");
+				System.out.println("Exiting Rubrica Manager 2.0 ...");
 				break;
 			}
 		}
 
 
 
-
 	}
+	// integrate la tabella riferimenti sul vostro DB
+	// ed iniziate a lavorare su una RUBRICA 2.0 a linea di comando che preveda la possibilità di avere più email e numeri di telefono sullo stesso contatto
 
 	//exports data from db to file
 	public static void jpaSessionExportData(String path){
@@ -144,15 +155,56 @@ public class RubricaJPAMod_2 {
 	}
 
 
+	//Adds recapito of existing user (?)
+	public void insertNewRecapito(EntityManager entityManager, Scanner scanner){
+		Contatto contatto = null;
+		int id = -1;
+		System.out.println("Does the new contact already exist? ('yes' or 'no')");
+		String userIn = scanner.nextLine();
+		if( userIn.equalsIgnoreCase("yes") ){
+			System.out.print("User id:");
+			id = Integer.valueOf(scanner.nextLine());
+			contatto = entityManager.find(Contatto.class, id );
+			if( contatto == null ){
+				System.out.println("Contact does not exist...");
+				id = insertNewContatto(entityManager, scanner);
+			}
+		}else{
+			id	 = insertNewContatto(entityManager, scanner);
+			contatto = entityManager.find(Contatto.class, id);
+		}
+
+
+		System.out.println("Adding more information");
+
+		String email = contatto.getEmail();
+		String telefono = contatto.getTelefono();
+		if( !(email.equalsIgnoreCase("")) || email != null ){
+			//recapito has email
+		}
+		if( !(telefono.equalsIgnoreCase("")) || telefono != null ){
+			// recapito has telefono
+		}
+
+
+		System.out.println("Adding more contact information to contact");
+	}
+
+	private static void insertRecapitoUtil(String recapito, Character type, EntityManager entityManager){
+		//insert contatto to recapiti
+
+	}
+
 	/// CLI methods ///////////////////////////////////
 	//inserisci nuovo contatto ()
-	public static void insertNewContatto(EntityManager entityManager, Scanner scanner){
+	public static int insertNewContatto(EntityManager entityManager, Scanner scanner){
 
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 
-		Contatto newContatto = new Contatto();
 
+		Contatto newContatto = new Contatto();
+		int contattoId = -1;
 		System.out.println("Entering new contact....");
 		System.out.print("Name: ");
 		newContatto.setNome(scanner.nextLine());
@@ -163,19 +215,24 @@ public class RubricaJPAMod_2 {
 		System.out.print("Email: ");
 		newContatto.setEmail(scanner.nextLine());
 
+		List<Contatto> contatti = selectJPA( entityManager, "SELECT c FROM Contatto c" );
+
+
 		System.out.printf("Adding new contact: " + newContatto.getNome() + " " + newContatto.getCognome());
 		entityManager.persist(newContatto);
 		System.out.printf("Confirm? ('yes' or 'no')");
 
 		if( scanner.nextLine().equalsIgnoreCase("yes")){
 			entityTransaction.commit();
-			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +" added.");
+			contattoId = newContatto.getId();
+			System.out.println(newContatto.getNome() + " " + newContatto.getCognome() +"("+contattoId+")" +" added.");
+
 		}else{
 			entityTransaction.rollback();
 			System.out.println("Insertion cancelled.");
 		}
 
-
+		return contattoId;
 
 	}
 

@@ -22,7 +22,7 @@ public class RubricaJPAMod {
 			Integer decision = Integer.valueOf(scanner.nextLine());
 			if( decision == 1 ){
 				System.out.println("Load data from File to DB...");
-				System.out.print("Enter file path: ");
+				System.out.print("Enter file path: (hard coded -- check file)");
 				String path = "src/testFile_CSV_XML/rubrichecsv/rubrica - cognomeReduced.csv";
 				//scanner.nextLine();
 				List<Contatto> contatti = CSVmanagerMod.readRubrica(path);
@@ -30,7 +30,7 @@ public class RubricaJPAMod {
 				jpaSessionImport(contatti);
 			}else if( decision == 2){
 				System.out.println("Load data from DB to File...");
-				System.out.print("Enter file path: ");
+				System.out.print("Enter file path: (hard coded -- check file)");
 				String path = "src/testFile_CSV_XML/output/rubrica-output.csv";
 				//scanner.nextLine();
 				jpaSessionExportData(path);
@@ -47,6 +47,8 @@ public class RubricaJPAMod {
 
 
 	}
+
+
 
 	//exports data from db to file
 	public static void jpaSessionExportData(String path){

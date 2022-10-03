@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/testFile_CSV_XML/rubrichecsv/rubrica - cognomeReduced.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Doll.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/FunWithArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/InitClass.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/XXX.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/ifTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/esercizio.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/esercizio.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/fileMod/CSVmanagerMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/fileMod/CSVmanagerMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubricamod/RubricaJPAMod_2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/it/beije/hopper/rubricamod/outputfiles/csv/output.cvs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/testFile_CSV_XML/output/rubrica - cognomeReducedOut.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/testFile_CSV_XML/output/rubrica-output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/target/classes/testFile_CSV_XML/output/rubrica-output.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Hopper",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -66,13 +74,13 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestEL.Wrapper">
-    <configuration name="InstanceTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestEL.InstanceTest" />
+  <component name="RunManager" selected="Application.eT">
+    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.T" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -80,12 +88,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestEL.Wrapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestEL.Wrapper" />
+    <configuration name="TC (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TC" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -93,12 +101,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Wrapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.codetestsOCA.TestEL.Wrapper" />
+    <configuration name="TC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TC" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.codetestsOCA.TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="eT (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.eT" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="eT" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.eT" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -108,9 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestEL.Wrapper" />
-        <item itemvalue="Application.InstanceTest" />
-        <item itemvalue="Application.Wrapper" />
+        <item itemvalue="Application.eT" />
+        <item itemvalue="Application.eT (1)" />
+        <item itemvalue="Application.T" />
+        <item itemvalue="Application.TC (1)" />
+        <item itemvalue="Application.TC" />
       </list>
     </recent_temporary>
   </component>
@@ -129,6 +165,7 @@
       <workItem from="1664340475226" duration="1630000" />
       <workItem from="1664380278148" duration="900000" />
       <workItem from="1664521660511" duration="126000" />
+      <workItem from="1664616387428" duration="21044000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
@@ -164,5 +201,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fixed more exercises from exercise folder" />
     <option name="LAST_COMMIT_MESSAGE" value="Fixed more exercises from exercise folder" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassCastException" package="java.lang" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -11,6 +11,8 @@ import java.util.List;
 @Table(name = "rubrica")
 public class Contatto {
 	
+	public Contatto() {}
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")

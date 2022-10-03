@@ -54,6 +54,17 @@ public class Recapito {
     @Column(name = "rubrica_id")
     private int rubrica_id;
 
+    @Override
+    public String toString() {
+        return "Recapito{" +
+                "id=" + id +
+                ", rubrica_id=" + rubrica_id +
+                ", recapito='" + recapito + '\'' +
+                ", tipo=" + tipo +
+                ", descr='" + descr + '\'' +
+                '}';
+    }
+
     @Column(name = "recapito")
     private String recapito;
 

@@ -32,6 +32,10 @@ public class Cart {
         return total;
     }
 
+    //Check if cart is Empty
+    public boolean isEmpty(){
+        return mapNumOfProducts.isEmpty();
+    }
     public String toString(){
         StringBuffer outProducts = new StringBuffer();
         outProducts.append("Cart contains: \n");

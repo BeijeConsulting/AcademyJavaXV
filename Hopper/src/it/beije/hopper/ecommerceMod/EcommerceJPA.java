@@ -25,6 +25,7 @@ public class EcommerceJPA {
 		System.out.println("Order: " + order);
 		System.out.println();
 
+		System.out.println("-------------------------");
 
 
 		Query query1 = entityManager.createQuery("SELECT p FROM Product as p");
@@ -34,9 +35,11 @@ public class EcommerceJPA {
 
 
 
-		User testUsr = getUser(entityManager, "miky@gmail.com");
-//		Product testProduct =
 
+		User testUsr = getUser(entityManager, "miky@gmail.com");
+		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
+		System.out.println("Test Usr: " + testUsr);
+		System.out.println("TestProduct: " + testProduct);
 		entityManager.close();
 	}
 
@@ -77,6 +80,9 @@ public class EcommerceJPA {
 		List<Product> products = query.getResultList();
 		return products;
 	}
+
+
+ /// -------------------- USER -----------------
 
 	//Extracts User based on email. TODO: make it work with name, surname (and id?) --> add String Type
 	//returns null if User does not exist

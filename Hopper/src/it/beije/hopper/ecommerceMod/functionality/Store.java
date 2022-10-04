@@ -2,10 +2,10 @@ package it.beije.hopper.ecommerceMod.functionality;
 
 import java.util.Scanner;
 
-public class UI {
+public class Store {
     private Scanner scanner;
 
-    public UI(Scanner scanner){
+    public Store(Scanner scanner){
         this.scanner = scanner;
     }
 

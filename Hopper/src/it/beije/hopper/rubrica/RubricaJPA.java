@@ -1,5 +1,6 @@
 package it.beije.hopper.rubrica;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -9,6 +10,7 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import it.beije.hopper.Contatto;
+import it.beije.hopper.ecommerce.Order;
 
 
 public class RubricaJPA {
@@ -21,9 +23,14 @@ public class RubricaJPA {
 		Contatto contatto = null;
 		
 		//SELECT c FROM Contatto as c WHERE id = X
-		contatto = entityManager.find(Contatto.class, 39);
-		System.out.println("contatto : " + contatto);
+//		contatto = entityManager.find(Contatto.class, 39);
+//		System.out.println("contatto : " + contatto);
 		
+		int orderId = 1;
+		Order order = entityManager.find(Order.class, orderId);
+		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id = " + orderId);//SELECT * FROM rubrica
+		order.setItems(query.getResultList());
+		System.out.println("order : " + order);
 		
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -53,13 +60,13 @@ public class RubricaJPA {
 //		entityManager.remove(contatto);
 
 		//SELECT JPQL
-		Query query = entityManager.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
-		List<Contatto> contatti = query.getResultList();
-		for (Contatto c : contatti) {
-			System.out.println(c);
-			if (c.getId() == 21) contatto = c;
-		}
-		System.out.println(contatti.size());
+//		Query query = entityManager.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
+//		List<Contatto> contatti = query.getResultList();
+//		for (Contatto c : contatti) {
+//			System.out.println(c);
+//			if (c.getId() == 21) contatto = c;
+//		}
+//		System.out.println(contatti.size());
 
 		
 		//if (true) throw new RuntimeException();

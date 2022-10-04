@@ -2,13 +2,14 @@ package it.beije.hopper.gestorerubrica;
 
 
 import it.beije.hopper.Contatto;
+import static it.beije.hopper.gestorerubrica.Utilities.*;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 import java.util.List;
 import java.util.Scanner;
-import java.util.logging.Level;
+
+
+
 
 public class GestoreRubrica {
     static Scanner s; //Si utilizza una variabile statica dato che si ha bisogno della sua disponibilità oltre il solo metodo main
@@ -75,10 +76,10 @@ public class GestoreRubrica {
     public static void visualizzaContatti() {//Visualizzazione dei contatti presenti nel DB
         System.out.println("Visualizzazione dei contatti\n\t");
         //SELECT JPQL
-        Query query = connessioneDB().createQuery("SELECT c FROM Contatto as c");//Connessione al DB e query
+        Query query = connessioneDB("hopper").createQuery("SELECT c FROM Contatto as c");//Connessione al DB e query
         List<Contatto> contatti = query.getResultList();//Esecuzione query
         stampaRisultati(contatti);
-        chiusuraConnessioneDB(connessioneDB());//Chiusura connessione al DB
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura connessione al DB
     }
     public static void cercaContatto(){//Manca solamente input per ricerca contatti
         int u=4;
@@ -121,34 +122,34 @@ public class GestoreRubrica {
         StringBuilder querystr= new StringBuilder("SELECT c FROM Contatto AS c WHERE")//Creazione query con dati forniti in ingresso
                 .append(" c.cognome like").append("'").append(cognome).append("'")
                 .append("AND c.nome like").append("'").append(nome).append("'");
-        Query query = connessioneDB().createQuery(querystr.toString());//Connessione al DB e query
+        Query query = connessioneDB("hopper").createQuery(querystr.toString());//Connessione al DB e query
         List<Contatto> contatti = query.getResultList();//Esecuzione query
         System.out.println("Ecco i risultati della ricerca");
         for (Contatto c : contatti){
             System.out.println(c.toString());
         }
-        chiusuraConnessioneDB(connessioneDB());//Chiusura connessione al DB
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura connessione al DB
     }
     public static void ricercaDatoEmail(String nome, String cognome, String email){//Ricerca dati forniti in ingresso
         StringBuilder querystr= new StringBuilder("SELECT c FROM Contatto AS c WHERE")//Creazione query con dati forniti in ingresso
                 .append(" 1c.cognome like").append("'").append(cognome).append("'")
                 .append("AND c.nome like").append("'").append(nome).append("'")
                 .append("AND c.email like").append("'").append(email).append("'");
-        Query query = connessioneDB().createQuery(querystr.toString());//Connessione al DB e query
+        Query query = connessioneDB("hopper").createQuery(querystr.toString());//Connessione al DB e query
         List<Contatto> contatti = query.getResultList();//Esecuzione query
         System.out.println("Ecco i risultati della ricerca");
         stampaRisultati(contatti);
-        chiusuraConnessioneDB(connessioneDB());//Chiusura connessione al DB
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura connessione al DB
     }
     public static void ricercaDatoTelefono(String nome, String cognome, String telefono){//Ricerca dati forniti in ingresso
         StringBuilder querystr= new StringBuilder("SELECT c FROM Contatto AS c WHERE")//Creazione query con dati forniti in ingresso
             .append(" c.cognome like").append("'").append(cognome).append("'")
             .append("AND c.nome like").append("'").append(nome).append("'")
             .append("AND c.telefono like").append("'").append(telefono).append("'");
-        Query query = connessioneDB().createQuery(querystr.toString());//Connessione al DB e query
+        Query query = connessioneDB("hopper").createQuery(querystr.toString());//Connessione al DB e query
         List<Contatto> contatti = query.getResultList();//Esecuzione query
         stampaRisultati(contatti);
-        chiusuraConnessioneDB(connessioneDB());//Chiusura connessione al DB
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura connessione al DB
     }
     public static void ricercaDatoCompleto(String nome, String cognome, String telefono,String email){//Ricerca dati forniti in ingresso
         StringBuilder querystr= new StringBuilder("SELECT c FROM Contatto AS c WHERE ")//Creazione query con dati forniti in ingresso
@@ -156,18 +157,11 @@ public class GestoreRubrica {
                 .append("AND c.nome like").append("'").append(nome).append("'")
                 .append("AND c.telefono like").append("'").append(telefono).append("'")
                 .append("AND c.email like").append("'").append(email).append("'");
-        Query query = connessioneDB().createQuery(querystr.toString());//Connessione al DB e query
+        Query query = connessioneDB("hopper").createQuery(querystr.toString());//Connessione al DB e query
         List<Contatto> contatti = query.getResultList();//Esecuzione query
         System.out.println("Ecco i risultati della ricerca");
         stampaRisultati(contatti);
-        chiusuraConnessioneDB(connessioneDB());//Chiusura connessione al DB
-    }
-    public static EntityManager connessioneDB(){//Apertura connessione Database
-        java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);//Istruzione per impedire logging di Hibernate
-        return  Persistence.createEntityManagerFactory("hopper").createEntityManager();//Ritorno connessione al DB tramite JPA
-    }
-    public static void chiusuraConnessioneDB(EntityManager db){//Chiusura della connessione al Database
-        db.close();
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura connessione al DB
     }
     public static void stampaRisultati(List<Contatto> contatti){//Stampa lista data in ingresso
         for (Contatto c : contatti){
@@ -175,6 +169,7 @@ public class GestoreRubrica {
         }
     }
     public static boolean inserimentoDati(Contatto c){
+        connessioneDB("hopper").getTransaction().begin();
         s = new Scanner(System.in);
         /*Popolazione campi dell'oggetto Contatto*/
         System.out.println("Inserisci il nome del contatto:");//Nome
@@ -188,10 +183,9 @@ public class GestoreRubrica {
         System.out.println("Inserisci eventuali note sul contatto:");//Note
         c.setNote(s.next());
         s.close();//Chiusura input da tastiera
-        connessioneDB().getTransaction().begin();
-        connessioneDB().persist(c);//Mette in scrittura il nuovo contatto sul db
-        connessioneDB().getTransaction().commit();//Esegue l'aggiunta del contatto nel db
-        chiusuraConnessioneDB(connessioneDB());//Chiusura della connessione al db
+        connessioneDB("hopper").persist(c);//Mette in scrittura il nuovo contatto sul db
+        connessioneDB("hopper").getTransaction().commit();//Esegue l'aggiunta del contatto nel db
+        chiusuraConnessioneDB(connessioneDB("hopper"));//Chiusura della connessione al db
         return true;
     }
 }

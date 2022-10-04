@@ -101,7 +101,7 @@ public class Product {
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
 				.append(", rating : ").append(this.rating)
-				.append(" }");
+				.append(" }\n");
 		
 		return builder.toString();
 	}

@@ -1,5 +1,28 @@
 package it.beije.xv.esercizi.TestEL;
 
+class T{
+    public  String eat(){
+        return "[T eats]";
+    }
+    public void startEating(){
+        //System.out.println("Started Eating..." + this.eat());
+        System.out.println("Started Eating..." + eat());
+
+    }
+}
+
+class eT extends T{
+    public String eat(){
+        return super.eat(); //"[Tssss eats]";
+    }
+    public static void main(String[] args){
+        T t = new eT();
+        t.startEating();
+
+    }
+}
+
+
 //class T{
 //    public static  void eat(){
 //        System.out.println("T");

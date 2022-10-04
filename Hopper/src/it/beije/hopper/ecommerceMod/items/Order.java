@@ -1,15 +1,8 @@
-package it.beije.hopper.ecommerce;
+package it.beije.hopper.ecommerceMod.items;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
 
 /*
 CREATE TABLE `orders` (
@@ -39,9 +32,9 @@ public class Order {
 	@Column(name = "datetime")
 	private LocalDateTime datetime;
 
-	//totale
-	// (item1.price * item1.quantity - item1.promo) +
-	// (item2.price * item2.quantity - item2.promo) + ...
+	//
+	//totale (item1.price * item1.quantity - item1.promo)
+	// + (item2.price * item2.quantity - item2.promo) + ...
 	@Column(name = "amount")
 	private Double amount;
 

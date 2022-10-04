@@ -35,7 +35,7 @@ public class Ecommerce {
         System.out.println("Inserire la propria mail:" );
         email+=inpuTastiera.next();
         System.out.println("Inserire la propria una password:" );
-        password+=inpuTastiera.next();
+        password=inpuTastiera.next();
 
     }
 }

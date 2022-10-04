@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/functionality/UI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerce/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerce/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

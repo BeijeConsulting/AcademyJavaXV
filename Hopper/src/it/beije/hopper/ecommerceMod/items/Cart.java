@@ -11,12 +11,14 @@ public class Cart {
     private Map<Product, Double > discountMap = new HashMap<>();// discount associated with a product
 
 
-    public void addProduct(Product product ){
+    public void addProduct(Product product, Double discount ){
         if( mapNumOfProducts.containsKey(product)){
             Integer newVal = mapNumOfProducts.get(product);
             mapNumOfProducts.replace(product, ++newVal );
+
         }else{
             mapNumOfProducts.put(product, 1 );
+            discountMap.put(product, discount);
         }
 
     }

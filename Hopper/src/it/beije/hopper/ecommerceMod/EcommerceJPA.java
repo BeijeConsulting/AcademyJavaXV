@@ -41,10 +41,11 @@ public class EcommerceJPA {
 	}
 
 
+//ADD USER
+//ADD PRODUCT
 
 
 
-	// Does not contain confirm transaction!
 	public static void addToCart(EntityManager entityManager, User user, Product product){
 
 
@@ -59,9 +60,16 @@ public class EcommerceJPA {
 //	}
 
 	//Extracts product based on name or id
-//	public static Product getProduct(EntityManager entityManager){
-//
-//	}
+	//returns null if Product does not exist
+	public static Product getProduct(EntityManager entityManager, String productName, Integer productId){
+		if( productId != null ) {
+			return entityManager.find(Product.class, productId);
+		}
+		Query query = entityManager.createQuery("SELECT p FROM Product as p WHERE name="+"'"+productName+"'");
+			for(Product product : (ArrayList<Product>)query.getResultList())
+				if(product.getName().equalsIgnoreCase(productName)) return product;
+		return null;
+	}
 
 	//Get all products
 	public static List<Product> getAllProducts(EntityManager entityManager){
@@ -71,6 +79,7 @@ public class EcommerceJPA {
 	}
 
 	//Extracts User based on email. TODO: make it work with name, surname (and id?) --> add String Type
+	//returns null if User does not exist
 	public static User getUser(EntityManager entityManager, String userEmail){
 			Query query = entityManager.createQuery("SELECT u FROM User as u WHERE email="+"'"+userEmail+"'");
 			for( User user : (ArrayList<User>)query.getResultList()){

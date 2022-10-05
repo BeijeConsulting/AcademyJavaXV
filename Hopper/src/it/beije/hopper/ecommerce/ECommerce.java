@@ -15,15 +15,13 @@ public class ECommerce {
 
 	public static void main(String[] args) {
 		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		login();
+		login(entityManager);
+		entityManager.close();
 	}
 	
-
-	static private void addUser() {
+	//solo amministratori***
+	static private void addUser(EntityManager entityManager,EntityTransaction transaction) {
 		
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		
-		EntityTransaction transaction=entityManager.getTransaction();
 		transaction.begin();
 		
 		User user=new User();
@@ -42,12 +40,10 @@ public class ECommerce {
 		transaction.commit();
 		entityManager.close();	
 	}
-
-	static private void addProduct() {
+	
+	//solo amministratori***
+	static private void addProduct(EntityManager entityManager,EntityTransaction transaction) {
 		
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		
-		EntityTransaction transaction=entityManager.getTransaction();
 		transaction.begin();
 		
 		Product product=new Product();
@@ -73,9 +69,7 @@ public class ECommerce {
 		entityManager.close();
 	}
 	
-	static private void order(int id) {
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		
+	static private void order(int id,EntityManager entityManager) {
 		EntityTransaction transaction=entityManager.getTransaction();
 		transaction.begin();
 		
@@ -84,7 +78,7 @@ public class ECommerce {
 		//Dato che la tabella è piccola faccio questa stampa in modo da facilitare l'acquisto
 		stampaProdotti();
 		
-		List<Product> carrello=new ArrayList<>();
+		Carrello carrello=new Carrello();
 		
 		
 		Scanner scanner=new Scanner(System.in);
@@ -124,13 +118,15 @@ public class ECommerce {
 		LocalDateTime localDateTime=LocalDateTime.now();
 		if(carrello.size()>0) {
 			System.out.println("\n\nVuoi acquistare gli articoli nel tuo carrello?");
-			for(int i=0;i<carrello.size();i++) {
-				System.out.println("Il tuo carrello:");
-				System.out.println(carrello.get(i));
+			System.out.println("Il tuo carrello:");
+			
+			for(int i=0;i<carrello.size();i++) {	
+				System.out.println(carrello.getProduct(i));
 			}
+			
 			if(scanner.nextLine().equalsIgnoreCase("y")) {
 				for(int i=0;i<carrello.size();i++) {
-					amount+=carrello.get(i).getPrice();
+					amount+=carrello.getProduct(i).getPrice();
 					
 			}
 				order.setUserId(id);
@@ -139,24 +135,18 @@ public class ECommerce {
 				order.setPromo(null);
 				entityManager.persist(order);
 				transaction.commit();
-				entityManager.close();
-				orderItems(order,carrello);
+				orderItems(order,carrello,entityManager,transaction);
 				System.out.println("Ordine effettuato");
 				
 			}	
 			else{
 			for(int i=0;i<carrello.size();i++)
-				carrello.get(0).setQuantity(carrello.get(0).getQuantity()+1);
+				carrello.getProduct(0).setQuantity(carrello.getProduct(0).getQuantity()+1);
 			}
 		}
-		
-		entityManager.close();
 	}
 	
-	static private void orderItems(Order order,List<Product> product) {
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		EntityTransaction transaction=entityManager.getTransaction();
-		
+	static private void orderItems(Order order,Carrello product,EntityManager entityManager,EntityTransaction transaction) {
 		
 		Item item;
 		LOOP:for(int i=0;i<product.size();i++) {
@@ -165,11 +155,11 @@ public class ECommerce {
 			if(i!=0)
 				for(int j=i-1;j>=0;j--) {
 					
-					if(product.get(i).getId()==product.get(j).getId()) {
-						Query query=entityManager.createQuery("SELECT i FROM Item i WHERE i.name='"+order.getId()+""+product.get(i).getId()+"'");
+					if(product.getProduct(i).getId()==product.getProduct(j).getId()) {
+						Query query=entityManager.createQuery("SELECT i FROM Item i WHERE i.name='"+order.getId()+""+product.getProduct(i).getId()+"'");
 						Item items=(Item)query.getResultList().get(0);
 						items.setQuantity(items.getQuantity()+1);
-						items.setPrice(items.getPrice()+product.get(i).getPrice());
+						items.setPrice(items.getPrice()+product.getProduct(i).getPrice());
 						entityManager.persist(items);
 						transaction.commit();
 						continue LOOP;
@@ -178,26 +168,19 @@ public class ECommerce {
 			
 			item=new Item();
 			item.setOrderId(order.getId());
-			item.setProductId(product.get(i).getId());
-			item.setName(order.getId()+""+product.get(i).getId());
-			item.setPrice(product.get(i).getPrice());
-			item.setDesc(product.get(i).getDesc());
+			item.setProductId(product.getProduct(i).getId());
+			item.setName(order.getId()+""+product.getProduct(i).getId());
+			item.setPrice(product.getProduct(i).getPrice());
+			item.setDesc(product.getProduct(i).getDesc());
 			item.setQuantity(1);
 			entityManager.persist(item);
 			transaction.commit();
 		}
 		
-		entityManager.close();
-		
 	}
 
-	static private void login() {
-		
-		EntityManager entityManager=JPAEntityManagerFactory.openSession();
-		EntityTransaction transaction=entityManager.getTransaction();
-		
-		transaction.begin();
-		
+	static private void login(EntityManager entityManager) {
+					
 		Scanner scanner=new Scanner(System.in);
 		String email;
 		String password;
@@ -215,7 +198,7 @@ public class ECommerce {
 			System.out.println("Login avvenuto con successo!\n");
 			System.out.println("Per fare un ordine digitare ordine");
 			if(scanner.nextLine().equalsIgnoreCase("ordine"))
-				order(user.getId());
+				order(user.getId(),entityManager);
 			}
 	}
 	

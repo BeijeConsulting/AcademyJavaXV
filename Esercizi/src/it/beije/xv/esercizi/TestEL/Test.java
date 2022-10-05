@@ -1,26 +1,66 @@
 package it.beije.xv.esercizi.TestEL;
 
-class T{
-    public  String eat(){
-        return "[T eats]";
+abstract class Ball {
+    protected final int size;
+    public Ball(int size) {
+        this.size = size;
     }
-    public void startEating(){
-        //System.out.println("Started Eating..." + this.eat());
-        System.out.println("Started Eating..." + eat());
-
+}
+interface Equipment {}
+class SoccerBall extends Ball implements Equipment {
+    public SoccerBall() {
+        super(5);
+    }
+    public Ball get() { return this; }
+    public static void main(String[] passes) {
+        Equipment equipment = (Equipment)new SoccerBall().get();
+        System.out.print(((SoccerBall)equipment).size);
     }
 }
 
-class eT extends T{
-    public String eat(){
-        return super.eat(); //"[Tssss eats]";
-    }
-    public static void main(String[] args){
-        T t = new eT();
-        t.startEating();
 
-    }
-}
+
+//abstract class Car {
+//    static { System.out.print("1"); }
+//    public Car(String name) {
+//        super();
+//        System.out.print("2");
+//    }
+//    { System.out.print("3"); }
+//}
+//class BlueCar extends Car {
+//    { System.out.print("4"); }
+//    public BlueCar() {
+//        super("blue");
+//        System.out.print("5");
+//    }
+//    public static void main(String[] gears) {
+//        new BlueCar();
+//    }
+//}
+
+
+//class T{
+//    public  String eat(){
+//        return "[T eats]";
+//    }
+//    public void startEating(){
+//        //System.out.println("Started Eating..." + this.eat());
+//        System.out.println("Started Eating..." + eat());
+//
+//    }
+//}
+//
+//class eT extends T{
+//    public String eat(){
+//        return super.eat(); //"[Tssss eats]";
+//    }
+//    public static void main(String[] args){
+//        T t = new eT();
+//        t.startEating();
+//
+//    }
+//}
 
 
 //class T{

@@ -1,12 +1,15 @@
 package it.beije.hopper.ecommerceMod;
 
 import it.beije.hopper.Contatto;
-import it.beije.hopper.ecommerce.Order;
-import it.beije.hopper.ecommerce.Product;
-import it.beije.hopper.ecommerce.User;
+import it.beije.hopper.ecommerceMod.items.Order;
+import it.beije.hopper.ecommerceMod.items.Product;
+import it.beije.hopper.ecommerceMod.items.User;
+import it.beije.hopper.ecommerceMod.items.Cart;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 
@@ -18,9 +21,10 @@ public class EcommerceJPA {
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 
-		int orderId = 3;
+		int orderId =4;
 		Order order = entityManager.find(Order.class, orderId);
 		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+orderId);
+		System.out.println(query.getResultList());
 		order.setItems(query.getResultList());
 		System.out.println("Order: " + order);
 		System.out.println();
@@ -38,8 +42,21 @@ public class EcommerceJPA {
 
 		User testUsr = getUser(entityManager, "miky@gmail.com");
 		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
+		Product testProduct2 = getProduct(entityManager, "", 2);
 		System.out.println("Test Usr: " + testUsr);
 		System.out.println("TestProduct: " + testProduct);
+		System.out.println("TestProduct2: " + testProduct2);
+
+		Cart cart = new Cart();
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		System.out.println(cart);
+
+		System.out.println(cart.getAllItemsInCart());
 		entityManager.close();
 	}
 
@@ -49,11 +66,62 @@ public class EcommerceJPA {
 
 
 
-	public static void addToCart(EntityManager entityManager, User user, Product product){
+	public static void addToCart(EntityManager entityManager, Product product){
+
 
 
 
 	}
+/// -------------------- Item (order items) -----------------
+
+	public static void addOrderItem(EntityManager entityManager, Order order, User user ){
+
+	}
+
+/// -------------------- Order --------------------------------
+	/*
+	`id`
+  	`user_id`
+  	`datetime`
+  	`amount`
+  	`promo`
+	* */
+	public static void addOrder(EntityManager entityManager, Cart cart, User user, LocalDateTime dateTime, Double promo){
+		EntityTransaction entityTransaction =  entityManager.getTransaction();
+		entityTransaction.begin();
+
+		Order newOrder = new Order();
+		Integer userId = user.getId();
+
+		newOrder.setUserId(user.getId());
+		newOrder.setDatetime(dateTime);
+		newOrder.setAmount(cart.totalCostofCart()-promo);
+
+		//fill order with items in cart
+		Iterator<Product> products = cart.getAllItemsInCart().iterator();
+		while(products.hasNext()){
+
+		}
+
+
+
+		//update order-items table
+
+
+//		Order order = entityManager.find(Order.class, orderId);
+//		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+orderId);
+
+	}
+	public static Order getOrder(EntityManager entityManager, Integer id){
+		return entityManager.find(Order.class, id);
+	}
+	//Get all Orders
+	public static List<Order> getAllOrders(EntityManager entityManager){
+		Query query = entityManager.createQuery("SELECT o FROM Order as o");
+		return query.getResultList();
+	}
+
+/// -------------------- Product -----------------
 //
 //	public static void addProduct(EntityManager entityManager, String name, String desc, Double price, Integer quantity, Integer rating ){
 //		EntityTransaction entityTransaction = entityManager.getTransaction();

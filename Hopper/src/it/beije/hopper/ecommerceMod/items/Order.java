@@ -93,6 +93,8 @@ public class Order {
 		this.items = items;
 	}
 
+
+
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
 				.append("{ id : ").append(this.id)

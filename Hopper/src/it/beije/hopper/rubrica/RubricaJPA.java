@@ -23,29 +23,29 @@ public class RubricaJPA {
 		Contatto contatto = null;
 		
 		//SELECT c FROM Contatto as c WHERE id = X
-//		contatto = entityManager.find(Contatto.class, 39);
-//		System.out.println("contatto : " + contatto);
+		contatto = entityManager.find(Contatto.class, 106);
+		System.out.println("contatto : " + contatto);
 		
-		int orderId = 1;
-		Order order = entityManager.find(Order.class, orderId);
-		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id = " + orderId);//SELECT * FROM rubrica
-		order.setItems(query.getResultList());
-		System.out.println("order : " + order);
+//		int orderId = 1;
+//		Order order = entityManager.find(Order.class, orderId);
+//		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id = " + orderId);//SELECT * FROM rubrica
+//		order.setItems(query.getResultList());
+//		System.out.println("order : " + order);
 		
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
 		
 		//INSERT
-//		Contatto newContatto = new Contatto();
-//		//newContatto.setId(50);
-//		newContatto.setCognome("Marinelli");
-//		newContatto.setNome("Raffaele");
-//		newContatto.setEmail("r.marinelli@beije.it");
-//		System.out.println("contatto PRE : " + newContatto);
-//		
-//		entityManager.persist(newContatto);
-//		
-//		System.out.println("contatto POST : " + newContatto);
+		Contatto newContatto = new Contatto();
+		//newContatto.setId(50);
+		newContatto.setCognome("Marinelli");
+		newContatto.setNome("Raffaele");
+		newContatto.setEmail("r.marinelli@beije.it");
+		System.out.println("contatto PRE : " + newContatto);
+
+		entityManager.persist(newContatto);
+
+		System.out.println("contatto POST : " + newContatto);
 		
 		
 		//UPDATE
@@ -55,7 +55,7 @@ public class RubricaJPA {
 //		contatto.setNome("Piero");
 //		entityManager.persist(contatto);
 //		System.out.println("contatto POST update : " + contatto);
-		
+//
 //		//DELETE
 //		entityManager.remove(contatto);
 

@@ -2,11 +2,18 @@
 <persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="hopper">
 
+<!--		<class>it.beije.hopper.Contatto</class>-->
+<!--		<class>it.beije.hopper.ecommerce.Item</class>-->
+<!--		<class>it.beije.hopper.ecommerce.Order</class>-->
+<!--		<class>it.beije.hopper.ecommerce.Product</class>-->
+<!--		<class>it.beije.hopper.ecommerce.User</class>-->
+
+
 		<class>it.beije.hopper.Contatto</class>
-		<class>it.beije.hopper.ecommerce.Item</class>
-		<class>it.beije.hopper.ecommerce.Order</class>
-		<class>it.beije.hopper.ecommerce.Product</class>
-		<class>it.beije.hopper.ecommerce.User</class>
+		<class>it.beije.hopper.ecommerceMod.items.Item</class>
+		<class>it.beije.hopper.ecommerceMod.items.Order</class>
+		<class>it.beije.hopper.ecommerceMod.items.Product</class>
+		<class>it.beije.hopper.ecommerceMod.items.User</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>

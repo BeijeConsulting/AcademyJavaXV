@@ -3,9 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/functionality/UI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/functionality/Store.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Cart.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Cart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/items/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubrica/RubricaJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/rubrica/RubricaJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/target/classes/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,48 +69,48 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.eT">
+  <component name="RunManager" selected="Application.DemoMain">
+    <configuration name="BlueCar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.BlueCar" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DemoMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.cap5.gruppo1.Elettrodomestici_ASFM.DemoMain" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.cap5.gruppo1.Elettrodomestici_ASFM.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SoccerBall" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.SoccerBall" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.T" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TC (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TC" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="eT (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.eT" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="eT (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.eT" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -133,11 +137,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DemoMain" />
+        <item itemvalue="Application.SoccerBall" />
+        <item itemvalue="Application.BlueCar" />
         <item itemvalue="Application.eT" />
         <item itemvalue="Application.T" />
-        <item itemvalue="Application.eT (2)" />
-        <item itemvalue="Application.eT (1)" />
-        <item itemvalue="Application.TC (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +161,7 @@
       <workItem from="1664380278148" duration="900000" />
       <workItem from="1664521660511" duration="126000" />
       <workItem from="1664616387428" duration="22449000" />
-      <workItem from="1664870905165" duration="3942000" />
+      <workItem from="1664870905165" duration="7713000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
@@ -201,6 +205,20 @@
           <properties class="java.lang.ClassCastException" package="java.lang" />
           <option name="timeStamp" value="2" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
+          <line>24</line>
+          <properties class="it.beije.xv.esercizi.TestEL.Car">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

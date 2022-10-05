@@ -31,8 +31,8 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
-	private String desc;
+	@Column(name = "descrizione")
+	private String descrizione;
 
 	@Column(name = "price")
 	private Double price;
@@ -61,11 +61,11 @@ public class Product {
 	}
 
 	public String getDesc() {
-		return desc;
+		return descrizione;
 	}
 
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.descrizione = desc;
 	}
 
 	public Double getPrice() {
@@ -97,7 +97,7 @@ public class Product {
 		StringBuilder builder = new StringBuilder()
 				.append("{ id : ").append(this.id)
 				.append(", name : ").append(this.name)
-				.append(", desc : ").append(this.desc)
+				.append(", desc : ").append(this.descrizione)
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
 				.append(", rating : ").append(this.rating)

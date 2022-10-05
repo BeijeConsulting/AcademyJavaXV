@@ -50,8 +50,8 @@ public class Item {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
-	private String desc;
+	@Column(name = "descrizione")
+	private String descrizione;
 
 	@Column(name = "price")
 	private Double price;
@@ -96,11 +96,11 @@ public class Item {
 	}
 
 	public String getDesc() {
-		return desc;
+		return descrizione;
 	}
 
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.descrizione = desc;
 	}
 
 	public Double getPrice() {
@@ -134,7 +134,7 @@ public class Item {
 				.append(", orderId : ").append(this.orderId)
 				.append(", productId : ").append(this.productId)
 				.append(", name : ").append(this.name)
-				.append(", desc : ").append(this.desc)
+				.append(", desc : ").append(this.descrizione)
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
 				.append(", promo : ").append(this.promo)

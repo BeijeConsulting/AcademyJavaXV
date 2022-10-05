@@ -1,11 +1,14 @@
 package it.beije.hopper;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 
 @Entity
@@ -33,6 +36,16 @@ public class Contatto {
 
 	@Column(name = "note")
 	private String note;
+	
+	@Transient
+	private List<Recapito> recapiti;
+	
+	public List<Recapito> getRecapiti() {
+		return recapiti;
+	}
+	public void setRecapiti(List<Recapito> recapiti) {
+		this.recapiti = recapiti;
+	}
 	
 	
 	public int getId() {

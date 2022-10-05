@@ -308,18 +308,31 @@ public class FileJPA {
 		entityTransaction.begin();
 
 //		TEST JOIN
-//		Query query = entityManager.createQuery("SELECT r FROM Recapito as r Join Contatto as c ON r.rubrica_id=c.id WHERE r.tipo LIKE 'E' ");
+//		Query query = entityManager.createQuery("SELECT c FROM Contatto as c Join Recapito as r ON r.rubrica_id=c.id");
 //		System.out.println(query.getResultList()+"\n");
+		
+//		Query query = entityManager.createQuery("SELECT c,r FROM Contatto as c JOIN Recapito as r ON r.rubrica_id=c.id");
+//		Query query = entityManager.createQuery("SELECT c,r FROM Contatto as c,Recapito as r WHERE r.rubrica_id=c.id");
+//		System.out.println(query.getResultList());
+		
+		
+		Query query = entityManager.createQuery("SELECT c FROM Contatto as c Join Recapito as r ON r.rubrica_id=c.id");
+		List<Contatto> contatti=query.getResultList();
+		
+		query=entityManager.createQuery("SELECT r FROM Recapito as r Join Contatto as c ON r.rubrica_id=c.id");
+		List<Recapito> recapiti=query.getResultList();
+			
+				
 	
-		Query query=entityManager.createQuery("SELECT c FROM Contatto c");
-		List<Contatto> contatto=query.getResultList();
-		
-		query=entityManager.createQuery("SELECT r FROM Recapito r");
-		List<Recapito> recapito=query.getResultList();
-		
-		for(Contatto c:contatto) {
+//		Query query=entityManager.createQuery("SELECT c FROM Contatto c");
+//		List<Contatto> contatto=query.getResultList();
+//		
+//		query=entityManager.createQuery("SELECT r FROM Recapito r");
+//		List<Recapito> recapito=query.getResultList();
+//		
+		for(Contatto c:contatti) {
 			System.out.println(c.toString());
-			for(Recapito r:recapito)
+			for(Recapito r:recapiti)
 				if(c.getId()==r.getRubrica_id()) {
 					if(r.getTipo().equals("E"))
 						System.out.print("Email aggiuntiva: "+r.getRecapito());

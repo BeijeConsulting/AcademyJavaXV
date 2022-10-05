@@ -1,27 +1,18 @@
 package it.beije.hopper.ecommerce;
 
+import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
 /*
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(11) NOT NULL,
-  `datetime` datetime NOT NULL,
-  `amount` decimal(10,2) NOT NULL,
-  `promo` decimal(10,2) DEFAULT NULL,
+CREATE TABLE `hopper`.`users` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `email` VARCHAR(100) NOT NULL,
+  `password` VARCHAR(45) NOT NULL,
+  `name` VARCHAR(45) NULL,
+  `surname` VARCHAR(45) NULL,
   PRIMARY KEY (`id`),
-  KEY `user_fk_idx` (`user_id`),
-  CONSTRAINT `user_fk` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB
+  UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE);
  */
 
 @Entity

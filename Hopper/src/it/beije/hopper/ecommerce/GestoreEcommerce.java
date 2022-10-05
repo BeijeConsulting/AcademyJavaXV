@@ -2,11 +2,12 @@ package it.beije.hopper.ecommerce;
 
 import it.beije.hopper.Contatto;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.EntityTransaction;
-import javax.persistence.Persistence;
+import javax.persistence.*;
+import java.lang.reflect.Method;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 
@@ -25,8 +26,15 @@ public class GestoreEcommerce {
         boolean login = MethodsEcommerce.login(email, psw);
 
         if (login) {
-            System.out.println("Benvenuto in BeijeShop, cosa vuoi fare?\n 1. Lista prodotti, \n 2. Acquista");
+            Query query = entityManager.createQuery("SELECT u FROM User as u WHERE email='" + email + "'");
+            List<User> users = query.getResultList();
+            User u = new User();
+            u.setId(users.get(0).getId());
+            u.setName(users.get(0).getName());
+            u.setSurname(users.get(0).getSurname());
+            System.out.println("Benvenuto in BeijeShop " + u.getName() + " " + u.getSurname() +", cosa vuoi fare?\n 1. Lista prodotti, \n 2. Acquista");
             String scelta = scanner.nextLine();
+
 
             switch (scelta) {
                 case "1": {
@@ -34,39 +42,86 @@ public class GestoreEcommerce {
                     break;
                 }
                 case "2": {
-                    ArrayList<Product> prodotti = new ArrayList<>();
+                    entityTransaction.begin();
+                    Order order = new Order();
+                    order.setUserId(u.getId());
+                    order.setDatetime(LocalDateTime.now());
+
+                    Double tot = 0.0;
+                    ArrayList<Item> carrello = new ArrayList<>();
                     MethodsEcommerce.productList();
-                    System.out.println("Che prodotto vuoi acquistare?");
-                    Integer id = Integer.valueOf(scanner.nextLine());
-                    System.out.println("Quanti ne vuoi acquistare?");
-                    Integer qta = Integer.valueOf(scanner.nextLine());
-                    Product articolo = entityManager.find(Product.class, id);
-                    Product articoloX = new Product();
-                    articoloX.setName(articolo.getName());
-                    articoloX.setDesc(articolo.getDesc());
-                    articoloX.setPrice(articolo.getPrice());
-                    articoloX.setQuantity(qta);
-                    prodotti.add(articoloX);
-                    System.out.println("Vuoi acquistare ancora?");
+                    try {
+                        System.out.println("Che prodotto vuoi acquistare?");
+                        Integer id = Integer.valueOf(scanner.nextLine());
+                        Product prodotto = entityManager.find(Product.class, id);
+                        prodotto.getName();
+                        System.out.println("Quanti ne vuoi acquistare?");
+                        Integer qta = Integer.valueOf(scanner.nextLine());
+
+                        Item item = new Item();
+                        item.setName(prodotto.getName());
+                        item.setDesc(prodotto.getDesc());
+                        item.setPrice(prodotto.getPrice());
+                        item.setProductId(prodotto.getId());
+                        item.setQuantity(qta);
+                        carrello.add(item);
+
+                        tot += item.getPrice() * item.getQuantity();
+                    } catch (NullPointerException e) {
+                        System.out.println("Prodotto non valido.");
+                    }
+                    System.out.println("Vuoi acquistare ancora? ('Y' se si', 'N' se no)");
                     String x = scanner.nextLine();
 
                     while (x.equalsIgnoreCase("Y")) {
-                        System.out.println("Che prodotto vuoi acquistare?");
-                        Integer id1 = Integer.valueOf(scanner.nextLine());
-                        System.out.println("Quanti ne vuoi acquistare?");
-                        Integer qta2 = Integer.valueOf(scanner.nextLine());
-                        Product articolo1 = entityManager.find(Product.class, id);
-                        Product articolo2 = new Product();
-                        articolo2.setName(articolo.getName());
-                        articolo2.setDesc(articolo.getDesc());
-                        articolo2.setPrice(articolo.getPrice());
-                        articolo2.setQuantity(qta2);
-                        prodotti.add(articolo2);
-                        System.out.println("Vuoi acquistare ancora?");
-                        x = scanner.nextLine();
+                        try {
+                            System.out.println("Che prodotto vuoi acquistare?");
+                            Integer id1 = Integer.valueOf(scanner.nextLine());
+                            Product prodotto1 = entityManager.find(Product.class, id1);
+                            prodotto1.getName();
+                            System.out.println("Quanti ne vuoi acquistare?");
+                            Integer qta2 = Integer.valueOf(scanner.nextLine());
+                            Item item1 = new Item();
+                            item1.setName(prodotto1.getName());
+                            item1.setDesc(prodotto1.getDesc());
+                            item1.setPrice(prodotto1.getPrice());
+                            item1.setProductId(prodotto1.getId());
+                            item1.setQuantity(qta2);
+                            carrello.add(item1);
+                            tot += item1.getPrice() * item1.getQuantity();
+                            System.out.println("Vuoi acquistare ancora? ('Y' se si', 'N' se no)");
+                            x = scanner.nextLine();
+                        } catch (NullPointerException e) {
+                            System.out.println("Prodotto non valido.");
+                            System.out.println("Vuoi acquistare ancora? ('Y' se si', 'N' se no)");
+                            x = scanner.nextLine();
+                        }
                     }
-                    System.out.println("okay, gli articoli che vuoi acquistare sono i seguenti: \n" + prodotti);
+                    System.out.println("okay, questi sono i prodotti che hai all'interno del carrello: \n" + carrello + "\n Per un totale di: " + tot + " euro.");
+                    System.out.println("Vuoi confermare l'ordine? ('Y' se si', 'N' se no)");
+                    String conferma = scanner.nextLine();
+                    if (conferma.equalsIgnoreCase("Y")) {
+                        order.setAmount(tot);
+                        entityManager.persist(order);
+                        int orderId = order.getId();
+                        entityTransaction.commit();
+
+                        for (Item i : carrello) {
+                            i.setOrderId(orderId);
+                            entityTransaction.begin();
+                            entityManager.persist(i);
+                            entityTransaction.commit();
+                        }
+                    } else {
+                        System.out.println("Hai annullato l'ordine, alla prossima!");
+                    }
+                    break;
                 }
+                default: {
+                    System.out.println("Scelta errata");
+                    scelta = scanner.nextLine();
+                }
+
             }
         } else {
             System.out.println("Username e/o password errati");

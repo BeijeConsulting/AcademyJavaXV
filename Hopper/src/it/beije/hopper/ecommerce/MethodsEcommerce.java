@@ -23,14 +23,14 @@ public class MethodsEcommerce {
     public static boolean login(String email, String psw) {
         Query query = entityManager.createQuery("SELECT u FROM User as u");
         List<User> listaUsers = query.getResultList();
-        for (User u : listaUsers) {
-            if (u.getEmail().equalsIgnoreCase(email) && u.getPassword().equals(psw)) {
+
+        for (int i = 0; i < listaUsers.size(); i++) {
+            if (listaUsers.get(i).getEmail().equalsIgnoreCase(email) && listaUsers.get(i).getPassword().equals(psw)) {
                 return true;
-            } else {
-                return false;
             }
         }
         return false;
     }
+
 }
 

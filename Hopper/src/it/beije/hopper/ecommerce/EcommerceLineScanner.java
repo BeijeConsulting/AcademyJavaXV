@@ -5,6 +5,7 @@ import it.beije.hopper.Recapito;
 import it.beije.hopper.rubrica.RubricaJPA2;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -15,7 +16,7 @@ public class EcommerceLineScanner {
 
     public static EntityManager createEntityManager() {
         if (entityManagerFactory == null) {
-            entityManagerFactory = Persistence.createEntityManagerFactory("corraro_pitossi");
+            entityManagerFactory = Persistence.createEntityManagerFactory("em");
 
         }
         return entityManagerFactory.createEntityManager();
@@ -124,7 +125,7 @@ public class EcommerceLineScanner {
         return true;
     }
 
-    public static Order AddOrder(EntityManager entityManager, User user) {
+    public static void AddOrder(EntityManager entityManager, User user) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
         Scanner s = new Scanner(System.in);
@@ -132,7 +133,7 @@ public class EcommerceLineScanner {
 
         Order order = new Order();
         order.setUserId(user.getId());
-        Query query = entityManager.createQuery("SELECT I FROM Product as i order by id");
+        Query query = entityManager.createQuery("SELECT i FROM Product as i order by id");
         List<Product> products = query.getResultList();
         for (Product product : products)
             System.out.println(product.toString());
@@ -143,21 +144,46 @@ public class EcommerceLineScanner {
             System.out.println("Inserire id dell'oggetto che vuoi comprare: (inserisci -1 per uscire)");
             temp = s.nextLine();
             Product productTemp = entityManager.find(Product.class, Integer.parseInt(temp));
-            System.out.println("Inserire quantità dell'oggetto che vuoi comprare: (Max: "+ productTemp.getQuantity()+ ")");
+            System.out.println("Inserire quantità dell'oggetto che vuoi comprare: (Max: " + productTemp.getQuantity() + ")");
             String q = s.nextLine();
             Item item = new Item();
             item.setPrice(productTemp.getPrice());
             item.setProductId(productTemp.getId());
             item.setQuantity(Integer.parseInt(q));
+            productTemp.setQuantity(productTemp.getQuantity() - Integer.parseInt(q));
+            entityManager.persist(item);
             itemsToBuy.add(item);
             amount += item.getPrice();
         }
         order.setAmount(amount);
-        for (Item item : itemsToBuy)
-            entityManager.persist(order);
+        order.setDatetime(LocalDateTime.now());
         order.setItems(itemsToBuy);
         entityManager.persist(order);
+        System.out.println("Ordine effettuato!");
 
+        entityTransaction.commit();
+    }
+
+    public static Order viewOrder(EntityManager entityManager, User user) {
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+        Scanner s = new Scanner(System.in);
+        double amount = 0;
+
+        Order order = new Order();
+        order.setUserId(user.getId());
+        Query query = entityManager.createQuery("SELECT o FROM Order as o WHERE userId = " + user.getId() + " order by datetime");
+        List<Order> orders = query.getResultList();
+        for (Order o : orders)
+            System.out.println(o.toString());
+
+        String temp = "";
+        while (temp.equals("-1") || temp.isEmpty()) {
+            System.out.println("Inserire id dell'ordine che vuoi cambiare: (inserisci -1 per uscire)");
+            temp = s.nextLine();
+            Order orderTemp = entityManager.find(Order.class, Integer.parseInt(temp));
+        }
+        //TODO
         entityTransaction.commit();
         return order;
     }

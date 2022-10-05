@@ -1,10 +1,7 @@
 package it.beije.hopper.ecommerceMod;
 
 import it.beije.hopper.Contatto;
-import it.beije.hopper.ecommerceMod.items.Order;
-import it.beije.hopper.ecommerceMod.items.Product;
-import it.beije.hopper.ecommerceMod.items.User;
-import it.beije.hopper.ecommerceMod.items.Cart;
+import it.beije.hopper.ecommerceMod.items.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -19,7 +16,6 @@ public class EcommerceJPA {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-
 
 		int orderId =4;
 		Order order = entityManager.find(Order.class, orderId);
@@ -36,8 +32,6 @@ public class EcommerceJPA {
 		for( Product product : (ArrayList<Product>)query1.getResultList() ){
 			System.out.println("Product: " + product);
 		}
-
-
 
 
 		User testUsr = getUser(entityManager, "miky@gmail.com");
@@ -66,15 +60,39 @@ public class EcommerceJPA {
 
 
 
-	public static void addToCart(EntityManager entityManager, Product product){
-
+	public static void addProductToCart(EntityManager entityManager, Product product, Integer discountPercentage){
+//		Double discount...
 
 
 
 	}
 /// -------------------- Item (order items) -----------------
 
-	public static void addOrderItem(EntityManager entityManager, Order order, User user ){
+	//Insert/Add Order Item in the DB
+	public static void addOrderItem(EntityManager entityManager, Order order, User user, Product product ,
+									 Cart cart, String orderDescription){
+
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+
+		Item newItem = new Item();
+		newItem.setOrderId(order.getId());
+		newItem.setName(product.getName());
+		newItem.setDesc(orderDescription);
+		newItem.setPrice( cart.numberOfProductInCart(product) * ( product.getPrice() - cart.singleProductDiscountAmount(product) ) ); //
+
+		newItem.setQuantity(numOfProductsInCart); // --> Add to order and remove from Warehouse
+
+		//Update number of items of product in "Warehouse"
+		int quantity = product.getQuantity() -;
+		updateProduct(entityManager, product, null, quantity );
+
+
+
+
+
+
+
 
 	}
 
@@ -85,20 +103,31 @@ public class EcommerceJPA {
   	`datetime`
   	`amount`
   	`promo`
-	* */
-	public static void addOrder(EntityManager entityManager, Cart cart, User user, LocalDateTime dateTime, Double promo){
+	*/
+	//TODO: fix promo to percentage of totalItemtype --> Double.
+	public static void addOrder(EntityManager entityManager, Cart cart, User user,
+								LocalDateTime dateTime, Double promo){
+
 		EntityTransaction entityTransaction =  entityManager.getTransaction();
 		entityTransaction.begin();
 
+		//Create new Order
 		Order newOrder = new Order();
 		Integer userId = user.getId();
 
 		newOrder.setUserId(user.getId());
 		newOrder.setDatetime(dateTime);
 		newOrder.setAmount(cart.totalCostofCart()-promo);
+		newOrder.setPromo(promo);
 
-		//fill order with items in cart
+		entityManager.persist(newOrder);
+		System.out.println("In addOrder (order):"+newOrder);
+//		entityTransaction.commit(); //Add this later??
+
+
+		//extract all orders from cart and add them on order-item table
 		Iterator<Product> products = cart.getAllItemsInCart().iterator();
+
 		while(products.hasNext()){
 
 		}
@@ -106,7 +135,6 @@ public class EcommerceJPA {
 
 
 		//update order-items table
-
 
 //		Order order = entityManager.find(Order.class, orderId);
 //		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+orderId);
@@ -122,6 +150,32 @@ public class EcommerceJPA {
 	}
 
 /// -------------------- Product -----------------
+	//TODO: OVERLOAD Better
+	public static void updateProduct(EntityManager entityManager, String productName,  Double newPrice, Integer newQuantity){
+		Product modifiedProduct = getProduct(entityManager, productName, null);
+		updateProduct( entityManager, modifiedProduct,  newPrice, newQuantity);
+	}
+
+	public static void updateProduct(EntityManager entityManager, Integer productId, Double newPrice, Integer newQuantity){
+		Product modifiedProduct = getProduct(entityManager, null, productId);
+		updateProduct( entityManager, modifiedProduct,  newPrice, newQuantity);
+	}
+
+	public static void updateProduct(EntityManager entityManager, Product product,  Double newPrice, Integer newQuantity){
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+
+		//modifyPrice
+		if( newPrice != null){
+			product.setPrice(newPrice);
+		}
+		//modifyQuantity
+		if( newQuantity != null){
+			product.setQuantity(newQuantity);
+		}
+		entityManager.persist(product);
+		entityTransaction.commit();
+	}
 //
 //	public static void addProduct(EntityManager entityManager, String name, String desc, Double price, Integer quantity, Integer rating ){
 //		EntityTransaction entityTransaction = entityManager.getTransaction();
@@ -130,6 +184,7 @@ public class EcommerceJPA {
 //
 //	}
 
+	//TODO: OVERLOAD the method!
 	//Extracts product based on name or id
 	//returns null if Product does not exist
 	public static Product getProduct(EntityManager entityManager, String productName, Integer productId){

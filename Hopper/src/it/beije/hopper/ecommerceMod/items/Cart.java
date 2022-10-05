@@ -5,11 +5,10 @@ import java.util.*;
 
 public class Cart {
     //Product--> number of products
-
     private Map<Product, Integer > numOfProductsMap = new HashMap<>();//# of a product
     private Map<Product, Double > discountMap = new HashMap<>();// discount associated with a product
 
-
+    //TODO: change product discount to percentage of product price --> Double priceDiscounted
     public void addProduct(Product product, Double discount ){
         if( numOfProductsMap.containsKey(product)){
             Integer newVal = numOfProductsMap.get(product);
@@ -18,14 +17,14 @@ public class Cart {
             numOfProductsMap.put(product, 1 );
             discountMap.put(product, discount);
         }
-
     }
+
 
 
     public Collection<Product> getAllItemsInCart(){
-
         return numOfProductsMap.keySet();
     }
+
     //Total cost of the cart
     public Double totalCostofCart(){
         Double total = 0.0;
@@ -33,6 +32,15 @@ public class Cart {
             total+= totalCostOfProducttype(product);
         }
         return total;
+    }
+
+
+    public Integer numberOfProductInCart(Product product){
+        return numOfProductsMap.get(product);
+    }
+
+    public Double singleProductDiscountAmount(Product product){
+        return discountMap.get(product);
     }
 
     //Check if cart is Empty

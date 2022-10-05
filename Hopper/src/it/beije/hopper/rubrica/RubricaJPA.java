@@ -71,7 +71,7 @@ public class RubricaJPA {
 		
 		//if (true) throw new RuntimeException();
 		
-		entityTransaction.commit();
+//		entityTransaction.commit();
 		//entityTransaction.rollback();
 
 		entityManager.close();

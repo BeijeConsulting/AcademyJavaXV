@@ -1,9 +1,9 @@
-package it.beije.java.xv.esercizi.elettriche;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Elettrodomestici.ElettroCorrente;
-import it.beije.java.xv.esercizi.Interfacce.TimerInterface;
+import it.beije.xv.esercizi.cap5.gruppo1.ElettroCorrente;
+import it.beije.xv.esercizi.cap5.gruppo1.TimerInterface;
 
 //import java.util.Timer;
 //import java.util.TimerTask;

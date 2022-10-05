@@ -1,4 +1,4 @@
-package it.beije.java.xv.esercizi.Interfacce;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 public interface Scalda {
 	boolean isScalda();

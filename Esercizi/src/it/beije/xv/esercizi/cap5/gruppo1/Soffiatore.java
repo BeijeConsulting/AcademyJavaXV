@@ -1,8 +1,8 @@
+package it.beije.xv.esercizi.cap5.gruppo1;
 
-package it.beije.java.xv.esercizi.pile;
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Elettrodomestici.ElettroPile;
+import it.beije.xv.esercizi.cap5.gruppo1.ElettroPile;
 
 public class Soffiatore extends ElettroPile {
 	

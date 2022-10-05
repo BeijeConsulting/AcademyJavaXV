@@ -1,4 +1,4 @@
-package it.beije.java.xv.esercizi.Elettrodomestici;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 
 public abstract class Elettrodomestici {

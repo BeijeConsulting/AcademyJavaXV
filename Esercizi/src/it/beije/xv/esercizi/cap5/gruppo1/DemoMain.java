@@ -1,5 +1,7 @@
-import it.beije.java.xv.esercizi.elettriche.Fornello;
-import it.beije.java.xv.esercizi.pile.Soffiatore;
+package it.beije.xv.esercizi.cap5.gruppo1;
+
+import it.beije.xv.esercizi.cap5.gruppo1.Fornello;
+import it.beije.xv.esercizi.cap5.gruppo1.Soffiatore;
 
 public class DemoMain {
 

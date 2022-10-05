@@ -1,21 +1,20 @@
-package it.beije.java.xv.esercizi.elettriche;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Elettrodomestici.ElettroCorrente;
+import it.beije.xv.esercizi.cap5.gruppo1.ElettroCorrente;
 
-public class Bimby extends ElettroCorrente {
+public class Aspirapolvere extends ElettroCorrente {
 
 	private boolean collegato;
 	private boolean on;
 	private String name;
 	
-	public Bimby(String name) {
+	public Aspirapolvere(String name) {
 		this.name = name;
 	}
-	
 	public boolean isCollegato() {
-		collegato = new Random().nextInt(2) == 1;
+		collegato = new Random().nextInt(1) == 1;
 		return collegato;
 	}
 
@@ -36,14 +35,8 @@ public class Bimby extends ElettroCorrente {
 	}
 
 
-	
 	public double potenza() {
-		return 1.5;
-	}
-	
-	
-	public double potenza(int mq) {		
-		return -1;
+		return (double)new Random().nextInt(1,3);
 	}
 
 	
@@ -53,8 +46,14 @@ public class Bimby extends ElettroCorrente {
 		else
 			on = false;
 	}
-	
-	public boolean isAllIngredients() {
-		return new Random().nextInt(2) == 1;
+
+	public int livelloPolvere() {
+		return new Random().nextInt(0,11);
 	}
+
+	
+	public double potenza(int mq) {	
+		return -1;
+	}
+
 }

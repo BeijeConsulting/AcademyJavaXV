@@ -1,8 +1,8 @@
-package it.beije.java.xv.esercizi.Elettrodomestici;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Interfacce.HaPile;
+import it.beije.xv.esercizi.cap5.gruppo1.HaPile;
 
 
 public abstract class ElettroPile extends Elettrodomestici implements HaPile {

@@ -1,8 +1,8 @@
-package it.beije.java.xv.esercizi.pile;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Elettrodomestici.ElettroPile;
+import it.beije.xv.esercizi.cap5.gruppo1.ElettroPile;
 
 public class Telecomando extends ElettroPile {
 	

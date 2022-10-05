@@ -1,11 +1,11 @@
-package it.beije.java.xv.esercizi.elettriche;
+package it.beije.xv.esercizi.cap5.gruppo1;
 
 import java.util.Random;
 
-import it.beije.java.xv.esercizi.Elettrodomestici.ElettroCorrente;
+import it.beije.xv.esercizi.cap5.gruppo1.ElettroCorrente;
 
-import it.beije.java.xv.esercizi.Interfacce.Raffredda;
-import it.beije.java.xv.esercizi.Interfacce.Scalda;
+import it.beije.xv.esercizi.cap5.gruppo1.Raffredda;
+import it.beije.xv.esercizi.cap5.gruppo1.Scalda;
 
 public class Climatizzatore extends ElettroCorrente implements Scalda, Raffredda{
 	

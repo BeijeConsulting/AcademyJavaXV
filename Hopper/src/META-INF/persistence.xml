@@ -4,8 +4,10 @@
 
 		<class>it.beije.hopper.Contatto</class>
 		<class>it.beije.hopper.Riferimento</class>
-		<!-- >class>it.beije.hopper.Prodotto</class>
-		<class>it.beije.hopper.User</class -->
+		<class>it.beije.hopper.ecommerce.Item</class>
+		<class>it.beije.hopper.ecommerce.Userr</class>
+		<class>it.beije.hopper.ecommerce.Product</class>
+		<class>it.beije.hopper.ecommerce.Order</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>

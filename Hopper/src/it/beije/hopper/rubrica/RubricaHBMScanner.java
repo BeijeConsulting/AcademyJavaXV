@@ -30,7 +30,7 @@ public class RubricaHBMScanner {
 		int idsc = 0;
 		
 		//SCANNER
-		System.out.println("Premi 'I' per inserire, 'U' per modificare, 'D' per cancellare, 'S' per vedere il db,");
+		System.out.println("Premi 'I' per inserire, 'U' per modificare, 'D' per cancellare, 'S' per vedere il db,Dup per duplicati");
 		
 		Scanner modifiche = new Scanner(System.in);
 		String st = modifiche.next();
@@ -70,7 +70,7 @@ public class RubricaHBMScanner {
 		
 		
 		//SE DIVERSO DA SELECT E INSERT CHIEDI ID
-				if (!st.equals("S") && !st.equals("I")) {
+				if (!st.equals("S") && !st.equals("I")&& !st.equals("Dup")) {
 					Query<Contatto> query = session.createQuery("SELECT c FROM Contatto as c");//SELECT * FROM rubrica
 					List<Contatto> contatti = query.getResultList();
 					for (Contatto c : contatti) {
@@ -92,7 +92,7 @@ public class RubricaHBMScanner {
 			}
 			if (c.getId() == idsc) contatto = c;
 		}
-		System.out.println(contatti.size());
+		//System.out.println(contatti.size());
 		
 
 		
@@ -133,7 +133,15 @@ public class RubricaHBMScanner {
 		//transaction.rollback();
 		
 		
-		
+		if(st.equals("Dup")) {
+			Query<Contatto> queryD = session.createQuery("Select c.cognome, c.nome, c.email, c.telefono, c.note, count(*) FROM Contatto AS c GROUP BY  c.cognome, c.nome, c.email, c.telefono, c.note  HAVING count(*)>1 ");
+			List<Contatto> contattiD = queryD.getResultList();
+			for (Contatto c : contattiD) {
+				
+				System.out.println(c);
+				}
+			
+			}
 		
 
 		

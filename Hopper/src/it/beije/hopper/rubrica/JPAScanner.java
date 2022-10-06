@@ -83,12 +83,12 @@ public class JPAScanner {
 					Scanner recapito = new Scanner(System.in);
 					
 					System.out.print("id: ");
-					int id= recapito.nextInt();
+					int id= Integer.parseInt(recapito.nextLine());
 					aggRecapito.setRubrica_id(id);
 					
 					System.out.print("recapito: ");
-					String recapit= recapito.nextLine();
-					aggRecapito.setRecapito(recapit);
+					String r= recapito.nextLine();	
+					aggRecapito.setRecapito(r);
 					
 					System.out.print("tipo: ");
 					String tipo= recapito.nextLine();

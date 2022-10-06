@@ -48,11 +48,12 @@ public class FirstServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("FirstServlet doPost...");
-		
 		String fname = request.getParameter("fname");
 		String lname = request.getParameter("lname");
-		
+		System.out.println("FirstServlet doPost...");
+		System.out.println(fname);
+
+
 		
 		
 		response.getWriter().append("fname : ").append(fname).append("<br/> lname : ").append(lname);

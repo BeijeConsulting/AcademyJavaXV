@@ -68,7 +68,7 @@ public class EcommerceJPA {
 	}
 /// -------------------- Item (order items) -----------------
 
-	//Insert/Add Order Item in the DB
+	//Insert/Add Order-Item in the DB (after
 	public static void addOrderItem(EntityManager entityManager, Order order, User user, Product product ,
 									 Cart cart, String orderDescription){
 

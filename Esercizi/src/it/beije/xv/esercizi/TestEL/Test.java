@@ -1,23 +1,147 @@
 package it.beije.xv.esercizi.TestEL;
 
-abstract class Ball {
-    protected final int size;
-    public Ball(int size) {
-        this.size = size;
-    }
-}
-interface Equipment {}
-class SoccerBall extends Ball implements Equipment {
-    public SoccerBall() {
-        super(5);
-    }
-    public Ball get() { return this; }
-    public static void main(String[] passes) {
-        Equipment equipment = (Equipment)new SoccerBall().get();
-        System.out.print(((SoccerBall)equipment).size);
-    }
+
+
+class C {
+        public static void main(String[] args){
+////                new C().crazyLoop();
+//                double d = 2.0;
+//                int i = 3;
+//                boolean bool = d<i;
+//                System.out.println(bool);
+
+//
+//                boolean b1 = false;
+//                boolean b2  = false;
+//                if (b2 = b1 == false){
+//                        System.out.println("true");
+//                } else{
+//                        System.out.println("false");
+//                }
+
+
+//                String s = "blooper";
+//                StringBuilder sb = new StringBuilder(s);
+////                sb.append(s.substring(4)).delete(3, 5);
+//                sb.substring(2);
+//                System.out.println(sb);
+//                Integer i = 0;
+//                i++;
+//                System.out.println(i);
+                Double d = 0.0;
+                System.out.println(--d);
+        }
+//        void crazyLoop(){
+//                int c=0;
+//                JACK:while(c< 8){
+//                        JILL:System.out.println(c);
+//                        if(c>3)break JACK;else c++;
+//                }
+//        }
+
 }
 
+//
+//class PE extends Exception{}
+//class Game{
+//    public void play() throws PE{
+//        System.out.println("Playing...");
+//    }
+//}
+//
+//class Soccer extends Game{
+//    public void play(){
+//        System.out.println("Playing Soccer...");
+//    }
+//    public static void main(String[] args){
+//        Game g = new Soccer();
+//        try{
+//            g.play();
+//        }catch(PE pe){
+//            System.out.println(pe);
+//            pe.printStackTrace();
+//        }
+//    }
+//}
+
+
+//
+//class SomeThrowable extends Throwable {
+//}
+//
+//class MyThrowable extends SomeThrowable {
+//}
+//
+//class TestClass1 {
+//    public static void main(String args[]) throws SomeThrowable {
+//        try {
+//            m1();
+//        } catch (SomeThrowable e) {
+//            throw e;
+//        } finally {
+//            System.out.println("Done");
+//        }
+//    }
+//
+//    public static void m1() throws MyThrowable {
+//        throw new MyThrowable();
+//    }
+//}
+
+
+//class A {
+//    public int getCode(){ return 2;}
+//}
+//
+//class AA extends A {
+//    public long getCode(){ return 3;}
+//}
+//
+//class TestClass2 {
+////
+////    public static void main(String[] args) throws Exception {
+////        A a = new A();
+////        A aa = new AA();
+////        System.out.println(a.getCode()+" "+aa.getCode());
+////    }
+////
+////    public int getCode() {
+////        return 1;
+////    }
+//
+//
+////    public static void main(String[] args){
+////        boolean b1 = false;
+////        boolean b2  = false;
+////        if (b2 = b1 != b2){
+////            System.out.println("true");
+////        } else{
+////            System.out.println("false");
+////        }
+////    }
+//
+//
+//
+//}
+
+//abstract class Ball {
+//    protected final int size;
+//    public Ball(int size) {
+//        this.size = size;
+//    }
+//}
+//interface Equipment {}
+//class SoccerBall extends Ball implements Equipment {
+//    public SoccerBall() {
+//        super(5);
+//    }
+//    public Ball get() { return this; }
+//    public static void main(String[] passes) {
+//        Equipment equipment = (Equipment)new SoccerBall().get();
+//        System.out.print(((SoccerBall)equipment).size);
+//    }
+//}
+//
 
 
 //abstract class Car {
@@ -91,7 +215,6 @@ class SoccerBall extends Ball implements Equipment {
 //        b2 = b;
 //    }
 //}
-
 
 
 //Consider the following classes :

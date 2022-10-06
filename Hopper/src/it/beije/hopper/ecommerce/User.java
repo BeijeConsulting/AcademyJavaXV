@@ -2,6 +2,7 @@ package it.beije.hopper.ecommerce;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -39,6 +40,9 @@ public class User {
 	@Column(name = "name")
 	private String name;
 
+	@Transient
+	private Cart cart;
+	
 	
 	public Integer getId() {
 		return id;
@@ -82,6 +86,15 @@ public class User {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	
+	public Cart getCart() {
+		return cart;
+	}
+
+	public void setCart(Cart cart) {
+		this.cart = cart;
 	}
 
 	

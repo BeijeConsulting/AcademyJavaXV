@@ -19,6 +19,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB
  */
 
+
 @Entity
 @Table(name = "products")
 public class Product {
@@ -31,7 +32,7 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
+	@Column(name = "`desc`")
 	private String desc;
 
 	@Column(name = "price")

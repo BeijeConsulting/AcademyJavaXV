@@ -1,15 +1,12 @@
 package it.beije.hopper.ecommerce;
-
-import javax.persistence.Transient;
+import java.util.ArrayList;
 import java.util.List;
-
 public class Cart {
-
-    private List<Item> product;
-
-    private int quantity;
-    public Cart(Item products){
-        this.product.add(products);
+    private static List<Item> cart=new ArrayList<>();
+    public static List<Item> addInCart(Item product) {
+        if(product.getQuantity()>0) {
+            cart.add(product);
+        }
+        return cart;
     }
-
 }

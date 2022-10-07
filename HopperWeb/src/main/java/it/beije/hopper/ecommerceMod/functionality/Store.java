@@ -1,4 +1,4 @@
-package ecommerceMod.functionality;
+package it.beije.hopper.ecommerceMod.functionality;
 
 import java.util.Scanner;
 

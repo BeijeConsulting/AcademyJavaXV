@@ -1,4 +1,4 @@
-package ecommerceMod.items;
+package it.beije.hopper.ecommerceMod.items;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

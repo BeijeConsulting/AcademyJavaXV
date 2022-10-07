@@ -1,4 +1,4 @@
-package it.beije.hopper.web;
+package main.java.web;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

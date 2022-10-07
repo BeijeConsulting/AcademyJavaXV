@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<%
+<%--
 String error = request.getParameter("error");
 if (error != null) {
 	%>
@@ -20,7 +20,17 @@ if (error != null) {
 	</p>
 	<%
 }
+--%>
+
+<p style="color: red">
+<%
+String error = (String) session.getAttribute("errore");
+if (error != null) {
+	out.print(error);
+	session.removeAttribute("errore");
+}
 %>
+</p>
 
 <form action="./login" method="post">
   <label for="username">Username:</label><br>

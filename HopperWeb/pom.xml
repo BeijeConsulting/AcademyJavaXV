@@ -24,4 +24,11 @@
       </plugin>
     </plugins>
   </build>
+  <dependencies>
+    <dependency>
+      <groupId>org.mortbay.jetty</groupId>
+      <artifactId>servlet-api</artifactId>
+      <version>3.0.PFD20090525</version>
+    </dependency>
+  </dependencies>
 </project>

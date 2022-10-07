@@ -2,143 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Action_Adventure.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Car_racing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Celeste.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Cuphead.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Fifa22.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Hades.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Mario_Kart_8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Mobile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Multiplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Offline.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Online.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Platform.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Pokemon_GO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Roguelikes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Role_playing.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Singleplayer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Sports.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Super_Mario_Odyssey.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Survivals.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/The_Last_of_Us.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/Videogame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Azienda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Beije.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Google.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/NoProfit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Privata.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Profit.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/Pubblica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SAPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SAS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SASINTERFACE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SPAINTERFACE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SRL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SRLINTERFACE.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo3/SRLS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Accordato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Amplificazione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Batteria.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Chitarra.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/ConBacchette.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Fisarmonica.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Flauto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/HasFiddleStick.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/PercussioneSingolo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Piano.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Sassofono.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Seduto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/StrumentoACorda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/StrumentoAFiato.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/StrumentoAPercussione.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/StrumentoMusicale.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Violino.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/Violoncello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperWeb/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperWeb/WebContent/META-INF/MANIFEST.MF" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperWeb/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperWeb/src/META-INF/persistence.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/CreatingDatesAndTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/FormattingDatesAndTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/ManipulatingDatesAndTimes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/WorkingWithPeriods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.projects/.org.eclipse.egit.core.cmp/.location" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/history.version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.version" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.root/1.tree" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jdt.ui.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jsch.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.jst.j2ee.webservice.ui.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.m2e.discovery.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.navigator.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.urischeme.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.egit.core/.org.eclipse.egit.core.cmp/.settings/org.eclipse.core.resources.prefs" beforeDir="false" afterPath="$PROJECT_DIR$/../.settings/org.eclipse.core.resources.prefs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/assumedExternalFilesCache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/externalFilesCache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/javaLikeNames.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/nonChainingJarsCache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.core/variablesAndContainers.dat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.ui/OpenTypeHistory.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.jdt.ui/QualifiedTypeNameHistory.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.m2e.logback.configuration/logback.1.16.3.20211002-1029.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.oomph.setup/workspace.setup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.tips.ide/dialog_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.ide/dialog_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.intro/introstate" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.workbench/dialog_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/.plugins/org.eclipse.ui.workbench/workingsets.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.metadata/version.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/DemoMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/DemoMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Elettrodomestici/ElettroCorrente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/ElettroCorrente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Elettrodomestici/ElettroPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/ElettroPile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Elettrodomestici/Elettrodomestici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/Cavo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Cavo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/Cucinare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Cucinare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/HaPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/HaPile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/Raffredda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Raffredda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/Scalda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Scalda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/Interfacce/TimerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/TimerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Aspirapolvere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Aspirapolvere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Bimby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Bimby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Climatizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Climatizzatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Fornello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Fornello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/elettriche/Lavatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Lavatrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/pile/CesoieElettriche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/CesoieElettriche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/pile/Soffiatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Soffiatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/pile/Telecomando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Telecomando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/DemoMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/DemoMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/ElettroCorrente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/ElettroCorrente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/ElettroPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/ElettroPile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/Elettrodomestici.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Elettrodomestici/Elettrodomestici.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Cavo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Cavo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Cucinare.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Cucinare.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/HaPile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/HaPile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Raffredda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Raffredda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Scalda.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/Scalda.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/TimerInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/Interfacce/TimerInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Aspirapolvere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Aspirapolvere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Bimby.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Bimby.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Climatizzatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Climatizzatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Fornello.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Fornello.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Lavatrice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/elettriche/Lavatrice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/CesoieElettriche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/CesoieElettriche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/Soffiatore.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/Soffiatore.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/Telecomando.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/Elettrodomestici_ASFM/src/it/beije/java/xv/esercizi/pile/Telecomando.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo2/videogiochi/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo4/strumenti/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperWeb/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +68,7 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.C">
+  <component name="RunManager" selected="Application.WorkingWithPeriods">
     <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.C" />
       <module name="Esercizi" />
@@ -212,12 +82,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Soccer (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Soccer" />
+    <configuration name="CreatingDatesAndTimes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.CreatingDatesAndTimes" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -225,12 +95,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Soccer (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Soccer" />
+    <configuration name="ManipulatingDatesAndTimes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.ManipulatingDatesAndTimes" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -251,12 +121,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TestClass1" />
+    <configuration name="WorkingWithPeriods" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.WorkingWithPeriods" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -266,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WorkingWithPeriods" />
+        <item itemvalue="Application.ManipulatingDatesAndTimes" />
+        <item itemvalue="Application.CreatingDatesAndTimes" />
         <item itemvalue="Application.C" />
         <item itemvalue="Application.Soccer" />
-        <item itemvalue="Application.Soccer (2)" />
-        <item itemvalue="Application.Soccer (1)" />
-        <item itemvalue="Application.TestClass1 (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -292,6 +162,9 @@
       <workItem from="1664616387428" duration="22449000" />
       <workItem from="1664870905165" duration="13018000" />
       <workItem from="1665059111958" duration="10000" />
+      <workItem from="1665059748436" duration="688000" />
+      <workItem from="1665115609364" duration="2194000" />
+      <workItem from="1665117844034" duration="1824000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

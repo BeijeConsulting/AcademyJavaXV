@@ -77,21 +77,19 @@ public class EcommerceJPA {
 
 		Item newItem = new Item();
 		newItem.setOrderId(order.getId());
+		newItem.setProductId(product.getId());
 		newItem.setName(product.getName());
 		newItem.setDesc(orderDescription);
-		newItem.setPrice( cart.numberOfProductInCart(product) * ( product.getPrice() - cart.singleProductDiscountAmount(product) ) ); //
-
-		newItem.setQuantity(numOfProductsInCart); // --> Add to order and remove from Warehouse
+		newItem.setPrice( cart.numberOfProductInCart(product) * ( product.getPrice() - cart.singleProductDiscountAmount(product) ) ); // price is composed of: ( (Price of single product - (discount on that product)) * numOfProducts in cart ) -
+		newItem.setQuantity(cart.numberOfProductInCart(product)); // --> Add to order and remove from Warehouse
+		newItem.setPromo(order.getPromo()); // total promo of single order. This is not the promo for each single item.
 
 		//Update number of items of product in "Warehouse"
-		int quantity = product.getQuantity() -;
-		updateProduct(entityManager, product, null, quantity );
+		int newTotalQuantity = product.getQuantity() - cart.numberOfProductInCart(product);
+		updateProduct(entityManager, product, null, newTotalQuantity );
 
-
-
-
-
-
+		entityManager.persist(newItem);
+		entityTransaction.commit();
 
 
 	}

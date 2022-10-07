@@ -1,30 +1,19 @@
-<%@page import="java.time.LocalDateTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>WELCOME PAGE</title>
+<title>My Profile</title>
 </head>
 <body>
-
 <%
-//String fname = request.getParameter("fname");
-//String lname = request.getParameter("lname");
-
 String fname = (String) session.getAttribute("fname");
 String lname = (String) session.getAttribute("lname");
-
-
-System.out.print(fname);
-System.out.print(lname);
-int x = 10+5;
-String timestamp = LocalDateTime.now().toString();
 %>
 
-<strong><%= timestamp %></strong>
 <br>
+QUESTE LE TUE CREDENZIALI<br><br>
 FIRST NAME : <%= fname %><br>
 LAST NAME : <%= lname %>
 

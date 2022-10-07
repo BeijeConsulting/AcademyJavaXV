@@ -18,7 +18,7 @@ public class EcommerceJPA {
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
-		int orderId =4;
+		int orderId =3;
 		Order order = entityManager.find(Order.class, orderId);
 		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+orderId);
 		System.out.println(query.getResultList());

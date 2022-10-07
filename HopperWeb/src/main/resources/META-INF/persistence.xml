@@ -10,10 +10,10 @@
 
 
 
-		<class>main.java.ecommerceMod.items.Item</class>
-		<class>main.java.ecommerceMod.items.Order</class>
-		<class>main.java.ecommerceMod.items.Product</class>
-		<class>main.java.ecommerceMod.items.User</class>
+		<class>it.beije.hopper.ecommerceMod.items.Item</class>
+		<class>it.beije.hopper.ecommerceMod.items.Order</class>
+		<class>it.beije.hopper.ecommerceMod.items.Product</class>
+		<class>it.beije.hopper.ecommerceMod.items.User</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 		<properties>

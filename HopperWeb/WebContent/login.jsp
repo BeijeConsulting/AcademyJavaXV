@@ -1,5 +1,6 @@
+<%@page import="it.beije.hopper.web.ecommerce.ECommerceComando"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -24,13 +25,19 @@ if (error != null) {
 
 <p style="color: red">
 <%
+ECommerceComando.login();
+
 String error = (String) session.getAttribute("errore");
 if (error != null) {
 	out.print(error);
 	session.removeAttribute("errore");
 }
+
+
 %>
 </p>
+
+
 
 <form action="./login" method="post">
   <label for="username">Username:</label><br>

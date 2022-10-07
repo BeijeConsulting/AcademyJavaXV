@@ -1,6 +1,6 @@
 package ecommerceMod;
 
-import it.beije.hopper.ecommerceMod.items.*;
+import ecommerceMod.items.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -56,8 +56,6 @@ public class EcommerceJPA {
 
 //ADD USER
 //ADD PRODUCT
-
-
 
 	public static void addProductToCart(EntityManager entityManager, Product product, Integer discountPercentage){
 //		Double discount...
@@ -221,4 +219,19 @@ public class EcommerceJPA {
 		List<User> users = query.getResultList();
 		return users;
 	}
+
+
+
+	public static boolean login(String email, String psw, EntityManager entityManager) {
+		Query query = entityManager.createQuery("SELECT u FROM User as u");
+		List<User> listaUsers = query.getResultList();
+		for (int i = 0; i < listaUsers.size(); i++) {
+			if (listaUsers.get(i).getEmail().equalsIgnoreCase(email) && listaUsers.get(i).getPassword().equals(psw)) {
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
+

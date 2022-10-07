@@ -28,30 +28,30 @@ public class EcommerceJPA {
 
 		System.out.println("-------------------------");
 
-
-		Query query1 = entityManager.createQuery("SELECT p FROM Product as p");
-		for( Product product : (ArrayList<Product>)query1.getResultList() ){
-			System.out.println("Product: " + product);
-		}
-
-
-		User testUsr = getUser(entityManager, "miky@gmail.com");
-		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
-		Product testProduct2 = getProduct(entityManager, "", 2);
-		System.out.println("Test Usr: " + testUsr);
-		System.out.println("TestProduct: " + testProduct);
-		System.out.println("TestProduct2: " + testProduct2);
-
-		Cart cart = new Cart();
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		System.out.println(cart);
-
-		System.out.println(cart.getAllItemsInCart());
+//
+//		Query query1 = entityManager.createQuery("SELECT p FROM Product as p");
+//		for( Product product : (ArrayList<Product>)query1.getResultList() ){
+//			System.out.println("Product: " + product);
+//		}
+//
+//
+//		User testUsr = getUser(entityManager, "miky@gmail.com");
+//		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
+//		Product testProduct2 = getProduct(entityManager, "", 2);
+//		System.out.println("Test Usr: " + testUsr);
+//		System.out.println("TestProduct: " + testProduct);
+//		System.out.println("TestProduct2: " + testProduct2);
+//
+//		Cart cart = new Cart();
+//		cart.addProduct(testProduct, 50.0);
+//		cart.addProduct(testProduct, 50.0);
+//		cart.addProduct(testProduct, 50.0);
+//		cart.addProduct(testProduct2, 5.0);
+//		cart.addProduct(testProduct2, 5.0);
+//		cart.addProduct(testProduct2, 5.0);
+//		System.out.println(cart);
+//
+//		System.out.println(cart.getAllItemsInCart());
 		entityManager.close();
 	}
 
@@ -88,6 +88,7 @@ public class EcommerceJPA {
 		updateProduct(entityManager, product, null, newTotalQuantity );
 
 		entityManager.persist(newItem);
+
 		entityTransaction.commit();
 
 
@@ -124,9 +125,11 @@ public class EcommerceJPA {
 
 		//extract all orders from cart and add them on order-item table
 		Iterator<Product> products = cart.getAllItemsInCart().iterator();
-
+		/*
+		addOrderItem(EntityManager entityManager, Order order, User user, Product product, Cart cart, String orderDescription)
+		* */
 		while(products.hasNext()){
-
+			//addOrderItem(entityManager, newOrder, user, product, cart, );
 		}
 
 

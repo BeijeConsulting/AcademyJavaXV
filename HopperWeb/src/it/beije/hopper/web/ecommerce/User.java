@@ -1,4 +1,4 @@
-package it.beije.hopper.ecommerce;
+package it.beije.hopper.web.ecommerce;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -11,6 +11,27 @@
 <body>
 
 <h1>Benvenuti nel nostro ecommerce</h1>
+<% 
+	//String fname = request.getParameter("fname");
+	//String lname = request.getParameter("lname");
+	
+	String fname = (String) session.getAttribute("fname");
+	String lname = (String) session.getAttribute("lname");
+	
+	//System.out.println( (String) session.getAttribute("fname") );
+	//System.out.println( (String) session.getAttribute("lname") ) ;
+	
+	String error = (String) session.getAttribute("errore");
+	
+	if (error != null) {
+	out.print(error);
+	session.removeAttribute("errore");
+	
+	}else{ 
+		%>FIRST NAME : <%= fname %><br> 
+		LAST NAME : <%= lname %><br><% 
+	}
+%>
 
 
 
@@ -22,11 +43,16 @@
 	}
 %>
 
-<form action="../loginEcommerce" method="post">
-  <input type="submit" value="Login">
-</form>
 
-<form action="../registerEcommerce" method="post">
+
+	<form action="../loginEcommerce" method="post">
+		<label for="username">Username:</label><br> 
+		<input type="text"name="username" value=""><br> <label for="password">Password:</label><br>
+		<input type="password" name="password" value=""><br>
+		<input type="submit" value="Login">
+	</form>
+
+	<form action="../registerEcommerce" method="post">
   <input type="submit" value="Register">
 </form>
 

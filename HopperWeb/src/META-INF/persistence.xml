@@ -3,6 +3,7 @@
 	<persistence-unit name="hopper">
 
 		<class>it.beije.hopper.web.ecommerce.Product</class>
+		<class>it.beije.hopper.web.ecommerce.User</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		

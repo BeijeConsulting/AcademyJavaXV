@@ -41,8 +41,11 @@ public class LoginServlet extends HttpServlet {
 			//verifico credenziali su DB...
 			if (username.equalsIgnoreCase("pippo") && password.equalsIgnoreCase("1234")) { //OK
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
+				System.out.println("Entro");
 				session.setAttribute("fname", "Pippo");
 				session.setAttribute("lname", "Rossi");
+				String s = (String) session.getAttribute("fname");
+				System.out.println(s);
 				page = "welcome.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");

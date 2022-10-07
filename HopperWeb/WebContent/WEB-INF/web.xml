@@ -29,4 +29,14 @@
     <servlet-name>StampaRubrica</servlet-name>
     <url-pattern>/StampaRubrica</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginEcommerce</display-name>
+    <servlet-name>LoginEcommerce</servlet-name>
+    <servlet-class>it.beije.hopper.web.ecommerce.LoginEcommerce</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginEcommerce</servlet-name>
+    <url-pattern>/LoginEcommerce</url-pattern>
+  </servlet-mapping>
 </web-app>

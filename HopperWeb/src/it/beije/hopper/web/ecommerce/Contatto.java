@@ -1,4 +1,4 @@
-package it.beije.hopper.web.ecommerce;
+package it.beije.hopper;
 
 import java.util.List;
 

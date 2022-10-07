@@ -10,11 +10,11 @@
 <body>
 
 <%
-//String fname = request.getParameter("fname");
-//String lname = request.getParameter("lname");
+String fname = request.getParameter("fname");
+String lname = request.getParameter("lname");
 
-String fname = (String) session.getAttribute("fname");
-String lname = (String) session.getAttribute("lname");
+//System.out.println( (String) session.getAttribute("fname") );
+//System.out.println( (String) session.getAttribute("lname") ) ;
 
 
 System.out.print(fname);

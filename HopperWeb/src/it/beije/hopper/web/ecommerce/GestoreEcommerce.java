@@ -1,4 +1,4 @@
-package it.beije.hopper.web.ecommerce;
+package it.beije.hopper.ecommerce;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -10,17 +10,18 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
+import it.beije.hopper.rubrica.JPAEntityManagerFactory;
 
 public class GestoreEcommerce {
 
     public static void main(String[] args) {
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
-        EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
         login();
     }
 
     static private void addUser() {
-    	 EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
 
         EntityTransaction transaction=entityManager.getTransaction();
         transaction.begin();
@@ -43,7 +44,7 @@ public class GestoreEcommerce {
     }
 
     static private void addProduct() {
-    	 EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
 
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
@@ -72,7 +73,7 @@ public class GestoreEcommerce {
     }
 
     static private void order(int id) {
-    	 EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
 
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
@@ -149,7 +150,7 @@ public class GestoreEcommerce {
     }
 
     static private void orderItems(Order order, List<Product> product) {
-    	 EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
         EntityTransaction transaction=entityManager.getTransaction();
 
         Item item;
@@ -187,7 +188,7 @@ public class GestoreEcommerce {
 
     static private void login() {
 
-    	EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager=JPAEntityManagerFactory.openSession();
         EntityTransaction transaction=entityManager.getTransaction();
 
         transaction.begin();
@@ -214,12 +215,10 @@ public class GestoreEcommerce {
 
     static private void stampaProdotti() {
 
-    	 EntityManager entityManager = JPAEntityManager.getConnection();
+        EntityManager entityManager = JPAEntityManagerFactory.openSession();
 
         Query query=entityManager.createQuery("SELECT p FROM Product as p");
         List<Product> product=query.getResultList();
-        if(product == null) System.out.println("Null");
-        if(product.get(0) == null) System.out.println("Null");
 
         for(Product u: product)
             System.out.println(u);

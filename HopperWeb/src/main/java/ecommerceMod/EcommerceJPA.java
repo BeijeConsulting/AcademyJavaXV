@@ -13,7 +13,7 @@ public class EcommerceJPA {
 
 	public static void main(String[] args) {
 
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
 
 		int orderId =4;

@@ -129,7 +129,7 @@ public class EcommerceJPA {
 		addOrderItem(EntityManager entityManager, Order order, User user, Product product, Cart cart, String orderDescription)
 		* */
 		while(products.hasNext()){
-			//addOrderItem(entityManager, newOrder, user, product, cart, );
+			addOrderItem(entityManager, newOrder, user, products.next(), cart,  "Temporary Order-Item description");
 		}
 
 

@@ -10,12 +10,10 @@
 <body>
 
 <%
-//String fname = request.getParameter("fname");
-//String lname = request.getParameter("lname");
+String fname = request.getParameter("email");
+String lname = request.getParameter("password");
 
-String fname = (String) session.getAttribute("fname");
-String lname = (String) session.getAttribute("lname");
-
+String errore=request.getParameter("errore");
 
 System.out.print(fname);
 System.out.print(lname);
@@ -26,7 +24,11 @@ String timestamp = LocalDateTime.now().toString();
 <strong><%= timestamp %></strong>
 <br>
 FIRST NAME : <%= fname %><br>
-LAST NAME : <%= lname %>
+LAST NAME : <%= lname %><br>
+
+<form action="listaprodotti.jsp">
+    <input type="submit" value="Visualizza prodotti" />
+</form>
 
 </body>
 </html>

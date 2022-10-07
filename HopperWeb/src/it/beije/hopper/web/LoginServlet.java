@@ -1,6 +1,12 @@
 package it.beije.hopper.web;
 
 import java.io.IOException;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Query;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,52 +14,60 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.beije.hopper.ecommerceweb.JPAEntityManagerFactory;
+import it.beije.hopper.entity.User;
+
 /**
  * Servlet implementation class LoginServlet
  */
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+
+		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+		EntityTransaction transaction = entityManager.getTransaction();
+
+		transaction.begin();
+
 		System.out.println("LoginServlet doPost...");
-		
-		String username = request.getParameter("username");
+
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		System.out.println("username : " + username);
+		System.out.println("username : " + email);
 		System.out.println("password : " + password);
-		
+
 		HttpSession session = request.getSession();
 		String page = "login.jsp";
+
+		Query query = entityManager.createQuery("SELECT u FROM User u");
+		List<User> user = query.getResultList();
+
+		int i=0;
 		
-		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
-			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo") && password.equalsIgnoreCase("1234")) { //OK
-//				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-				session.setAttribute("fname", "Pippo");
-				session.setAttribute("lname", "Rossi");
-				page = "welcome.jsp";
-			} else { //KO
-				//response.sendRedirect("login.jsp?error=1");
-				session.setAttribute("errore", "CREDENZIALI ERRATE");
+		if (email != null && email.length() > 0 && password != null && password.length() > 0) {
+			// verifico credenziali su DB...
+
+			for (i = 0; i < user.size(); i++) {
+				if (email.equalsIgnoreCase(user.get(i).getEmail()) && password.equalsIgnoreCase(user.get(i).getPassword())) { // OK
+					RequestDispatcher view = request.getRequestDispatcher("welcome.jsp");
+					view.forward(request, response);
+					break;
+				} else { //KO
+					RequestDispatcher view = request.getRequestDispatcher("loginusererror.html");
+					view.forward(request, response);
+					break;
+				}
 			}
 		} else {
-			//response.sendRedirect("login.jsp?error=2");
-			session.setAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
+			// response.sendRedirect("login.jsp?error=2");
+			RequestDispatcher view = request.getRequestDispatcher("loginusererror.html");
+			view.forward(request, response);
 		}
-
-		response.sendRedirect(page);
+		
+		
 	}
-
 }

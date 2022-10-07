@@ -46,26 +46,53 @@ public class GestioneUser {
 		}
 	}
 	
-	public static User login() {
-		
-		User newUser = new User();
-		Scanner s = new Scanner(System.in);
-		int scelta = 0;
-		
-		String email;
-		String password;
-		
-		System.out.println("\n---Login---");
-		
-		System.out.print("Email: ");
-		email = s.next();
-		
-		System.out.print("Password: ");
-		password = s.next();
-		
-		User user = UserConnections.login(email, password);
-		
-		return user;
-	}
+//	public static User login() {
+//		
+//		User newUser = new User();
+//		Scanner s = new Scanner(System.in);
+//		int scelta = 0;
+//		
+//		String email;
+//		String password;
+//		
+//		System.out.println("\n---Login---");
+//		
+//		System.out.print("Email: ");
+//		email = s.next();
+//		
+//		System.out.print("Password: ");
+//		password = s.next();
+//		
+//		User user = UserConnections.login(email, password);
+//		
+//		return user;
+//	}
+	
+	 static private void login() {
+
+	        EntityManager entityManager=JPAEntityManagerFactory.openSession();
+	        EntityTransaction transaction=entityManager.getTransaction();
+
+	        transaction.begin();
+
+	        Scanner scanner = new Scanner(System.in);
+	        String email;
+	        String password;
+
+	        System.out.println("Benvenuto, inserire email e password:");
+	        System.out.print("Email: ");
+	        email=scanner.nextLine();
+	        System.out.print("Password: ");
+	        password=scanner.nextLine();
+
+	        Query query=entityManager.createQuery("SELECT u FROM User AS u WHERE u.email='"+email+"' AND u.password='"+password+"'");
+	        User user=(User)query.getResultList().get(0);
+	        if(user!=null) {
+	            System.out.println("Login avvenuto con successo!");
+	            System.out.println("Per effettuare un ordine digita 1, altrimenti digita 0");
+	            if(scanner.nextLine().equalsIgnoreCase("1"))
+	                order(user.getId());
+	        }
+	    }
 	
 }

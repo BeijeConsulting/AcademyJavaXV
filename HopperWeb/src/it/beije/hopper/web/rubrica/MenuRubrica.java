@@ -1,8 +1,7 @@
-package it.beije.hopper.web;
+package it.beije.hopper.web.rubrica;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,51 +10,43 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class FirstServlet
+ * Servlet implementation class MenuRubrica
  */
-@WebServlet("/first_servlet")
-public class FirstServlet extends HttpServlet {
+@WebServlet("/menu_rubrica")
+public class MenuRubrica extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public FirstServlet() {
-    	
-    	System.out.println("FirstServlet...");
+    public MenuRubrica() {
+        super();
+        // TODO Auto-generated constructor stub
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("FirstServlet doGet...");
-		
 		StringBuilder builder = new StringBuilder();
 		builder.append("<!DOCTYPE html>" + 
 				"<html><head><meta charset=\"ISO-8859-1\">" + 
-				"<title>First Servlet</title></head>" + 
+				"<title>Rubrica</title></head>" + 
 				"<body>" + 
-				"CIAO HOPPER! Sono la vostra prima Servlet..." + 
+				"Ciao, benvenuto nella tua rubrica, inserisci l'opzione da eseguire<br>" + 
+				"- <a href=\"./stampa_rubrica\">Visualizza rubrica</a>"+
 				"</body>" + 
 				"</html>");
 		
 		response.getWriter().append(builder.toString());
-		response.getWriter().append("Served at: ").append(LocalDateTime.now().toString());
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("FirstServlet doPost...");
-		
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
-		
-		
-		
-		response.getWriter().append("fname : ").append(fname).append("<br/> lname : ").append(lname);
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

@@ -9,4 +9,24 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>MenuRubrica</display-name>
+    <servlet-name>MenuRubrica</servlet-name>
+    <servlet-class>it.beije.hopper.web.rubrica.MenuRubrica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MenuRubrica</servlet-name>
+    <url-pattern>/MenuRubrica</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>StampaRubrica</display-name>
+    <servlet-name>StampaRubrica</servlet-name>
+    <servlet-class>it.beije.hopper.web.rubrica.StampaRubrica</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>StampaRubrica</servlet-name>
+    <url-pattern>/StampaRubrica</url-pattern>
+  </servlet-mapping>
 </web-app>

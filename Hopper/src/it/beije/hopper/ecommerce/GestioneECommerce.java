@@ -11,7 +11,9 @@ public class GestioneECommerce {
 	static User user;
 	static int[][] game;
 	public static final void main(String[] args)  {
-		seeMenu();
+		
+		GestioneUser.addUser();
+		//seeMenu();
 
 	}
 	

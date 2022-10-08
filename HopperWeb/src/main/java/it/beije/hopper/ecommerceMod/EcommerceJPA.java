@@ -83,8 +83,8 @@ public class EcommerceJPA {
 	public static void addOrderItem(EntityManager entityManager, Order order, User user, Product product ,
 									 Cart cart, String orderDescription, Double promoOrder){
 
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
+//		EntityTransaction entityTransaction = entityManager.getTransaction();
+//		entityTransaction.begin();
 
 		Item newItem = new Item();
 		newItem.setOrderId(order.getId());
@@ -101,8 +101,8 @@ public class EcommerceJPA {
 		updateProduct(entityManager, product, null, newTotalQuantity );
 
 
-
-		entityTransaction.commit();
+//
+//		entityTransaction.commit();
 
 
 	}
@@ -131,10 +131,6 @@ public class EcommerceJPA {
 
 
 
-//		 //Add this later??
-
-
-
 		Iterator<Product> products = cart.getAllItemsInCart().iterator();
 		//Calculate total promo and Set promo
 		//promo = (objectType0-Promo*#Objectype0)+...+(objectType(n-1)-Promo*#Objectype(n-1))
@@ -149,8 +145,8 @@ public class EcommerceJPA {
 		newOrder.setPromo(promoSingleItems);
 
 		entityManager.persist(newOrder);
-		System.out.println("In addOrder (order):"+newOrder);
-		entityTransaction.commit();
+		System.out.println("In addOrder (order) PT1:"+newOrder);
+//		entityTransaction.commit();
 
 		//extract all orders from cart and add them on order-item table
 		products = cart.getAllItemsInCart().iterator();
@@ -159,12 +155,16 @@ public class EcommerceJPA {
 		* */
 		//update order-items table
 		while(products.hasNext()){
-
 			addOrderItem(entityManager, newOrder, user, products.next(), cart,  "Temporary Order-Item description", promoOrder);
 		}
 
+		entityTransaction.commit();
 
 
+		// ------- Order done -----
+		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+newOrder.getId());
+		newOrder.setItems( query.getResultList() );
+		System.out.println("In addOrder (order) Aftercommit:"+newOrder);
 
 
 //		Order order = entityManager.find(Order.class, orderId);
@@ -193,10 +193,10 @@ public class EcommerceJPA {
 	}
 
 	public static void updateProduct(EntityManager entityManager, Product product,  Double newPrice, Integer newQuantity){
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		if( !entityTransaction.isActive() ){
-			entityTransaction.begin();
-		}
+//		EntityTransaction entityTransaction = entityManager.getTransaction();
+//		if( !entityTransaction.isActive() ){
+//			entityTransaction.begin();
+//		}
 
 
 		//modifyPrice
@@ -208,7 +208,7 @@ public class EcommerceJPA {
 			product.setQuantity(newQuantity);
 		}
 		entityManager.persist(product);
-		entityTransaction.commit();
+//		entityTransaction.commit();
 	}
 //
 //	public static void addProduct(EntityManager entityManager, String name, String desc, Double price, Integer quantity, Integer rating ){

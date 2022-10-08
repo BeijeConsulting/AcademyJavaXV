@@ -1,0 +1,26 @@
+public static VostroOggettoDocumento parse(String file) {...}
+
+che restituirà appunto un VostroOggettoDocumento (nome che deciderete voi). DONE --> XMLload
+
+I metodi da implementare sono:
+
+//DONE --> XMLnode getRoot()
+getRootElement() //torna l'elemento root
+ 
+getChildNodes() //torna tutti i nodi "figli" interni all'elemento su cui viene eseguito
+
+//DONE
+getChildElements() //torna i soli elementi figli dell'elemento su cui viene eseguitox
+
+getElementsByTagName(String tagName) //torna TUTTI gli elementi con quello specifico nome
+
+//DONE
+getTagName() //torna il nome del tag
+
+//DONE???
+getTextContent() //torna il contenuto del tag
+
+//DONE
+getAttributes() //torna l'elenco degli attributi dell'elemento
+//DONE
+getAttribute(String attribute) //torna il valore dell'attributo specificato

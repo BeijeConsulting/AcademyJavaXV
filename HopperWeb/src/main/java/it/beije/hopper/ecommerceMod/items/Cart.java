@@ -27,14 +27,6 @@ public class Cart {
         return numOfProductsMap.keySet();
     }
 
-    //Total cost of the cart
-    public Double totalCostofCart(){
-        Double total = 0.0;
-        for(Product product : numOfProductsMap.keySet()){
-            total+= totalCostOfProducttype(product);
-        }
-        return total;
-    }
 
 
     public Integer numberOfProductInCart(Product product){
@@ -59,6 +51,16 @@ public class Cart {
         }
         return outProducts.toString();
     }
+
+    //Total cost of the cart
+    public Double totalCostofCart(){
+        Double total = 0.0;
+        for(Product product : numOfProductsMap.keySet()){
+            total+= totalCostOfProducttype(product);
+        }
+        return total;
+    }
+
 
     //returns the total amount/cost of the products of type "product" in the cart.
     private Double totalCostOfProducttype( Product product){

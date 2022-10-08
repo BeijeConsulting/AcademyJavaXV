@@ -28,30 +28,42 @@ public class EcommerceJPA {
 
 		System.out.println("-------------------------");
 
-//
-//		Query query1 = entityManager.createQuery("SELECT p FROM Product as p");
-//		for( Product product : (ArrayList<Product>)query1.getResultList() ){
-//			System.out.println("Product: " + product);
-//		}
-//
-//
-//		User testUsr = getUser(entityManager, "miky@gmail.com");
-//		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
-//		Product testProduct2 = getProduct(entityManager, "", 2);
-//		System.out.println("Test Usr: " + testUsr);
-//		System.out.println("TestProduct: " + testProduct);
-//		System.out.println("TestProduct2: " + testProduct2);
-//
-//		Cart cart = new Cart();
-//		cart.addProduct(testProduct, 50.0);
-//		cart.addProduct(testProduct, 50.0);
-//		cart.addProduct(testProduct, 50.0);
-//		cart.addProduct(testProduct2, 5.0);
-//		cart.addProduct(testProduct2, 5.0);
-//		cart.addProduct(testProduct2, 5.0);
-//		System.out.println(cart);
-//
-//		System.out.println(cart.getAllItemsInCart());
+
+		Query query1 = entityManager.createQuery("SELECT p FROM Product as p");
+		for( Product product : (ArrayList<Product>)query1.getResultList() ){
+			System.out.println("Product: " + product);
+		}
+
+
+		User testUsr = getUser(entityManager, "miky@gmail.com");
+		Product testProduct = getProduct(entityManager, "Scarpe Nike", null);
+		Product testProduct2 = getProduct(entityManager, "", 2);
+		System.out.println("Test Usr: " + testUsr);
+		System.out.println("TestProduct: " + testProduct);
+		System.out.println("TestProduct2: " + testProduct2);
+
+		Cart cart = new Cart();
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		cart.addProduct(testProduct2, 5.0);
+		System.out.println(cart);
+
+		System.out.println(cart.getAllItemsInCart());
+
+		System.out.println("-----------------------------------");
+		/*
+		addOrder(EntityManager entityManager, Cart cart, User user,
+								LocalDateTime dateTime, Double promoOrder){
+		* */
+		LocalDateTime testDateTime = LocalDateTime.now();
+		addOrder( entityManager, cart, testUsr,  testDateTime, 1.0);
+
 		entityManager.close();
 	}
 
@@ -69,7 +81,7 @@ public class EcommerceJPA {
 
 	//Insert/Add Order-Item in the DB (after
 	public static void addOrderItem(EntityManager entityManager, Order order, User user, Product product ,
-									 Cart cart, String orderDescription){
+									 Cart cart, String orderDescription, Double promoOrder){
 
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -81,13 +93,14 @@ public class EcommerceJPA {
 		newItem.setDesc(orderDescription);
 		newItem.setPrice( cart.numberOfProductInCart(product) * ( product.getPrice() - cart.singleProductDiscountAmount(product) ) ); // price is composed of: ( (Price of single product - (discount on that product)) * numOfProducts in cart ) -
 		newItem.setQuantity(cart.numberOfProductInCart(product)); // --> Add to order and remove from Warehouse
-		newItem.setPromo(order.getPromo()); // total promo of single order. This is not the promo for each single item.
+		newItem.setPromo(promoOrder); // total promo of single order. This is not the promo for each single item.
 
 		//Update number of items of product in "Warehouse"
 		int newTotalQuantity = product.getQuantity() - cart.numberOfProductInCart(product);
+		entityManager.persist(newItem);
 		updateProduct(entityManager, product, null, newTotalQuantity );
 
-		entityManager.persist(newItem);
+
 
 		entityTransaction.commit();
 
@@ -104,7 +117,7 @@ public class EcommerceJPA {
 	*/
 	//TODO: fix promo to percentage of totalItemtype --> Double.
 	public static void addOrder(EntityManager entityManager, Cart cart, User user,
-								LocalDateTime dateTime, Double promo){
+								LocalDateTime dateTime, Double promoOrder){
 
 		EntityTransaction entityTransaction =  entityManager.getTransaction();
 		entityTransaction.begin();
@@ -115,26 +128,44 @@ public class EcommerceJPA {
 
 		newOrder.setUserId(user.getId());
 		newOrder.setDatetime(dateTime);
-		newOrder.setAmount(cart.totalCostofCart()-promo);
-		newOrder.setPromo(promo);
+
+
+
+//		 //Add this later??
+
+
+
+		Iterator<Product> products = cart.getAllItemsInCart().iterator();
+		//Calculate total promo and Set promo
+		//promo = (objectType0-Promo*#Objectype0)+...+(objectType(n-1)-Promo*#Objectype(n-1))
+
+		Double promoSingleItems = 0.0;
+		while(products.hasNext()){
+			Product tmpProd = products.next();
+			promoSingleItems += ( cart.singleProductDiscountAmount(tmpProd) * cart.numberOfProductInCart(tmpProd));
+		}
+
+		newOrder.setAmount(cart.totalCostofCart()-( promoSingleItems+promoOrder ));
+		newOrder.setPromo(promoSingleItems);
 
 		entityManager.persist(newOrder);
 		System.out.println("In addOrder (order):"+newOrder);
-//		entityTransaction.commit(); //Add this later??
-
+		entityTransaction.commit();
 
 		//extract all orders from cart and add them on order-item table
-		Iterator<Product> products = cart.getAllItemsInCart().iterator();
+		products = cart.getAllItemsInCart().iterator();
 		/*
 		addOrderItem(EntityManager entityManager, Order order, User user, Product product, Cart cart, String orderDescription)
 		* */
+		//update order-items table
 		while(products.hasNext()){
-			addOrderItem(entityManager, newOrder, user, products.next(), cart,  "Temporary Order-Item description");
+
+			addOrderItem(entityManager, newOrder, user, products.next(), cart,  "Temporary Order-Item description", promoOrder);
 		}
 
 
 
-		//update order-items table
+
 
 //		Order order = entityManager.find(Order.class, orderId);
 //		Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE order_id="+orderId);
@@ -163,7 +194,10 @@ public class EcommerceJPA {
 
 	public static void updateProduct(EntityManager entityManager, Product product,  Double newPrice, Integer newQuantity){
 		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
+		if( !entityTransaction.isActive() ){
+			entityTransaction.begin();
+		}
+
 
 		//modifyPrice
 		if( newPrice != null){

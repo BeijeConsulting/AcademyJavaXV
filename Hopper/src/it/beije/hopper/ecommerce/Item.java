@@ -130,7 +130,7 @@ public class Item {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{ id : ").append(this.id)
+				.append("{ ")
 				.append(", orderId : ").append(this.orderId)
 				.append(", productId : ").append(this.productId)
 				.append(", name : ").append(this.name)

@@ -95,13 +95,11 @@ public class Product {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{ id : ").append(this.id)
-				.append(", name : ").append(this.name)
-				.append(", desc : ").append(this.desc)
+				.append("Name : ").append(this.name)
+				.append(", description : ").append(this.desc)
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
-				.append(", rating : ").append(this.rating)
-				.append(" }");
+				.append(", rating : ").append(this.rating);
 		
 		return builder.toString();
 	}

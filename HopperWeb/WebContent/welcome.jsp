@@ -1,4 +1,6 @@
 <%@page import="java.time.LocalDateTime"%>
+<%@ page import="jakarta.persistence.EntityManagerFactory" %>
+<%@ page import="jakarta.persistence.Persistence" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -16,9 +18,10 @@
 String fname = (String) session.getAttribute("fname");
 String lname = (String) session.getAttribute("lname");
 
+EntityManagerFactory e = Persistence.createEntityManagerFactory("HopperWeb");
 
-System.out.print(fname);
-System.out.print(lname);
+//System.out.print(fname);
+//System.out.print(lname);
 int x = 10+5;
 String timestamp = LocalDateTime.now().toString();
 %>

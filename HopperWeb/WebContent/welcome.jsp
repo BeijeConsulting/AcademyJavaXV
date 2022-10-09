@@ -1,6 +1,6 @@
 <%@page import="java.time.LocalDateTime"%>
-<%@ page import="jakarta.persistence.EntityManagerFactory" %>
-<%@ page import="jakarta.persistence.Persistence" %>
+<%@ page import="jakarta.persistence.*" %>
+<%@ page import="java.util.List" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -18,7 +18,18 @@
 String fname = (String) session.getAttribute("fname");
 String lname = (String) session.getAttribute("lname");
 
-EntityManagerFactory e = Persistence.createEntityManagerFactory("HopperWeb");
+    EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+    EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+    List a = entityManager.createNativeQuery("SELECT * FROM order_items").getResultList();
+   // System.out.println(a.size());
+   // System.out.println(a);
+    EntityTransaction entityTransaction = entityManager.getTransaction();
+    entityTransaction.begin();
+
+
+    entityTransaction.commit();
+    entityManager.close();
 
 //System.out.print(fname);
 //System.out.print(lname);
@@ -29,7 +40,7 @@ String timestamp = LocalDateTime.now().toString();
 <strong><%= timestamp %></strong>
 <br>
 FIRST NAME : <%= fname %><br>
-LAST NAME : <%= lname %>
-
+LAST NAME : <%= lname %><br>
+LIST : <%= a %>
 </body>
 </html>

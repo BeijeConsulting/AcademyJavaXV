@@ -1,15 +1,30 @@
 package it.beije.xv.esercizi.TestEL;
 
 
+class ScopeTest {
 
-class C {
-        public static void main(String[] args){
-////                new C().crazyLoop();
-//                double d = 2.0;
-//                int i = 3;
-//                boolean bool = d<i;
-//                System.out.println(bool);
 
+    public static void ifTest(boolean flag){
+        if (flag)   //1
+            if (flag)   //2
+                if (flag)   //3
+                    System.out.println("False True");
+                else        //4
+                    System.out.println("True False");
+            else        //5
+                System.out.println("True True");
+        else        //6
+            System.out.println("False False");
+    }
+
+    public static void main(String args[]) {
+        ifTest(true);
+    }
+
+}
+//class prova{
+//
+//        public static void main(String[] args){
 //
 //                boolean b1 = false;
 //                boolean b2  = false;
@@ -18,28 +33,48 @@ class C {
 //                } else{
 //                        System.out.println("false");
 //                }
-
-
-//                String s = "blooper";
-//                StringBuilder sb = new StringBuilder(s);
-////                sb.append(s.substring(4)).delete(3, 5);
-//                sb.substring(2);
-//                System.out.println(sb);
-//                Integer i = 0;
-//                i++;
-//                System.out.println(i);
-                Double d = 0.0;
-                System.out.println(--d);
-        }
-//        void crazyLoop(){
-//                int c=0;
-//                JACK:while(c< 8){
-//                        JILL:System.out.println(c);
-//                        if(c>3)break JACK;else c++;
-//                }
+//
 //        }
+//}
 
-}
+//class C {
+//        public static void main(String[] args){
+//////                new C().crazyLoop();
+////                double d = 2.0;
+////                int i = 3;
+////                boolean bool = d<i;
+////                System.out.println(bool);
+//
+////
+////                boolean b1 = false;
+////                boolean b2  = false;
+////                if (b2 = b1 == false){
+////                        System.out.println("true");
+////                } else{
+////                        System.out.println("false");
+////                }
+//
+//
+////                String s = "blooper";
+////                StringBuilder sb = new StringBuilder(s);
+//////                sb.append(s.substring(4)).delete(3, 5);
+////                sb.substring(2);
+////                System.out.println(sb);
+////                Integer i = 0;
+////                i++;
+////                System.out.println(i);
+//                Double d = 0.0;
+//                System.out.println(--d);
+//        }
+////        void crazyLoop(){
+////                int c=0;
+////                JACK:while(c< 8){
+////                        JILL:System.out.println(c);
+////                        if(c>3)break JACK;else c++;
+////                }
+////        }
+//
+//}
 
 //
 //class PE extends Exception{}

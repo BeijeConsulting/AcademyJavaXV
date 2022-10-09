@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/CreatingDatesAndTimes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/FormattingDatesAndTimes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/ManipulatingDatesAndTimes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/date_and_time/WorkingWithPeriods.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/src/it/beije/hopper/ecommerceMod/EcommerceJPA.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperWeb/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperWeb/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,20 +63,7 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.WorkingWithPeriods">
-    <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.C" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.ScopeTest">
     <configuration name="CreatingDatesAndTimes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.CreatingDatesAndTimes" />
       <module name="Esercizi" />
@@ -108,8 +90,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Soccer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Soccer" />
+    <configuration name="ScopeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ScopeTest" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -134,13 +116,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="prova" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.prova" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ScopeTest" />
+        <item itemvalue="Application.prova" />
         <item itemvalue="Application.WorkingWithPeriods" />
         <item itemvalue="Application.ManipulatingDatesAndTimes" />
         <item itemvalue="Application.CreatingDatesAndTimes" />
-        <item itemvalue="Application.C" />
-        <item itemvalue="Application.Soccer" />
       </list>
     </recent_temporary>
   </component>
@@ -165,6 +160,7 @@
       <workItem from="1665059748436" duration="688000" />
       <workItem from="1665115609364" duration="2194000" />
       <workItem from="1665117844034" duration="1824000" />
+      <workItem from="1665262275658" duration="3543000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
@@ -210,7 +206,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>148</line>
+          <line>183</line>
           <properties class="it.beije.xv.esercizi.TestEL.Car">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -219,7 +215,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>161</line>
+          <line>196</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

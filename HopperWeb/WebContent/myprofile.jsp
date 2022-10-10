@@ -1,4 +1,4 @@
-<%@page import="it.beije.hopper.web.User"%>
+<%@page import="it.beije.hopper.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:useBean id="loggedUser" class="it.beije.hopper.web.User" scope="session"></jsp:useBean>
+<jsp:useBean id="loggedUser" class="it.beije.hopper.entity.User" scope="session"></jsp:useBean>
 <%
 /* jsp:useBean EQUIVALE A
 User loggedUser = (User) session.getAttribute("loggedUser");
@@ -28,8 +28,8 @@ System.out.println("loggedUser : " + loggedUser);
 
 <br>
 QUESTE LE TUE CREDENZIALI<br><br>
-FIRST NAME : <%= loggedUser.getFirstName() %><br>
-LAST NAME : <%= loggedUser.getLastName() %>
+FIRST NAME : <%= loggedUser.getName() %><br>
+LAST NAME : <%= loggedUser.getSurname() %>
 
 </body>
 </html>

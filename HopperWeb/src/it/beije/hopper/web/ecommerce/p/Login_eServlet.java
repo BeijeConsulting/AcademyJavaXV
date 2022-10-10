@@ -66,11 +66,16 @@ public class Login_eServlet extends HttpServlet {
 				session.setAttribute("fname",u.getName());
 				session.setAttribute("lname", u.getSurname());
 					}
-					Query query1 = entityManager.createQuery("SELECT p FROM Product as p");//SELECT * FROM rubrica
-					List<Product> product = query1.getResultList();
-					request.setAttribute("product", product);
+					
+				
 					
 				page = "product.jsp";
+				
+				Query query1 = entityManager.createQuery("SELECT p FROM Product as p");//SELECT * FROM rubrica
+				List<Product> product = query1.getResultList();
+				
+					session.setAttribute("prod", product);
+				
 			} else{  //KO
 				session.setAttribute("errore", "CREDENZIALI ERRATE");
 			}

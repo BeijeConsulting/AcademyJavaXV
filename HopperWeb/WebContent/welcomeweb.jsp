@@ -1,4 +1,4 @@
-<%@page import="java.time.LocalDateTime"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,13 +10,15 @@
 <body>
 
 <%
-String fname = request.getParameter("email");
-String password = request.getParameter("password");
+//String fname = request.getParameter("email");
+//String password = request.getParameter("password");
 
+String email=(String)session.getAttribute("email");
+String password=(String)session.getAttribute("password");
 %>
 
 
-FIRST NAME : <%= fname %><br>
+FIRST NAME : <%= email %><br>
 Password : <%= password %><br>
 <br>
 

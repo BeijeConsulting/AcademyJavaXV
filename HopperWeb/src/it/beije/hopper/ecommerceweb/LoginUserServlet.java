@@ -23,7 +23,6 @@ import it.beije.hopper.entity.User;
 public class LoginUserServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
@@ -36,37 +35,44 @@ public class LoginUserServlet extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		System.out.println("username : " + email);
-		System.out.println("password : " + password);
-		HttpServlet session;;
-		
+		HttpSession session = request.getSession();
+
 		Query query = entityManager.createQuery("SELECT u FROM User u");
 		List<User> user = query.getResultList();
 
-		int i=0;
-		
+		String loc = "";
 		if (email != null && email.length() > 0 && password != null && password.length() > 0) {
 			// verifico credenziali su DB...
 
-			for (i = 0; i < user.size();) {
-				if (email.equalsIgnoreCase(user.get(i).getEmail()) && password.equalsIgnoreCase(user.get(i).getPassword())) { // OK
-					RequestDispatcher view = request.getRequestDispatcher("welcome.jsp");
-					
-					view.forward(request, response);
+			for (int i = 0; i < user.size();) {
+				if (email.equalsIgnoreCase(user.get(i).getEmail())
+						&& password.equalsIgnoreCase(user.get(i).getPassword())) { // OK
+//					RequestDispatcher view = request.getRequestDispatcher("welcomeweb.jsp");	
+//					view.forward(request, response);
+					System.out.println("username : " + email);
+					System.out.println("password : " + password);
+					session.setAttribute("password", password);
+					session.setAttribute("email", email);
+					loc = "welcomeweb.jsp";
 					break;
-				} else { //KO
+
+				} else { // KO
 //					RequestDispatcher view = request.getRequestDispatcher("loginusererror.html");
 //					view.forward(request, response);
 //					break;
-					
+					session.setAttribute("error", "error");
+					loc = "loguser.jsp";
+					break;
 				}
 			}
 		} else {
-			// response.sendRedirect("login.jsp?error=2");
-			RequestDispatcher view = request.getRequestDispatcher("loginusererror.html");
-			view.forward(request, response);
+//			response.sendRedirect("loguser.jsp?error=2");
+//			RequestDispatcher view = request.getRequestDispatcher("loginusererror.html");
+//			view.forward(request, response);
+			session.setAttribute("error", "error");
+			loc = "loguser.jsp";
 		}
-		
-		
+
+		response.sendRedirect(loc);
 	}
 }

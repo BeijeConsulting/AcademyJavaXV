@@ -47,7 +47,7 @@ public class SignupServlet extends HttpServlet {
 			transaction.commit();
 			entityManager.close();	
 			
-			RequestDispatcher view = request.getRequestDispatcher("welcome.jsp");
+			RequestDispatcher view = request.getRequestDispatcher("welcomeweb.jsp");
 			view.forward(request, response);
 		}
 		else {

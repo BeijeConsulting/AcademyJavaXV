@@ -1,6 +1,13 @@
 package it.beije.hopper.web;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.Persistence;
+
 import java.io.IOException;
+import java.util.List;
+import java.util.Objects;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +35,22 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet doPost...");
-		
+
+
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+//		List products = entityManager.createNativeQuery("SELECT * FROM Product").getResultList();
+		List products = entityManager.createQuery("from Product p").getResultList();
+		for (Object p: products) {
+			System.out.println(p.toString());
+		}
+//		EntityTransaction entityTransaction = entityManager.getTransaction();
+//		entityTransaction.begin();
+//
+//		entityTransaction.commit();
+		entityManager.close();
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println("username : " + username);

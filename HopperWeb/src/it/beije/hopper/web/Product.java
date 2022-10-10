@@ -1,11 +1,6 @@
 package it.beije.hopper.web;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import jakarta.persistence.*;
 
 /*
 CREATE TABLE `products` (
@@ -31,8 +26,8 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
-	private String desc;
+	@Column(name = "description")
+	private String description;
 
 	@Column(name = "price")
 	private Double price;
@@ -61,11 +56,11 @@ public class Product {
 	}
 
 	public String getDesc() {
-		return desc;
+		return description;
 	}
 
 	public void setDesc(String desc) {
-		this.desc = desc;
+		this.description = desc;
 	}
 
 	public Double getPrice() {
@@ -97,7 +92,7 @@ public class Product {
 		StringBuilder builder = new StringBuilder()
 				.append("{ id : ").append(this.id)
 				.append(", name : ").append(this.name)
-				.append(", desc : ").append(this.desc)
+				.append(", desc : ").append(this.description)
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
 				.append(", rating : ").append(this.rating)

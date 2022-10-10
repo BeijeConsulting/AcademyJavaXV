@@ -1,12 +1,6 @@
 package it.beije.hopper.web;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+import jakarta.persistence.*;
 /*
 CREATE TABLE `hopper`.`users` (
   `id` INT NOT NULL AUTO_INCREMENT,

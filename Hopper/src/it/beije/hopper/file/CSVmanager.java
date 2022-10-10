@@ -38,7 +38,8 @@ public class CSVmanager {
 				System.out.println("rows["+ c + "] " + rows.get(c++));
 			}
 			
-			Contatto contatto = null;
+			Contatto contatto = new Contatto();
+			
 			for (String row : rows) {
 //				StringTokenizer tokenizer = new StringTokenizer(row, ";");
 //				System.out.println("COGNOME : " + tokenizer.nextToken());
@@ -47,11 +48,21 @@ public class CSVmanager {
 //				System.out.println("EMAIL : " + tokenizer.nextToken());
 //				System.out.println("NOTE : " + tokenizer.nextToken());
 				
+			    
 				String[] cols = row.split(";");
+				
+				
+				
+				
+				
+				
+				
+				
 //				for (String col : cols) {
 //					System.out.println(col);
 //				}
-				
+				// if (cols.length<4)
+					
 				contatto = new Contatto();
 				contatto.setCognome(cols[0]);
 				contatto.setNome(cols[1]);
@@ -108,8 +119,8 @@ public class CSVmanager {
 	}
 
 	public static void main(String[] args) throws IOException {
-		List<Contatto> contatti = readRubrica("/temp/rubrica.csv");
-		writeRubrica(contatti, "/temp/hopper_rubrica.csv");
+		List<Contatto> contatti = readRubrica("C:\\Users\\Padawan\\Documents\\Esercizi\\XMLParser\\rubrica.csv");
+		//writeRubrica(contatti, "/temp/hopper_rubrica.csv");
 	}
 
 

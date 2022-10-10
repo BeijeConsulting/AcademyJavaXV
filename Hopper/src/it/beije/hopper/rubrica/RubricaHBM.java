@@ -14,6 +14,8 @@ public class RubricaHBM {
 
 	public static void testHBM() {
 		
+		
+		
 //		Configuration configuration = new Configuration().configure()
 //				.addAnnotatedClass(Contatto.class);
 ////.addAnnotatedClass(AltraClasse.class)				

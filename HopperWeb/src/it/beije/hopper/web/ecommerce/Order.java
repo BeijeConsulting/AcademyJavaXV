@@ -1,4 +1,4 @@
-package it.beije.hopper.ecommerce;
+package it.beije.hopper.web.ecommerce;
 
 import java.time.LocalDateTime;
 import java.util.List;

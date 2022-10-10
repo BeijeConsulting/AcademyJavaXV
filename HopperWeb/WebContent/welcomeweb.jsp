@@ -18,19 +18,22 @@ button:hover {
 </style>
 <body>
 
+<jsp:useBean id="loggedUser" class="it.beije.hopper.entity.User" scope="session"></jsp:useBean>
+<jsp:setProperty property="email" name="loggedUser" param="email"/>
+<jsp:setProperty property="password" name="loggedUser" param="password"/>
+
 	<%
 	//String fname = request.getParameter("email");
 	//String password = request.getParameter("password");
-
-	String email = (String) session.getAttribute("email");
-	String password = (String) session.getAttribute("");
+	//String email = (String) session.getAttribute("email");
+	//String password = (String) session.getAttribute("");
 	%>
-
-
-	FIRST NAME :<%=email%><br> Password :<%=password%><br>
+	
+	
+	FIRST NAME :<%=loggedUser.getEmail() %><br> Password :<%=loggedUser.getPassword() %><br>
 	<br>
 
-	<form action="listaprodotti.jsp">
+	<form action="ProdServlet">
 		<button type="submit">Visualizza prodotti nello store</button>
 	</form>
 

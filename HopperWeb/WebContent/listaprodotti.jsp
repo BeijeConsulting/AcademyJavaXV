@@ -18,19 +18,15 @@
 		<h1 style="color: red">LISTA PRODOTTI</h1>
 		
 		<%
-		Carrello carrello = new Carrello();
-		int count=0;
+		Carrello carrello=new Carrello();
 		%>
 		<p>
-			Carrello:<%=count%></p>
+			Carrello:<%= carrello.size()%></p>
 		<%
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		EntityTransaction transaction = entityManager.getTransaction();
-
-		Query query = entityManager.createQuery("SELECT p FROM Product as p");
-		List<Product> product = query.getResultList();
+		List<Product> product=(List<Product>)session.getAttribute("prod");
 		for (Product p : product) {
 		%>
+		<form method="POST" action="ProdServlet">
 			<p>
 				Name:
 				<%=p.getName()%></p>
@@ -45,10 +41,11 @@
 			<p>
 				Description:
 				<%=p.getDesc()%></p>
+				<button type="submit">Add to cart</button>
 			<br>
+			
 			<br>
 		<%}%>
-
-	
+		</form>
 	</body>
 </html>

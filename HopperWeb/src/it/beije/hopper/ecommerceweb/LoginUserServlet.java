@@ -50,10 +50,8 @@ public class LoginUserServlet extends HttpServlet {
 						&& password.equalsIgnoreCase(user.get(i).getPassword())) { // OK
 //					RequestDispatcher view = request.getRequestDispatcher("welcomeweb.jsp");	
 //					view.forward(request, response);
-					System.out.println("username : " + email);
-					System.out.println("password : " + password);
-					session.setAttribute("password", password);
-					session.setAttribute("email", email);
+				
+					session.setAttribute("loggedUser", user.get(i));
 					loc = "welcomeweb.jsp";
 					break;
 

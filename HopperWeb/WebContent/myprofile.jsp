@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<jsp:useBean id="loggedUser" class="it.beije.hopper.web.User" scope="session"></jsp:useBean>
+<jsp:useBean id="loggedUser" class="it.beije.hopper.web.ecommerce.User" scope="session"></jsp:useBean>
 <%
 /* jsp:useBean EQUIVALE A
 User loggedUser = (User) session.getAttribute("loggedUser");

@@ -1,6 +1,7 @@
-package it.beije.hopper.web;
+package it.beije.hopper.web.ecommerce.p;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -11,13 +12,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import  javax.persistence.Query;
+
+import it.beije.hopper.web.ecommerce.p.JPAEntityManagerFactory;
+import it.beije.hopper.web.ecommerce.Product;
 import it.beije.hopper.web.ecommerce.User;
 
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/logine")
+public class Login_eServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 //	/**
@@ -40,33 +45,41 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("password : " + password);
 		
 		HttpSession session = request.getSession();
-		String page = "login.jsp";
+		String page = "login_e.jsp";
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
-//				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-//				session.setAttribute("fname", "Pippo");
-//				session.setAttribute("lname", "Rossi");
-				
-				User user = new User();
-				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
-				
-				System.out.println(user);
-						
-				session.setAttribute("loggedUser", user);
-				
-				page = "welcome.jsp";
-			} else { //KO
-				//response.sendRedirect("login.jsp?error=1");
+			
+			EntityManager entityManager = JPAEntityManagerFactory.openSession();
+
+			EntityTransaction entityTransaction = entityManager.getTransaction();
+			entityTransaction.begin();
+			
+			
+			
+		Query query = entityManager.createQuery("SELECT u FROM User as u WHERE email ='"+username+"'AND password ='"+password+"'");
+		 List<User> user = query.getResultList();
+	
+			//if (username.equalsIgnoreCase(u.getEmail()) && password.equalsIgnoreCase(u.getPassword())) { //OK
+				if(query.getResultList().size() != 0){
+					for (User u : user) {
+				session.setAttribute("fname",u.getName());
+				session.setAttribute("lname", u.getSurname());
+					}
+					Query query1 = entityManager.createQuery("SELECT p FROM Product as p");//SELECT * FROM rubrica
+					List<Product> product = query1.getResultList();
+					request.setAttribute("product", product);
+					
+				page = "product.jsp";
+			} else{  //KO
 				session.setAttribute("errore", "CREDENZIALI ERRATE");
 			}
+			
+		//}
 		} else {
-			//response.sendRedirect("login.jsp?error=2");
 			session.setAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
 		}
+		
 
 		response.sendRedirect(page);
 	}

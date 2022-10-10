@@ -1,6 +1,8 @@
-package it.beije.hopper.web;
+package it.beije.hopper.web.ecommerce.p;
 
 import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
@@ -11,13 +13,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import  javax.persistence.Query;
+
+import it.beije.hopper.web.ecommerce.p.JPAEntityManagerFactory;
 import it.beije.hopper.web.ecommerce.User;
 
 /**
  * Servlet implementation class LoginServlet
  */
-@WebServlet("/login")
-public class LoginServlet extends HttpServlet {
+@WebServlet("/register")
+public class RegisterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
 //	/**
@@ -34,39 +39,32 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet doPost...");
 		
-		String username = request.getParameter("username");
+		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		System.out.println("username : " + username);
-		System.out.println("password : " + password);
+		String nome = request.getParameter("nome");
+		String cognome = request.getParameter("cognome");
+	
 		
 		HttpSession session = request.getSession();
-		String page = "login.jsp";
+		String page = "registration.jsp";
 		
-		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
-			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
-//				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-//				session.setAttribute("fname", "Pippo");
-//				session.setAttribute("lname", "Rossi");
-				
-				User user = new User();
-				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
-				
-				System.out.println(user);
-						
-				session.setAttribute("loggedUser", user);
-				
-				page = "welcome.jsp";
-			} else { //KO
-				//response.sendRedirect("login.jsp?error=1");
-				session.setAttribute("errore", "CREDENZIALI ERRATE");
-			}
-		} else {
-			//response.sendRedirect("login.jsp?error=2");
-			session.setAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
-		}
+		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+		User user = new User();
+		
+		
+		user.setSurname(cognome);
+		user.setName(nome);
+		user.setEmail(email);
+		user.setPassword(password);
+		
+		entityManager.persist(user);
+		entityTransaction.commit();
+		entityManager.close();
+		page = "login_e.jsp";
+		
 
 		response.sendRedirect(page);
 	}

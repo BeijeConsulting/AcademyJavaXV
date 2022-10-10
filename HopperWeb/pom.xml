@@ -4,6 +4,7 @@
   <artifactId>HopperWeb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
+
   <build>
     <sourceDirectory>src</sourceDirectory>
     <plugins>
@@ -24,4 +25,17 @@
       </plugin>
     </plugins>
   </build>
+  
+    <dependencies>
+  	<dependency>
+  		<groupId>mysql</groupId>
+  		<artifactId>mysql-connector-java</artifactId>
+  		<version>8.0.26</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>5.4.30.Final</version>
+  	</dependency>
+  </dependencies>
 </project>

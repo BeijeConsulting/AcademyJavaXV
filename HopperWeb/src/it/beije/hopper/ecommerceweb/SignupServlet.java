@@ -41,6 +41,7 @@ public class SignupServlet extends HttpServlet {
 		String loc="";
 		System.out.println("ok");
 		if (email != null && email.length() > 0 && password != null && password.length() > 0 && nome != null && nome.length() > 0 && cognome != null && cognome.length() > 0) {
+			
 			user.setEmail(email);
 			user.setPassword(password);
 			user.setName(nome);
@@ -56,7 +57,7 @@ public class SignupServlet extends HttpServlet {
 			session.setAttribute("email",password);
 			session.setAttribute("email",nome);
 			session.setAttribute("email",cognome);
-			loc="welcome.jsp";
+			loc="welcomeweb.jsp";
 		}
 		else {
 //			RequestDispatcher view = request.getRequestDispatcher("signup_failed.html");

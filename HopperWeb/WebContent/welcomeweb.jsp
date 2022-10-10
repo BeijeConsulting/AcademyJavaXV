@@ -23,13 +23,11 @@ button:hover {
 	//String password = request.getParameter("password");
 
 	String email = (String) session.getAttribute("email");
-	String password = (String) session.getAttribute("password");
+	String password = (String) session.getAttribute("");
 	%>
 
 
-	FIRST NAME :
-	<%=email%><br> Password :
-	<%=password%><br>
+	FIRST NAME :<%=email%><br> Password :<%=password%><br>
 	<br>
 
 	<form action="listaprodotti.jsp">

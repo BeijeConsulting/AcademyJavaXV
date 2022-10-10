@@ -39,17 +39,17 @@ public class LoginServlet extends HttpServlet {
 
 		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
 		EntityManager entityManager = entityManagerFactory.createEntityManager();
-
-//		List products = entityManager.createNativeQuery("SELECT * FROM Product").getResultList();
-		List products = entityManager.createQuery("from Product p").getResultList();
-		for (Object p: products) {
-			System.out.println(p.toString());
-		}
+//
+////		List products = entityManager.createNativeQuery("SELECT * FROM Product").getResultList();
+//		List products = entityManager.createQuery("from Product p").getResultList();
+//		for (Object p: products) {
+//			System.out.println(p.toString());
+//		}
 //		EntityTransaction entityTransaction = entityManager.getTransaction();
 //		entityTransaction.begin();
 //
-//		entityTransaction.commit();
-		entityManager.close();
+////		entityTransaction.commit();
+//		entityManager.close();
 
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -60,11 +60,12 @@ public class LoginServlet extends HttpServlet {
 		String page = "login.jsp";
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
-			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo") && password.equalsIgnoreCase("1234")) { //OK
+
+			List<User> user  = entityManager.createQuery("from User u where u.email = '" + username + "' " + " and u.password = '" + password + "'").getResultList();
+			if (user.size() != 0) { //OK
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-				session.setAttribute("fname", "Pippo");
-				session.setAttribute("lname", "Rossi");
+				session.setAttribute("fname", user.get(0).getName());
+				session.setAttribute("lname", user.get(0).getSurname());
 				page = "welcome.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");

@@ -1,5 +1,7 @@
 package it.beije.hopper.web;
 
+import it.beije.hopper.web.controller.Controller;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final Controller controller = new Controller();
        
 //	/**
 //	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -43,7 +46,11 @@ public class LoginServlet extends HttpServlet {
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
 				session.setAttribute("fname", "Pippo");
 				session.setAttribute("lname", "Rossi");
-				page = "welcome.jsp";
+
+
+
+				session.setAttribute("ProdList", controller.getProduct());
+				page = "itemlist.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");
 				session.setAttribute("errore", "CREDENZIALI ERRATE");

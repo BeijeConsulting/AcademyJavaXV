@@ -1,24 +1,19 @@
-package it.beije.hopper.ecommerce;
-
-import it.beije.hopper.Contatto;
-import it.beije.hopper.Recapito;
-import it.beije.hopper.rubrica.RubricaJPA2;
+package it.beije.hopper.web.controller;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Scanner;
+import it.beije.hopper.web.beans.*;
 
-public class EcommerceLineScanner {
+public class Controller {
+    static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopperweb");
+    static EntityManager entityManager = getConnection();
 
-    private static EntityManagerFactory entityManagerFactory;
-
-    public static EntityManager createEntityManager() {
-        if (entityManagerFactory == null) {
-            entityManagerFactory = Persistence.createEntityManagerFactory("em");
-
-        }
+    public static EntityManager getConnection() {
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopperweb");
         return entityManagerFactory.createEntityManager();
     }
 
@@ -125,44 +120,52 @@ public class EcommerceLineScanner {
         return true;
     }
 
-    public static void AddOrder(EntityManager entityManager, User user) {
+    public static Order AddOrder(int userid, HashMap<Integer, Integer> hashMap) {
         EntityTransaction entityTransaction = entityManager.getTransaction();
         entityTransaction.begin();
-        Scanner s = new Scanner(System.in);
-        double amount = 0;
+        User user = entityManager.find(User.class, userid);
+
+        double amount = 0.0;
 
         Order order = new Order();
         order.setUserId(user.getId());
-        Query query = entityManager.createQuery("SELECT i FROM Product as i order by id");
-        List<Product> products = query.getResultList();
-        for (Product product : products)
-            System.out.println(product.toString());
 
         List<Item> itemsToBuy = new ArrayList<>();
-        String temp = "";
-        while (temp.equals("-1") || temp.isEmpty()) {
-            System.out.println("Inserire id dell'oggetto che vuoi comprare: (inserisci -1 per uscire)");
-            temp = s.nextLine();
-            Product productTemp = entityManager.find(Product.class, Integer.parseInt(temp));
-            System.out.println("Inserire quantità dell'oggetto che vuoi comprare: (Max: " + productTemp.getQuantity() + ")");
-            String q = s.nextLine();
+        for (int i : hashMap.keySet()) {
+            System.out.println("key: " + i + " value: " + hashMap.get(i));
+            Product productTemp = entityManager.find(Product.class, i);
             Item item = new Item();
-            item.setName(productTemp.getName() + q + LocalDateTime.now());
-            item.setPrice(productTemp.getPrice());
+            item.setName(productTemp.getName() + hashMap.get(i) + LocalDateTime.now());
+            item.setPrice(productTemp.getPrice()*hashMap.get(i));
             item.setProductId(productTemp.getId());
-            item.setQuantity(Integer.parseInt(q));
-            productTemp.setQuantity(productTemp.getQuantity() - Integer.parseInt(q));
-            entityManager.persist(item);
+            item.setQuantity(hashMap.get(i));
+            productTemp.setQuantity(productTemp.getQuantity() - hashMap.get(i));
+
             itemsToBuy.add(item);
-            amount += item.getPrice();
+            amount += productTemp.getPrice()*hashMap.get(i);
         }
         order.setAmount(amount);
         order.setDatetime(LocalDateTime.now());
         order.setItems(itemsToBuy);
         entityManager.persist(order);
+        for(Item item: itemsToBuy){
+            item.setOrderId(order.getId());
+            entityManager.persist(item);
+        }
         System.out.println("Ordine effettuato!");
 
         entityTransaction.commit();
+        return order;
+    }
+
+    public static List<Product> getProduct() {
+        EntityTransaction entityTransaction = entityManager.getTransaction();
+        entityTransaction.begin();
+        Query query = entityManager.createQuery("SELECT i FROM Product as i order by id");
+        List<Product> products = query.getResultList();
+
+        entityTransaction.commit();
+        return products;
     }
 
     public static Order viewOrder(EntityManager entityManager, User user) {
@@ -187,12 +190,5 @@ public class EcommerceLineScanner {
         //TODO
         entityTransaction.commit();
         return order;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = new int[] { 1, 0, 2 };
-        Object p = nums;
-        int[] two = (int[]) p;
-        System.out.println(10 / two[2]);
     }
 }

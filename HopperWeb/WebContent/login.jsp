@@ -1,25 +1,25 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+         pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Login JSP</title>
+    <meta charset="ISO-8859-1">
+    <title>Login JSP</title>
 </head>
 <body>
 
 <%--
-String error = request.getParameter("error");
-if (error != null) {
-	%>
-	<p style="color: red">
-	<%
-	if (error.equals("1")) out.print("CREDENZIALI ERRATE");
-	else out.print("INSERIRE ENTRAMBE LE CREDENZIALI");
-	%>
-	</p>
-	<%
-}
+    String error = request.getParameter("error");
+    if (error != null) {
+%>
+<p style="color: red">
+    <%
+        if (error.equals("1")) out.print("CREDENZIALI ERRATE");
+        else out.print("INSERIRE ENTRAMBE LE CREDENZIALI");
+    %>
+</p>
+<%
+    }
 --%>
 
 <p style="color: red">
@@ -33,11 +33,11 @@ if (error != null) {
 </p>
 
 <form action="./login" method="post">
-  <label for="username">Username:</label><br>
-  <input type="text" name="username" value=""><br>
-  <label for="password">Password:</label><br>
-  <input type="password" name="password" value=""><br><br>
-  <input type="submit" value="Submit">
+    <%--@declare id="username"--%><label for="username">Username:</label><br>
+    <input type="text" name="username" value=""><br>
+    <%--@declare id="password"--%><label for="password">Password:</label><br>
+    <input type="password" name="password" value=""><br><br>
+    <input type="submit" value="Submit">
 </form>
 
 </body>

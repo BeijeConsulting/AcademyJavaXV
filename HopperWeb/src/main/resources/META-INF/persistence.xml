@@ -10,10 +10,10 @@
 
 
 
-		<class>it.beije.hopper.ecommerceMod.items.Item</class>
-		<class>it.beije.hopper.ecommerceMod.items.Order</class>
-		<class>it.beije.hopper.ecommerceMod.items.Product</class>
-		<class>it.beije.hopper.ecommerceMod.items.User</class>
+		<class>it.beije.hopper.ecommerceMod.models.Item</class>
+		<class>it.beije.hopper.ecommerceMod.models.Order</class>
+		<class>it.beije.hopper.ecommerceMod.models.Product</class>
+		<class>it.beije.hopper.ecommerceMod.models.User</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 

@@ -1,45 +1,74 @@
 package it.beije.xv.esercizi.TestEL;
 
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
-
-class C {
-        public static void main(String[] args){
-////                new C().crazyLoop();
-//                double d = 2.0;
-//                int i = 3;
-//                boolean bool = d<i;
-//                System.out.println(bool);
-
+public class DoubleLoopSample {
+   public static void main(String[] args) {
+             char c = 'a';
+             for(int i=1; i˂= 3; i++)
+               for(int j=0; j˂= 2; j++) System.out.print(c++);
+         } }
+//class A {
 //
-//                boolean b1 = false;
-//                boolean b2  = false;
-//                if (b2 = b1 == false){
-//                        System.out.println("true");
-//                } else{
-//                        System.out.println("false");
-//                }
-
-
-//                String s = "blooper";
-//                StringBuilder sb = new StringBuilder(s);
-////                sb.append(s.substring(4)).delete(3, 5);
-//                sb.substring(2);
-//                System.out.println(sb);
-//                Integer i = 0;
-//                i++;
-//                System.out.println(i);
-                Double d = 0.0;
-                System.out.println(--d);
-        }
-//        void crazyLoop(){
-//                int c=0;
-//                JACK:while(c< 8){
-//                        JILL:System.out.println(c);
-//                        if(c>3)break JACK;else c++;
-//                }
+//    public static void main(String[] args) {
+//         int x = 10;
+//         switch(x % 4.) {
+//               default: System.out.print("Not divisible by 4");
+//                   case 0: System.out.print("Divisible by 4");
+//                 }
+//    } }
+//class TestClass1 {
+//    public static void main(String args[]) {
+//        StringBuilder b = new StringBuilder("1");
+//        StringBuilder c = b.append("2");
+//        b.append("234");
+//        c.deleteCharAt(1);
+//        System.out.println("Equals? " + (b == c));
+//        System.out.println("B=" + b);
+//        System.out.println("C=" + c);
+//    }
+//
+//
+//}
+//class C {
+//    private void layEggs(int... eggs) {
+//        System.out.print("many " + eggs[0] + " ");
+//    }
+//    private void layEggs(int eggs) {
+//        System.out.print("one " + eggs + " ");
+//    }
+//    public static void main(String[] args) {
+//        int i = 0;
+//        try {
+//            i += 1;
+//            e();
+//            i += 2;
+//        } finally {
+//            i += 8;
+//        }catch (Exception e) {
+//            i += 4;
 //        }
+//        System.out.print(i);
+//    }
+//    private static void e() {
+//  throws new IllegalArgumentException();
+//    }
+//}
 
-}
+//public class Lion {
+//        Lion l = new Lion();
+//        static void public main(String[] args) {
+//                new Lion();
+//        }
+//        public void roar() {
+//                Lion l = new Lion();
+//                if ( l == l) {
+//                        System.out.println("roar!");
+//                } } }
+//
 
 //
 //class PE extends Exception{}

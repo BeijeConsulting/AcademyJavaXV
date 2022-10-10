@@ -1,4 +1,4 @@
-package it.beije.hopper.ecommerceMod.items;
+package it.beije.hopper.ecommerceMod.models;
 
 import javax.persistence.*;
 import java.util.Objects;

@@ -1,4 +1,4 @@
-package it.beije.hopper.ecommerceMod.items;
+package it.beije.hopper.ecommerceMod.models;
 
 import java.util.Collection;
 import java.util.HashMap;

@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * Servlet implementation class FirstServlet
  */
-@WebServlet("/first_servlet")
+@WebServlet("./first_servlet")
 public class FirstServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

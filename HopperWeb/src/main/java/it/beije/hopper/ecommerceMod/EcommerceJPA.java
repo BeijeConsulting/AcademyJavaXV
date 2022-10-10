@@ -2,7 +2,7 @@ package it.beije.hopper.ecommerceMod;
 
 
 
-import it.beije.hopper.ecommerceMod.items.*;
+import it.beije.hopper.ecommerceMod.models.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -43,15 +43,15 @@ public class EcommerceJPA {
 		System.out.println("TestProduct2: " + testProduct2);
 
 		Cart cart = new Cart();
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct, 50.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
-		cart.addProduct(testProduct2, 5.0);
+//		cart.addProduct(testProduct, 50.0);
+//		cart.addProduct(testProduct, 50.0);
+//		cart.addProduct(testProduct, 50.0);
+		cart.addProduct(testProduct2, 2.0);
+		cart.addProduct(testProduct2, 2.0);
+		cart.addProduct(testProduct2, 2.0);
+		cart.addProduct(testProduct2, 2.0);
+		cart.addProduct(testProduct2, 2.0);
+
 		System.out.println(cart);
 
 		System.out.println(cart.getAllItemsInCart());
@@ -95,10 +95,9 @@ public class EcommerceJPA {
 		newItem.setQuantity(cart.numberOfProductInCart(product)); // --> Add to order and remove from Warehouse
 		newItem.setPromo(promoOrder); // total promo of single order. This is not the promo for each single item.
 
-		//Update number of items of product in "Warehouse"
-		int newTotalQuantity = product.getQuantity() - cart.numberOfProductInCart(product);
+
 		entityManager.persist(newItem);
-		updateProduct(entityManager, product, null, newTotalQuantity );
+
 
 
 //
@@ -148,6 +147,10 @@ public class EcommerceJPA {
 		System.out.println("In addOrder (order) PT1:"+newOrder);
 //		entityTransaction.commit();
 
+
+
+
+
 		//extract all orders from cart and add them on order-item table
 		products = cart.getAllItemsInCart().iterator();
 		/*
@@ -155,7 +158,11 @@ public class EcommerceJPA {
 		* */
 		//update order-items table
 		while(products.hasNext()){
-			addOrderItem(entityManager, newOrder, user, products.next(), cart,  "Temporary Order-Item description", promoOrder);
+			Product tmpProduct = products.next();
+			addOrderItem(entityManager, newOrder, user, tmpProduct, cart,  "Temporary Order-Item description", promoOrder);
+			//Update number of items of product in "Warehouse"
+			int newTotalQuantity = tmpProduct.getQuantity() - cart.numberOfProductInCart(tmpProduct);
+			updateProduct(entityManager, tmpProduct, null, newTotalQuantity );
 		}
 
 		entityTransaction.commit();
@@ -233,6 +240,14 @@ public class EcommerceJPA {
 
 	//Get all products
 	public static List<Product> getAllProducts(EntityManager entityManager){
+		Query query = entityManager.createQuery("SELECT p FROM Product as p");
+		List<Product> products = query.getResultList();
+		return products;
+	}
+
+	public static List<Product> getAllProducts(){
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		Query query = entityManager.createQuery("SELECT p FROM Product as p");
 		List<Product> products = query.getResultList();
 		return products;

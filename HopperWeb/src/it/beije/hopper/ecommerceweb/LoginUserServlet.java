@@ -35,11 +35,12 @@ public class LoginUserServlet extends HttpServlet {
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
-		HttpSession session = request.getSession();
+		
 
 		Query query = entityManager.createQuery("SELECT u FROM User u");
 		List<User> user = query.getResultList();
 
+		HttpSession session = request.getSession();
 		String loc = "";
 		if (email != null && email.length() > 0 && password != null && password.length() > 0) {
 			// verifico credenziali su DB...

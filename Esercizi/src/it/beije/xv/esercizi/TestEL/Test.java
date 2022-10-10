@@ -1,27 +1,39 @@
 package it.beije.xv.esercizi.TestEL;
 
 
-class ScopeTest {
+import java.io.IOException;
+import java.sql.SQLException;
+import java.time.*;
+import java.util.*;
 
 
-    public static void ifTest(boolean flag){
-        if (flag)   //1
-            if (flag)   //2
-                if (flag)   //3
-                    System.out.println("False True");
-                else        //4
-                    System.out.println("True False");
-            else        //5
-                System.out.println("True True");
-        else        //6
-            System.out.println("False False");
+class X {
+    static char ch;
+    static float f;
+    static boolean bool;
+
+    public static void main(String[] args) {
+        System.out.print(f);
+        System.out.print(" ");
+        System.out.print(ch);
+        System.out.print(" ");
+        System.out.print(bool);
     }
-
-    public static void main(String args[]) {
-        ifTest(true);
-    }
-
 }
+//class ScopeTest {
+//
+//    public static void main(String args[]) {
+//
+//        byte starting = 3;
+//        short firstValue = 5;
+//        int secondValue = 7;
+//        int functionValue = (int) (starting / 2 + firstValue / 2 + (int) firstValue / 3) + secondValue / 2;
+//        System.out.println(functionValue);
+//        int test = 5/2;
+//
+//    }
+//
+//}
 //class prova{
 //
 //        public static void main(String[] args){

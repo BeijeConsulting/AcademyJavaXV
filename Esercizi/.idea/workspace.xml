@@ -63,35 +63,9 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ScopeTest">
-    <configuration name="CreatingDatesAndTimes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.CreatingDatesAndTimes" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ManipulatingDatesAndTimes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.ManipulatingDatesAndTimes" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ScopeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ScopeTest" />
+  <component name="RunManager" selected="Application.X">
+    <configuration name="C" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.C" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -103,12 +77,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WorkingWithPeriods" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.date_and_time.WorkingWithPeriods" />
+    <configuration name="D" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.D" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.date_and_time.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -116,8 +90,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="prova" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.prova" />
+    <configuration name="TC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TC" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TestClass" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="X" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.X" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -131,11 +131,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ScopeTest" />
-        <item itemvalue="Application.prova" />
-        <item itemvalue="Application.WorkingWithPeriods" />
-        <item itemvalue="Application.ManipulatingDatesAndTimes" />
-        <item itemvalue="Application.CreatingDatesAndTimes" />
+        <item itemvalue="Application.X" />
+        <item itemvalue="Application.TestClass" />
+        <item itemvalue="Application.TC" />
+        <item itemvalue="Application.D" />
+        <item itemvalue="Application.C" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +161,7 @@
       <workItem from="1665115609364" duration="2194000" />
       <workItem from="1665117844034" duration="1824000" />
       <workItem from="1665262275658" duration="3543000" />
+      <workItem from="1665341042923" duration="8210000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
@@ -206,8 +207,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>183</line>
-          <properties class="it.beije.xv.esercizi.TestEL.Car">
+          <line>195</line>
+          <properties class="it.beije.xv.esercizi.TestEL.TestClass">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
@@ -215,7 +216,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>196</line>
+          <line>208</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>

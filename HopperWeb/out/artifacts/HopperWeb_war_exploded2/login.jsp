@@ -32,7 +32,7 @@ if (error != null) {
 %>
 </p>
 
-<form action="./login" method="post">
+<form action="./welcome.jsp" method="post">
   <label for="username">Username:</label><br>
   <input type="text" name="username" value=""><br>
   <label for="password">Password:</label><br>

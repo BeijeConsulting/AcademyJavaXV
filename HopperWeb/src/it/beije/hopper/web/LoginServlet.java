@@ -1,6 +1,10 @@
 package it.beije.hopper.web;
 
 import java.io.IOException;
+import java.util.List;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +32,7 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet doPost...");
-		
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println("username : " + username);

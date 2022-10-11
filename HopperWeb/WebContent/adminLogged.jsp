@@ -16,7 +16,6 @@
     String benvenuto = "Complimenti "+ fname +"! Hai effettuato l'accesso";
     List<Product> listaP = Ecommerce.visualizzaProdotti();
     List<Order> listaO = Ecommerce.visualizzaOrdini();
-
 %>
 <html>
 <head>
@@ -52,8 +51,8 @@
 </div>
 <div>
     <table>
-        <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')"> Inserisci nuovo prodotto</a></td></tr>
-        <tr><td><a href="#"  onclick="win = window.open('deleteProduct.html', 'Elimina Prodotto', 'location=yes,width=400,height=400')">Elimina prodotto</a></td></tr>
+        <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')"> Inserisci nuovo prodotto </a></td></tr>
+        <tr><td><a href="#"  onclick="win = window.open('deleteProduct.html', 'Elimina Prodotto', 'location=yes,width=400,height=400')"> Elimina prodotto </a></td></tr>
     </table>
 </div>
 </body>

@@ -15,7 +15,7 @@ public class LogoutUserServlet extends HttpServlet {
        
 
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
 		System.out.println("Session before invalidate: "+ request.getSession(false));
 		if(session!=null) {

@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login</title>
 
 </head>
 <style>
@@ -29,11 +29,12 @@ button:hover {
 	%>
 	<p style="color: red">Credenziali errate</p>
 	<%
+	session.removeAttribute("error");
 	}
 	%>
 	<form method="POST" action="login_user">
 		 email: <br><input type="text" placeholder="Enter Email" size="40" maxlength="40" name="email" /><br>
-		 password: <br><input type="text" placeholder="Enter Password" size="40"maxlength="40" name="password" /><br>
+		 password: <br><input type="password" placeholder="Enter Password" size="40"maxlength="40" name="password" /><br>
 		<button type="submit">login</button>
 	</form>
 

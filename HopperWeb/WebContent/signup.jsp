@@ -19,13 +19,14 @@ button:hover {
 	<h1>SIGNUP</h1>
 
 	<%
-	String error = (String) session.getAttribute("errorSignup");
+	String error = (String) session.getAttribute("error");
 
 	if (error != null)
 		if (error.equals("error")) {
 	%>
 	<p style="color: red">Credenziali errate</p>
 	<%
+	session.removeAttribute("error");
 	}
 	%>
 

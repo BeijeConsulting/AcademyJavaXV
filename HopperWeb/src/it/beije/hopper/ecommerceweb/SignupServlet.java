@@ -62,7 +62,7 @@ public class SignupServlet extends HttpServlet {
 		else {
 //			RequestDispatcher view = request.getRequestDispatcher("signup_failed.html");
 //			view.forward(request, response);
-			session.setAttribute("errorSignup", "errorSignup");
+			session.setAttribute("error", "error");
 			loc="signup.jsp";
 		}
 		

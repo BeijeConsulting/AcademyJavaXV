@@ -17,23 +17,23 @@ public class ECommerceComando {
 
 	public static void main(String[] args) {
 		
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
-		 EntityManager entityManager = entityManagerFactory.createEntityManager();
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
-		
-		
-		
-		User utente = login();
-		
-		//eCommerceUsers(entityManager, entityTransaction);
-		//eCommerceProducts(entityManager, entityTransaction);
-		//eCommerceOrder(entityManager, entityTransaction);
-		//eCommerceOrderItems(entityManager, entityTransaction);
-		Acquisto (utente, entityManager,  entityTransaction);
-		
-		
-		entityManager.close();
+//		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+//		 EntityManager entityManager = entityManagerFactory.createEntityManager();
+//		EntityTransaction entityTransaction = entityManager.getTransaction();
+//		entityTransaction.begin();
+//		
+//		
+//		
+//		//User utente = login();
+//		
+//		//eCommerceUsers(entityManager, entityTransaction);
+//		//eCommerceProducts(entityManager, entityTransaction);
+//		//eCommerceOrder(entityManager, entityTransaction);
+//		//eCommerceOrderItems(entityManager, entityTransaction);
+//		//Acquisto (utente, entityManager,  entityTransaction);
+//		
+//		
+//		entityManager.close();
 	}
 	
 	
@@ -85,36 +85,28 @@ public class ECommerceComando {
 		entityTransaction.commit();
 	}
 	
-	public static User login()
+	public static void login(String username, String password)
 	{
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("hopper");
-		 EntityManager entityManager = entityManagerFactory.createEntityManager();
+		
+		System.out.println("Funziona");
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
 		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
-		
-		System.out.println("Sei già iscritto (1) o vuoi creare un nuovo utente(2)?");
-		Scanner scanner = new Scanner(System.in);
-		
-		String s = scanner.nextLine();
-		
+		entityTransaction.begin();		
 		
 		User user = new User();
 		 
 		 List<User> users = entityManager.createQuery("from User u", User.class).getResultList();
-		 
-		
-		switch(s)
-		{
-			case "1": //controllare che utente sia in DB
+
+			//controllare che utente sia in DB
 				
 				boolean isExist = false;
-				do {
-					
+
 					 System.out.println("Inserire email");		 
-					 user.setEmail(scanner.nextLine());
+					 user.setEmail(username);
 					 
 					 System.out.println("Inserire password");		 
-					 user.setPassword(scanner.nextLine());
+					 user.setPassword(password);
 					 
 					for (User u : users)
 						 if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword()))
@@ -123,50 +115,46 @@ public class ECommerceComando {
 							 user.setId(u.getId());
 						 }
 					
-				} while(!isExist);
-
-				break;
 				
-			case "2": //inserisci nuovo utente
-				
-				boolean isThere = false;
-				
-				for (User u : users)
-					 if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword()))
-						 isThere = true;
-				
-				if (isThere == false)
-				{
-					scanner = new Scanner(System.in);
-				
-					System.out.println("Inserire Nome: ");		
-					user.setName(scanner.nextLine());
-					
-					System.out.println("Inserire Cognome: ");
-					user.setSurname(scanner.nextLine());
-					
-					System.out.println("Inserire Email: ");
-					user.setEmail(scanner.nextLine());
-					
-					System.out.println("Inserire Password: ");
-					user.setPassword(scanner.nextLine());
-					
-					entityManager.persist(user);
-					
-					entityTransaction.commit();
-					
-				}
-				
-				else
-					System.out.println("Utente già presente!!");
-				 
-				//entityManager.close();
-				break;
+			
+		entityManager.close();						
 		}
-				 
-		
-		
-		return user;
+	
+	public static void registrazione(String username, String password)
+	{
+//		boolean isThere = false;
+//		
+//		for (User u : users)
+//			 if (u.getEmail().equals(user.getEmail()) && u.getPassword().equals(user.getPassword()))
+//				 isThere = true;
+//		
+//		if (isThere == false)
+//		{
+//			scanner = new Scanner(System.in);
+//		
+//			System.out.println("Inserire Nome: ");		
+//			user.setName(scanner.nextLine());
+//			
+//			System.out.println("Inserire Cognome: ");
+//			user.setSurname(scanner.nextLine());
+//			
+//			System.out.println("Inserire Email: ");
+//			user.setEmail(scanner.nextLine());
+//			
+//			System.out.println("Inserire Password: ");
+//			user.setPassword(scanner.nextLine());
+//			
+//			entityManager.persist(user);
+//			
+//			entityTransaction.commit();
+//			
+//		}
+//		
+//		else
+//			System.out.println("Utente già presente!!");
+//		 
+//		//entityManager.close();
+//		break;
 	}
 	
 	public static void Acquisto (User user, EntityManager entityManager, EntityTransaction entityTransaction)

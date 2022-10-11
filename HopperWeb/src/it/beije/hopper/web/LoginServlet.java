@@ -1,12 +1,23 @@
 package it.beije.hopper.web;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.EntityTransaction;
+import javax.persistence.Persistence;
+import jakarta.persistence.*;
+//import javax.servlet.ServletException;
+//import javax.servlet.annotation.WebServlet;
+//import javax.servlet.http.HttpServlet;
+//import javax.servlet.http.HttpServletRequest;
+//import javax.servlet.http.HttpServletResponse;
+//import javax.servlet.http.HttpSession;
+
+import it.beije.hopper.web.ecommerce.ECommerceComando;
+import it.beije.hopper.web.ecommerce.Product;
+import it.beije.hopper.web.ecommerce.User;
 
 /**
  * Servlet implementation class LoginServlet
@@ -28,11 +39,23 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet doPost...");
+
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+
+        List<Product> products = entityManager.createQuery("from Product p", Product.class).getResultList();
+        for (Product p: products) {
+            System.out.println(p);
+        }
+
+        entityManager.close();
 		
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		System.out.println("username : " + username);
 		System.out.println("password : " + password);
+		//ECommerceComando.login(username,password);
+	
 		
 		HttpSession session = request.getSession();
 		String page = "login.jsp";

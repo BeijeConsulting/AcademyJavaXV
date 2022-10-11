@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jakarta.el.api" type="repository">
+    <properties maven-id="jakarta.el:jakarta.el-api:5.0.1" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/el/jakarta.el-api/5.0.1/jakarta.el-api-5.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

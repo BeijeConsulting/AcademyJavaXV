@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jakarta.servlet.api" type="repository">
+    <properties maven-id="jakarta.servlet:jakarta.servlet-api:6.0.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/jakarta/servlet/jakarta.servlet-api/6.0.0/jakarta.servlet-api-6.0.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

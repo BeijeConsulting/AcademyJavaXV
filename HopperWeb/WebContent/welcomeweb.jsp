@@ -8,6 +8,7 @@
 <title>WELCOME PAGE</title>
 </head>
 <style>
+
 button {
 	cursor: pointer;
 }
@@ -33,7 +34,7 @@ button:hover {
 	response.sendRedirect("loguser.jsp");
 	%>
 	
-	FIRST NAME :<%=loggedUser.getEmail() %><br> Password :<%=loggedUser.getPassword() %><br>
+	<strong>FIRST NAME :</strong><%=loggedUser.getName() %><br><strong> LAST NAME :</strong><%=loggedUser.getSurname()%><br><strong> EMAIL :</strong><%=loggedUser.getEmail()%><br>
 	<br>
 
 	<form action="ProdServlet">

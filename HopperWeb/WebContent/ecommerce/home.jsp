@@ -63,7 +63,7 @@ button {
 %>
 
 
-
+<br>
 <%
 	List<Product> products = ProductConnections.getAllProducts();
 	for(Product p : products){

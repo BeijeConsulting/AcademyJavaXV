@@ -8,6 +8,16 @@
 </head>
 <body>
 
+<% 	
+	String error = (String) session.getAttribute("errore");
+	
+	if (error != null) {
+	out.print(error);
+	session.removeAttribute("errore");
+	
+	}
+%>
+
 	<form action="../loginEcommerce" method="post">
 		<label for="username">Username:</label><br> <input type="text"
 			name="username" value=""><br> <label for="password">Password:</label><br>

@@ -63,10 +63,12 @@ public class LoginEcommerce extends HttpServlet {
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");
 				session.setAttribute("errore", "CREDENZIALI ERRATE");
+				page = "ecommerce/login_user.jsp";
 			}
 		} else {
 			//response.sendRedirect("login.jsp?error=2");
 			session.setAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
+			page = "ecommerce/login_user.jsp";
 		}
 
 		response.sendRedirect(page);

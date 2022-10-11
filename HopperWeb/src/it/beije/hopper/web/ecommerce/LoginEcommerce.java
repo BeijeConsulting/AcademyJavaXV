@@ -58,6 +58,7 @@ public class LoginEcommerce extends HttpServlet {
 				//response.sendRedirect(string.toString());
 				session.setAttribute("fname", user.getName());
 				session.setAttribute("lname", user.getSurname());
+				session.setAttribute("loggedUser", user);
 				page = "ecommerce/home.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");

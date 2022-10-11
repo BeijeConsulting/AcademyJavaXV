@@ -8,15 +8,49 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
+
+<style>
+button {
+	margin: 10px 0px;
+	cursor: pointer;
+	align: right;
+	color: red;
+}
+
+form{
+	align: right;
+}
+
+input {
+  float: right;
+}
+
+</style>
+
 <body>
 
 <h1>Benvenuti nel nostro ecommerce</h1>
+
+<div>
+	<form action="./login_user.jsp" method="post">
+		<button type="submit" value="Login">login</button>
+	</form>
+</div>
+
+<jsp:useBean id="loggedUser" class="it.beije.hopper.web.ecommerce.User" scope="session"></jsp:useBean>
+<jsp:setProperty property="email" name="loggedUser" param="email"/>
+<jsp:setProperty property="password" name="loggedUser" param="password"/>
 <% 
 	//String fname = request.getParameter("fname");
 	//String lname = request.getParameter("lname");
 	
-	String fname = (String) session.getAttribute("fname");
-	String lname = (String) session.getAttribute("lname");
+	//loggedUser.getName();
+	
+	//String fname = (String) session.getAttribute("fname");
+	//String lname = (String) session.getAttribute("lname");
+	
+	String fname = loggedUser.getName();
+	String lname = loggedUser.getSurname();
 	
 	//System.out.println( (String) session.getAttribute("fname") );
 	//System.out.println( (String) session.getAttribute("lname") ) ;
@@ -51,6 +85,10 @@
 		<input type="password" name="password" value=""><br>
 		<input type="submit" value="Login">
 	</form>
+	
+	
+	
+	
 
 	<form action="../registerEcommerce" method="post">
   <input type="submit" value="Register">

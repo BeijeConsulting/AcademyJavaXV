@@ -14,16 +14,9 @@ button {
 	margin: 10px 0px;
 	cursor: pointer;
 	align: right;
-	color: red;
 }
 
-form{
-	align: right;
-}
 
-input {
-  float: right;
-}
 
 </style>
 
@@ -31,11 +24,13 @@ input {
 
 <h1>Benvenuti nel nostro ecommerce</h1>
 
-<div>
+<div align="right">
 	<form action="./login_user.jsp" method="post">
 		<button type="submit" value="Login">login</button>
+		<button type="submit" value="Register">register</button>
 	</form>
 </div>
+
 
 <jsp:useBean id="loggedUser" class="it.beije.hopper.web.ecommerce.User" scope="session"></jsp:useBean>
 <jsp:setProperty property="email" name="loggedUser" param="email"/>
@@ -79,20 +74,7 @@ input {
 
 
 
-	<form action="../loginEcommerce" method="post">
-		<label for="username">Username:</label><br> 
-		<input type="text"name="username" value=""><br> <label for="password">Password:</label><br>
-		<input type="password" name="password" value=""><br>
-		<input type="submit" value="Login">
-	</form>
-	
-	
-	
-	
 
-	<form action="../registerEcommerce" method="post">
-  <input type="submit" value="Register">
-</form>
 
 </body>
 </html>

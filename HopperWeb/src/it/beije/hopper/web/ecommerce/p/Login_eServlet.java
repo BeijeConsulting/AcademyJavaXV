@@ -63,6 +63,7 @@ public class Login_eServlet extends HttpServlet {
 			//if (username.equalsIgnoreCase(u.getEmail()) && password.equalsIgnoreCase(u.getPassword())) { //OK
 				if(query.getResultList().size() != 0){
 					for (User u : user) {
+						session.setAttribute("id_u",u.getId());
 				session.setAttribute("fname",u.getName());
 				session.setAttribute("lname", u.getSurname());
 					}

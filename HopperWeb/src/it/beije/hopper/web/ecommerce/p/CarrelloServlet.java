@@ -24,6 +24,8 @@ import it.beije.hopper.web.ecommerce.User;
  */
 @WebServlet("/CarrelloServlet")
 public class CarrelloServlet extends HttpServlet {
+	static List<Product>  carrello=new ArrayList<>();
+
 	private static final long serialVersionUID = 1L;
        
 //	/**
@@ -56,7 +58,6 @@ public class CarrelloServlet extends HttpServlet {
 		
 		
 		Product product=entityManager.find(Product.class, Integer.parseInt(id_p));
-		List<Product> carrello=new ArrayList<>();
 		carrello.add(product);
 		System.out.println(carrello);
 		

@@ -73,7 +73,7 @@
 
     %>
 
-    <h4>Your cart </h4>
+    <h2>Your cart </h2>
 
    <%
        if( cart == null){
@@ -91,7 +91,6 @@
                out.println("Discount:"+cart.singleProductDiscountAmount(product)+"<br/>");
                out.println("Total Discount:"+cart.numberOfProductInCart(product)*cart.singleProductDiscountAmount(product)+"<br/>");
                out.println("Total cost per product:"+( cart.numberOfProductInCart(product) * ( product.getPrice() - cart.singleProductDiscountAmount(product) ) )+"<br/>");
-               out.println("<hr>");
                out.println("<br/>");
                out.println("<div/>");
            }
@@ -99,6 +98,8 @@
        }
 
    %>
+    <hr>
+
 <%--    <c:set var="cartC" value="${cart}"/>--%>
 <%--    <c:if test="cart==null">--%>
 <%--        <p>Your cart is empty</p>--%>

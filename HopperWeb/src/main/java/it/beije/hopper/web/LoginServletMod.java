@@ -51,25 +51,24 @@ public class LoginServletMod extends HttpServlet {
         HttpSession session = request.getSession();
         String page = "loginMod.jsp";
 
-        if (email != null && email.length() > 0 && password != null && password.length() > 0) {
-            //verifico credenziali su DB...
-            if (EcommerceJPA.login(email, password)) { //OK
-//				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-
+        if (email.length() <= 0 || password.length() <= 0) {
+            response.sendRedirect("loginMod.jsp?error=2");
+            session.setAttribute("error", "INSERISCI TUTTI I CAMPI!");
+        } else {
+            if (EcommerceJPA.login(email, password)) {
                 User u = new User();
-                u=EcommerceJPA.getUser(email);
+                u = EcommerceJPA.getUser(email);
                 session.setAttribute("fname", u.getName());
                 session.setAttribute("lname", u.getSurname());
-                page = "welcome.jsp";
-            } else { //KO
-                //response.sendRedirect("login.jsp?error=1");
-                session.setAttribute("errore", "CREDENZIALI ERRATE");
+                session.setAttribute("id", u.getId());
+                session.setAttribute("orders", EcommerceJPA.getAllUserOrders(u.getId()));
+
+                response.sendRedirect("welcomeMod.jsp");
+            } else {
+                response.sendRedirect("loginMod.jsp?error=1");
+                session.setAttribute("error", "EMAIL E/O PASSWORD ERRATE");
             }
-        } else {
-            //response.sendRedirect("login.jsp?error=2");
-            session.setAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
         }
-        response.sendRedirect(page);
     }
 
 }

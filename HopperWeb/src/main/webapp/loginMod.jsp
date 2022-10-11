@@ -11,7 +11,15 @@
     <title>Login</title>
 </head>
 <body>
-
+<p style="color: red">
+  <%
+    String error = (String) session.getAttribute("error");
+    if (error != null) {
+      out.print(error);
+      session.removeAttribute("error");
+    }
+  %>
+</p>
 <form action="./LoginServletMod" method="post">
   <label for="email">Email:</label><br>
   <input type="text" name="email" value=""><br>

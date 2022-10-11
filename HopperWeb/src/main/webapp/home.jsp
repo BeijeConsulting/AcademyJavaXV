@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<form action="./LoginServletMod" method="post">
+<form action="loginMod.jsp" method="post">
     <input type="submit" value="login">
 </form>
 

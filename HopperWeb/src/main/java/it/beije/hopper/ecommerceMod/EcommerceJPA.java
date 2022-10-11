@@ -175,10 +175,15 @@ public class EcommerceJPA {
     public static Order getOrder(EntityManager entityManager, Integer id) {
         return entityManager.find(Order.class, id);
     }
-
-    //Get all Orders
+        //Get all Orders
     public static List<Order> getAllOrders(EntityManager entityManager) {
         Query query = entityManager.createQuery("SELECT o FROM Order as o");
+        return query.getResultList();
+    }
+    public static List<Order> getAllUserOrders(Integer id) {
+        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        Query query = entityManager.createQuery("SELECT o FROM Order as o where userId=" + id);
         return query.getResultList();
     }
 

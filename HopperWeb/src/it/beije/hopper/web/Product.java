@@ -38,6 +38,9 @@ public class Product {
 	@Column(name = "rating")
 	private Integer rating;
 
+	@Column(name = "promo")
+	private Integer promo;
+
 	
 	public Integer getId() {
 		return id;
@@ -99,5 +102,13 @@ public class Product {
 				.append(" }");
 		
 		return builder.toString();
+	}
+
+	public Integer getPromo() {
+		return promo;
+	}
+
+	public void setPromo(Integer promo) {
+		this.promo = promo;
 	}
 }

@@ -13,23 +13,24 @@
 <body>
 
 <%
-//String fname = request.getParameter("fname");
-//String lname = request.getParameter("lname");
-
-String fname = (String) session.getAttribute("fname");
-String lname = (String) session.getAttribute("lname");
 
 
-//System.out.print(fname);
-//System.out.print(lname);
+Integer b = (Integer) session.getAttribute("admin");
+String pageAdmin="";
+String pageUser="";
 
-String timestamp = LocalDateTime.now().toString();
+//String timestamp = LocalDateTime.now().toString();
 %>
-
-<strong><%= timestamp %></strong>
-<br>
-FIRST NAME : <%= fname %><br>
-LAST NAME : <%= lname %><br>
+<div>
+    <%
+        if(b != null){
+        pageAdmin = "adminLogged.jsp";
+        response.sendRedirect(pageAdmin);
+    }else{
+        pageUser = "normalUserLogged.jsp";
+        response.sendRedirect(pageUser);
+    }%>
+</div>
 
 </body>
 </html>

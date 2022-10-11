@@ -21,14 +21,17 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-//	/**
-//	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-//	 */
-//	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		response.getWriter().append("Served at: ").append(request.getContextPath());
-//	}
+	static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+	static EntityManager entityManager = entityManagerFactory.createEntityManager();
+	static EntityTransaction entityTransaction = entityManager.getTransaction();
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
@@ -37,8 +40,6 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("LoginServlet doPost...");
 
 
-		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
-		EntityManager entityManager = entityManagerFactory.createEntityManager();
 //
 ////		List products = entityManager.createNativeQuery("SELECT * FROM Product").getResultList();
 //		List products = entityManager.createQuery("from Product p").getResultList();
@@ -66,6 +67,7 @@ public class LoginServlet extends HttpServlet {
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
 				session.setAttribute("fname", user.get(0).getName());
 				session.setAttribute("lname", user.get(0).getSurname());
+				if(user.get(0).getAdmin()==1) session.setAttribute("admin", 1);
 				page = "welcome.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");
@@ -77,6 +79,11 @@ public class LoginServlet extends HttpServlet {
 		}
 
 		response.sendRedirect(page);
+	}
+
+	public static boolean inserisciProdotto(){
+		//entityTransaction.begin();
+		return true;
 	}
 
 }

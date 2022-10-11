@@ -22,7 +22,7 @@ button:hover {
 	<h1>LOGIN</h1>
 
 	<%
-		String error=(String)session.getAttribute("error");
+	String error =(String)session.getAttribute("error");
 		if(error!=null)
 			if(error.equals("error")){
 	%>

@@ -29,12 +29,19 @@ button:hover {
 	//String password = (String) session.getAttribute("");
 	%>
 	
+	<%if(loggedUser.getEmail()==null || loggedUser.getPassword()==null)
+	response.sendRedirect("loguser.jsp");
+	%>
 	
 	FIRST NAME :<%=loggedUser.getEmail() %><br> Password :<%=loggedUser.getPassword() %><br>
 	<br>
 
 	<form action="ProdServlet">
 		<button type="submit">Visualizza prodotti nello store</button>
+	</form>
+	
+	<form action="LogoutUserServlet">
+		<button type="submit">logout</button>
 	</form>
 
 </body>

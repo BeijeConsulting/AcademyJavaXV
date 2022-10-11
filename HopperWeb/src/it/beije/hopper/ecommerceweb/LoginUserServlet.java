@@ -44,7 +44,7 @@ public class LoginUserServlet extends HttpServlet {
 		if (email != null && email.length() > 0 && password != null && password.length() > 0) {
 			// verifico credenziali su DB...
 
-			for (int i = 0; i < user.size();) {
+			for (int i = 0; i < user.size();i++) {
 				if (email.equalsIgnoreCase(user.get(i).getEmail())
 						&& password.equalsIgnoreCase(user.get(i).getPassword())) { // OK
 //					RequestDispatcher view = request.getRequestDispatcher("welcomeweb.jsp");	
@@ -52,7 +52,6 @@ public class LoginUserServlet extends HttpServlet {
 				
 					session.setAttribute("loggedUser", user.get(i));
 					loc = "welcomeweb.jsp";
-					
 					break;
 
 				} else { // KO
@@ -61,7 +60,6 @@ public class LoginUserServlet extends HttpServlet {
 //					break;
 					session.setAttribute("error", "error");
 					loc = "loguser.jsp";
-					break;
 				}
 			}
 		} else {

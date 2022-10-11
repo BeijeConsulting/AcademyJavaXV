@@ -20,7 +20,6 @@ button:hover {
 
 	<%
 	String error = (String) session.getAttribute("errorSignup");
-	System.out.println(error);
 
 	if (error != null)
 		if (error.equals("error")) {

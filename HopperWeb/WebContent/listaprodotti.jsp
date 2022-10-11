@@ -15,6 +15,11 @@
 		<title>Lista prodotti</title>
 	</head>
 	<body>
+	
+	<jsp:useBean id="loggedUser" class="it.beije.hopper.entity.User" scope="session"></jsp:useBean>
+	<jsp:setProperty property="email" name="loggedUser" param="email"/>
+	<jsp:setProperty property="password" name="loggedUser" param="password"/>
+	
 		<h1 style="color: red">LISTA PRODOTTI</h1>
 		
 		<%
@@ -25,28 +30,33 @@
 		<%
 		
 		List<Product> product=(List<Product>)session.getAttribute("prod");
-		for (Product p : product) {
+		if(!(product==null)){
+			for (Product p : product) {
 		%>
 		
-			<p>
-				Name:
-				<%=p.getName()%></p>
-			<p>
-				Price: &euro;<%=p.getPrice()%></p>
-			<p>
-				Quantity:
-				<%=p.getQuantity()%></p>
-			<p>
-				Rating:
-				<%=p.getRating()%></p>
-			<p>
-				Description:
-				<%=p.getDesc()%></p>
-				<button type="submit">Add to cart</button>
-			<br>
+				<p>
+					Name:
+					<%=p.getName()%></p>
+				<p>
+					Price: &euro;<%=p.getPrice()%></p>
+				<p>
+					Quantity:
+					<%=p.getQuantity()%></p>
+				<p>
+					Rating:
+					<%=p.getRating()%></p>
+				<p>
+					Description:
+					<%=p.getDesc()%></p>
+					<button type="submit">Add to cart</button>
+				<br>
 			
-			<br>
-		<%}%>
+				<br>
+			<%}
+		}else{
+			if(loggedUser.getEmail()==null || loggedUser.getPassword()==null)
+				response.sendRedirect("loguser.jsp");
+		}%>
 		
 	</body>
 </html>

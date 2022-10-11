@@ -17,10 +17,10 @@ public class LogoutUserServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
+		System.out.println("Session before invalidate: "+ request.getSession(false));
 		if(session!=null) {
-			session.removeAttribute("loggedUser");
-			
-			session.setAttribute("ok", "ok");
+			session.invalidate();
+			System.out.println("Session after invalidate: "+ request.getSession(false)); 
 			response.sendRedirect("loguser.jsp");
 		}
 	}

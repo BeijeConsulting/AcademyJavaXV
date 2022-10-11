@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.beije.hopper.entity.Product;
+import it.beije.hopper.entity.User;
 
 /**
  * Servlet implementation class ProdServlet
@@ -38,12 +39,15 @@ public class ProdServlet extends HttpServlet {
 		EntityManager entityManager = JPAEntityManagerFactory.openSession();
 
 		HttpSession session=request.getSession();
-		
-		Query query = entityManager.createQuery("SELECT p FROM Product as p");
-		List<Product> product = query.getResultList();
-		session.setAttribute("prod", product);
-		response.sendRedirect("listaprodotti.jsp");
-		
+		//User user=(User)session.getAttribute("loggedUser");
+		if(session!=null) {
+			Query query = entityManager.createQuery("SELECT p FROM Product as p");
+			List<Product> product = query.getResultList();
+			session.setAttribute("prod", product);
+			response.sendRedirect("listaprodotti.jsp");
+		}
+		else
+			response.sendRedirect("loguser.jsp");
 	}
 
 	/**

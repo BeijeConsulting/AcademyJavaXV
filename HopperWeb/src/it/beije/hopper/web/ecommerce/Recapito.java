@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream
 package it.beije.hopper;
+=======
+package it.beije.hopper.web.ecommerce;
+>>>>>>> Stashed changes
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

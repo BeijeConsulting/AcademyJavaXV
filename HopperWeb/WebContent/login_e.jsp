@@ -12,7 +12,7 @@
 <title>Login JSP</title>
 </head>
 <body>
-
+LOGIN
 <p style="color: red">
 <%
 String error = (String) session.getAttribute("errore");
@@ -28,7 +28,7 @@ if (error != null) {
   <input type="text" name="username" value=""><br>
   <label for="password">Password:</label><br>
   <input type="password" name="password" value=""><br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="Login">
  <input type="button" onclick="location.href='registration.jsp'" value="registration"/>
 
 </form>

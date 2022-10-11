@@ -13,8 +13,9 @@
 </head>
 <body>
 
+REGISTRATION 
 
-<form action="./register" method="post">
+<br><br><form action="./register" method="post">
   <label for="email">email:</label><br>
   <input type="text" name="email" value=""><br>
   <label for="password">Password:</label><br>
@@ -30,3 +31,8 @@
 
 </body>
 </html>
+
+
+	 NOME
+ID   DESC 		PREZZO  QUANTITà 
+   	 RATING

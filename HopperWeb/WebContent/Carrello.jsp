@@ -10,4 +10,21 @@
 <title>My Profile</title>
 </head>
 <body>
+CARRELLO<br><br>
 
+<%
+
+List<Product> ris = (List<Product>)session.getAttribute("carr");
+
+	for (Product p: ris){
+		%>
+		<br>
+		   <%= p %>
+		  
+		  <% 
+		 
+	System.out.println(p);
+	}
+%>
+<br><br>
+<input type="button" onclick="location.href='product.jsp'" value="torna"/>

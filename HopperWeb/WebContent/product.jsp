@@ -19,19 +19,25 @@ List<Product> ris = (List<Product>)session.getAttribute("prod");
 	for (Product p: ris){
 		%>
 		<br>
-		   <%= p %>
+		 &nbsp &nbsp  <%= p.getName().toUpperCase()%><br>
+		   <%= p.getId()%>&nbsp  
+		   <%= p.getDesc()%> <br>
+		&nbsp &nbsp <%= p.getPrice() %> Euro &nbsp
+		    Quantity: <%= p.getQuantity()%>
+		   &nbsp &nbsp Rating: <%= p.getRating()%><br>
 		  <% 
 		 
 	System.out.println(p);
 	}
 %>
-<form action="./logine" method="post">
-  <label for="id_p">id_p:</label><br>
+
+<form action="./CarrelloServlet" method="post">
+  <br><label for="id_p">id product</label><br>
   <input type="text" name="id_p" value=""><br>
  
-  <input type="submit" value="Submit">
- <input type="button" onclick="location.href='Carrello.jsp'" value="carrello"/>
 
+ <input type="submit" value="Submit">
+<input type="button" onclick="location.href='carrello.jsp'" value="Carrello"/>
 </form>
 
 

@@ -11,15 +11,25 @@ import java.io.IOException;
 /**
      * Servlet implementation class LoginServlet
      */
-    @WebServlet("/newProduct")
-    public class newProductServlet extends HttpServlet {
+    @WebServlet("/manageProduct")
+    public class manageProductServlet extends HttpServlet {
 
         /**
          * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
          */
         protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+            String id = request.getParameter("id");
+            try {
+                Product productToDelete = LoginServlet.entityManager.find(Product.class, id);
+                LoginServlet.entityTransaction.begin();
+                LoginServlet.entityManager.remove(productToDelete);
+                LoginServlet.entityTransaction.commit();
+                response.getWriter().append("Hai eliminato correttamente il prodotto!!!");
+            }catch (Exception e){
+                response.getWriter().append("Hai inserito dati non corretti, riprova!!!");
+                LoginServlet.entityTransaction.rollback();
+            }
 
-            response.getWriter().append("Served at: ").append(request.getContextPath());
         }
 
         /**
@@ -44,6 +54,8 @@ import java.io.IOException;
                 response.getWriter().append("Hai inserito dati non coertwertywerywertyertyrretti, riprova!!!");
                 LoginServlet.entityTransaction.rollback();
             }
+
+
         }
     }
 

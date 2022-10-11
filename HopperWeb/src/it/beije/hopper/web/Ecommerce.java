@@ -1,5 +1,6 @@
 package it.beije.hopper.web;
 
+
 import java.util.List;
 
 public class Ecommerce {
@@ -15,13 +16,10 @@ public class Ecommerce {
     }
     public static List visualizzaProdotti(){
         List<Product> products = LoginServlet.entityManager.createQuery("from Product p").getResultList();
-        for (Product p: products) {
-            System.out.println(p);
-        }
-
         return products;
     }
-    public static void visualizzaOrdini(){
-        System.out.println("Pollo");
+    public static List visualizzaOrdini(){
+        List<Order> orders = LoginServlet.entityManager.createQuery("from Order p").getResultList();
+        return orders;
     }
 }

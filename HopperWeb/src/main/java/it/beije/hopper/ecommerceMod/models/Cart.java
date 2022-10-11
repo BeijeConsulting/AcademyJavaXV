@@ -21,6 +21,16 @@ public class Cart {
         }
     }
 
+    public void addProduct(Product product, Double discount, Integer numOfProducts ){
+        if( numOfProductsMap.containsKey(product)){
+            Integer newVal = numOfProductsMap.get(product) + numOfProducts;
+            numOfProductsMap.replace(product, newVal );
+        }else{
+            numOfProductsMap.put(product, numOfProducts );
+            discountMap.put(product, discount);
+        }
+    }
+
 
 
     public Collection<Product> getAllItemsInCart(){
@@ -46,7 +56,7 @@ public class Cart {
         outProducts.append("Cart contains: \n");
 
         for( Product product: numOfProductsMap.keySet() ){
-            outProducts.append( product + "->  Quantity:" + numOfProductsMap.get(product) + " - Total per type Cost: "+totalCostOfProducttype(product)
+            outProducts.append( product + "->  Quantity: " + numOfProductsMap.get(product) + " - Total per type Cost: "+totalCostOfProducttype(product)
                     +" - Discount: "+ discountMap.get(product)* numOfProductsMap.get(product) +"\n");
         }
         return outProducts.toString();

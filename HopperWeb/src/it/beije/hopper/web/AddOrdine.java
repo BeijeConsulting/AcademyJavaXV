@@ -1,5 +1,6 @@
 package it.beije.hopper.web;
 
+import it.beije.hopper.web.beans.User;
 import it.beije.hopper.web.controller.Controller;
 import it.beije.hopper.web.beans.Order;
 import it.beije.hopper.web.beans.Product;
@@ -10,6 +11,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 @WebServlet(name = "AddOrdine", value = "/add_ordine")
 public class AddOrdine extends HttpServlet {
@@ -35,24 +37,27 @@ public class AddOrdine extends HttpServlet {
                 hashMap.put(p.getId(), quantita);
             }
         }
-        System.out.println(hashMap.toString());
+        User user = (User) session.getAttribute("User");
         Order order = null;
         if (!hashMap.isEmpty())
-            order = controller.AddOrder(1, hashMap);
+            order = controller.AddOrder(user.getId(), hashMap);
 
 
         String page = "itemlist.jsp";
 
         if (order != null) { //OK
 //			response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-            session.setAttribute("ordine", order);
+            List<Order> ordini = controller.viewOrder(user);
+            request.setAttribute("Ordini", ordini);
+            request.setAttribute("successo", "Ordine effettuato");
 
-            page = "ordinefatto.jsp";
+            page = "orders.jsp";
+
         } else {
             //response.sendRedirect("login.jsp?error=2");
-            session.setAttribute("errore", "Ordine non effettuato");
+            request.setAttribute("errore", "Ordine non effettuato");
         }
 
-        response.sendRedirect(page);
+        request.getRequestDispatcher(page).forward(request, response);
     }
 }

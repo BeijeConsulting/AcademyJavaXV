@@ -1,5 +1,6 @@
 package it.beije.hopper.web;
 
+import it.beije.hopper.web.beans.User;
 import it.beije.hopper.web.controller.Controller;
 
 import java.io.IOException;
@@ -16,7 +17,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final Controller controller = new Controller();
+	private final Controller controller = new Controller();
        
 //	/**
 //	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -42,12 +43,10 @@ public class LoginServlet extends HttpServlet {
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo") && password.equalsIgnoreCase("1234")) { //OK
+			User loginUser = controller.LogIn(username, password);
+			if (loginUser != null) { //OK
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-				session.setAttribute("fname", "Pippo");
-				session.setAttribute("lname", "Rossi");
-
-
+				session.setAttribute("User", loginUser);
 
 				session.setAttribute("ProdList", controller.getProduct());
 				page = "itemlist.jsp";

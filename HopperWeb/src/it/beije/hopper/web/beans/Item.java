@@ -125,15 +125,12 @@ public class Item {
 	
 	public String toString() {
 		StringBuilder builder = new StringBuilder()
-				.append("{ id : ").append(this.id)
-				.append(", orderId : ").append(this.orderId)
-				.append(", productId : ").append(this.productId)
+				.append('{')
 				.append(", name : ").append(this.name)
-				.append(", desc : ").append(this.desc)
 				.append(", price : ").append(this.price)
 				.append(", quantity : ").append(this.quantity)
 				.append(", promo : ").append(this.promo)
-				.append(" }");
+				.append('}');
 		
 		return builder.toString();
 	}

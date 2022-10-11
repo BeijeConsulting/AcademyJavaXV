@@ -9,7 +9,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-    <title>Insert title here</title>
+    <title>E-commerce brutto</title>
 </head>
 <body>
 <%@page import="java.util.ArrayList" %>
@@ -18,12 +18,19 @@
 
 <% ArrayList<Product> prodList = (ArrayList) session.getAttribute("ProdList"); %> <%--Assigning ArrayList object containing Employee data to the local object --%>
 
-<strong><a href="<%=request.getContextPath()%>/IteratorExample?type=getDetails">Show Product Details</a></strong>
+<strong><a>Show Product Details</a></strong>
 <br></br>
+<p style="color: red">
+    <%
+        String error = (String) session.getAttribute("errore");
+        if (error != null) {
+            out.print(error);
+            session.removeAttribute("errore");
+        }
+    %>
+</p>
 <form action="./add_ordine" method="post">
-<table cellspacing="2" cellpadding="2">
-
-
+    <table cellspacing="2" cellpadding="2">
 
 
         <tr>
@@ -42,25 +49,34 @@
 
                 while (iterator.hasNext())  // iterate through all the data until the last record
                 {
-                    Product product = iterator.next(); //assign individual employee record to the employee class object
+                    Product product = iterator.next();
         %>
         <tr>
             <td><%=product.getName()%>
             </td>
-            <td><%=product.getPrice()%>
+            <td><%=String.format("%.2f", product.getPrice()) + "$"%>
             </td>
             <td><%=product.getDesc()%>
             <td><%=product.getRating()%>
             </td>
             </td>
-            <td><input type="number" name="<%=product.getId()%>" min="0" max="<%=product.getQuantity()%>"></td>
 
+            <td>
+                <% if (product.getQuantity() > 0) { %>
+                <input type="number" name="<%=product.getId()%>" min="0" max="<%=product.getQuantity()%>">
+                <%} else {%>
+                <p style="color: red">
+                    <%
+                        out.print("Oggetto non disponibile al momento");
+                    %>
+                </p></td>
+            <%}%>
         </tr>
         <%
                 }
             }
         %>
-</table>
+    </table>
     <input type="submit">
 </form>
 

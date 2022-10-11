@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
-package it.beije.hopper;
-=======
 package it.beije.hopper.web.ecommerce;
->>>>>>> Stashed changes
+
 
 import java.util.List;
 

@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
-package it.beije.hopper.ecommerce;
-=======
 package it.beije.hopper.web.ecommerce;
->>>>>>> Stashed changes
+
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -14,29 +11,22 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-<<<<<<< Updated upstream
-import it.beije.hopper.rubrica.JPAEntityManagerFactory;
-=======
->>>>>>> Stashed changes
+
 
 public class GestoreEcommerce {
 
     public static void main(String[] args) {
         java.util.logging.Logger.getLogger("org.hibernate").setLevel(Level.OFF);
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
         login();
     }
 
     static private void addUser() {
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
 
         EntityTransaction transaction=entityManager.getTransaction();
         transaction.begin();
@@ -59,11 +49,9 @@ public class GestoreEcommerce {
     }
 
     static private void addProduct() {
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
 
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
@@ -92,11 +80,9 @@ public class GestoreEcommerce {
     }
 
     static private void order(int id) {
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
 
         EntityTransaction transaction = entityManager.getTransaction();
         transaction.begin();
@@ -173,11 +159,9 @@ public class GestoreEcommerce {
     }
 
     static private void orderItems(Order order, List<Product> product) {
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
         EntityTransaction transaction=entityManager.getTransaction();
 
         Item item;
@@ -215,11 +199,9 @@ public class GestoreEcommerce {
 
     static private void login() {
 
-<<<<<<< Updated upstream
-        EntityManager entityManager=JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager=JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
         EntityTransaction transaction=entityManager.getTransaction();
 
         transaction.begin();
@@ -246,11 +228,9 @@ public class GestoreEcommerce {
 
     static private void stampaProdotti() {
 
-<<<<<<< Updated upstream
-        EntityManager entityManager = JPAEntityManagerFactory.openSession();
-=======
+
         EntityManager entityManager = JPAEntityManager.getConnection();
->>>>>>> Stashed changes
+
 
         Query query=entityManager.createQuery("SELECT p FROM Product as p");
         List<Product> product=query.getResultList();

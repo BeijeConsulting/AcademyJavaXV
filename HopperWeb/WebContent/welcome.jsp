@@ -1,4 +1,4 @@
-<%@page import="it.beije.hopper.web.User"%>
+<%@page import="it.beije.hopper.entity.User"%>
 <%@page import="java.time.LocalDateTime"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -19,16 +19,16 @@
 
 User loggedUser = (User) session.getAttribute("loggedUser");
 
-System.out.println(loggedUser.getFirstName());
-System.out.println(loggedUser.getLastName());
+System.out.println(loggedUser.getName());
+System.out.println(loggedUser.getSurname());
 int x = 10+5;
 String timestamp = LocalDateTime.now().toString();
 %>
 
 <strong><%= timestamp %></strong>
 <br>
-FIRST NAME : <%= loggedUser.getFirstName() %><br>
-LAST NAME : <%= loggedUser.getLastName() %>
+FIRST NAME : <%= loggedUser.getName() %><br>
+LAST NAME : <%= loggedUser.getSurname() %>
 
 </body>
 </html>

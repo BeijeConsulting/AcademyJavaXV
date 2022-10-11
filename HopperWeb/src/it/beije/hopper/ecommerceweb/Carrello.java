@@ -8,11 +8,9 @@ import it.beije.hopper.entity.Product;
 public class Carrello {
 
 	List<Product> list;
-	List<Integer> unico;
 	
 	public Carrello() {
 		list=new ArrayList<>();
-		unico=new ArrayList<>();
 	}
 	
 	public void add(Product p) {

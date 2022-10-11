@@ -8,6 +8,7 @@
 <title>WELCOME PAGE</title>
 </head>
 <style>
+
 button {
 	cursor: pointer;
 }
@@ -18,20 +19,30 @@ button:hover {
 </style>
 <body>
 
+<jsp:useBean id="loggedUser" class="it.beije.hopper.entity.User" scope="session"></jsp:useBean>
+<jsp:setProperty property="email" name="loggedUser" param="email"/>
+<jsp:setProperty property="password" name="loggedUser" param="password"/>
+
 	<%
 	//String fname = request.getParameter("email");
 	//String password = request.getParameter("password");
-
-	String email = (String) session.getAttribute("email");
-	String password = (String) session.getAttribute("");
+	//String email = (String) session.getAttribute("email");
+	//String password = (String) session.getAttribute("");
 	%>
-
-
-	FIRST NAME :<%=email%><br> Password :<%=password%><br>
+	
+	<%if(loggedUser.getEmail()==null || loggedUser.getPassword()==null)
+	response.sendRedirect("loguser.jsp");
+	%>
+	
+	<strong>FIRST NAME :</strong><%=loggedUser.getName() %><br><strong> LAST NAME :</strong><%=loggedUser.getSurname()%><br><strong> EMAIL :</strong><%=loggedUser.getEmail()%><br>
 	<br>
 
-	<form action="listaprodotti.jsp">
+	<form action="ProdServlet">
 		<button type="submit">Visualizza prodotti nello store</button>
+	</form>
+	
+	<form action="LogoutUserServlet">
+		<button type="submit">logout</button>
 	</form>
 
 </body>

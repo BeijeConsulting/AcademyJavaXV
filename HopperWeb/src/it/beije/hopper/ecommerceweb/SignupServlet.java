@@ -39,7 +39,7 @@ public class SignupServlet extends HttpServlet {
 		String cognome=request.getParameter("cognome");
 		HttpSession session=request.getSession();
 		String loc="";
-		System.out.println("ok");
+
 		if (email != null && email.length() > 0 && password != null && password.length() > 0 && nome != null && nome.length() > 0 && cognome != null && cognome.length() > 0) {
 			
 			user.setEmail(email);
@@ -62,7 +62,7 @@ public class SignupServlet extends HttpServlet {
 		else {
 //			RequestDispatcher view = request.getRequestDispatcher("signup_failed.html");
 //			view.forward(request, response);
-			session.setAttribute("error", "error");
+			session.setAttribute("errorSignup", "errorSignup");
 			loc="signup.jsp";
 		}
 		

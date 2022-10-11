@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<jsp:useBean id="loggedUser" class="it.beije.hopper.web.User" scope="session"></jsp:useBean>
+<jsp:useBean id="loggedUser" class="it.beije.hopper.entity.User" scope="session"></jsp:useBean>
 <jsp:setProperty property="firstName" name="loggedUser" param="fname"/>
 <jsp:setProperty property="lastName" name="loggedUser" param="lname"/>
 

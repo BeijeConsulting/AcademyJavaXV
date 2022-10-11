@@ -34,5 +34,11 @@ Cosa vuoi fare?
     <input type="submit" value="orderList">
 </form>
 
+
+<form action="UtilServlet" method="GET">
+    <input type="submit" value="Shop">
+</form>
+
+
 </body>
 </html>

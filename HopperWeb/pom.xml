@@ -11,7 +11,7 @@
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.0</version>
-                <configuration>s
+                <configuration>
                     <source>1.8</source>
                     <target>1.8</target>
                 </configuration>
@@ -46,18 +46,17 @@
             <artifactId>hibernate-core</artifactId>
             <version>5.4.30.Final</version>
         </dependency>
-        <!--dependency>
+        <dependency>
             <groupId>jakarta.servlet</groupId>
             <artifactId>jakarta.servlet-api</artifactId>
             <version>5.0.0</version>
             <scope>provided</scope>
-        </dependency-->
+        </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
         </dependency>
-
     </dependencies>
 </project>
 

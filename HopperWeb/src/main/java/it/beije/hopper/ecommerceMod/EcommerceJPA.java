@@ -186,6 +186,12 @@ public class EcommerceJPA {
 		Query query = entityManager.createQuery("SELECT o FROM Order as o");
 		return query.getResultList();
 	}
+	public static List<Order> getAllUserOrders(Integer id) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		Query query = entityManager.createQuery("SELECT o FROM Order as o where userId=" + id);
+		return query.getResultList();
+	}
 
 /// -------------------- Product -----------------
 	//TODO: OVERLOAD Better
@@ -287,8 +293,37 @@ public class EcommerceJPA {
 		return false;
 	}
 
+	public static boolean login(String email, String psw) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		Query query = entityManager.createQuery("SELECT u FROM User as u");
+		List<User> listaUsers = query.getResultList();
+		for (int i = 0; i < listaUsers.size(); i++) {
+			if (listaUsers.get(i).getEmail().equalsIgnoreCase(email) && listaUsers.get(i).getPassword().equals(psw)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
+	public static User getUser(String userEmail) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		Query query = entityManager.createQuery("SELECT u FROM User as u WHERE email=" + "'" + userEmail + "'");
+		for (User user : (ArrayList<User>) query.getResultList()) {
+			if (user.getEmail().equalsIgnoreCase(userEmail)) return user;
+		}
+		return null;
+	}
 
+	public static void addUser(User user) {
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("HopperWeb");
+		EntityManager entityManager = entityManagerFactory.createEntityManager();
+		EntityTransaction entityTransaction = entityManager.getTransaction();
+		entityTransaction.begin();
+		entityManager.persist(user);
+		entityTransaction.commit();
+	}
 
 
 }

@@ -23,13 +23,16 @@
     FIRST NAME : <%= fname %><br>
     LAST NAME : <%= lname %><br>
 </div>
-<h2>Ecco l'elenco di operazioni che puoi effettuare: </h2>
+<div>
+    <table>
+        <tr></tr>
+        <tr></tr>
+    </table>
+</div>
 <div>
     <table>
         <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')"> Inserisci nuovo prodotto</a></td></tr>
         <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')">Elimina prodotto</a></td></tr>
-        <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')">Visualizza elenco prodotti</a></td></tr>
-        <tr><td><a href="#"  onclick="win = window.open('newProduct.html', 'Inserisci Prodotto', 'location=yes,width=400,height=400')">Visualizza ordini</a></td></tr>
     </table>
 </div>
 </body>

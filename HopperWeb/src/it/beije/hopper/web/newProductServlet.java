@@ -5,7 +5,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
 
@@ -13,7 +12,7 @@ import java.io.IOException;
      * Servlet implementation class LoginServlet
      */
     @WebServlet("/newProduct")
-    public class newProduct extends HttpServlet {
+    public class newProductServlet extends HttpServlet {
 
         /**
          * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -41,9 +40,6 @@ import java.io.IOException;
                 LoginServlet.entityManager.persist(newP);
                 LoginServlet.entityTransaction.commit();
                 response.getWriter().append("Hai inserito correttamente il nuovo prodotto!!!");
-            }catch (NumberFormatException p){
-                response.getWriter().append("Hai inserito dati non corretti, riprova!!!");
-                LoginServlet.entityTransaction.rollback();
             }catch (Exception e){
                 response.getWriter().append("Hai inserito dati non coertwertywerywertyertyrretti, riprova!!!");
                 LoginServlet.entityTransaction.rollback();

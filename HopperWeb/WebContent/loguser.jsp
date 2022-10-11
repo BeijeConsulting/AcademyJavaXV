@@ -27,7 +27,9 @@ button:hover {
 			if(error.equals("error")){
 	%>
 	<p style="color: red">Credenziali errate</p>
-	<%} %>
+	<%
+	}
+	%>
 	<form method="POST" action="login_user">
 		 email: <br><input type="text" placeholder="Enter Email" size="40" maxlength="40" name="email" /><br>
 		 password: <br><input type="text" placeholder="Enter Password" size="40"maxlength="40" name="password" /><br>

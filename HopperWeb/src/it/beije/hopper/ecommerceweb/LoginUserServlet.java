@@ -31,7 +31,6 @@ public class LoginUserServlet extends HttpServlet {
 
 		transaction.begin();
 
-		System.out.println("LoginServlet doPost...");
 
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
@@ -53,6 +52,7 @@ public class LoginUserServlet extends HttpServlet {
 				
 					session.setAttribute("loggedUser", user.get(i));
 					loc = "welcomeweb.jsp";
+					
 					break;
 
 				} else { // KO

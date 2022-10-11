@@ -19,7 +19,7 @@ button:hover {
 	<h1>SIGNUP</h1>
 
 	<%
-	String error = (String) session.getAttribute("error");
+	String error = (String) session.getAttribute("errorSignup");
 	System.out.println(error);
 
 	if (error != null)

@@ -23,10 +23,11 @@
 		<p>
 			Carrello:<%= carrello.size()%></p>
 		<%
+		
 		List<Product> product=(List<Product>)session.getAttribute("prod");
 		for (Product p : product) {
 		%>
-		<form method="POST" action="ProdServlet">
+		
 			<p>
 				Name:
 				<%=p.getName()%></p>
@@ -46,6 +47,6 @@
 			
 			<br>
 		<%}%>
-		</form>
+		
 	</body>
 </html>

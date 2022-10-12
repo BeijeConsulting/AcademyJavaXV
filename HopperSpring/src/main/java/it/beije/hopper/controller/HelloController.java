@@ -81,7 +81,6 @@ public class HelloController {
 		} else {
 			model.addAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
 		}
-
 		return "login";
 	}
 

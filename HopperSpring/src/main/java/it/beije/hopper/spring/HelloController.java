@@ -69,6 +69,8 @@ public class HelloController {
 				
 				model.addAttribute("loggedUser", user);
 				
+				model.addAttribute("lista", new String[] {"qui", "quo", "qua"});
+				
 				return "welcome";
 			} else { //KO
 				model.addAttribute("errore", "CREDENZIALI ERRATE");

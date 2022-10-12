@@ -21,42 +21,56 @@
 	<jsp:setProperty property="password" name="loggedUser" param="password"/>
 	
 		<h1 style="color: red">LISTA PRODOTTI</h1>
-		
 		<%
-		Carrello carrello=new Carrello();
-		%>
+		String purchase=(String) session.getAttribute("acquisto");
+		Carrello cart=(Carrello)session.getAttribute("cart");
+		Product prod=(Product)session.getAttribute("p");
+		
+		if(purchase!=null)
+			if(purchase.equals("acquisto")){%>
+			<p style=color:green>Acquisto effettuato</p>
+		<%}%>
+		
+		<form action="purchase.jsp">
+		<button type="submit">Purchase products</button>
+		</form>
+		
 		<p>
-			Carrello:<%= carrello.size()%></p>
+			Carrello:<%= cart.size()%></p>
 		<%
-		
-		List<Product> product=(List<Product>)session.getAttribute("prod");
-		if(!(product==null)){
-			for (Product p : product) {
+			
+			List<Product> products=(List<Product>)session.getAttribute("prod");
+			if(!(products==null)){
+				for (Product p : products) {
 		%>
 		
-				<p>
-					Name:
-					<%=p.getName()%></p>
-				<p>
-					Price: &euro;<%=p.getPrice()%></p>
-				<p>
-					Quantity:
-					<%=p.getQuantity()%></p>
-				<p>
-					Rating:
-					<%=p.getRating()%></p>
-				<p>
-					Description:
-					<%=p.getDesc()%></p>
-					<button type="submit">Add to cart</button>
-				<br>
+					<p>
+						Name:
+						<%=p.getName()%></p>
+					<p>
+						Price: &euro;<%=p.getPrice()%></p>
+					<p>
+						Quantity:
+						<%=p.getQuantity()%></p>
+					<p>
+						Rating:
+						<%=p.getRating()%></p>
+					<p>
+						Description:
+						<%=p.getDesc()%></p>
+						<form action="AddcartServlet">
+						<%
+							prod=p;
+						%>
+						<button type="submit">Add to cart</button>
+						</form>
+					<br>
 			
-				<br>
-			<%}
-		}else{
-			if(loggedUser.getEmail()==null || loggedUser.getPassword()==null)
+					<br>
+				<%}
+			}else{
+				if(loggedUser.getEmail()==null || loggedUser.getPassword()==null)
 				response.sendRedirect("loguser.jsp");
-		}%>
-		
+			}%>	
 	</body>
 </html>

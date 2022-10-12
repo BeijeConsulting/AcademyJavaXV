@@ -42,8 +42,12 @@ public class ProdServlet extends HttpServlet {
 		//User user=(User)session.getAttribute("loggedUser");
 		if(session!=null) {
 			Query query = entityManager.createQuery("SELECT p FROM Product as p");
-			List<Product> product = query.getResultList();
-			session.setAttribute("prod", product);
+			List<Product> products = query.getResultList();
+			Product prod=new Product();
+			Carrello cart=new Carrello();
+			session.setAttribute("p", prod);
+			session.setAttribute("cart", cart);
+			session.setAttribute("prod", products);
 			response.sendRedirect("listaprodotti.jsp");
 		}
 		else

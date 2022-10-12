@@ -6,20 +6,103 @@ import java.sql.SQLException;
 import java.time.*;
 import java.util.*;
 
+public class Test {
+    static String s = "";
 
-class X {
-    static char ch;
-    static float f;
-    static boolean bool;
+    public static void m0(int a, int b) {
+        s += a;
+        m2();
+        m1(b);
+    }
 
-    public static void main(String[] args) {
-        System.out.print(f);
-        System.out.print(" ");
-        System.out.print(ch);
-        System.out.print(" ");
-        System.out.print(bool);
+    public static void m1(int i) {
+        s += i;
+    }
+
+    public static void m2() {
+        throw new NullPointerException("aa");
+    }
+
+    public static void m() {
+        m0(1, 2);
+        m1(3);
+    }
+
+    public static void main(String args[]) {
+        try {
+            m();
+        } catch (Exception e) {
+        }
+        System.out.println(s);
     }
 }
+//class NewException extends Exception {
+//}
+//
+//class AnotherException extends Exception {
+//}
+//
+//class ExceptionTest {
+//    public static void main(String[] args) throws Exception {
+//        try {
+//            m2();
+//        } finally {
+//            m3();
+//        }
+//    }
+//
+//    public static void m2() throws NewException {
+//        throw new NewException();
+//    }
+//
+//    public static void m3() throws AnotherException {
+//        throw new AnotherException();
+//    }
+//}
+//class MyException extends Throwable {
+//}
+//
+//class MyException1 extends MyException {
+//}
+//
+//class MyException2 extends MyException {
+//}
+//
+//class MyException3 extends MyException2 {
+//}
+//
+//public class ExceptionTest {
+//    void myMethod() throws MyException {
+//        throw new MyException3();
+//    }
+//
+//    public static void main(String[] args) {
+//        ExceptionTest et = new ExceptionTest();
+//        try {
+//            et.myMethod();
+//        } catch (MyException me) {
+//            System.out.println("MyException thrown");
+//        } catch (MyException3 me3) {
+//            System.out.println("MyException3 thrown");
+//        } finally {
+//            System.out.println(" Done");
+//        }
+//    }
+//}
+
+//class X {
+//    static char ch;
+//    static float f;
+//    static boolean bool;
+//
+//    public static void main(String[] args) {
+//        System.out.print(f);
+//        System.out.print(" ");
+//        System.out.print(ch);
+//        System.out.print(" ");
+//        System.out.print(bool);
+//    }
+//}
 //class ScopeTest {
 //
 //    public static void main(String args[]) {

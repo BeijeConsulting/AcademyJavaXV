@@ -24,5 +24,8 @@ FIRST NAME : ${loggedUser.firstName}<br>
 LAST NAME : ${loggedUser.lastName}<br>
 GENDER : ${loggedUser.gender}
 
+<form action="login.jsp" method="POST">
+<button></button></form>
+
 </body>
 </html>

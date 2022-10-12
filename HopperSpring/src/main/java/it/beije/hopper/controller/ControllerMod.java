@@ -1,6 +1,9 @@
 package it.beije.hopper.controller;
 
 import it.beije.hopper.model.User;
+import it.beije.hopper.service.UserService;
+import it.beije.hopper.service.UserServiceMod;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;
@@ -18,6 +21,8 @@ import java.util.Arrays;
 
 @Controller
 public class ControllerMod {
+@Autowired
+private UserServiceMod userService;
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(HttpServletRequest request) {
@@ -56,5 +61,11 @@ public class ControllerMod {
                 return "loginMod.jsp?error=2";
             }
         }
+    }
+    @RequestMapping(value = "/testMod", method = RequestMethod.GET)
+    public String testMod(HttpSession session, Model model) {
+    model.addAttribute("list", userService.listUsers());
+        System.out.println(userService.listUsers());
+    return "testMod";
     }
 }

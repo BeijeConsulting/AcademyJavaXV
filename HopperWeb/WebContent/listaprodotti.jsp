@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="javax.persistence.EntityTransaction"%>
 <%@page import="it.beije.hopper.ecommerceweb.JPAEntityManagerFactory"%>
 <%@page import="it.beije.hopper.entity.Product"%>
@@ -24,11 +25,10 @@
 		<%
 		String purchase=(String) session.getAttribute("acquisto");
 		Carrello cart=(Carrello)session.getAttribute("cart");
-		Product prod=(Product)session.getAttribute("p");
 		
 		if(purchase!=null)
 			if(purchase.equals("acquisto")){%>
-			<p style=color:green>Acquisto effettuato</p>
+			<p style=color:green>Ordine effettuato</p>
 		<%}%>
 		
 		<form action="purchase.jsp">
@@ -41,27 +41,24 @@
 			
 			List<Product> products=(List<Product>)session.getAttribute("prod");
 			if(!(products==null)){
-				for (Product p : products) {
+				for (int i=0;i<products.size();i++) {
 		%>
 		
 					<p>
 						Name:
-						<%=p.getName()%></p>
+						<%=products.get(i).getName()%></p>
 					<p>
-						Price: &euro;<%=p.getPrice()%></p>
+						Price: &euro;<%=products.get(i).getPrice()%></p>
 					<p>
 						Quantity:
-						<%=p.getQuantity()%></p>
+						<%=products.get(i).getQuantity()%></p>
 					<p>
 						Rating:
-						<%=p.getRating()%></p>
+						<%=products.get(i).getRating()%></p>
 					<p>
 						Description:
-						<%=p.getDesc()%></p>
-						<form action="AddcartServlet">
-						<%
-							prod=p;
-						%>
+						<%=products.get(i).getDesc()%></p>
+						<form action="listaprodotti.jsp">
 						<button type="submit">Add to cart</button>
 						</form>
 					<br>

@@ -5,6 +5,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Hopper Spring</name>
+   
   
   <properties>
     <jdk.version>1.8</jdk.version>
@@ -12,6 +13,7 @@
     <spring.version>5.2.0.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
   </properties>
+
   
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
@@ -24,6 +26,16 @@
           <target>${jdk.version}</target>
         </configuration>
       </plugin>
+        
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-eclipse-plugin</artifactId>
+        <version>2.9</version>
+        <configuration>
+            <wtpversion>2.0</wtpversion>
+            <wtpContextName>HopperSpring</wtpContextName>
+        </configuration>
+    </plugin>
      <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.1</version>

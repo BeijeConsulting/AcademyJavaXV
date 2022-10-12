@@ -13,16 +13,10 @@
 <body>
 <div style="text-align: center; margin: auto">
     <p style="color: #c62727">
-        <%
-            String error = (String) session.getAttribute("error");
-            if (error != null) {
-                out.print(error);
-                session.removeAttribute("error");
-            }
-        %>
+        ${error}
     </p>
 
-    <form>
+    <form action="./loginMod" method="post">
         <label for="email">Email:</label><br>
         <input type="text" name="email" value=""><br>
         <label for="password">Password:</label><br>

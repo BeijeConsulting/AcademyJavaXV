@@ -1,9 +1,7 @@
-<%@ page import="java.time.LocalDateTime"%>
-<%@ page import="jakarta.persistence.*" %>
-<%@ page import="java.util.*" %>
-<%@ page import="java.lang.*" %>
-<%@ page import="it.beije.hopper.web.Product" %>
-<%--<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>--%>
+<%@page import="it.beije.hopper.web.User"%>
+<%@page import="java.time.LocalDateTime"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,24 +11,24 @@
 <body>
 
 <%
+//String fname = request.getParameter("fname");
+//String lname = request.getParameter("lname");
 
+//String fname = (String) session.getAttribute("fname");
+//String lname = (String) session.getAttribute("lname");
 
-Integer b = (Integer) session.getAttribute("admin");
-String pageAdmin="";
-String pageUser="";
+User loggedUser = (User) session.getAttribute("loggedUser");
 
-//String timestamp = LocalDateTime.now().toString();
+System.out.println(loggedUser.getFirstName());
+System.out.println(loggedUser.getLastName());
+int x = 10+5;
+String timestamp = LocalDateTime.now().toString();
 %>
-<div>
-    <%
-        if(b != null){
-        pageAdmin = "adminLogged.jsp";
-        response.sendRedirect(pageAdmin);
-    }else{
-        pageUser = "normalUserLogged.jsp";
-        response.sendRedirect(pageUser);
-    }%>
-</div>
+
+<strong><%= timestamp %></strong>
+<br>
+FIRST NAME : <%= loggedUser.getFirstName() %><br>
+LAST NAME : <%= loggedUser.getLastName() %>
 
 </body>
 </html>

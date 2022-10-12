@@ -1,4 +1,4 @@
-package it.beije.hopper.web;
+package it.beije.hopper.spring;
 
 public class User {
 	
@@ -33,6 +33,10 @@ public class User {
 	}
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
+	}
+	
+	public String getGender() {
+		return "cazzi miei";
 	}
 
 	public String toString() {

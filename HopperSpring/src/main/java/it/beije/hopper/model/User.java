@@ -1,4 +1,4 @@
-package it.beije.hopper.spring;
+package it.beije.hopper.model;
 
 public class User {
 	

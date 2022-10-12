@@ -1,40 +1,43 @@
-package it.beije.hopper.spring;
+package it.beije.hopper.controller;
 
-import java.util.Locale;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.beije.hopper.model.User;
+import it.beije.hopper.service.UserService;
+
 
 @Controller
 public class HelloController {
 	
-//	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
-//	public String index(HttpServletRequest request) {
-//		System.out.println("Hello Page Requested : " + request.getRequestURI());
-//
-//		return "beije"; // /WEB-INF/views/beije.jsp
-//	}
+	@Autowired
+	private UserService userService;
+
+	public HelloController() {
+		System.out.println("creo un oggetto HelloController...");
+	}
+	
+	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
+	public String index(HttpServletRequest request) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
+
+		return "beije"; // /WEB-INF/views/beije.jsp
+	}
 	
 	@RequestMapping(value = "/hello", method = RequestMethod.GET)
 	public String hello(HttpServletRequest request) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 
 		return "hello";
-	}
-
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
-	public String test(HttpServletRequest request, HttpServletResponse response, Locale locale) {
-		System.out.println("test : " + locale);
-
-		return "testosterone";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -61,15 +64,15 @@ public class HelloController {
 //				model.addAttribute("fname", "Pippo");
 //				model.addAttribute("lname", "Rossi");
 				
-				User user = new User();
-				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
-				System.out.println(user);
+				//carico dettaglio utente...
+				User loggedUser = userService.loadUser(username);
 				
-				model.addAttribute("loggedUser", user);
+				model.addAttribute("loggedUser", loggedUser);
 				
-				model.addAttribute("lista", new String[] {"qui", "quo", "qua"});
+				//carico lista dei nipoti...
+				List<String> lista = userService.loadList();
+				
+				model.addAttribute("lista", lista);
 				
 				return "welcome";
 			} else { //KO
@@ -81,4 +84,5 @@ public class HelloController {
 
 		return "login";
 	}
+
 }

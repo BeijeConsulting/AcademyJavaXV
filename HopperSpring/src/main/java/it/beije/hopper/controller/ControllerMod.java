@@ -1,5 +1,6 @@
-package it.beije.hopper.spring;
+package it.beije.hopper.controller;
 
+import it.beije.hopper.model.User;
 import org.springframework.stereotype.Controller;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;

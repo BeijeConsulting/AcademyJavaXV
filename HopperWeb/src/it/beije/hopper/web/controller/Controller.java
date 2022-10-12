@@ -182,7 +182,7 @@ public class Controller {
         order.setUserId(user.getId());
         Query query = entityManager.createQuery("SELECT o FROM Order as o WHERE userId = " + user.getId() + " order by datetime");
         List<Order> orders = query.getResultList();
-        for (Order o : orders){
+        for (Order o : orders) {
             query = entityManager.createQuery("SELECT i FROM Item as i WHERE orderId = " + o.getId() + " order by id");
             List<Item> itemsTemp = query.getResultList();
             o.setItems(itemsTemp);
@@ -192,5 +192,17 @@ public class Controller {
 
         entityTransaction.commit();
         return orders;
+    }
+
+    public List<Item> viewItems(int idOrder) {
+        entityTransaction.begin();
+        Scanner s = new Scanner(System.in);
+        double amount = 0;
+
+        Query query = entityManager.createQuery("SELECT i FROM Item as i WHERE orderId = " + idOrder + " order by id");
+        List<Item> items = query.getResultList();
+
+        entityTransaction.commit();
+        return items;
     }
 }

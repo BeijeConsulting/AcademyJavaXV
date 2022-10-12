@@ -14,6 +14,8 @@
 <body>
 <%@page import="java.util.ArrayList" %>
 <%@page import="it.beije.hopper.web.beans.*" %>
+<%@ page import="java.time.format.DateTimeFormatter" %>
+<%@ page import="java.time.format.FormatStyle" %>
 
 <% ArrayList<Order> ordini = (ArrayList) request.getAttribute("Ordini"); %> <%--Assigning ArrayList object containing Employee data to the local object --%>
 
@@ -44,17 +46,16 @@
             for (Order order : ordini) {
     %>
     <tr>
-        <td><%=order.getDatetime()%>
+        <td><%=order.getDatetime().format(DateTimeFormatter.ofLocalizedDate(FormatStyle.SHORT)) %>
         </td>
         <td><%=String.format("%.2f", order.getAmount()) + "$"%>
         </td>
         <td><% if (order.getPromo() != null) out.print(order.getPromo());
-        else out.print("Nessuna promo applicata"); %>
+        else out.print("\t Nessuna promo applicata"); %>
         </td>
-        <td> <a name="<%=order.getId()%>" href="itemDetails.jps"> <% if (order.getItems() != null) {
+        <td> <a href="item_details?id=<%=order.getId()%>"> <% if (order.getItems() != null) {
             System.out.println(order.getItems().toString());
-            out.print("view Item details");
-            session.setAttribute("Items", order.getItems());
+            out.print("\t view Item details");
         }%>
         </a>
         </td>

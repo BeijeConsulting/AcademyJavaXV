@@ -60,12 +60,14 @@ public class HelloController {
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
+			User loggedUser = userService.findByEmailAndPassword(username, password);
+			if (loggedUser != null) {
+//			if (username.equalsIgnoreCase("ivo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
 //				model.addAttribute("fname", "Pippo");
 //				model.addAttribute("lname", "Rossi");
 				
 				//carico dettaglio utente...
-				User loggedUser = userService.loadUser(username);
+				//User loggedUser = userService.loadUser(username);
 				
 				model.addAttribute("loggedUser", loggedUser);
 				

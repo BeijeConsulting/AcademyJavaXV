@@ -1,17 +1,14 @@
 package it.beije.hopper.controller;
 
 import it.beije.hopper.model.User;
-import it.beije.hopper.service.UserService;
 import it.beije.hopper.service.UserServiceMod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.ui.Model;
-import javax.servlet.http.HttpServletResponse;
+
 import javax.servlet.http.HttpSession;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +19,7 @@ import java.util.Arrays;
 @Controller
 public class ControllerMod {
 @Autowired
-private UserServiceMod userService;
+private UserServiceMod userServiceMod;
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(HttpServletRequest request) {
@@ -47,14 +44,13 @@ private UserServiceMod userService;
             model.addAttribute("error", "Inserisci tutti i campi!");
             return "loginMod.jsp?error=1";
         } else {
-            if (email.equals("antonio@gmail.com") && password.equals("123")) {
-                User u = new User();
-                u.setEmail(email);
-                u.setFirstName("Antonio");
-                model.addAttribute("name", u.getFirstName());
-                model.addAttribute("email", u.getEmail());
-                ArrayList<String> list = new ArrayList<String>( Arrays.asList("prova", "ciao", "tino") );
-                model.addAttribute("list", list);
+        if (userServiceMod.findByEmailAndPassword(email, password) != null) {
+                User u = userServiceMod.findByEmailAndPassword(email, password);
+                model.addAttribute("user", u);
+                ArrayList<User> listTest = userServiceMod.findByLastNameAndFirstName("Paperino", "Pippo");
+
+                model.addAttribute("listTest", listTest);
+                System.out.println(listTest);
                 return "welcomeMod";
             } else {
                 model.addAttribute("error", "Email e/o password errata/e!");
@@ -64,8 +60,8 @@ private UserServiceMod userService;
     }
     @RequestMapping(value = "/testMod", method = RequestMethod.GET)
     public String testMod(HttpSession session, Model model) {
-    model.addAttribute("list", userService.listUsers());
-        System.out.println(userService.listUsers());
+    model.addAttribute("list", userServiceMod.listUsers());
+        System.out.println(userServiceMod.listUsers());
     return "testMod";
     }
 }

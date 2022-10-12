@@ -13,11 +13,11 @@
 </head>
 <body>
 <h1 style="text-align: center">
-Benvenuto ${name} <br>
-${email}
+Benvenuto ${user.firstName} <br>
+${user.email}
 </h1>
 <h2 style="text-align: center">
-    <c:forEach items="${list}" var="l"> ${l} </c:forEach>
+    <c:forEach items="${listTest}" var="l1">${l1.firstName} ${l1.email} ${l1.password} </c:forEach>
 </h2>
 </body>
 </html>

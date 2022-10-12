@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
-    </list>
+    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -163,6 +160,7 @@
       <workItem from="1665262275658" duration="3543000" />
       <workItem from="1665341042923" duration="8210000" />
       <workItem from="1665552036042" duration="1985000" />
+      <workItem from="1665572094486" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

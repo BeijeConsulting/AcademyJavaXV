@@ -1,6 +1,14 @@
 package it.beije.hopper.web;
 
 import java.io.IOException;
+
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.annotation.WebServlet;
+//import jakarta.servlet.http.HttpServlet;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
+//import jakarta.servlet.http.HttpSession;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,20 +47,10 @@ public class LoginServlet extends HttpServlet {
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
+			if (username.equalsIgnoreCase("pippo") && password.equalsIgnoreCase("1234")) { //OK
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-//				session.setAttribute("fname", "Pippo");
-//				session.setAttribute("lname", "Rossi");
-				
-				User user = new User();
-				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
-				
-				System.out.println(user);
-						
-				session.setAttribute("loggedUser", user);
-				
+				session.setAttribute("fname", "Pippo");
+				session.setAttribute("lname", "Rossi");
 				page = "welcome.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");

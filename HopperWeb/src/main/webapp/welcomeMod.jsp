@@ -25,8 +25,21 @@ String timestamp = LocalDateTime.now().toString();
 
 <strong><%= timestamp %></strong>
 <br>
-FIRST NAME : <%= fname %><br>
-LAST NAME : <%= lname %>
+Benvenuto, <%= fname %> <%= lname %> <br>
+ <p>
+Cosa vuoi fare?
+ </p>
+
+<form action="orderList.jsp" method="post">
+    <input type="submit" value="orderList">
+</form>
+
+<br/>
+
+<form action="UtilServlet" method="GET">
+    <input type="submit" value="Shop">
+</form>
+
 
 </body>
 </html>

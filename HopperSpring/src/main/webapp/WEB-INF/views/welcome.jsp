@@ -24,7 +24,6 @@ int x = 10+5;
 <br>
 FIRST NAME : ${loggedUser.firstName}<br>
 LAST NAME : ${loggedUser.lastName}<br>
-GENDER : ${loggedUser.gender}<br>
 <br>
 <c:if test="${loggedUser.firstName eq 'Pippo'}">CIAO PIPPO!!!</c:if>
 <%--

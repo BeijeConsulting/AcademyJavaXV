@@ -69,8 +69,6 @@
         System.out.println("Inside shopPage: \n"+ cart);
 
 
-
-
     %>
 
     <h2>Your cart </h2>
@@ -100,18 +98,17 @@
    %>
     <hr>
 
-<%--    <c:set var="cartC" value="${cart}"/>--%>
-<%--    <c:if test="cart==null">--%>
-<%--        <p>Your cart is empty</p>--%>
-<%--    </c:if>--%>
-<%--    <c:if test="${not empty cartC}">--%>
+    <c:set var="cartC" value="${cart}"/>
+    <c:if test="${cart eq null}">
+        <p>Your cart is empty</p>
+    </c:if>
+    <c:if test="${not empty cartC}">
 
-<%--        <div>--%>
-<%--            <p><%=session.getAttribute("productId")%></p>--%>
-<%--            <p><%= session.getAttribute("numOfProductsInCart") %></p>--%>
-
-<%--        </div>--%>
-<%--    </c:if>--%>
+        <div>
+            <p><%=session.getAttribute("productId")%></p>
+            <p><%= session.getAttribute("numOfProductsInCart") %></p>
+        </div>
+    </c:if>
 
 
 </body>

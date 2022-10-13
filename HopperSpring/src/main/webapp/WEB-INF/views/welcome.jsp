@@ -35,8 +35,11 @@ LAST NAME : ${loggedUser.lastName}<br>
 
 <br>
 LISTA:
-<c:forEach items="${lista}" var="l">
-	<br>${l}
+<c:forEach items="${orders}" var="order">
+	<br>- ORDINE ID ${order.id} in data ${order.datetime}, euro ${order.amount}:<br>
+	<c:forEach items="${order.items}" var="item">
+	${item.name} * ${item.quantity}<br>
+	</c:forEach>
 </c:forEach>
 
 <form method=GET action="prodotti">

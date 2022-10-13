@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import it.beije.hopper.ecommerce.model.Order;
+import it.beije.hopper.ecommerce.service.OrderService;
 import it.beije.hopper.model.User;
 import it.beije.hopper.service.UserService;
 import it.beije.hopper.model.Product;
@@ -24,6 +26,9 @@ public class HelloController {
 	
 	@Autowired
 	private UserService userService;
+
+	@Autowired
+	private OrderService orderService;
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -74,10 +79,10 @@ public class HelloController {
 				
 				model.addAttribute("loggedUser", loggedUser);
 				
-				//carico lista dei nipoti...
-				List<String> lista = userService.loadList();
+				List<Order> lista = orderService.findByUserId(loggedUser.getId());
+				System.out.println("lista: " + lista);
 				
-				model.addAttribute("lista", lista);
+				model.addAttribute("orders", lista);
 				
 				return "welcome";
 			} else { //KO

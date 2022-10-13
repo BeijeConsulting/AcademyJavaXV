@@ -8,11 +8,11 @@
 <title>testosterone</title>
 </head>
 <body>
-Questa è una classe ad alto tasso di testosterone
+Elenco utenti che hanno fatto un ordine nell'ultimo mese:
 <br>
 LISTA:
-<c:forEach items="${lista}" var="l">
-	<br>${l}
+<c:forEach items="${lista}" var="user">
+	<br>- ${user.email}
 </c:forEach>
 </body>
 </html>

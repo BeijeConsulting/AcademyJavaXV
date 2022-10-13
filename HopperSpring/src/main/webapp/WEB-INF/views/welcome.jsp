@@ -38,9 +38,19 @@ LISTA:
 <c:forEach items="${lista}" var="l">
 	<br>${l}
 </c:forEach>
+
 <br>
-LISTA:
+LISTA DI COGNOMI:
 <c:forEach items="${lastNames}" var="l2" >
+	<table>
+		<th>
+			<tr>email</tr>
+			<tr>password</tr>
+			<tr>name</tr>
+			<tr>email</tr>
+		</th>
+
+	</table>
 	<br>${l2}
 </c:forEach>
 

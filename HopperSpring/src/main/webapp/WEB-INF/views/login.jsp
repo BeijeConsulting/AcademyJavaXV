@@ -10,7 +10,7 @@
 
 <p style="color: red">${errore}</p>
 
-<form action="./login" method="post">
+<form action="./login" method="GET">
   <label for="username">Username:</label><br>
   <input type="text" name="username" value=""><br>
   <label for="password">Password:</label><br>

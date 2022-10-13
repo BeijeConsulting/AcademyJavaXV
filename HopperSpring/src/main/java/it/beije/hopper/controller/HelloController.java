@@ -33,12 +33,7 @@ public class HelloController {
 		return "beije"; // /WEB-INF/views/beije.jsp
 	}
 	
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public String hello(HttpServletRequest request) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
 
-		return "hello";
-	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
@@ -52,12 +47,12 @@ public class HelloController {
 			@RequestParam(name = "username", required = false) String username,
 			@RequestParam(name = "password", required = false) String password,
 			Model model) {
-		
+
 		System.out.println("POST login...");
-		
+
 		System.out.println("username : " + username);
 		System.out.println("password : " + password);
-		
+
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
 			User loggedUser = userService.findByEmailAndPassword(username, password);
@@ -65,16 +60,16 @@ public class HelloController {
 //			if (username.equalsIgnoreCase("ivo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
 //				model.addAttribute("fname", "Pippo");
 //				model.addAttribute("lname", "Rossi");
-				
+
 				//carico dettaglio utente...
 				//User loggedUser = userService.loadUser(username);
 
 				model.addAttribute("loggedUser", loggedUser);
-				
+
 				//carico lista dei nipoti...
 				List<String> lista = userService.loadList();
 
-				
+
 				model.addAttribute("lista", lista);
 //				userService.findById(3);
 				//lista degli utenti con lo stesso cognome

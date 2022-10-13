@@ -4,8 +4,9 @@
    <head>
       <title>E-Commerce</title>
    </head>
-   <body>
-      <h1>Benvenuto su HopperShop!!</h1>
+   <body style="text-align: center" bgcolor="#7fffd4" topmargin="200px">
+
+      <h1 style="color: blue">Benvenuto su HopperShop!!</h1>
       <h3>Effettua l'accesso oppure registrati</h3>
    <form>
       <input type="button" value="Accedi" onclick="document.getElementById('accessDiv').removeAttribute('hidden');document.getElementById('registerDiv').setAttribute('hidden','hidden')">

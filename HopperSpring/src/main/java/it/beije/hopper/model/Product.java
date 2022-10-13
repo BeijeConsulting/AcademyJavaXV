@@ -1,11 +1,6 @@
-package it.beije.hopper.ecommerce.model;
+package it.beije.hopper.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /*
 CREATE TABLE `products` (
@@ -31,7 +26,7 @@ public class Product {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
+	@Column(name = "descr")
 	private String desc;
 
 	@Column(name = "price")

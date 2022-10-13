@@ -1,13 +1,12 @@
-package it.beije.hopper.ecommerce.service;
+package it.beije.hopper.service;
 
 
-import java.util.List;
-
+import it.beije.hopper.model.Order;
+import it.beije.hopper.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.beije.hopper.ecommerce.model.Order;
-import it.beije.hopper.ecommerce.repository.OrderRepository;
+import java.util.List;
 
 
 @Service

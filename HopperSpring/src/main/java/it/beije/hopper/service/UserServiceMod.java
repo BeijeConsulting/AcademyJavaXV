@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class UserServiceMod {
@@ -26,5 +27,9 @@ public class UserServiceMod {
     }
     public ArrayList<User> findByLastNameAndFirstName(String lastName, String firstName){
        return userRepositoryMod.findByLastNameAndFirstName(lastName, firstName);
+    }
+
+    public List<User> findAll(){
+        return userRepositoryMod.findAll();
     }
 }

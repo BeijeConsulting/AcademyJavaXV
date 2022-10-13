@@ -60,8 +60,8 @@ private UserServiceMod userServiceMod;
     }
     @RequestMapping(value = "/testMod", method = RequestMethod.GET)
     public String testMod(HttpSession session, Model model) {
-    model.addAttribute("list", userServiceMod.listUsers());
-        System.out.println(userServiceMod.listUsers());
+    model.addAttribute("list", userServiceMod.findAll());
+        System.out.println(userServiceMod.findAll());
     return "testMod";
     }
 }

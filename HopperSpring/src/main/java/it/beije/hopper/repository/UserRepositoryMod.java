@@ -19,4 +19,7 @@ public interface UserRepositoryMod extends JpaRepository<User, Integer>{
     public abstract List<User> findByLastName(String lastName);
 
     ArrayList<User> findByLastNameAndFirstName(String lastName, String firstName);
+
+    List<User> findAll();
+
 }

@@ -10,8 +10,33 @@
 <head>
     <title>Title</title>
 </head>
-<body>
-<c:forEach items="${list}" var="l">${l.firstName}, </c:forEach>
+<style>
+    th, td {
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+</style>
+<table style="margin: 0 auto; text-align: center; ">
+    <tr>
+        <th>Nome</th>
+        <th>Cognome</th>
+        <th>Email</th>
+        <th>ID</th>
+    </tr>
+    <c:forEach items="${list}" var="l">
+        <tr>
+            <td>${l.firstName}
+            </td>
+            <td>${l.lastName}
+            </td>
+            <td>${l.email}
+            </td>
+            <td>${l.id}
+            </td>
+        </tr>
+    </c:forEach>
 
+
+</table>
 </body>
 </html>

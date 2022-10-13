@@ -43,6 +43,7 @@ public class UserService {
 	
 	public List<String> loadList() {
 		return Arrays.asList("qui", "quo", "qua");
+		
 	}
 
 }

@@ -12,12 +12,27 @@
     <title>Title</title>
 </head>
 <body>
+<style>
+    input[type=button], input[type=submit], input[type=reset] {
+        background-color: #04AA6D;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin: 4px 2px;
+        cursor: pointer;
+    }
+</style>
 <h1 style="text-align: center">
-Benvenuto ${user.firstName} <br>
-${user.email}
+    Benvenuto ${user.firstName} ${user.lastName} <br>
+    <form action="./orderHistory" method="POST">
+        <input type="hidden" name="userId" value=${user.id}>
+        <input type="submit" value="Storico Ordini">
+    </form>
+
 </h1>
 <h2 style="text-align: center">
-    <c:forEach items="${listTest}" var="l1">${l1.firstName} ${l1.email} ${l1.password} </c:forEach>
+
 </h2>
 </body>
 </html>

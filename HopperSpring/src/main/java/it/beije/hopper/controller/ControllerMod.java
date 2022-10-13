@@ -1,6 +1,8 @@
 package it.beije.hopper.controller;
 
+import it.beije.hopper.model.Order;
 import it.beije.hopper.model.User;
+import it.beije.hopper.service.OrderService;
 import it.beije.hopper.service.UserServiceMod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,13 +15,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class ControllerMod {
 @Autowired
 private UserServiceMod userServiceMod;
+@Autowired
+private OrderService orderService;
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public String home(HttpServletRequest request) {
@@ -47,16 +50,19 @@ private UserServiceMod userServiceMod;
         if (userServiceMod.findByEmailAndPassword(email, password) != null) {
                 User u = userServiceMod.findByEmailAndPassword(email, password);
                 model.addAttribute("user", u);
-                ArrayList<User> listTest = userServiceMod.findByLastNameAndFirstName("Paperino", "Pippo");
-
-                model.addAttribute("listTest", listTest);
-                System.out.println(listTest);
                 return "welcomeMod";
             } else {
                 model.addAttribute("error", "Email e/o password errata/e!");
                 return "loginMod.jsp?error=2";
             }
         }
+    }
+    @RequestMapping(value = "/orderHistory", method = RequestMethod.POST)
+    public String OrderHistory(HttpSession session, Model model, @RequestParam(name = "userId", required = true) Integer id) {
+        System.out.println(orderService.findByUserId(id));
+        List<Order> orderList = orderService.findByUserId(id);
+        model.addAttribute("orderHistory", orderList);
+        return "orderHistory";
     }
     @RequestMapping(value = "/testMod", method = RequestMethod.GET)
     public String testMod(HttpSession session, Model model) {

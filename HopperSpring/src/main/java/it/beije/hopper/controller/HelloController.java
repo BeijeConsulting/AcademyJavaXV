@@ -5,7 +5,6 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,9 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.beije.hopper.model.*;
-import it.beije.hopper.service.*;
-
+import it.beije.hopper.ecommerce.model.Order;
+import it.beije.hopper.ecommerce.service.OrderService;
+import it.beije.hopper.model.User;
+import it.beije.hopper.service.UserService;
 
 
 @Controller
@@ -23,12 +23,9 @@ public class HelloController {
 	
 	@Autowired
 	private UserService userService;
-	@Autowired
-	private ProductService productService;
+
 	@Autowired
 	private OrderService orderService;
-	@Autowired
-	private ItemService itemService;
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -70,15 +67,19 @@ public class HelloController {
 			//verifico credenziali su DB...
 			User loggedUser = userService.findByEmailAndPassword(username, password);
 			if (loggedUser != null) {
+//			if (username.equalsIgnoreCase("ivo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
+//				model.addAttribute("fname", "Pippo");
+//				model.addAttribute("lname", "Rossi");
+				
 				//carico dettaglio utente...
 				//User loggedUser = userService.loadUser(username);
 				
 				model.addAttribute("loggedUser", loggedUser);
 				
-				//carico lista dei nipoti...
-				List<String> lista = userService.loadList();
+				List<Order> lista = orderService.findByUserId(loggedUser.getId());
+				System.out.println("lista: " + lista);
 				
-				model.addAttribute("lista", lista);
+				model.addAttribute("orders", lista);
 				
 				return "welcome";
 			} else { //KO
@@ -87,6 +88,7 @@ public class HelloController {
 		} else {
 			model.addAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
 		}
+
 		return "login";
 	}
 

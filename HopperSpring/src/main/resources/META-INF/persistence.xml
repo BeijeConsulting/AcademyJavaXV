@@ -3,16 +3,16 @@
 	<persistence-unit name="hopper">
 
 		<class>it.beije.hopper.model.User</class>
-		<class>it.beije.hopper.model.Product</class>
-		<class>it.beije.hopper.model.Order</class>
-		<class>it.beije.hopper.model.Item</class>
+		<class>it.beije.hopper.ecommerce.model.Item</class>
+		<class>it.beije.hopper.ecommerce.model.Product</class>
+		<class>it.beije.hopper.ecommerce.model.Order</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hopper"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
-			<property name="javax.persistence.jdbc.password" value="Saponara13"/>
+			<property name="javax.persistence.jdbc.password" value="beije"/>
 		</properties>
 
 	</persistence-unit>

@@ -36,9 +36,9 @@ public class TestController {
 	public String test(Locale locale, Model model) {
 		System.out.println("test : " + locale);
 
-		List<User> lista = userService.loadLastClients(LocalDate.now().minusMonths(1));
-		System.out.println("lista : " + lista);
-		model.addAttribute("lista", lista);
+//		List<User> lista = userService.loadLastClients(LocalDate.now().minusMonths(1));
+//		System.out.println("lista : " + lista);
+//		model.addAttribute("lista", lista);
 		
 		return "testosterone";
 	}

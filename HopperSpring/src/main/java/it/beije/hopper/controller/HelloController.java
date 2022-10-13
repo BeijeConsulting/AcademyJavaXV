@@ -1,10 +1,11 @@
 package it.beije.hopper.controller;
 
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import it.beije.hopper.model.Product;
+import it.beije.hopper.service.OrderService;
+import it.beije.hopper.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.beije.hopper.ecommerce.model.Order;
-import it.beije.hopper.ecommerce.service.OrderService;
 import it.beije.hopper.model.User;
 import it.beije.hopper.service.UserService;
+
+import java.util.List;
 
 
 @Controller
@@ -26,6 +27,8 @@ public class HelloController {
 
 	@Autowired
 	private OrderService orderService;
+	@Autowired
+	private ProductService productService;
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -35,21 +38,15 @@ public class HelloController {
 	public String index(HttpServletRequest request) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 
-		return "beije"; // /WEB-INF/views/beije.jsp
+		return "home"; // /WEB-INF/views/home.jsp
 	}
 	
-	@RequestMapping(value = "/hello", method = RequestMethod.GET)
-	public String hello(HttpServletRequest request) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
-
-		return "hello";
-	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String login() {
 		System.out.println("GET login...");
 
-		return "login";
+		return "home";
 	}
 
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -76,11 +73,15 @@ public class HelloController {
 				
 				model.addAttribute("loggedUser", loggedUser);
 				
-				List<Order> lista = orderService.findByUserId(loggedUser.getId());
-				System.out.println("lista: " + lista);
-				
-				model.addAttribute("orders", lista);
-				
+				//List<Order> lista = orderService.findByUserId(loggedUser.getId());
+//				System.out.println("lista: " + lista);
+//
+//				model.addAttribute("orders", lista);
+
+				List<Product> listaProdotti = productService.findAll();
+				System.out.println("lista: " + listaProdotti);
+				model.addAttribute("products", listaProdotti);
+
 				return "welcome";
 			} else { //KO
 				model.addAttribute("errore", "CREDENZIALI ERRATE");
@@ -89,7 +90,7 @@ public class HelloController {
 			model.addAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
 		}
 
-		return "login";
+		return "home";
 	}
 
 }

@@ -5,7 +5,9 @@ import it.beije.hopper.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("productService")
+import java.util.List;
+
+@Service
 public class ProductService {
     @Autowired
     private ProductRepository productRepository;
@@ -28,5 +30,10 @@ public class ProductService {
         System.out.println("loadProduct : " + product);
 
         return product;
+    }
+
+    public List<Product> findAll(){
+        List<Product> products = productRepository.findAll();
+        return products;
     }
 }

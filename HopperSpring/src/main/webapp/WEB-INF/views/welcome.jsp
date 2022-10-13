@@ -9,18 +9,6 @@
 </head>
 <body>
 
-<%
-/*
-User loggedUser = (User) session.getAttribute("loggedUser");
-
-System.out.println(loggedUser.getFirstName());
-System.out.println(loggedUser.getLastName());
-int x = 10+5;
-*/
-
-//KO!!! -> System.out.println("sono nella welcome.jsp : " + ${loggedUser});
-%>
-
 <br>
 FIRST NAME : ${loggedUser.firstName}<br>
 LAST NAME : ${loggedUser.lastName}<br>
@@ -35,11 +23,8 @@ LAST NAME : ${loggedUser.lastName}<br>
 
 <br>
 LISTA:
-<c:forEach items="${orders}" var="order">
-	<br>- ORDINE ID ${order.id} in data ${order.datetime}, euro ${order.amount}:<br>
-	<c:forEach items="${order.items}" var="item">
-	${item.name} * ${item.quantity}<br>
-	</c:forEach>
+<c:forEach items="${products}" var="product">
+	${product} <br>
 </c:forEach>
 </body>
 </html>

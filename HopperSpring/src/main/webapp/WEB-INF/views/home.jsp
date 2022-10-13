@@ -12,7 +12,7 @@
       <input type="button" value="Accedi" onclick="document.getElementById('accessDiv').removeAttribute('hidden');document.getElementById('registerDiv').setAttribute('hidden','hidden')">
       <input type="button" value="Registrati" onclick="document.getElementById('registerDiv').removeAttribute('hidden');document.getElementById('accessDiv').setAttribute('hidden','hidden')">
    </form>
-
+      <p style="color: red">${errore}</p>
       <div id="accessDiv" hidden="hidden">
          <form action="./login" method="post">
             <label for="username">Username:</label><br>

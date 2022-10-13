@@ -3,6 +3,8 @@ package it.beije.hopper.spring;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.beije.hopper.model.Product;
+
 
 
 public class Carrello {

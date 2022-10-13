@@ -12,11 +12,11 @@
 
 
 	<h1>PRODOTTI</h1>
-	Cart:${cartsize}
+	
    	<c:forEach items="${products}" var="p">
 		<br>${p.name}
 		<br>${p.desc}
-		<br>${p.price}
+		<br>&euro;${p.price}
 		<form>
 		<button>add to cart</button>
 		</form>

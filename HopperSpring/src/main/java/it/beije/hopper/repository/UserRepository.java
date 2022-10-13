@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 
 import it.beije.hopper.model.User;
 
-
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
@@ -16,4 +15,5 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	public abstract User findByEmailAndPassword(String email, String password);
 
 	public abstract List<User> findByLastName(String lastName);
+	
 }

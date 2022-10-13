@@ -5,6 +5,7 @@
 		
 		<class>it.beije.hopper.entity.User</class>
 		<class>it.beije.hopper.entity.Product</class>
+		<class>it.beije.hopper.entity.Order</class>
 
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		

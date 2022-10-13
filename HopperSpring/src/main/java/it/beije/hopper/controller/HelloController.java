@@ -1,8 +1,10 @@
 package it.beije.hopper.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import it.beije.hopper.model.User;
 import it.beije.hopper.service.UserService;
+import it.beije.hopper.model.Product;
 
 
 @Controller
@@ -87,4 +90,12 @@ public class HelloController {
 		return "login";
 	}
 
+	@RequestMapping(value = "/prodotti", method = RequestMethod.GET)
+	public String prodotti(HttpServletRequest request ,Model model) {
+		System.out.println("test1");
+		List<Product> products=userService.loadProducts();
+		model.addAttribute("products",products);
+		
+		return "prodotti";
+	}
 }

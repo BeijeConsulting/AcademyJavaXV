@@ -39,7 +39,7 @@ LISTA:
 	<br>${l}
 </c:forEach>
 
-<form method=GET action="./prodotti">
+<form method=GET action="prodotti">
 <button>visualizza prodotti</button></form>
 </body>
 </html>

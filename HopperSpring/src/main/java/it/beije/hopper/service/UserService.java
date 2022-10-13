@@ -7,7 +7,7 @@ import it.beije.hopper.model.User;
 import it.beije.hopper.repository.UserRepository;
 
 
-@Service
+@Service("userService")
 public class UserService {
 	
 	@Autowired

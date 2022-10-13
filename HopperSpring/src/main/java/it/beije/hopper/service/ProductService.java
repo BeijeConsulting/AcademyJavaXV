@@ -5,9 +5,8 @@ import it.beije.hopper.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("productService")
 public class ProductService {
-
     @Autowired
     private ProductRepository productRepository;
 
@@ -24,7 +23,7 @@ public class ProductService {
 //		Optional<User> u = userRepository.findById(1);
 //		User user = u.isPresent() ? u.get() : new User();
 
-        Product product = productRepository.findByID(username);
+        Product product = productRepository.findById(username);
 
         System.out.println("loadProduct : " + product);
 

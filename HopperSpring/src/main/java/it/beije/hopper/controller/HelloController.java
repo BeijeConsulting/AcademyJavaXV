@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,8 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import it.beije.hopper.model.User;
-import it.beije.hopper.service.UserService;
+import it.beije.hopper.model.*;
+import it.beije.hopper.service.*;
+
 
 
 @Controller
@@ -21,6 +23,12 @@ public class HelloController {
 	
 	@Autowired
 	private UserService userService;
+	@Autowired
+	private ProductService productService;
+	@Autowired
+	private OrderService orderService;
+	@Autowired
+	private ItemService itemService;
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -62,10 +70,6 @@ public class HelloController {
 			//verifico credenziali su DB...
 			User loggedUser = userService.findByEmailAndPassword(username, password);
 			if (loggedUser != null) {
-//			if (username.equalsIgnoreCase("ivo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
-//				model.addAttribute("fname", "Pippo");
-//				model.addAttribute("lname", "Rossi");
-				
 				//carico dettaglio utente...
 				//User loggedUser = userService.loadUser(username);
 				
@@ -83,7 +87,6 @@ public class HelloController {
 		} else {
 			model.addAttribute("errore", "INSERIRE ENTRAMBE LE CREDENZIALI");
 		}
-
 		return "login";
 	}
 

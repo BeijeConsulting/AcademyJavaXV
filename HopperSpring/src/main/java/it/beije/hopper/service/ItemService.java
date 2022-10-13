@@ -5,16 +5,16 @@ import it.beije.hopper.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+@Service("itemService")
 public class ItemService {
     @Autowired
-    private ItemRepository productRepository;
+    private ItemRepository itemRepository;
 
     public ItemService() {
-        System.out.println("creo un oggetto OrderService...");
+        System.out.println("creo un oggetto ItemService...");
     }
 
-    public Item loadItem(int ID) {
+    public Item loadItem(int id) {
 //		User user = new User();
 //		user.setEmail(username);
 //		user.setFirstName("Pippo");
@@ -23,7 +23,7 @@ public class ItemService {
 //		Optional<User> u = userRepository.findById(1);
 //		User user = u.isPresent() ? u.get() : new User();
 
-        Item item = productRepository.findByID(ID);
+        Item item = itemRepository.findById(id);
 
         System.out.println("loadProduct : " + item);
 

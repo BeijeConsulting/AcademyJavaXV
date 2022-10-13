@@ -38,5 +38,11 @@ LISTA:
 <c:forEach items="${lista}" var="l">
 	<br>${l}
 </c:forEach>
+<br>
+LISTA:
+<c:forEach items="${lastNames}" var="l2" >
+	<br>${l2}
+</c:forEach>
+
 </body>
 </html>

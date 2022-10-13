@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder" />
+    <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Hopper/Hopper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../Hopper/Hopper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,9 +68,9 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="ExceptionTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ExceptionTest" />
+  <component name="RunManager" selected="Application.TtClass">
+    <configuration name="ExtendsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ExtendsTest" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -74,8 +82,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TC" />
+    <configuration name="T (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.T" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -87,8 +95,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Test" />
+    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.T" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -100,8 +108,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TestClass" />
+    <configuration name="TestC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TestC" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -113,8 +121,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="X" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.X" />
+    <configuration name="TtClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TtClass" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -128,11 +136,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Test" />
-        <item itemvalue="Application.ExceptionTest" />
-        <item itemvalue="Application.X" />
-        <item itemvalue="Application.TestClass" />
-        <item itemvalue="Application.TC" />
+        <item itemvalue="Application.TtClass" />
+        <item itemvalue="Application.T" />
+        <item itemvalue="Application.T (1)" />
+        <item itemvalue="Application.TestC" />
+        <item itemvalue="Application.ExtendsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -161,6 +169,7 @@
       <workItem from="1665341042923" duration="8210000" />
       <workItem from="1665552036042" duration="1985000" />
       <workItem from="1665572094486" duration="10000" />
+      <workItem from="1665636187540" duration="5507000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
@@ -206,7 +215,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>278</line>
+          <line>318</line>
           <properties class="it.beije.xv.esercizi.TestEL.TestClass">
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
@@ -215,13 +224,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>291</line>
+          <line>331</line>
           <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

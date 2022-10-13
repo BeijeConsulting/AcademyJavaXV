@@ -6,36 +6,76 @@ import java.sql.SQLException;
 import java.time.*;
 import java.util.*;
 
-public class Test {
-    static String s = "";
 
-    public static void m0(int a, int b) {
-        s += a;
-        m2();
-        m1(b);
-    }
 
-    public static void m1(int i) {
-        s += i;
-    }
 
-    public static void m2() {
-        throw new NullPointerException("aa");
-    }
-
-    public static void m() {
-        m0(1, 2);
-        m1(3);
-    }
-
-    public static void main(String args[]) {
-        try {
-            m();
-        } catch (Exception e) {
-        }
-        System.out.println(s);
-    }
-}
+//class B {}
+//class B1 extends B {}
+//class B2 extends B {}
+//class ExtendsTest{
+//    public static void main(String args[]){
+//        B b = new B();
+//        B1 b1 = new B1();
+//        B2 b2 = new B2();
+////        b = b1;
+//        b1 = (B1) b;
+//        // insert statement here
+//    }
+//}
+//interface Test{
+//    static void check(){
+//        System.out.println("Ciao");
+//    }
+//
+//    default void check2(){
+//        System.out.println("Ciao!");
+//    }
+//}
+//class TC{
+//    public static void main(String args[]){
+//        Test.check();
+//
+//    }
+//}
+//class A{
+//    int max(int x, int y)  { if (x>y) return x; else return y; }
+//}
+//class B extends A{
+//    int max(int x, int y)  {  return 2 * super.max(x, y) ; }
+//}
+//class C extends B{
+//    int max(int x, int y)  {  return super.max( 2*x, 2*y); }
+//}
+//public class Test {
+//    static String s = "";
+//
+//    public static void m0(int a, int b) {
+//        s += a;
+//        m2();
+//        m1(b);
+//    }
+//
+//    public static void m1(int i) {
+//        s += i;
+//    }
+//
+//    public static void m2() {
+//        throw new NullPointerException("aa");
+//    }
+//
+//    public static void m() {
+//        m0(1, 2);
+//        m1(3);
+//    }
+//
+//    public static void main(String args[]) {
+//        try {
+//            m();
+//        } catch (Exception e) {
+//        }
+//        System.out.println(s);
+//    }
+//}
 //class NewException extends Exception {
 //}
 //

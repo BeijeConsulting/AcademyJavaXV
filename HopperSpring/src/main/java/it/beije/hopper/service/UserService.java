@@ -24,7 +24,14 @@ public class UserService {
 	public User findByEmailAndPassword(String email, String password) {
 		return userRepository.findByEmailAndPassword(email, password);
 	}
+	public List<User> findByLastName(String lastName){
+		return userRepository.findByLastName(lastName);
+	}
 
+//	public void findById(Integer id){
+//		System.out.println("User repository find by id: " + userRepository.findById(id));
+//		return;
+//	}
 	public User loadUser(String username) {
 //		User user = new User();
 //		user.setEmail(username);
@@ -33,7 +40,7 @@ public class UserService {
 
 //		Optional<User> u = userRepository.findById(1); 
 //		User user = u.isPresent() ? u.get() : new User();
-		
+
 		User user = userRepository.findByEmail(username);
 		
 		System.out.println("loadUser : " + user);

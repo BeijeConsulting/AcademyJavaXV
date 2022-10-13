@@ -1,8 +1,7 @@
 package it.beije.hopper.service;
 
-import java.util.Arrays;
+import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,6 +15,7 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
 
 	public UserService() {
 		System.out.println("creo un oggetto UserService...");
@@ -44,6 +44,7 @@ public class UserService {
 	public List<String> loadList() {
 		return Arrays.asList("qui", "quo", "qua");
 		
+	public List<User> loadLastClients(LocalDate date) {
+		return userRepository.loadLastClients(date);
 	}
-
 }

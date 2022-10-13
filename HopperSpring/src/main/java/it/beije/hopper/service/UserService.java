@@ -41,8 +41,6 @@ public class UserService {
 		return user;
 	}
 	
-	public List<String> loadList() {
-		return Arrays.asList("qui", "quo", "qua");
 		
 	public List<User> loadLastClients(LocalDate date) {
 		return userRepository.loadLastClients(date);

@@ -10,12 +10,8 @@ import it.beije.hopper.model.User;
 
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer>{
+public interface ProductRepository extends JpaRepository<Product, Integer>{
 	
-	public abstract User findByEmail(String email);
-
-	public abstract User findByEmailAndPassword(String email, String password);
-
-	public abstract List<User> findByLastName(String lastName);
+	public abstract List<Product> findAll();
 	
 }

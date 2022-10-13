@@ -35,6 +35,9 @@ LAST NAME : ${loggedUser.lastName}<br>
 
 <br>
 LISTA:
+<c:forEach items="${product}" var="p">
+	<br>${p}
+</c:forEach>
 <c:forEach items="${lista}" var="l">
 	<br>${l}
 </c:forEach>

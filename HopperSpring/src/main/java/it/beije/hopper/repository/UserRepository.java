@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
-import it.beije.hopper.model.Product;
+
 import it.beije.hopper.model.User;
 
 

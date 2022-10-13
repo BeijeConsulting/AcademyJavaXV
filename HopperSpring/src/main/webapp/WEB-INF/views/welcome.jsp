@@ -40,7 +40,6 @@ LISTA:
 	<br>${p}
 </c:forEach>
 
-
 <c:forEach items="${orders}" var="order">
 	<br>- ORDINE ID ${order.id} in data ${order.datetime}, euro ${order.amount}:<br>
 	<c:forEach items="${order.items}" var="item">

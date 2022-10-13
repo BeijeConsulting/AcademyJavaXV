@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
-import it.beije.hopper.model.Product;
+import it.beije.hopper.ecommerce.model.Product;
 
 import it.beije.hopper.ecommerce.model.Order;
 import it.beije.hopper.ecommerce.service.OrderService;
@@ -30,7 +30,6 @@ public class HelloController {
 	private UserService userService;
 	@Autowired
 	private ProductService productService;
-
 	@Autowired
 	private OrderService orderService;
 
@@ -85,8 +84,7 @@ public class HelloController {
 
 				//carico lista dei nipoti...
 				List<Product> product = productService.loadProduct();
-				//List<String> lista = userService.loadList();
-				//model.addAttribute("lista", lista);
+				
 				model.addAttribute("product", product);
 
 				List<Order> lista = orderService.findByUserId(loggedUser.getId());

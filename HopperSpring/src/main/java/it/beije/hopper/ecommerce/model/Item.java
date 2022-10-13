@@ -1,5 +1,6 @@
 package it.beije.hopper.ecommerce.model;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -50,7 +51,7 @@ public class Item {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
+	@Column(name = "descrizione")
 	private String desc;
 
 	@Column(name = "price")

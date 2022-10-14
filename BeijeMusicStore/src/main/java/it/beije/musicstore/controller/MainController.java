@@ -23,29 +23,29 @@ public class MainController {
 //	private OrderService orderService;
 
     public MainController() {
-        System.out.println("creo un oggetto HelloController...");
+        System.out.println("creo un oggetto MainController...");
     }
 
     @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
     public String index(HttpServletRequest request) {
-        System.out.println("Hello Page Requested : " + request.getRequestURI());
+        //System.out.println("Hello Page Requested : " + request.getRequestURI());
 
         return "welcome"; // /WEB-INF/views/beije.jsp
     }
-
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello(HttpServletRequest request) {
-        System.out.println("Hello Page Requested : " + request.getRequestURI());
-
-        return "hello";
-    }
-
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public String login() {
-        System.out.println("GET login...");
-
-        return "login";
-    }
+//
+//    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+//    public String hello(HttpServletRequest request) {
+//        System.out.println("Hello Page Requested : " + request.getRequestURI());
+//
+//        return "hello";
+//    }
+//
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public String login() {
+//        System.out.println("GET login...");
+//
+//        return "login";
+//    }
 
 
 }

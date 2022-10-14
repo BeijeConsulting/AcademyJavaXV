@@ -82,7 +82,6 @@ public class HelloController {
 				model.addAttribute("loggedUser", loggedUser);
 				
 
-				//carico lista dei nipoti...
 				List<Product> product = productService.loadProduct();
 				
 				model.addAttribute("product", product);

@@ -8,5 +8,10 @@
 </head>
 <body>
 <h1>Benvenuto</h1>
+
+	<form action="./find_artist_by_genre" method="get">
+		<input type="submit" value="Cerca Artista tramite genere">
+	</form>
+
 </body>
 </html>

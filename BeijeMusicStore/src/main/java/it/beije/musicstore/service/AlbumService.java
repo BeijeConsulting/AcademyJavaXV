@@ -19,7 +19,8 @@ public class AlbumService {
 		return album;
 	}
 	
-	public String getAnno() {
-		return "ciao";
+	public List<Album> getAlbumByGenere(String genere){
+		List<Album> album=albumRepository.findByGenere(genere);
+		return album;
 	}
 }

@@ -14,5 +14,5 @@ public interface CanzoneRepository extends JpaRepository<Canzone, Integer>{
 	
 	public abstract List<Canzone> findByAlbumId(Integer album);
 	public abstract List<Canzone> findByArtistaId(Integer artist);
-	
+	public abstract List<Canzone> findByGenere(String genere);
 }

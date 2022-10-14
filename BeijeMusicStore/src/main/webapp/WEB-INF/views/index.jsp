@@ -30,6 +30,10 @@
 	<button>AlbumByGenre</button>
 </form>
 
+<form action="songbygenre">
+	<button>SongByGenre</button>
+</form>
+
 
 </body>
 </html>

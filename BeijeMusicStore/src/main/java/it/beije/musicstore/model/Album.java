@@ -19,13 +19,13 @@ public class Album {
 	private Integer id;
 	
 	@Column(name = "id_artista")
-	private Integer id_artista;
+	private Integer artistaId;
 
 	@Column(name = "titolo")
 	private String titolo;
 	
-	@Column(name = "data_di_nascita")
-	private String dataDiNascita;
+	@Column(name = "data_di_uscita")
+	private String dataDiUscita;
 	
 	@Column(name = "genere")
 	private String genere;
@@ -38,12 +38,12 @@ public class Album {
 		this.id = id;
 	}
 
-	public Integer getId_artista() {
-		return id_artista;
+	public Integer getArtistaId() {
+		return artistaId;
 	}
 
-	public void setId_artista(Integer id_artista) {
-		this.id_artista = id_artista;
+	public void setArtistaId(Integer artistaId) {
+		this.artistaId = artistaId;
 	}
 
 	public String getTitolo() {
@@ -54,12 +54,14 @@ public class Album {
 		this.titolo = titolo;
 	}
 
-	public String getData_di_nascita() {
-		return dataDiNascita;
+	
+
+	public String getDataDiUscita() {
+		return dataDiUscita;
 	}
 
-	public void setData_di_nascita(String data_di_nascita) {
-		this.dataDiNascita = data_di_nascita;
+	public void setDataDiUscita(String dataDiUscita) {
+		this.dataDiUscita = dataDiUscita;
 	}
 
 	public String getGenere() {
@@ -72,8 +74,8 @@ public class Album {
 
 	@Override
 	public String toString() {
-		return "Album [id=" + id + ", id_artista=" + id_artista + ", titolo=" + titolo + ", data_di_nascita="
-				+ dataDiNascita + ", genere=" + genere + "]";
+		return "Album [id=" + id + ", id_artista=" + artistaId + ", titolo=" + titolo + ", data_di_nascita="
+				+ dataDiUscita + ", genere=" + genere + "]";
 	}
 
 	

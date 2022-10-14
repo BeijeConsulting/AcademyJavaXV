@@ -1,11 +1,18 @@
 package it.beije.musicstore.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
 
 
 
@@ -24,6 +31,10 @@ public class Artista {
 	@Column(name = "genere")
 	private String genere;
 
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name="id_artista")
+//	private List<Album> album;
+	
 	public Integer getId() {
 		return id;
 	}
@@ -47,6 +58,11 @@ public class Artista {
 	public void setGenere(String genere) {
 		this.genere = genere;
 	}
+
+//	public List<Album> getAlbum() {
+//		return album;
+//	}
+
 
 	@Override
 	public String toString() {

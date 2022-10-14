@@ -13,5 +13,10 @@
 	<br><br><strong>NOME:</strong>${a.nome} <strong>GENERE:</strong>${a.genere}
 </c:forEach>
 
+<c:forEach items="${album}" var="a">
+	<br><br><strong>ID ARTISTA:</strong>${a.artistaId} <strong>TITOLO:</strong>${a.titolo} 
+	<strong>DATA USCITA:</strong>${a.dataDiUscita} <strong>GENERE:</strong>${a.genere}
+</c:forEach>
+
 </body>
 </html>

@@ -11,8 +11,10 @@ public class Artista {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
+
     @Column(name = "nome")
     private String nome;
+
     @Column(name = "genere")
     private Integer genere;
 

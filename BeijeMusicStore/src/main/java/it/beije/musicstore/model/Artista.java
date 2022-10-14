@@ -17,10 +17,6 @@ public class Artista {
     @Column(name="genere")
     private String genere;
 
-   /* @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name="id_artista")
-    private List<Canzone> canzoni;*/
-
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JoinColumn(name="id_artista")
     private List<Album> albumArtista;
@@ -47,14 +43,6 @@ public class Artista {
     public void setGenere(String genere) {
         this.genere = genere;
     }
-
-    /*public List<Canzone> getCanzoni() {
-        return canzoni;
-    }
-
-    public void setCanzoni(List<Canzone> canzoni) {
-        this.canzoni = canzoni;
-    }*/
 
     public List<Album> getAlbumArtista() {
         return albumArtista;

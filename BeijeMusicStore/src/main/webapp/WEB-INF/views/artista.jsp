@@ -9,7 +9,7 @@
 <title>ARTIST BY GENRE</title>
 </head>
 <body>
-<H1 style=color:red>ARTIST BY GENRE</H1>
+<H1 style=color:red>ARTIST</H1>
 
 <c:forEach items="${artisti}" var="a">
 	<br><br><strong>NOME:</strong>${a.nome} <strong>GENERE:</strong>${a.genere}

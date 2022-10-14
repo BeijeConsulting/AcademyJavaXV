@@ -30,10 +30,6 @@ public class Artista {
 
 	@Column(name = "genere")
 	private String genere;
-
-//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//	@JoinColumn(name="id_artista")
-//	private List<Album> album;
 	
 	public Integer getId() {
 		return id;
@@ -58,11 +54,6 @@ public class Artista {
 	public void setGenere(String genere) {
 		this.genere = genere;
 	}
-
-//	public List<Album> getAlbum() {
-//		return album;
-//	}
-
 
 	@Override
 	public String toString() {

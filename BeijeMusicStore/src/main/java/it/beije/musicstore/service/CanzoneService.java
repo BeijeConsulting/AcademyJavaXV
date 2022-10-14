@@ -1,6 +1,8 @@
 package it.beije.musicstore.service;
 
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import it.beije.musicstore.model.Canzone;
@@ -22,5 +24,9 @@ public class CanzoneService {
 	
 	public List<Canzone> getCanzoniByGenere(String genere){
 		return canzoneRepository.findByGenere(genere);
+	}
+	
+	public Optional<Canzone> getCanzoniById(Integer id){
+		return canzoneRepository.findById(id);
 	}
 }

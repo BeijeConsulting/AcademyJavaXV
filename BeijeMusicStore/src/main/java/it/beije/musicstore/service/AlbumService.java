@@ -1,6 +1,7 @@
 package it.beije.musicstore.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,12 +16,14 @@ public class AlbumService {
 	AlbumRepository albumRepository;
 	
 	public List<Album> getAlbumByArtistaId(Integer id){
-		List<Album> album=albumRepository.findByArtistaId(id);
-		return album;
-	}
+		return albumRepository.findByArtistaId(id);
+	} 
 	
 	public List<Album> getAlbumByGenere(String genere){
-		List<Album> album=albumRepository.findByGenere(genere);
-		return album;
+		return albumRepository.findByGenere(genere);
+	}
+	
+	public Optional<Album> getAlbumByCanzoneId(Integer album){
+		return albumRepository.findById(album);
 	}
 }

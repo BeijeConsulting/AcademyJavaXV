@@ -38,7 +38,6 @@ public class CanzoneController {
 		return "song";
 	}
 	
-	
 	@RequestMapping(value = "songbygenre", method = RequestMethod.GET)
 	public String songbygenre(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
@@ -47,4 +46,5 @@ public class CanzoneController {
 		model.addAttribute("canzoni",canzone);
 		return "song";
 	}
+
 }

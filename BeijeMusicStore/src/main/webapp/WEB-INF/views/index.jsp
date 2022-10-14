@@ -10,7 +10,7 @@
 <body>
 <h1>FILIPPO ANDREA</h1>
 
-<form action="artistByGenre">
+<form action="artistbygenre">
 	<button>ArtistByGenre</button>
 </form>
 
@@ -32,6 +32,14 @@
 
 <form action="songbygenre">
 	<button>SongByGenre</button>
+</form>
+
+<form action="albumbysong">
+	<button>AlbumBySong</button>
+</form>
+
+<form action="artistbysong">
+	<button>ArtistBySong</button>
 </form>
 
 

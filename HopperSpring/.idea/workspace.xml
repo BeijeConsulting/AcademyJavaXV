@@ -9,7 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="" />
+    <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="Artista e Canzone Repository create">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -83,13 +89,13 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alessandro/Code/Workspaces/Intellij/Accademy/BeijeMusicStore",
+    "last_opened_file_path": "C:/Users/Alessandro/Code/Workspaces/Intellij/Accademy/HopperSpring",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3061056",
     "settings.editor.selected.configurable": "spring",
-    "spring.configuration.checksum": "0aa2a9bbd9e830fc962978c10910d55d"
+    "spring.configuration.checksum": "910df933178e837167b541700ef58374"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -244,7 +250,16 @@
       <workItem from="1665676365226" duration="1862000" />
       <workItem from="1665720866463" duration="1738000" />
       <workItem from="1665732092837" duration="7711000" />
+      <workItem from="1665741747879" duration="2484000" />
     </task>
+    <task id="LOCAL-00001" summary="Artista e Canzone Repository create">
+      <created>1665744037573</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665744037573</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -262,6 +277,8 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Artista e Canzone Repository create" />
+    <option name="LAST_COMMIT_MESSAGE" value="Artista e Canzone Repository create" />
     <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
   </component>
   <component name="XDebuggerManager">

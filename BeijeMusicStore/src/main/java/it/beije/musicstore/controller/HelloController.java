@@ -74,7 +74,7 @@ public class HelloController {
 				
 				model.addAttribute("loggedUser", loggedUser);
 				
-				List<Order> lista = orderService.findByUserId(loggedUser.getId());
+				//List<Order> lista = orderService.findByUserId(loggedUser.getId());
 				System.out.println("lista: " + lista);
 				
 				model.addAttribute("orders", lista);

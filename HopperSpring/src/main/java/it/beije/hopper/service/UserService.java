@@ -6,9 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.beije.hopper.model.Product;
+
 import it.beije.hopper.model.User;
-import it.beije.hopper.repository.ProductRepository;
 import it.beije.hopper.repository.UserRepository;
 
 
@@ -17,8 +16,6 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
-	@Autowired
-	private ProductRepository productRepository;
 
 	public UserService() {
 		System.out.println("creo un oggetto UserService...");
@@ -47,13 +44,7 @@ public class UserService {
 	public List<User> loadLastClients(LocalDate date) {
 		return userRepository.loadLastClients(date);
 	}
-	
-	public List<Product> loadProducts() {
-		System.out.println("test2");
-		List<Product> product=productRepository.findAll();
-		System.out.println(product);
-		return product;
-	}
+
 
 }
 

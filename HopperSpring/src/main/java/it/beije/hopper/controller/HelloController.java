@@ -18,7 +18,7 @@ import it.beije.hopper.ecommerce.model.Order;
 import it.beije.hopper.ecommerce.service.OrderService;
 import it.beije.hopper.model.User;
 import it.beije.hopper.service.UserService;
-import it.beije.hopper.model.Product;
+
 
 
 @Controller
@@ -95,12 +95,4 @@ public class HelloController {
 		return "login";
 	}
 
-	@RequestMapping(value = "/prodotti", method = RequestMethod.GET)
-	public String prodotti(HttpServletRequest request ,Model model) {
-		System.out.println("test1");
-		List<Product> products=userService.loadProducts();
-		model.addAttribute("products",products);
-		
-		return "prodotti";
-	}
 }

@@ -3,7 +3,7 @@ package it.beije.hopper.spring;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.beije.hopper.model.Product;
+import it.beije.hopper.ecommerce.model.Product;
 
 
 

@@ -19,10 +19,10 @@ public class Artista {
 	private Integer id;
 	
 	@Column(name = "nome")
-	private Integer nome;
+	private String nome;
 
-	@Column(name = "cognome")
-	private String cognome;
+	@Column(name = "genere")
+	private String genere;
 
 	public Integer getId() {
 		return id;
@@ -32,25 +32,25 @@ public class Artista {
 		this.id = id;
 	}
 
-	public Integer getNome() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setNome(Integer nome) {
+	public void setNome(String nome) {
 		this.nome = nome;
 	}
 
-	public String getCognome() {
-		return cognome;
+	public String getGenere() {
+		return genere;
 	}
 
-	public void setCognome(String cognome) {
-		this.cognome = cognome;
+	public void setGenere(String genere) {
+		this.genere = genere;
 	}
 
 	@Override
 	public String toString() {
-		return "Order [id=" + id + ", nome=" + nome + ", cognome=" + cognome + "]";
+		return "Order [id=" + id + ", nome=" + nome + ", genere=" + genere + "]";
 	} 
 
 	

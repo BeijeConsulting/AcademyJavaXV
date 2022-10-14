@@ -20,4 +20,10 @@ public class ArtistService {
 		return artistRepository.loadByGenre(genre);
 	}
 	
+	public List<Artist>listArtist(){
+		return artistRepository.loadAllArtist();
+	}
+	
+	
+	
 }

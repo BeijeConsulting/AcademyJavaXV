@@ -12,7 +12,7 @@
 
 	<form action="./find_artist_by_genre" method="get">
 		<label for="username">Genere </label><br> <input type="text"
-			name="genre" value="genre"><br> <input type="submit"
+			name="genre" value=""><br> <input type="submit"
 			value="Cerca Artista tramite genere">
 	</form>
 	

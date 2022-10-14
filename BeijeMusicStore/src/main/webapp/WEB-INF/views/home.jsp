@@ -12,6 +12,10 @@
 	<form action="./find_artist_by_genre" method="get">
 		<input type="submit" value="Cerca Artista tramite genere">
 	</form>
+	
+	<form action="./find_album_by_artist" method="get">
+		<input type="submit" value="Cerca Album tramite artista">
+	</form>
 
 </body>
 </html>

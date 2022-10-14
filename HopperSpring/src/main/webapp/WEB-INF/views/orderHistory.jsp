@@ -34,7 +34,7 @@
            <tr><th>Desc</th>
            <th>ID</th>
            <th>Prezzo</th></tr>
-           <td> ${oI.desc}</td> <td>${oI.id}</td> <td>${oI.price}</td></table>
+           <td> ${oI.desc}</td> <td>${oI.id}</td> <td>${oI.price}</table></td>
 
     </c:forEach>
 

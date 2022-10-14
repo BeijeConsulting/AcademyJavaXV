@@ -3,6 +3,7 @@ package it.beije.hopper.service;
 import it.beije.hopper.model.User;
 import it.beije.hopper.repository.UserRepositoryMod;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -31,5 +32,9 @@ public class UserServiceMod {
 
     public List<User> findAll(){
         return userRepositoryMod.findAll();
+    }
+
+    public void signUpUser(String email, String password, String lastName, String firstName){
+        userRepositoryMod.signUpUser(email, password, lastName, firstName);
     }
 }

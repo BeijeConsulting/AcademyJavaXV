@@ -8,7 +8,7 @@
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 
-	<!-- Enables the Spring MVC @Controller programming model -->
+	<!-- Enables the Spring MVC @MusicController programming model -->
 	<annotation-driven />
 	<context:component-scan base-package="it.beije.musicstore" />
 

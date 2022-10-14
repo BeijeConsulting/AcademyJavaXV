@@ -28,7 +28,7 @@ public class CanzoneController {
 
 	@RequestMapping(value = "/canzoni_by_album", method = RequestMethod.GET)
 	public String canzoniByAlbum(HttpSession session,
-					   @RequestParam(name = "id_album", required = true) Integer id, Model model) {
+					   @RequestParam(name = "album", required = true) Integer id, Model model) {
 		System.out.println("id_album : " + id);
 
 		List<Canzone> lista = canzoneService.findByAlbum(id);
@@ -44,7 +44,7 @@ public class CanzoneController {
 								  @RequestParam(name = "id_artista", required = true) Integer id, Model model) {
 		System.out.println("id_artista : " + id);
 
-		List<Canzone> lista = canzoneService.findByArtista(id);
+		List<Canzone> lista = (List<Canzone>) canzoneService.findByArtista(id);
 		System.out.println("lista : " + lista);
 		model.addAttribute("lista", lista);
 
@@ -54,10 +54,10 @@ public class CanzoneController {
 
 	@RequestMapping(value = "/canzone_by_genere", method = RequestMethod.GET)
 	public String canzoneByGenere(HttpSession session,
-								  @RequestParam(name = "genere", required = true) String genere, Model model) {
+								  @RequestParam(name = "genereCanzoni", required = true) String genere, Model model) {
 		System.out.println("test : " + genere);
 
-		List<Artista> lista =  canzoneService.findByGenere(genere);
+		List<Canzone> lista =  canzoneService.findByGenere(genere);
 		System.out.println("lista : " + lista);
 		model.addAttribute("lista", lista);
 

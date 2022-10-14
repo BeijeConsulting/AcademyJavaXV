@@ -1,5 +1,8 @@
 package it.beije.musicstore.model;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -28,10 +31,12 @@ public class Artista {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "artista_id")
+	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Album> albums;
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "artista_id")
+	@Fetch(value = FetchMode.SUBSELECT)
 	private List<Canzone> canzoni;
 
 	public Integer getId() {

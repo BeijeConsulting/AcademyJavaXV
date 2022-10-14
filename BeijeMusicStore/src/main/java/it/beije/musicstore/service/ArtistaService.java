@@ -25,6 +25,14 @@ public class ArtistaService {
 		return artistaRepository.findByGenere(genere);
 	}
 
+	public List<Artista> getAll() {
+		return artistaRepository.findAll();
+	}
+
+	public List<String> getAllGeneri() {
+		return artistaRepository.getallGeneri();
+	}
+
 	public Optional<Artista> findById(Integer id) {
 		return artistaRepository.findById(id);
 	}

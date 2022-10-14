@@ -27,10 +27,19 @@ public class CanzoneService {
 	}
 
 	public List<Canzone> findByArtista(Integer id_artista) {
-		return canzoneRepository.findByArtista(id_artista);
+		return (List<Canzone>) canzoneRepository.findByArtista(id_artista);
 	}
 
-	public List<Artista> findByGenere(String genere) {
+	public List<Canzone> findByGenere(String genere) {
 		return canzoneRepository.findByGenere(genere);
 	}
+
+	public List<String> getAllGeneri() {
+		return canzoneRepository.getallGeneri();
+	}
+
+	public List<Canzone> getAll() {
+		return canzoneRepository.findAll();
+	}
+
 }

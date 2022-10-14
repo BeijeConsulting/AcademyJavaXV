@@ -5,14 +5,14 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>Hopper Spring</name>
-  
+
   <properties>
     <jdk.version>1.8</jdk.version>
     <servlet.version>4.0.1</servlet.version>
-    <spring.version>5.2.0.RELEASE</spring.version>
+    <spring.version>5.2.14.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
   </properties>
-  
+
   <build>
     <sourceDirectory>src/main/java</sourceDirectory>
     <plugins>
@@ -24,7 +24,7 @@
           <target>${jdk.version}</target>
         </configuration>
       </plugin>
-     <plugin>
+      <plugin>
         <artifactId>maven-war-plugin</artifactId>
         <version>3.2.1</version>
         <configuration>
@@ -40,6 +40,7 @@
       <artifactId>javax.servlet-api</artifactId>
       <version>${servlet.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-webmvc</artifactId>
@@ -66,5 +67,5 @@
       <version>8.0.26</version>
     </dependency>
   </dependencies>
-    
+
 </project>

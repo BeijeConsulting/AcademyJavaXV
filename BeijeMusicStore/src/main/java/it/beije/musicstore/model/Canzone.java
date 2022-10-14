@@ -25,6 +25,12 @@ public class Canzone {
     @Column(name = "id")
     private Integer id;
 
+    @Column(name = "artista_id")
+    private Integer artista_id;
+
+    @Column(name = "album_id")
+    private Integer album_id;
+
     @Column(name = "titolo")
     private String titolo;
 
@@ -40,6 +46,22 @@ public class Canzone {
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    public Integer getArtista_id() {
+        return artista_id;
+    }
+
+    public void setArtista_id(Integer artista_id) {
+        this.artista_id = artista_id;
+    }
+
+    public Integer getAlbum_id() {
+        return album_id;
+    }
+
+    public void setAlbum_id(Integer album_id) {
+        this.album_id = album_id;
     }
 
     public String getTitolo() {

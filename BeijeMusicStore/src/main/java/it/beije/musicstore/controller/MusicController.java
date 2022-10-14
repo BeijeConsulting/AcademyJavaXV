@@ -12,7 +12,7 @@ public class MusicController {
     public MusicController() {
         System.out.println("creo un oggetto MusicController...");
     }
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/index", method = RequestMethod.GET)
     public String hello(HttpServletRequest request) {
         System.out.println("Hello Page Requested : " + request.getRequestURI());
         return "index";

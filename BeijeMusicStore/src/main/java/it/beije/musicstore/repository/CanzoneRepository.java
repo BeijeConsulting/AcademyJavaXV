@@ -13,5 +13,6 @@ import it.beije.musicstore.model.Canzone;
 public interface CanzoneRepository extends JpaRepository<Canzone, Integer>{
 	
 	public abstract List<Canzone> findByAlbumId(Integer album);
+	public abstract List<Canzone> findByArtistaId(Integer artist);
 	
 }

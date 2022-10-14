@@ -22,5 +22,14 @@
 	<button>SongByAlbum</button>
 </form>
 
+<form action="songbyartist">
+	<button>SongByArtist</button>
+</form>
+
+<form action="albumbygenre">
+	<button>AlbumByGenre</button>
+</form>
+
+
 </body>
 </html>

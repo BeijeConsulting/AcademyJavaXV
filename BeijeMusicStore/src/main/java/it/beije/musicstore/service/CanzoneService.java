@@ -15,4 +15,8 @@ public class CanzoneService {
 	public List<Canzone> getCanzoniByAlbum(Integer album){
 		return canzoneRepository.findByAlbumId(album);
 	}
+	
+	public List<Canzone> getCanzoniByArtist(Integer artist){
+		return canzoneRepository.findByArtistaId(artist);
+	}
 }

@@ -70,4 +70,13 @@ public class HelloController {
 		model.addAttribute("canzoni",canzoni);
 		return "song_by_album";
 	}
+	
+	@RequestMapping(value = "songbyartist", method = RequestMethod.GET)
+	public String songbyartist(HttpServletRequest request,Model model) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
+		
+		List<Canzone> canzoni=canzoneService.getCanzoniByArtist(1);
+		model.addAttribute("canzoni",canzoni);
+		return "song_by_artist";
+	}
 }

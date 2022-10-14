@@ -26,6 +26,11 @@
     <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Alessandro_Musto" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="HighlightingSettingsPerFile">
@@ -78,7 +83,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/BeijeMusicStore",
+    "last_opened_file_path": "C:/Users/Alessandro/Code/Workspaces/Intellij/Accademy/BeijeMusicStore",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
@@ -204,7 +209,7 @@
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.67" />
-          <option name="path" value="$PROJECT_DIR$/../../../../../Tomcat/apache-tomcat-9.0.67" />
+          <option name="path" value="$USER_HOME$/Tomcat/apache-tomcat-9.0.67" />
           <option name="version" value="9.0.67.0" />
         </TomcatInfo>
       </option>
@@ -213,14 +218,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Smart Tomcat.Tomcat: HopperSpring" />
       <item itemvalue="Tomcat Server.Tomcat 9.0.671-Spring" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Smart Tomcat.Tomcat: HopperSpring" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">

@@ -90,4 +90,26 @@ public class musicController {
         return "home"; // /WEB-INF/views/home.jsp
     }
 
+    @RequestMapping(value = {"/GtoAl"}, method = RequestMethod.POST)
+    public String GtoAl(HttpServletRequest request, @RequestParam(name = "genere2", required = false) String genere, Model model) {
+        List<Artista> Artisti = artistaService.findAll();
+        model.addAttribute("artistiHome", Artisti);
+        List<Album> Albums = albumService.findAll();
+        model.addAttribute("albumsHome", Albums);
+        List<Album> lista4 = albumService.findByGenere(genere);
+        model.addAttribute("albums1", lista4);
+        return "home"; // /WEB-INF/views/home.jsp
+    }
+
+    @RequestMapping(value = {"/GtoC"}, method = RequestMethod.POST)
+    public String GtoC(HttpServletRequest request, @RequestParam(name = "genere3", required = false) String genere, Model model) {
+        List<Artista> Artisti = artistaService.findAll();
+        model.addAttribute("artistiHome", Artisti);
+        List<Album> Albums = albumService.findAll();
+        model.addAttribute("albumsHome", Albums);
+        List<Canzone> lista5 = canzoneService.findByGenere(genere);
+        model.addAttribute("canzoni3", lista5);
+        return "home"; // /WEB-INF/views/home.jsp
+    }
+
 }

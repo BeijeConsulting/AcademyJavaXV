@@ -10,6 +10,7 @@ import java.util.List;
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Integer> {
     public abstract List<Album> findByIdArtista(int id);
+    public abstract List<Album> findByGenere(String genere);
     public abstract List<Album> findAll();
 //
 

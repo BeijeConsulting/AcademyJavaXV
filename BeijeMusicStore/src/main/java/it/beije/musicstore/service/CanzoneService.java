@@ -22,6 +22,11 @@ public class CanzoneService {
         return canzoni;
     }
 
+    public List<Canzone> findByGenere(String genere){
+        List<Canzone> canzoni = canzoneRepository.findByGenere(genere);
+        return canzoni;
+    }
+
 
 
     public List<Canzone> findByIdAlbum(int id){

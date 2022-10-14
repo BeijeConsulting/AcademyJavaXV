@@ -22,6 +22,11 @@ public class AlbumService {
         return albums;
     }
 
+    public List<Album> findByGenere(String genere){
+        List<Album> albums = albumRepository.findByGenere(genere);
+        return albums;
+    }
+
 //
     public List<Album> findAll(){
         return albumRepository.findAll();

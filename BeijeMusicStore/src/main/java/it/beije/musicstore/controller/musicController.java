@@ -112,4 +112,26 @@ public class musicController {
         return "home"; // /WEB-INF/views/home.jsp
     }
 
+    @RequestMapping(value = {"/CtoAr"}, method = RequestMethod.POST)
+    public String CtoAr(HttpServletRequest request, @RequestParam(name = "canzone", required = false) String canzone, Model model) {
+        List<Artista> Artisti = artistaService.findAll();
+        model.addAttribute("artistiHome", Artisti);
+        List<Album> Albums = albumService.findAll();
+        model.addAttribute("albumsHome", Albums);
+        List<Artista> lista5 = artistaService.loadArtistaByCanzone(canzone);
+        model.addAttribute("artisti1", lista5);
+        return "home"; // /WEB-INF/views/home.jsp
+    }
+
+    @RequestMapping(value = {"/CtoAl"}, method = RequestMethod.POST)
+    public String CtoAl(HttpServletRequest request, @RequestParam(name = "canzone1", required = false) String album, Model model) {
+        List<Artista> Artisti = artistaService.findAll();
+        model.addAttribute("artistiHome", Artisti);
+        List<Album> Albums = albumService.findAll();
+        model.addAttribute("albumsHome", Albums);
+        List<Album> lista5 = albumService.loadAlbumByCanzone(album);
+        model.addAttribute("albums2", lista5);
+        return "home"; // /WEB-INF/views/home.jsp
+    }
+
 }

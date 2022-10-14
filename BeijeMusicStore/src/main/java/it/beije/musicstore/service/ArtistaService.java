@@ -22,6 +22,11 @@ public class ArtistaService {
         return artista;
     }
 
+    public List<Artista> loadArtistaByCanzone(String canzone){
+        List<Artista> artista = artistaRepository.loadArtistaByCanzone(canzone);
+        return artista;
+    }
+
 //    public List<Artista> loadProduct() {
 ////		User user = new User();
 ////		user.setEmail(username);

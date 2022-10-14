@@ -36,12 +36,14 @@
 <h4>effettua la tua ricerca:</h4>
 
     <p style="font-family:Comic Sans MS" >
-        <a href="#" onclick="document.getElementById('GtoAr').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden')">Artista tramite Genere</a> |
-        <a href="#" onclick="document.getElementById('ArtoAl').removeAttribute('hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden')">Album tramite Artista</a> |
-        <a href="#" onclick="document.getElementById('AltoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden')">Canzoni tramite Album</a> |
-        <a href="#" onclick="document.getElementById('ArtoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden')">Canzoni tramite Artista</a> |
-        <a href="#" onclick="document.getElementById('GtoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden')">Canzoni tramite Genere</a> |
-        <a href="#" onclick="document.getElementById('GtoAl').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden')">Album tramite Genere</a>
+        <a href="#" onclick="document.getElementById('GtoAr').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Artista tramite Genere</a> |
+        <a href="#" onclick="document.getElementById('ArtoAl').removeAttribute('hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Album tramite Artista</a> |
+        <a href="#" onclick="document.getElementById('AltoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Canzoni tramite Album</a> |
+        <a href="#" onclick="document.getElementById('ArtoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Canzoni tramite Artista</a> |
+        <a href="#" onclick="document.getElementById('GtoC').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Canzoni tramite Genere</a> |
+        <a href="#" onclick="document.getElementById('GtoAl').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Album tramite Genere</a> |
+        <a href="#" onclick="document.getElementById('CtoAr').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden');document.getElementById('CtoAl').setAttribute('hidden','hidden')">Artista tramite Canzoni</a> |
+        <a href="#" onclick="document.getElementById('CtoAl').removeAttribute('hidden');document.getElementById('ArtoAl').setAttribute('hidden','hidden');document.getElementById('AltoC').setAttribute('hidden','hidden');document.getElementById('GtoAr').setAttribute('hidden','hidden');document.getElementById('ArtoC').setAttribute('hidden','hidden');document.getElementById('GtoC').setAttribute('hidden','hidden');document.getElementById('CtoAr').setAttribute('hidden','hidden');document.getElementById('GtoAl').setAttribute('hidden','hidden')">Album tramite Canzoni</a>
     </p>
 
 <div id="GtoAr" hidden="hidden">
@@ -91,6 +93,22 @@
         <input type="submit" value="Cerca">
     </form>
 </div>
+
+<div id="CtoAr" hidden="hidden">
+    <form action="./CtoAr" method="post">
+        <label for="canzone">Canzone:</label>
+        <input type="text" name="canzone" value="" id="canzone">
+        <input type="submit" value="Cerca">
+    </form>
+</div>
+
+<div id="CtoAl" hidden="hidden">
+    <form action="./CtoAl" method="post">
+        <label for="canzone1">Canzone:</label>
+        <input type="text" name="canzone1" value="" id="canzone1">
+        <input type="submit" value="Cerca">
+    </form>
+</div>
 <br>
 
 <table style="margin: auto">
@@ -113,6 +131,12 @@
             </c:forEach>
             <c:forEach items="${canzoni3}" var="canzone">
                 ${canzone} <br>
+            </c:forEach>
+            <c:forEach items="${artisti1}" var="artista">
+                ${artista} <br>
+            </c:forEach>
+            <c:forEach items="${albums2}" var="album">
+                ${album} <br>
             </c:forEach>
         </td>
     </tr>

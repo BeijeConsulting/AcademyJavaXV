@@ -12,5 +12,6 @@
 </head>
 <body>
 Siamo tutti bellissimi
+${Artista}
 </body>
 </html>

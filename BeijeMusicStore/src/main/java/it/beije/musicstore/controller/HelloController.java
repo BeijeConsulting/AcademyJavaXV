@@ -34,35 +34,18 @@ public class HelloController {
 	public String index(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		return "index"; // /WEB-INF/views/index.jsp
-	}
-	
-	@RequestMapping(value = "artistbygenre", method = RequestMethod.GET)
-	public String artistbygenre(HttpServletRequest request,Model model) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
-		
-		List<Artista> artisti=artistaService.findByGenere("rock");
-		model.addAttribute("artisti",artisti);
-		
-		return "artist_by_genre"; // /WEB-INF/views/index.jsp
-	}
-	
-	@RequestMapping(value = "albumbyartist", method = RequestMethod.GET)
-	public String albumbyartist(HttpServletRequest request,Model model) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
-		
 		int idArtista=1;
+
+		List<Artista> artisti=artistaService.findByGenere("rock");
 		List<Album> album=albumService.getAlbumByArtistaId(idArtista);
+		System.out.println(artisti);
 		
 		model.addAttribute("album",album);
 		model.addAttribute("artista",idArtista);
+		model.addAttribute("artisti",artisti);
 		
-		return "album_by_artist"; // /WEB-INF/views/index.jsp
+		return "index"; // /WEB-INF/views/index.jsp
 	}
-	
-	
-	
-	
 	
 	
 	

@@ -20,7 +20,7 @@ public class ArtistService {
 		return artistRepository.loadByGenre(genre);
 	}
 	
-	public List<Artist>listArtist(){
+	public List<Artist>listAllArtist(){
 		return artistRepository.loadAllArtist();
 	}
 	

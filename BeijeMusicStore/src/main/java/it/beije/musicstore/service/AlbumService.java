@@ -35,4 +35,8 @@ public class AlbumService {
 		return albumRepository.loadByArtist(id_artist);
 	}
 	
+	public List<Album> listAllAlbum(){
+		return albumRepository.loadAllAlbum();
+	}
+	
 }

@@ -16,6 +16,14 @@
 	<form action="./find_album_by_artist" method="get">
 		<input type="submit" value="Cerca Album tramite artista">
 	</form>
+	
+	<form action="./find_song_by_album" method="get">
+		<input type="submit" value="Cerca canzoni tramite album">
+	</form>
+	
+	<form action="./find_song_by_artist" method="get">
+		<input type="submit" value="Cerca canzoni tramite artista">
+	</form>
 
 </body>
 </html>

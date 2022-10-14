@@ -25,7 +25,7 @@
 
 <h3>Trova album dall'artista: </h3>
 <form action="./album_by_artista" method="get">
-    <label for="id_artista">Scegli l'artista che ti interessa:</label>
+    <label for="id_artista_for_album">Scegli l'artista che ti interessa:</label>
     <input list="artisti3" name="id_artista_for_album" id="id_artista_for_album">
     <datalist id="artisti3">
         <c:forEach items="${artisti}" var="artista">

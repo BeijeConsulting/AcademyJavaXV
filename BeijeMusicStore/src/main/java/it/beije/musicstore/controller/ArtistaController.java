@@ -1,5 +1,6 @@
 package it.beije.musicstore.controller;
 
+import it.beije.musicstore.model.Album;
 import it.beije.musicstore.model.Artista;
 import it.beije.musicstore.service.ArtistaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -32,10 +34,9 @@ public class ArtistaController {
 
 		List<Artista> lista = artistaService.findByGenere(genere);
 		System.out.println("lista : " + lista);
-		model.addAttribute("lista", lista);
+		model.addAttribute("ArtistaLista", lista);
 
-		//TODO
-		return "TODO";
+		return "list";
 	}
 
 	@RequestMapping(value = "/artista_by_id", method = RequestMethod.GET)
@@ -44,11 +45,13 @@ public class ArtistaController {
 		System.out.println("test : " + id);
 
 		Optional<Artista> art = artistaService.findById(id);
-		System.out.println("artista : " + art);
-		model.addAttribute("artista", art);
 
-		//TODO
-		return "TODO";
+		List<Artista> lista = new ArrayList<>();
+		art.ifPresent(lista::add);
+		System.out.println("lista : " + lista);
+		model.addAttribute("ArtistaLista", lista);
+
+		return "list";
 	}
 
 }

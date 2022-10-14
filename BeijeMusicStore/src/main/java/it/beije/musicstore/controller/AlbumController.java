@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpSession;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +20,6 @@ public class AlbumController {
 
     @Autowired
     private AlbumService albumService;
-
 
 
     public AlbumController() {
@@ -36,34 +36,36 @@ public class AlbumController {
         System.out.println("lista : " + lista);
         model.addAttribute("listaAlbum", lista);
 
-        //TODO
-        return "TODO";
+        return "list";
     }
 
     @RequestMapping(value = "/album_by_genere", method = RequestMethod.GET)
-    public String canzoneByGenere(HttpSession session,
-                                  @RequestParam(name = "genereAlbum", required = true) String genere, Model model) {
+    public String albumByGenere(HttpSession session,
+                                @RequestParam(name = "genereAlbum", required = true) String genere, Model model) {
         System.out.println("test : " + genere);
 
-        List<Album> lista =  albumService.findByGenere(genere);
+        List<Album> lista = albumService.findByGenere(genere);
+        System.out.println("lista : " + lista);
+        model.addAttribute("listaAlbum", lista);
+
+
+        return "list";
+    }
+
+    @RequestMapping(value = "/album_by_id", method = RequestMethod.GET)
+    public String albumById(HttpSession session,
+                            @RequestParam(name = "album_id", required = true) Integer id, Model model) {
+        System.out.println("test : " + id);
+
+        Optional<Album> art = albumService.findById(id);
+
+        List<Album> lista = new ArrayList<>();
+        art.ifPresent(lista::add);
         System.out.println("lista : " + lista);
         model.addAttribute("listaAlbum", lista);
 
         //TODO
-        return "TODO";
-    }
-
-    @RequestMapping(value = "/album_by_id", method = RequestMethod.GET)
-    public String artistaById(HttpSession session,
-                              @RequestParam(name = "album_id", required = true) Integer id, Model model) {
-        System.out.println("test : " + id);
-
-        Optional<Album> art = albumService.findById(id);
-        System.out.println("Album : " + art);
-        model.addAttribute("Album", art);
-
-        //TODO
-        return "TODO";
+        return "list";
     }
 
 

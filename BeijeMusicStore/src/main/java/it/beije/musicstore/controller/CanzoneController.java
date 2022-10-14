@@ -33,10 +33,9 @@ public class CanzoneController {
 
 		List<Canzone> lista = canzoneService.findByAlbum(id);
 		System.out.println("lista : " + lista);
-		model.addAttribute("lista", lista);
+		model.addAttribute("listaCanzoni", lista);
 
-		//TODO
-		return "TODO";
+		return "list";
 	}
 
 	@RequestMapping(value = "/canzoni_by_artista", method = RequestMethod.GET)
@@ -46,10 +45,9 @@ public class CanzoneController {
 
 		List<Canzone> lista = (List<Canzone>) canzoneService.findByArtista(id);
 		System.out.println("lista : " + lista);
-		model.addAttribute("lista", lista);
+		model.addAttribute("listaCanzoni", lista);
 
-		//TODO
-		return "TODO";
+		return "list";
 	}
 
 	@RequestMapping(value = "/canzone_by_genere", method = RequestMethod.GET)
@@ -59,10 +57,9 @@ public class CanzoneController {
 
 		List<Canzone> lista =  canzoneService.findByGenere(genere);
 		System.out.println("lista : " + lista);
-		model.addAttribute("lista", lista);
+		model.addAttribute("listaCanzoni", lista);
 
-		//TODO
-		return "TODO";
+		return "list";
 	}
 
 }

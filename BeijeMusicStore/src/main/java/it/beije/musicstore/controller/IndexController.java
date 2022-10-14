@@ -11,12 +11,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.List;
-import java.util.Optional;
 
 
 @Controller
@@ -29,10 +26,13 @@ public class IndexController {
 	private AlbumService albumService;
 
 
+	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
+	public String home(HttpServletRequest request, Model model) {
 
-	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
-	public String index(HttpServletRequest request, Model model) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
+		return "home"; // /WEB-INF/views/search.jsp
+	}
+	@RequestMapping(value = {"/search"}, method = RequestMethod.GET)
+	public String search(HttpServletRequest request, Model model) {
 		List<String> generiArtisti = artistaService.getAllGeneri();
 		model.addAttribute("generiArtisti", generiArtisti);
 
@@ -51,7 +51,76 @@ public class IndexController {
 		List<Canzone> canzoni = canzoneService.getAll();
 		model.addAttribute("canzoni", canzoni);
 
-		return "welcome"; // /WEB-INF/views/welcome.jsp
+		return "search"; // /WEB-INF/views/search.jsp
+	}
+
+	@RequestMapping(value = {"/search_canzone"}, method = RequestMethod.GET)
+	public String searchCanzone(HttpServletRequest request, Model model) {
+		List<String> generiArtisti = artistaService.getAllGeneri();
+		model.addAttribute("generiArtisti", generiArtisti);
+
+		List<String> generiCanzoni = canzoneService.getAllGeneri();
+		model.addAttribute("generiCanzoni", generiCanzoni);
+
+		List<String> generiAlbum = albumService.getAllGeneri();
+		model.addAttribute("generiAlbum", generiCanzoni);
+
+		List<Artista> artisti = artistaService.getAll();
+		model.addAttribute("artisti", artisti);
+
+		List<Album> albums = albumService.getAll();
+		model.addAttribute("albums", albums);
+
+		List<Canzone> canzoni = canzoneService.getAll();
+		model.addAttribute("canzoni", canzoni);
+
+		return "search_canzone"; // /WEB-INF/views/search.jsp
+	}
+
+	@RequestMapping(value = {"/search_artista"}, method = RequestMethod.GET)
+	public String searchArtista(HttpServletRequest request, Model model) {
+		List<String> generiArtisti = artistaService.getAllGeneri();
+		model.addAttribute("generiArtisti", generiArtisti);
+
+		List<String> generiCanzoni = canzoneService.getAllGeneri();
+		model.addAttribute("generiCanzoni", generiCanzoni);
+
+		List<String> generiAlbum = albumService.getAllGeneri();
+		model.addAttribute("generiAlbum", generiCanzoni);
+
+		List<Artista> artisti = artistaService.getAll();
+		model.addAttribute("artisti", artisti);
+
+		List<Album> albums = albumService.getAll();
+		model.addAttribute("albums", albums);
+
+		List<Canzone> canzoni = canzoneService.getAll();
+		model.addAttribute("canzoni", canzoni);
+
+		return "search_artista"; // /WEB-INF/views/search.jsp
+	}
+
+	@RequestMapping(value = {"/search_album"}, method = RequestMethod.GET)
+	public String searchAlbum(HttpServletRequest request, Model model) {
+		List<String> generiArtisti = artistaService.getAllGeneri();
+		model.addAttribute("generiArtisti", generiArtisti);
+
+		List<String> generiCanzoni = canzoneService.getAllGeneri();
+		model.addAttribute("generiCanzoni", generiCanzoni);
+
+		List<String> generiAlbum = albumService.getAllGeneri();
+		model.addAttribute("generiAlbum", generiCanzoni);
+
+		List<Artista> artisti = artistaService.getAll();
+		model.addAttribute("artisti", artisti);
+
+		List<Album> albums = albumService.getAll();
+		model.addAttribute("albums", albums);
+
+		List<Canzone> canzoni = canzoneService.getAll();
+		model.addAttribute("canzoni", canzoni);
+
+		return "search_album"; // /WEB-INF/views/search.jsp
 	}
 
 }

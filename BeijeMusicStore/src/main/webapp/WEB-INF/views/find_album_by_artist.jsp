@@ -11,6 +11,8 @@
 
 <h1>Cerca album tramite artista</h1>
 
+<p style="color: red">${errore}</p>
+
 <c:forEach items="${listArtist}" var="artist">
 	<br>- ${artist.id} ${artist.name} 
 </c:forEach>

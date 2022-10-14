@@ -28,7 +28,17 @@ public class ArtistController {
 			@RequestParam(name = "genre", required = false) String genre) {
 		
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
-		model.addAttribute("listArtist" , artistService.listArtistByGenre(genre));
+		
+		if(genre != null && genre.length() > 0) {
+			List<Artist> listArtist = artistService.listArtistByGenre(genre);
+			if(listArtist != null && listArtist.size() > 0)
+				model.addAttribute("listArtist" , listArtist);
+			else
+				model.addAttribute("errore", "INSERISCI UN VALORE CORRETTO");
+		}else {
+			model.addAttribute("errore", "INSERISCI UN VALORE");
+		}
+		
 
 		return "find_artist_by_genre"; 
 	}

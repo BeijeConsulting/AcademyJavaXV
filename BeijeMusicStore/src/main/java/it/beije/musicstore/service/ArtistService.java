@@ -17,6 +17,7 @@ public class ArtistService {
 	private ArtistRepository artistRepository;
 	
 	public List<Artist> listArtistByGenre(String genre){
+		genre = genre.toLowerCase();
 		return artistRepository.loadByGenre(genre);
 	}
 	

@@ -31,16 +31,18 @@ public class AlbumController {
 			Model model,
 			@RequestParam(name = "artist", required = false) String artist) {
 		
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
-		
-		//Integer id_artist = 1;  
 		model.addAttribute("listArtist", artistService.listAllArtist());
-		if(artist != null) {
-			Integer id_artist = Integer.valueOf(artist);
-			model.addAttribute("listAlbum" , albumService.listAlbumByArtist(id_artist));
+		if(artist != null && artist.length() > 0) {
+			Integer id_artist = null;
+			try {
+			 id_artist = Integer.valueOf(artist);
+			 model.addAttribute("listAlbum" , albumService.listAlbumByArtist(id_artist));
+			}catch(NumberFormatException numb) {
+				model.addAttribute("errore", "INSERISCI UN VALORE CORRETTO");
+			}	
+		}else { //KO
+			model.addAttribute("errore", "INSERISCI UN VALORE");
 		}
-		
-
 		return "find_album_by_artist"; 
 	}
 	

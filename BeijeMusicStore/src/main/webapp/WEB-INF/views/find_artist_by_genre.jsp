@@ -8,17 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Cerca artista tramite genere</h1>
+	<h1>Cerca artista tramite genere</h1>
+
+	<p style="color: red">${errore}</p>
 
 	<form action="./find_artist_by_genre" method="get">
 		<label for="username">Genere </label><br> <input type="text"
 			name="genre" value=""><br> <input type="submit"
 			value="Cerca Artista tramite genere">
 	</form>
-	
+
 	LISTA ARTISTI:
 	<c:forEach items="${listArtist}" var="artist">
-	<br>- ${artist.name}
+		<br>- ${artist.name}
 </c:forEach>
 </body>
 </html>

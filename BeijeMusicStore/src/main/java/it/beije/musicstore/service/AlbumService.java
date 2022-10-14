@@ -21,17 +21,6 @@ public class AlbumService {
 	private ArtistRepository artistRepository;
 	
 	public List<Album> listAlbumByArtist(Integer id_artist){
-		
-		//Artist artist = artistRepository.loadByName(name_artist);
-		//Artist artist = artistRepository.loadById(id_artist);
-		
-//		List<Album> list = null;
-//		list = albumRepository.loadByArtist(id_artist);
-//		
-//		
-//		
-//		for(Album a : list) System.out.println(a.getTitle());
-		
 		return albumRepository.loadByArtist(id_artist);
 	}
 	

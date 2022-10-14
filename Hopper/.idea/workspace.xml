@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="649be670-45f5-4c20-be01-3abf8b79c2ab" name="Changes" comment="merge">
+      <change beforePath="$PROJECT_DIR$/Hopper.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Hopper.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="origin/Gruppo5-Ecommerce" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Valente" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectId" id="2F7UjukcNnsZrme2K9RQo55KRkC" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Git.Branch.Popup.ShowAllRemotes": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Hopper",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.3770115",
+    "settings.editor.selected.configurable": "editor.preferences.completion"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Hopper\src" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Hopper\src\it\beije\hopper\ecommerceMod" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Hopper\src\it\beije\hopper" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Hopper" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy-pt2\Hopper\src\it\beije\hopper\testFile_CSV_XML\xml" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy-pt2\Hopper\src" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy-pt2\Hopper\testFile_CSV_XML" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy-pt2\Hopper\src\it\beije\hopper\rubrica\rubirche" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="it.beije.hopper.ecommerceMod" />
+      <recent name="it.beije.hopper.rubricamod" />
+      <recent name="it.beije.hopper.rubricamod.itemsMod" />
+      <recent name="it.beije.hopper.rubrica" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.EcommerceJPA">
+    <configuration name="CSVmanagerMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.hopper.rubricamod.fileMod.CSVmanagerMod" />
+      <module name="Hopper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.hopper.rubricamod.fileMod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EcommerceJPA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.hopper.ecommerceMod.EcommerceJPA" />
+      <module name="Hopper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.hopper.ecommerceMod.functionality.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RubricaJPA" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.hopper.rubrica.RubricaJPA" />
+      <module name="Hopper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.hopper.rubrica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RubricaJPAMod" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.hopper.rubricamod.RubricaJPAMod" />
+      <module name="Hopper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.hopper.rubricamod.fileMod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RubricaJPAMod_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.hopper.rubricamod.RubricaJPAMod_2" />
+      <module name="Hopper" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.hopper.rubricamod.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EcommerceJPA" />
+        <item itemvalue="Application.RubricaJPAMod_2" />
+        <item itemvalue="Application.RubricaJPAMod" />
+        <item itemvalue="Application.RubricaJPA" />
+        <item itemvalue="Application.CSVmanagerMod" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="649be670-45f5-4c20-be01-3abf8b79c2ab" name="Changes" comment="" />
+      <created>1663842755626</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663842755626</updated>
+      <workItem from="1663842756827" duration="30777000" />
+      <workItem from="1664004850856" duration="2862000" />
+      <workItem from="1664007778019" duration="6575000" />
+      <workItem from="1664189381527" duration="12424000" />
+      <workItem from="1664273281925" duration="57350000" />
+      <workItem from="1664521791417" duration="69019000" />
+      <workItem from="1665048914015" duration="4551000" />
+      <workItem from="1665066394040" duration="1414000" />
+      <workItem from="1665069878153" duration="1674000" />
+      <workItem from="1665114327334" duration="1206000" />
+      <workItem from="1665117847654" duration="10368000" />
+      <workItem from="1665147214820" duration="3077000" />
+      <workItem from="1665152171992" duration="3219000" />
+      <workItem from="1665239528136" duration="1519000" />
+      <workItem from="1665578539702" duration="636000" />
+    </task>
+    <task id="LOCAL-00001" summary="eclipse-&gt;intellij">
+      <created>1663843132879</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1663843132879</updated>
+    </task>
+    <task id="LOCAL-00002" summary="added smaller rubrica.csv, copied CSVmanager.">
+      <created>1663853437040</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1663853437040</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added unversioned files before merge">
+      <created>1663853663188</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1663853663188</updated>
+    </task>
+    <task id="LOCAL-00004" summary="added functionalities XML or CSV to DB.">
+      <created>1663860490679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1663860490679</updated>
+    </task>
+    <task id="LOCAL-00005" summary="added functionalities XML or CSV to DB.">
+      <created>1663860504871</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1663860504871</updated>
+    </task>
+    <task id="LOCAL-00006" summary="added differentiation from writeToDB">
+      <created>1663942074694</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1663942074694</updated>
+    </task>
+    <task id="LOCAL-00007" summary="db to file functionality">
+      <created>1664005699110</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664005699110</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Working on Update">
+      <created>1664299903399</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664299903399</updated>
+    </task>
+    <task id="LOCAL-00009" summary="workspace">
+      <created>1664355044074</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664355044074</updated>
+    </task>
+    <task id="LOCAL-00010" summary="more modifications">
+      <created>1665059497887</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1665059497887</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="BEK_SORT_TYPE" value="1" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Valente" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="eclipse-&gt;intellij" />
+    <MESSAGE value="added smaller rubrica.csv, copied CSVmanager." />
+    <MESSAGE value="added unversioned files before merge" />
+    <MESSAGE value="added functionalities XML or CSV to DB." />
+    <MESSAGE value="added differentiation from writeToDB" />
+    <MESSAGE value="db to file functionality" />
+    <MESSAGE value="Working on Update" />
+    <MESSAGE value="workspace" />
+    <MESSAGE value="merge main to Valente" />
+    <MESSAGE value="more modifications" />
+    <MESSAGE value="merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="merge" />
+    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/it/beije/hopper/ecommerceMod/items/User.java</url>
+          <line>6</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="rs" />
+      </configuration>
+    </watches-manager>
+  </component>
+</project>

@@ -2,14 +2,28 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="HopperSpring:war exploded" />
+      <artifact name="HopperWeb:war exploded2" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="" />
+    <list default="true" id="62a2cb84-f54b-4f8b-ba57-4f03d5435bb0" name="Changes" comment="gruppo5-Ecommerce intellij restructure">
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Cart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Item.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/repository/ProductRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/EcommerceJPA.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/ProductService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/shopPage.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Esercizi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Esercizi/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +32,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
@@ -26,12 +41,12 @@
     <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="Gruppo5-Ecommerce" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/main/java/it/beije/hopper/ecommerce/model/Item.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/it/beije/hopper/ecommerce/model/Order.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/main/java/it/beije/hopper/ecommerce/model/Product.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="JpbToolWindowState">
     <option name="myId2FirstActivated">
@@ -66,7 +81,7 @@
       </MavenGeneralSettings>
     </option>
   </component>
-  <component name="ProjectId" id="2G47mNgY607SkvebslAW3kw7tH6" />
+  <component name="ProjectId" id="2FlHxE4mR0UN6jDNCYFrc4aYFFz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -74,48 +89,59 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/BeijeMusicStore",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/HopperSpring",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.3061056",
-    "settings.editor.selected.configurable": "spring",
-    "spring.configuration.checksum": "0aa2a9bbd9e830fc962978c10910d55d"
+    "project.structure.side.proportion": "0.3757322",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperSpring\src\main\java\it\beije\hopper\model" />
-      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperSpring\src\main\java\it\beije\hopper" />
-      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperSpring\src\main\webapp\WEB-INF\views" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\main\java" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\main\resources" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\META-INF" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\WebContent\META-INF" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperSpring\src\main\java\it\beije\hopper\myEcommerceMod" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\main\resources\lib" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\main\webapp" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src\main\resources\META-INF" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\src" />
+      <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\HopperWeb\WebContent\META-INF" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="it.beije.hopper.model" />
-      <recent name="it.beije.hopper.service" />
-      <recent name="it.beije.hopper.repository" />
-      <recent name="it.beije.hopper.service.functionality" />
+      <recent name="it.beije.hopper.web" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.671-Spring">
-    <configuration name="Tomcat 9.0.671-Spring" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.671" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
+  <component name="RunDashboard">
+    <option name="openRunningConfigInTab" value="true" />
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.671-NS">
+    <configuration name="Tomcat 9.0.671-NS" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.671" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
-        <artifact name="HopperSpring:war exploded">
+        <artifact name="HopperWeb:war exploded2">
           <settings>
-            <option name="CONTEXT_PATH" value="/HopperSpring" />
+            <option name="CONTEXT_PATH" value="/HopperWeb" />
           </settings>
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="f787fd4a-7648-4556-a707-ee8115923dd1" />
+        <option name="BASE_DIRECTORY_NAME" value="8c3f1847-df66-4789-91eb-e79a4cf9f9be" />
         <option name="HTTP_PORT" value="8082" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
@@ -124,7 +150,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="64645" />
+        <option name="DEBUG_PORT" value="52034" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -188,19 +214,18 @@
       </ConfigurationWrapper>
       <method v="2">
         <option name="Make" enabled="true" />
-        <option name="BuildArtifacts" enabled="true">
-          <artifact name="HopperSpring:war exploded" />
-        </option>
+        <option name="BuildArtifacts" enabled="false" />
       </method>
     </configuration>
-    <configuration name="Tomcat: HopperSpring" type="com.poratu.idea.plugins.tomcat" temporary="true">
+    <configuration name="Tomcat: HopperWeb" type="com.poratu.idea.plugins.tomcat" temporary="true">
       <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
       <predefined_log_file enabled="true" id="Tomcat Access Log" />
       <predefined_log_file id="Tomcat Catalina Log" />
       <predefined_log_file id="Tomcat Manager Log" />
       <predefined_log_file id="Tomcat Host Manager Log" />
-      <option name="contextPath" value="/HopperSpring" />
+      <option name="contextPath" value="/HopperWeb" />
       <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="port" value="8082" />
       <option name="tomcatInfo">
         <TomcatInfo>
           <option name="name" value="Apache Tomcat/9.0.67" />
@@ -208,44 +233,63 @@
           <option name="version" value="9.0.67.0" />
         </TomcatInfo>
       </option>
+      <option name="vmOptions" value="" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
-      <item itemvalue="Smart Tomcat.Tomcat: HopperSpring" />
-      <item itemvalue="Tomcat Server.Tomcat 9.0.671-Spring" />
+      <item itemvalue="Smart Tomcat.Tomcat: HopperWeb" />
+      <item itemvalue="Tomcat Server.Tomcat 9.0.671-NS" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Smart Tomcat.Tomcat: HopperSpring" />
+        <item itemvalue="Smart Tomcat.Tomcat: HopperWeb" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration>C:\Users\Michael Angelo\AppData\Roaming\Subversion</configuration>
-  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="" />
-      <created>1665636167510</created>
+      <changelist id="62a2cb84-f54b-4f8b-ba57-4f03d5435bb0" name="Changes" comment="" />
+      <created>1665059998962</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1665636167510</updated>
-      <workItem from="1665636171147" duration="1508000" />
-      <workItem from="1665646716198" duration="10604000" />
-      <workItem from="1665668379421" duration="114000" />
-      <workItem from="1665668516157" duration="154000" />
-      <workItem from="1665668695803" duration="726000" />
-      <workItem from="1665669439889" duration="1987000" />
-      <workItem from="1665671925691" duration="120000" />
-      <workItem from="1665672069575" duration="3735000" />
-      <workItem from="1665675827270" duration="517000" />
-      <workItem from="1665676365226" duration="1862000" />
-      <workItem from="1665720866463" duration="1738000" />
-      <workItem from="1665732092837" duration="5774000" />
+      <updated>1665059998962</updated>
+      <workItem from="1665060000369" duration="2180000" />
+      <workItem from="1665066394041" duration="3182000" />
+      <workItem from="1665069894691" duration="2475000" />
+      <workItem from="1665114326688" duration="1293000" />
+      <workItem from="1665117846826" duration="12488000" />
+      <workItem from="1665152279595" duration="10470000" />
+      <workItem from="1665182029268" duration="295000" />
+      <workItem from="1665182332656" duration="608000" />
+      <workItem from="1665182954397" duration="262000" />
+      <workItem from="1665222272329" duration="35000" />
+      <workItem from="1665222869311" duration="6640000" />
+      <workItem from="1665241856839" duration="7249000" />
+      <workItem from="1665340909713" duration="886000" />
+      <workItem from="1665380444615" duration="16588000" />
+      <workItem from="1665414884873" duration="1730000" />
+      <workItem from="1665416635478" duration="11549000" />
+      <workItem from="1665481084453" duration="101000" />
+      <workItem from="1665481203540" duration="7599000" />
+      <workItem from="1665559065861" duration="462000" />
+      <workItem from="1665559545121" duration="6742000" />
+      <workItem from="1665570891240" duration="41000" />
+      <workItem from="1665578438458" duration="3315000" />
+      <workItem from="1665636169895" duration="912000" />
+      <workItem from="1665655474526" duration="2420000" />
+      <workItem from="1665668042293" duration="334000" />
     </task>
+    <task id="LOCAL-00001" summary="gruppo5-Ecommerce">
+      <created>1665138873584</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665138873584</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,21 +307,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="GROUP_MULTIFILE_MERGE_BY_DIRECTORY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/it/beije/hopper/myMod/model/User.java</url>
-          <line>9</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+    <MESSAGE value="gruppo5-Ecommerce" />
+    <option name="LAST_COMMIT_MESSAGE" value="gruppo5-Ecommerce" />
   </component>
 </project>

@@ -19,16 +19,16 @@ public class Canzone {
 	private Integer id;
 	
 	@Column(name = "id_artista")
-	private Integer id_artista;
+	private Integer artistaId;
 
 	@Column(name = "id_album")
-	private Integer id_album;
+	private Integer albumId;
 	
 	@Column(name = "titolo")
 	private String titolo;
 	
-	@Column(name = "data_di_nascita")
-	private String dataDiNascita;
+	@Column(name = "data_di_uscita")
+	private String dataDiUscita;
 	
 	@Column(name = "genere")
 	private String genere;
@@ -41,20 +41,20 @@ public class Canzone {
 		this.id = id;
 	}
 
-	public Integer getId_artista() {
-		return id_artista;
+	public Integer getArtistaId() {
+		return artistaId;
 	}
 
-	public void setId_artista(Integer id_artista) {
-		this.id_artista = id_artista;
+	public void setArtistaId(Integer artistaId) {
+		this.artistaId = artistaId;
 	}
 
-	public Integer getId_album() {
-		return id_album;
+	public Integer getAlbumId() {
+		return albumId;
 	}
 
-	public void setId_album(Integer id_album) {
-		this.id_album = id_album;
+	public void setAlbumId(Integer albumId) {
+		this.albumId = albumId;
 	}
 
 	public String getTitolo() {
@@ -65,12 +65,14 @@ public class Canzone {
 		this.titolo = titolo;
 	}
 
-	public String getDataDiNascita() {
-		return dataDiNascita;
+
+
+	public String getDataDiUscita() {
+		return dataDiUscita;
 	}
 
-	public void setDataDiNascita(String dataDiNascita) {
-		this.dataDiNascita = dataDiNascita;
+	public void setDataDiUscita(String dataDiUscita) {
+		this.dataDiUscita = dataDiUscita;
 	}
 
 	public String getGenere() {
@@ -83,9 +85,13 @@ public class Canzone {
 
 	@Override
 	public String toString() {
-		return "Canzone [id=" + id + ", id_artista=" + id_artista + ", id_album=" + id_album + ", titolo=" + titolo
-				+ ", dataDiNascita=" + dataDiNascita + ", genere=" + genere + "]";
+		return "Canzone [id=" + id + ", artistaId=" + artistaId + ", albumId=" + albumId + ", titolo=" + titolo
+				+ ", dataDiUscita=" + dataDiUscita + ", genere=" + genere + "]";
 	}
+
+
+	
+
 	
 	
 	

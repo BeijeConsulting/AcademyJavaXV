@@ -15,8 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import it.beije.musicstore.JPAEntityManagerFactory;
 import it.beije.musicstore.model.Album;
 import it.beije.musicstore.model.Artista;
+import it.beije.musicstore.model.Canzone;
 import it.beije.musicstore.service.AlbumService;
 import it.beije.musicstore.service.ArtistaService;
+import it.beije.musicstore.service.CanzoneService;
 
 @Controller
 public class HelloController {
@@ -25,6 +27,8 @@ public class HelloController {
 	ArtistaService artistaService;
 	@Autowired
 	AlbumService albumService;
+	@Autowired
+	CanzoneService canzoneService;
 	
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -34,19 +38,36 @@ public class HelloController {
 	public String index(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		int idArtista=1;
-
+		return "index";
+	}
+	
+	@RequestMapping(value ="artistByGenre", method = RequestMethod.GET)
+	public String artistbygenre(HttpServletRequest request,Model model) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		List<Artista> artisti=artistaService.findByGenere("rock");
-		List<Album> album=albumService.getAlbumByArtistaId(idArtista);
-		System.out.println(artisti);
-		
-		model.addAttribute("album",album);
-		model.addAttribute("artista",idArtista);
+	
 		model.addAttribute("artisti",artisti);
-		
-		return "index"; // /WEB-INF/views/index.jsp
+		return "artist_by_genre";
 	}
 	
 	
+	@RequestMapping(value ="albumbyartist", method = RequestMethod.GET)
+	public String albumbyartist(HttpServletRequest request,Model model) {
+		int idArtista=1;
+
+		List<Album> album=albumService.getAlbumByArtistaId(idArtista);
+		
+		model.addAttribute("album",album);
+		model.addAttribute("artista",idArtista);
+		return "album_by_artist";
+	}
 	
+	@RequestMapping(value = "songbyalbum", method = RequestMethod.GET)
+	public String songbyalbum(HttpServletRequest request,Model model) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
+		
+		List<Canzone> canzoni=canzoneService.getCanzoniByAlbum(1);
+		model.addAttribute("canzoni",canzoni);
+		return "song_by_album";
+	}
 }

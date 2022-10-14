@@ -21,9 +21,9 @@ public class AlbumService {
 	private ArtistRepository artistRepository;
 	
 	public List<Album> listAlbumByArtist(Integer id_artist){
-		return albumRepository.loadByArtist(id_artist);
+		return albumRepository.loadByArtist(id_artist);	
 	}
-	
+
 	public List<Album> listAllAlbum(){
 		return albumRepository.loadAllAlbum();
 	}

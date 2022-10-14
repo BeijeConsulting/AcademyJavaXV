@@ -28,7 +28,7 @@ public class ArtistaController {
 	@RequestMapping(value ="artistbygenre", method = RequestMethod.GET)
 	public String artistbygenre(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
-		List<Artista> artisti=artistaService.getByGenere("rock");
+		List<Artista> artisti=artistaService.getByGenere("rap");
 	
 		model.addAttribute("artisti",artisti);
 		return "artista";

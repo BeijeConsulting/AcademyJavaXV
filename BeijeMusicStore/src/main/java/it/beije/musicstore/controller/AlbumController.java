@@ -41,7 +41,7 @@ public class AlbumController {
 	public String albumbygenre(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		List<Album> album=albumService.getAlbumByGenere("rock");
+		List<Album> album=albumService.getAlbumByGenere("rap");
 		model.addAttribute("album",album);
 		return "album";
 	}

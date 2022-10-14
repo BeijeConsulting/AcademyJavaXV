@@ -33,7 +33,7 @@ public class CanzoneController {
 	public String songbyartist(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		List<Canzone> canzoni=canzoneService.getCanzoniByArtist(1);
+		List<Canzone> canzoni=canzoneService.getCanzoniByArtist(2);
 		model.addAttribute("canzoni",canzoni);
 		return "song";
 	}

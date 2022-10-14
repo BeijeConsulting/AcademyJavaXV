@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +36,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/HopperWeb",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
@@ -65,9 +64,9 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TtClass">
-    <configuration name="ExtendsTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ExtendsTest" />
+  <component name="RunManager" selected="Application.Beta">
+    <configuration name="Beta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Beta" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -133,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Beta" />
         <item itemvalue="Application.TtClass" />
         <item itemvalue="Application.T" />
         <item itemvalue="Application.T (1)" />
         <item itemvalue="Application.TestC" />
-        <item itemvalue="Application.ExtendsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +167,7 @@
       <workItem from="1665572094486" duration="10000" />
       <workItem from="1665636187540" duration="5507000" />
       <workItem from="1665655452096" duration="20000" />
+      <workItem from="1665720997405" duration="1871000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

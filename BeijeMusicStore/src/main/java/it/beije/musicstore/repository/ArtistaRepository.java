@@ -11,6 +11,7 @@ import java.util.List;
 @Repository
 public interface ArtistaRepository  extends JpaRepository<Artista, Integer> {
     public Artista findByNome(String nome);
+    List<Artista> findByGenere(String genere);
 
 }
 

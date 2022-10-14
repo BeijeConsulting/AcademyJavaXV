@@ -17,4 +17,8 @@ public class ArtistaService{
     public List<Artista> findAll(){
         return artistaRepository.findAll();
     }
+    public List<Artista> findByGenere(String genere) {
+        return artistaRepository.findByGenere(genere);
+    }
+
 }

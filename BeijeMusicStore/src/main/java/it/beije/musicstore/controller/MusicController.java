@@ -45,4 +45,33 @@ public class MusicController {
         model.addAttribute("canzoni", canzoni);
         return "findSongByAlbum";
     }
+    @RequestMapping(value = "/findByGenere", method = RequestMethod.GET)
+    public String findByGenere(HttpServletRequest request, Model model){
+        return "findByGenere";
+    }
+    @RequestMapping(value = "/findByGenere", method = RequestMethod.POST)
+    public String findByGenere(HttpServletRequest request, Model model, @RequestParam(name="genere", required = false) String genere) {
+        int risultato = artistaService.findByGenere(genere).size();
+        if(risultato >= 1 ){
+            model.addAttribute("risultato", artistaService.findByGenere(genere));
+        } else {
+            model.addAttribute("errore", risultato);
+        }
+        return "findByGenere";
+    }
+    @RequestMapping(value = "/albumtramiteartista", method = RequestMethod.GET)
+    public String albumByArtist(HttpServletRequest request) {
+
+        return "albumtramiteartista";
+    }
+
+    @RequestMapping(value = "/albumtramiteartista", method = RequestMethod.POST)
+    public String albumByArtist(HttpServletRequest request, Model model, @RequestParam(name = "nome", required = false) String nomeArtista) {
+
+        System.out.println(artistaService.findByNome(nomeArtista));
+        List <Album> albums = artistaService.findByNome(nomeArtista).getAlbumArtista();
+        model.addAttribute("risultato", albums);
+        return "albumtramiteartista";
+    }
+
 }

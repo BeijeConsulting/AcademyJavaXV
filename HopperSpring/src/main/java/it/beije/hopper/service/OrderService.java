@@ -5,6 +5,8 @@ import it.beije.hopper.repository.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class OrderService {
     @Autowired
@@ -27,6 +29,21 @@ public class OrderService {
 
         System.out.println("loadProduct : " + order);
 
+        return order;
+    }
+
+    public Order findById(int ID){
+        Order order = orderRepository.findById(ID);
+        return order;
+    }
+
+    public List<Order> findByUserId(int ID){
+        List<Order> order = orderRepository.findByUserId(ID);
+        return order;
+    }
+
+    public List<Order> findAll(){
+        List<Order> order = orderRepository.findAll();
         return order;
     }
 }

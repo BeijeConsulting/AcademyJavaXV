@@ -3,6 +3,7 @@ package it.beije.hopper.controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import it.beije.hopper.model.Order;
 import it.beije.hopper.model.Product;
 import it.beije.hopper.service.OrderService;
 import it.beije.hopper.service.ProductService;
@@ -72,17 +73,22 @@ public class HelloController {
 				//User loggedUser = userService.loadUser(username);
 				
 				model.addAttribute("loggedUser", loggedUser);
-				
-				//List<Order> lista = orderService.findByUserId(loggedUser.getId());
-//				System.out.println("lista: " + lista);
-//
-//				model.addAttribute("orders", lista);
 
 				List<Product> listaProdotti = productService.findAll();
-				System.out.println("lista: " + listaProdotti);
+				System.out.println("lista prodotti: " + listaProdotti);
 				model.addAttribute("products", listaProdotti);
 
-				return "welcome";
+				if(loggedUser.getAdmin()==1){
+					List<Order> listaOrdini = orderService.findAll();
+					System.out.println("lista ordini: " + listaOrdini);
+					model.addAttribute("orders", listaOrdini);
+					return "welcomeAdmin";
+				}else{
+					List<Order> listaOrdini = orderService.findByUserId(loggedUser.getId());
+					System.out.println("lista ordini: " + listaOrdini);
+					model.addAttribute("orders", listaOrdini);
+					return "welcomeUser";
+				}
 			} else { //KO
 				model.addAttribute("errore", "CREDENZIALI ERRATE");
 			}

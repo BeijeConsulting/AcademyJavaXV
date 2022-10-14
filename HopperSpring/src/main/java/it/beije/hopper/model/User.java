@@ -39,6 +39,9 @@ public class User {
 	@Column(name = "name")
 	private String firstName;
 
+	@Column(name = "admin")
+	private int admin;
+
 	
 	public Integer getId() {
 		return id;
@@ -94,5 +97,13 @@ public class User {
 				.append(" }");
 		
 		return builder.toString();
+	}
+
+	public int getAdmin() {
+		return admin;
+	}
+
+	public void setAdmin(int admin) {
+		this.admin = admin;
 	}
 }

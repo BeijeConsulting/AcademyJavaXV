@@ -23,12 +23,12 @@ public class MainController {
 //	private OrderService orderService;
 
     public MainController() {
-        System.out.println("creo un oggetto MainController...");
+        System.out.println("creo un oggetto MainController...........");
     }
 
     @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
     public String index(HttpServletRequest request) {
-        //System.out.println("Hello Page Requested : " + request.getRequestURI());
+        System.out.println("Hello Page Requested : " + request.getRequestURI());
 
         return "welcome"; // /WEB-INF/views/beije.jsp
     }

@@ -1,10 +1,8 @@
 package it.beije.musicstore.model;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
+@Entity
 public class Artista {
 
     @Id
@@ -16,7 +14,7 @@ public class Artista {
     private String nome;
 
     @Column(name = "genere")
-    private Integer genere;
+    private String genere;
 
     //Getter e setter
     public Integer getId() {
@@ -35,11 +33,11 @@ public class Artista {
         this.nome = nome;
     }
 
-    public Integer getGenere() {
+    public String getGenere() {
         return genere;
     }
 
-    public void setGenere(Integer genere) {
+    public void setGenere(String genere) {
         this.genere = genere;
     }
 

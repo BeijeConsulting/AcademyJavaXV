@@ -9,17 +9,18 @@ import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-	//organizzate bene i package...
-    @Configuration
-    @EnableTransactionManagement
-    @EnableJpaRepositories(value = {"it.beije.musicstore.repository"})
-    public class ConfigurationClass {
+//organizzate bene i package...
+@Configuration
+@EnableTransactionManagement
+@EnableJpaRepositories(value = {"it.beije.musicstore.repository"})
+public class ConfigurationClass {
 
-        @Primary
-        @Bean(name="transactionManager")
-        public PlatformTransactionManager dbTransactionManager() {
-            JpaTransactionManager transactionManager = new JpaTransactionManager();
-            transactionManager.setEntityManagerFactory(JpaEntityManager.getInstance());
-            return transactionManager;
-        }
+    @Primary
+    @Bean(name="transactionManager")
+    public PlatformTransactionManager dbTransactionManager() {
+        JpaTransactionManager transactionManager = new JpaTransactionManager();
+        transactionManager.setEntityManagerFactory(JpaEntityManager.getInstance());
+        return transactionManager;
+    }
 }
+

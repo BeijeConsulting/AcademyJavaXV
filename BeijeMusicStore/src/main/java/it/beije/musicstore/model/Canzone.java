@@ -2,10 +2,9 @@ package it.beije.musicstore.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
 @Entity
-@Table(name="album")
-public class Album {
+@Table(name="canzone")
+public class Canzone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -14,17 +13,17 @@ public class Album {
     @Column(name="id_artista")
     private Integer idArtista;
 
+    @Column(name="id_album")
+    private Integer idAlbum;
+
     @Column(name="titolo")
     private String titolo;
 
-    @Column(name="data_di_uscita")
+    @Column(name="data_uscita")
     private LocalDateTime data;
 
     @Column(name="genere")
     private String genere;
-
-    @Column(name="n_canzoni")
-    private Integer nCanzoni;
 
     public Integer getId() {
         return id;
@@ -40,6 +39,14 @@ public class Album {
 
     public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
+    }
+
+    public Integer getIdAlbum() {
+        return idAlbum;
+    }
+
+    public void setIdAlbum(Integer idAlbum) {
+        this.idAlbum = idAlbum;
     }
 
     public String getTitolo() {
@@ -66,23 +73,15 @@ public class Album {
         this.genere = genere;
     }
 
-    public Integer getnCanzoni() {
-        return nCanzoni;
-    }
-
-    public void setnCanzoni(Integer nCanzoni) {
-        this.nCanzoni = nCanzoni;
-    }
-
     @Override
     public String toString() {
-        return "Album{" +
+        return "Canzone{" +
                 "id=" + id +
                 ", idArtista=" + idArtista +
+                ", idAlbum=" + idAlbum +
                 ", titolo='" + titolo + '\'' +
                 ", data=" + data +
                 ", genere='" + genere + '\'' +
-                ", nCanzoni=" + nCanzoni +
                 '}';
     }
 }

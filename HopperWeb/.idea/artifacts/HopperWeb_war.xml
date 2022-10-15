@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="HopperWeb:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>HopperWeb</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="HopperWeb-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="HopperWeb:war exploded" />
+    </root>
+  </artifact>
+</component>

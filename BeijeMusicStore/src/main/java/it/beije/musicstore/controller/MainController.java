@@ -3,8 +3,10 @@ package it.beije.musicstore.controller;
 
 import it.beije.musicstore.model.Album;
 import it.beije.musicstore.model.Artista;
+import it.beije.musicstore.model.Canzone;
 import it.beije.musicstore.service.AlbumService;
 import it.beije.musicstore.service.ArtistaService;
+import it.beije.musicstore.service.CanzoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
@@ -27,11 +29,15 @@ public class MainController {
     @Autowired
     private AlbumService albumService;
 
+    @Autowired
+    private CanzoneService canzoneService;
 
     List<Artista> artists = null;
     List<String> listGenere = null;
 
     List<Album> albums = null;
+
+    List<Canzone> canzoni = null;
 
     public MainController() {
         System.out.println("creo un oggetto MainController....");
@@ -81,15 +87,6 @@ public class MainController {
     @RequestMapping(value={ "/albumbyartista-form" })
     public String albumForm(HttpSession session, Model model, HttpServletRequest request){
 
-
-//
-//        List<Album> album = albumService.findAlbumByIdArtista(1);
-//        System.out.println("album: " + album);
-//        System.out.println("------------------");
-//        Artista artista = artistaService.findArtistaByNome("Ed Sheeran");
-//        System.out.println("Artista: " + artista);
-//        System.out.println("------------------");
-
         if( artists == null ){
             artists = artistaService.findAll();
             session.setAttribute("artists", artists);
@@ -114,6 +111,23 @@ public class MainController {
         return "album-by-artista";
     }
 
+    /// ---------------------  (3) - Pagina che restituisce le CANZONI tramite l'ALBUM
+    @RequestMapping(value={ "/canzonibyalbum-form" })
+    public String canzoneForm(HttpSession session, Model model, HttpServletRequest request){
+
+        if( artists == null ){
+            artists = artistaService.findAll();
+            session.setAttribute("artists", artists);
+        }
+        if(  canzoni == null){
+            canzoni = canzoneService.findAll();
+            session.setAttribute("canzoni", canzoni);
+        }
+        List<Canzone> canzoni = canzoneService.findCanzoniFromAlbumId(5);
+        System.out.println("Canzoni: " + canzoni);
+
+        return "canzoni-by-album-form";
+    }
 
 
 //

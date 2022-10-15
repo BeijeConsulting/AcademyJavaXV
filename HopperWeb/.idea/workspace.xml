@@ -10,19 +10,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62a2cb84-f54b-4f8b-ba57-4f03d5435bb0" name="Changes" comment="gruppo5-Ecommerce intellij restructure">
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Cart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/model/Product.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/EcommerceJPA.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/shopPage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Esercizi/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Esercizi/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/controller/HelloController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/beije.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/CanzoneService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album-form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../HopperSpring/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +91,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/HopperSpring",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/HopperWeb",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
@@ -281,6 +275,7 @@
       <workItem from="1665636169895" duration="912000" />
       <workItem from="1665655474526" duration="2420000" />
       <workItem from="1665668042293" duration="334000" />
+      <workItem from="1665870596438" duration="26000" />
     </task>
     <task id="LOCAL-00001" summary="gruppo5-Ecommerce">
       <created>1665138873584</created>

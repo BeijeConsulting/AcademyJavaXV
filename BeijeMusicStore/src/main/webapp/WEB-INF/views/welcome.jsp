@@ -13,10 +13,18 @@
 
     <div>
         <a href="artistibygenre-form"> (1) - Pagina che restituisce gli ARTISTI tramite il GENERE </a>
+        </br>
     </div>
     <div>
         <a href="albumbyartista-form"> (2) - Pagina che restituisce l'ALBUM tramite l'ARTISTA </a>
+        </br>
     </div>
+    <div>
+        <a href="canzonibyalbum-form"> (3) - Pagina che restituisce le CANZONI tramite l'ALBUM </a>
+        </br>
+    </div>
+
+
 
 <%--<%--%>
 <%--/*--%>

@@ -22,4 +22,6 @@ public interface ArtistaRepository extends JpaRepository<Artista, Integer> {
 
 
     public abstract List<Artista> findArtistaByGenere(String nome);
+
+    public abstract Artista findArtistaByNome(String nome);
 }

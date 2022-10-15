@@ -10,7 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="Artista e Canzone Repository create">
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/AlbumService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista-form.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/ArtistaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/ArtistaRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/ArtistaService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +44,27 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="music_valente_musto" />
+                    <option name="lastUsedInstant" value="1665757594" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/src/main/java/it/beije/hopper/ecommerce/model/Item.java" root0="FORCE_HIGHLIGHTING" />
@@ -86,12 +116,12 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Alessandro/Code/Workspaces/Intellij/Accademy/BeijeMusicStore",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/HopperSpring",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.3061056",
-    "settings.editor.selected.configurable": "spring",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "910df933178e837167b541700ef58374"
   }
 }]]></component>
@@ -111,7 +141,7 @@
       <recent name="it.beije.hopper.service.functionality" />
     </key>
   </component>
-  <component name="RunManager" selected="Smart Tomcat.Tomcat: HopperSpring">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.671-Spring">
     <configuration name="Tomcat 9.0.671-Spring" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.671" ALTERNATIVE_JRE_ENABLED="false">
       <option name="BROWSER_ID" value="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" />
       <option name="UPDATING_POLICY" value="restart-server" />
@@ -256,6 +286,10 @@
       <workItem from="1665741747879" duration="3203000" />
       <workItem from="1665745059995" duration="744000" />
       <workItem from="1665749336462" duration="48000" />
+      <workItem from="1665837177602" duration="406000" />
+      <workItem from="1665837607045" duration="54000" />
+      <workItem from="1665837682771" duration="402000" />
+      <workItem from="1665838335149" duration="5319000" />
     </task>
     <task id="LOCAL-00001" summary="Artista e Canzone Repository create">
       <created>1665744037573</created>

@@ -13,9 +13,11 @@
 
     <div>
         <a href="artistibygenre-form"> (1) - Pagina che restituisce gli ARTISTI tramite il GENERE </a>
-
-
     </div>
+    <div>
+        <a href="albumbyartista-form"> (2) - Pagina che restituisce l'ALBUM tramite l'ARTISTA </a>
+    </div>
+
 <%--<%--%>
 <%--/*--%>
 <%--User loggedUser = (User) session.getAttribute("loggedUser");--%>

@@ -1,10 +1,13 @@
 package it.beije.musicstore.controller;
 
 
+import it.beije.musicstore.model.Album;
 import it.beije.musicstore.model.Artista;
+import it.beije.musicstore.service.AlbumService;
 import it.beije.musicstore.service.ArtistaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -21,6 +24,10 @@ public class MainController {
     @Autowired
     private ArtistaService artistaService;
 
+    @Autowired
+    private AlbumService albumService;
+
+
     public MainController() {
         System.out.println("creo un oggetto MainController....");
     }
@@ -34,7 +41,7 @@ public class MainController {
         return "welcome"; // /WEB-INF/  views/beije.jsp
     }
 
-
+    /// ---------------------   (1) - Pagina che restituisce gli ARTISTI tramite il GENERE
     @RequestMapping(value={ "/artistibygenre-form" })
     public String artistForm(HttpSession session, Model model, HttpServletRequest request){
         List<Artista> artists = artistaService.findAll();
@@ -55,6 +62,26 @@ public class MainController {
         model.addAttribute( "artists", artists);
         return "artisti-by-genere";
     }
+
+
+
+
+
+    /// ---------------------  (2) - Pagina che restituisce l'ALBUM tramite l'ARTISTA
+    @RequestMapping(value={ "/albumbyartista-form" })
+    public String albumForm(HttpSession session, Model model, HttpServletRequest request){
+//        List<Artista> artists = artistaService.findAll();
+//        model.addAttribute("artists", artists);
+//        System.out.println("artists:" + artists);
+//        List<String> listGenere = artistaService.listOfGenere();
+//        model.addAttribute("listGenere", listGenere);
+//        System.out.println("listGenere:" + listGenere);
+//
+        List<Album> album = albumService.findAlbumByIdArtista(1);
+        System.out.println("album: " + album);
+        return "album-by-artista-form";
+    }
+
 //
 //    @RequestMapping(value = "/hello", method = RequestMethod.GET)
 //    public String hello(HttpServletRequest request) {

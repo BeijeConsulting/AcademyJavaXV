@@ -14,7 +14,7 @@ public class Album {
     private Integer id;
 
     @Column(name = "id_artista")
-    private Integer id_artista;
+    private Integer idArtista;
 
     @Column(name = "titolo")
     private String titolo;
@@ -35,11 +35,11 @@ public class Album {
     }
 
     public Integer getId_artista() {
-        return id_artista;
+        return idArtista;
     }
 
     public void setId_artista(Integer id_artista) {
-        this.id_artista = id_artista;
+        this.idArtista = id_artista;
     }
 
     public String getTitolo() {
@@ -64,5 +64,15 @@ public class Album {
 
     public void setGenere(String genere) {
         this.genere = genere;
+    }
+
+    public String toString(){
+        StringBuilder builder = new StringBuilder()
+                .append("id: " + this.id)
+                .append(", id_artista: " + this.idArtista)
+                .append(", titolo: " + this.titolo)
+                .append(", data:" + this.data)
+                .append(", genere: " + this.genere);
+        return builder.toString();
     }
 }

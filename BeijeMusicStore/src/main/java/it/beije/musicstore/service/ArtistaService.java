@@ -42,8 +42,8 @@ public class ArtistaService {
         return artistaRepository.findArtistaByGenere(nome);
     }
 
-//    public Artista findArtistaByNome(String nome){
-//        return artistaRepository.findArtistaByNome(nome);
-//    }
+    public Artista findArtistaByNome(String nome){
+        return artistaRepository.findArtistaByNome(nome);
+    }
 
 }

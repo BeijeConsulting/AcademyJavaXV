@@ -28,6 +28,11 @@ public class MainController {
     private AlbumService albumService;
 
 
+    List<Artista> artists = null;
+    List<String> listGenere = null;
+
+    List<Album> albums = null;
+
     public MainController() {
         System.out.println("creo un oggetto MainController....");
     }
@@ -44,12 +49,17 @@ public class MainController {
     /// ---------------------   (1) - Pagina che restituisce gli ARTISTI tramite il GENERE
     @RequestMapping(value={ "/artistibygenre-form" })
     public String artistForm(HttpSession session, Model model, HttpServletRequest request){
-        List<Artista> artists = artistaService.findAll();
-        model.addAttribute("artists", artists);
-        System.out.println("artists:" + artists);
-        List<String> listGenere = artistaService.listOfGenere();
-        model.addAttribute("listGenere", listGenere);
-        System.out.println("listGenere:" + listGenere);
+
+        if( artists == null){
+            artists = artistaService.findAll();
+            session.setAttribute("artists", artists);
+        }
+
+        if(listGenere == null){
+            listGenere = artistaService.listOfGenere();
+            session.setAttribute("listGenere", listGenere);
+        }
+
         return "artisti-by-genere-form";
     }
 
@@ -70,17 +80,41 @@ public class MainController {
     /// ---------------------  (2) - Pagina che restituisce l'ALBUM tramite l'ARTISTA
     @RequestMapping(value={ "/albumbyartista-form" })
     public String albumForm(HttpSession session, Model model, HttpServletRequest request){
-//        List<Artista> artists = artistaService.findAll();
-//        model.addAttribute("artists", artists);
-//        System.out.println("artists:" + artists);
-//        List<String> listGenere = artistaService.listOfGenere();
-//        model.addAttribute("listGenere", listGenere);
-//        System.out.println("listGenere:" + listGenere);
+
+
 //
-        List<Album> album = albumService.findAlbumByIdArtista(1);
-        System.out.println("album: " + album);
+//        List<Album> album = albumService.findAlbumByIdArtista(1);
+//        System.out.println("album: " + album);
+//        System.out.println("------------------");
+//        Artista artista = artistaService.findArtistaByNome("Ed Sheeran");
+//        System.out.println("Artista: " + artista);
+//        System.out.println("------------------");
+
+        if( artists == null ){
+            artists = artistaService.findAll();
+            session.setAttribute("artists", artists);
+        }
+        if(  albums == null){
+            albums = albumService.findAllAlbums();
+            session.setAttribute("albums", albums);
+        }
+
+
         return "album-by-artista-form";
     }
+
+
+    @RequestMapping(value={ "/albumbyartista" }, method=RequestMethod.GET)
+    public String album(HttpSession session, Model model, HttpServletRequest request,
+                         @RequestParam(name ="artistNome", required=false) String artistNome){
+
+        List<Album> albumByArtista = albumService.findAlbumByNomeArtista(artistNome);
+        model.addAttribute("albums", albumByArtista);
+
+        return "album-by-artista";
+    }
+
+
 
 //
 //    @RequestMapping(value = "/hello", method = RequestMethod.GET)

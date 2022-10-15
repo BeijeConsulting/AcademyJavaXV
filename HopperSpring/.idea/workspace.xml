@@ -10,16 +10,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="Artista e Canzone Repository create">
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/AlbumService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/ArtistaRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/ArtistaRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/AlbumService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/AlbumService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/ArtistaService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/ArtistaService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/album-by-artista-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +50,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="music_valente_musto" />
-                    <option name="lastUsedInstant" value="1665757594" />
+                    <option name="lastUsedInstant" value="1665856242" />
                   </RecentBranch>
                 </list>
               </option>

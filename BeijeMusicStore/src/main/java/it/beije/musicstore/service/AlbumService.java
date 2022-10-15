@@ -15,9 +15,9 @@ public class AlbumService {
 
     @Autowired
     AlbumRepository albumRepository;
-//
-//    @Autowired
-//    ArtistaService artistaService;
+
+    @Autowired
+    ArtistaService artistaService;
     public AlbumService(){
         System.out.println("Creating Album Service...");
     }
@@ -27,9 +27,14 @@ public class AlbumService {
     }
 
     // TODO: join artista and album --> search there
-//    public List<Album> findAlbumByNomeArtista(String nome){
-//        Artista artista = artistaService.findArtistaByNome(nome);
-//        List<Album> result = findAlbumById_artista(artista.getId());
-//        return result;
-//    }
+    public List<Album> findAlbumByNomeArtista(String nome){
+        Artista artista = artistaService.findArtistaByNome(nome);
+        List<Album> result = findAlbumByIdArtista(artista.getId());
+        return result;
+    }
+
+
+    public List<Album> findAllAlbums(){
+        return albumRepository.findAll();
+    }
 }

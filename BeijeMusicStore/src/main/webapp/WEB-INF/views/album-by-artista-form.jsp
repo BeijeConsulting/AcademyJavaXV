@@ -31,8 +31,8 @@
   <div >
     <h3>Lista di album</h3>
     <ul>
-      <c:forEach var="listAlbum" items="${listAlbum}" >
-        <li>${listAlbum}</li>
+      <c:forEach var="albums" items="${albums}" >
+        <li>${albums.titolo} - ${albums.data}</li>
       </c:forEach>
     </ul>
   </div>
@@ -43,10 +43,10 @@
 <div>
 
   <hr>
-  <h3> Inserisci Genere dell' artista</h3>
-  <form action="./artistibygenre" method="GET">
-    <label for="artistGenere">Genere:</label><br>
-    <input type="text" name="artistGenere" value=""><br><br>
+  <h3> Inserisci nome dell' artista </h3>
+  <form action="./albumbyartista" method="GET">
+    <label for="artistNome">nome artista:</label><br>
+    <input type="text" name="artistNome" value=""><br><br>
     <input type="submit" value="Submit">
   </form>
 

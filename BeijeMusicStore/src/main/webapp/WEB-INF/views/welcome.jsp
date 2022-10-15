@@ -5,10 +5,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>WELCOME PAGE</title>
+<title>Beije Music Store </title>
 </head>
 <body>
-<h3> TESTING </h3>
+<h3>  Beije Music Store  </h3>
+
+
+    <div>
+        <a href="artistibygenre"> (1) - Pagina che restituisce gli ARTISTI tramite il GENERE </a>
+
+
+    </div>
 <%--<%--%>
 <%--/*--%>
 <%--User loggedUser = (User) session.getAttribute("loggedUser");--%>

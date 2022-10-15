@@ -12,7 +12,7 @@
 
 
     <div>
-        <a href="artistibygenre"> (1) - Pagina che restituisce gli ARTISTI tramite il GENERE </a>
+        <a href="artistibygenre-form"> (1) - Pagina che restituisce gli ARTISTI tramite il GENERE </a>
 
 
     </div>

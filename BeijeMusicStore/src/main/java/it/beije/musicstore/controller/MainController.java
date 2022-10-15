@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -21,7 +22,7 @@ public class MainController {
     private ArtistaService artistaService;
 
     public MainController() {
-        System.out.println("creo un oggetto MainController...........");
+        System.out.println("creo un oggetto MainController....");
     }
 
     @RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
@@ -36,16 +37,22 @@ public class MainController {
 
     @RequestMapping(value={ "/artistibygenre-form" })
     public String artistForm(HttpSession session, Model model, HttpServletRequest request){
-        List<Artista> artists = artistaService.findByGenere("Pop");
+        List<Artista> artists = artistaService.findAll();
         model.addAttribute("artists", artists);
+        System.out.println("artists:" + artists);
+        List<String> listGenere = artistaService.listOfGenere();
+        model.addAttribute("listGenere", listGenere);
+        System.out.println("listGenere:" + listGenere);
         return "artisti-by-genere-form";
     }
 
 
-    @RequestMapping(value={ "/artistibygenre" })
-    public String artist(HttpSession session, Model model, HttpServletRequest request){
-        List<Artista> artists = artistaService.findByGenere("Pop");
-        model.addAttribute("artists", artists);
+    @RequestMapping(value={ "/artistibygenre" }, method=RequestMethod.GET)
+    public String artist(HttpSession session, Model model, HttpServletRequest request,
+                        @RequestParam(name ="artistGenere", required=false) String artistGenere){
+        System.out.println("Artist Genere :" + artistGenere);
+        List<Artista> artists = artistaService.findArtistaByGenere(artistGenere);
+        model.addAttribute( "artists", artists);
         return "artisti-by-genere";
     }
 //

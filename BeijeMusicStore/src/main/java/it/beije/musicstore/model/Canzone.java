@@ -13,23 +13,22 @@ public class Canzone {
     private Integer id;
 
     @Column(name = "id_artista")
-    private Integer id_artista;
+    private Integer idArtista;
 
     @Column(name = "id_album")
-    private Integer id_album;
-
-    @Column(name = "titolo")
-    private String titolo;
-
-    @Column(name = "data")
-    private LocalDateTime data;
+    private Integer idAlbum;
 
     @Column(name = "genere")
     private String genere;
 
+    @Column(name = "nome")
+    private String nome;
+
 
 
     //Getter e setter
+
+
     public Integer getId() {
         return id;
     }
@@ -38,20 +37,20 @@ public class Canzone {
         this.id = id;
     }
 
-    public Integer getId_artista() {
-        return id_artista;
+    public Integer getIdArtista() {
+        return idArtista;
     }
 
-    public void setId_artista(Integer id_artista) {
-        this.id_artista = id_artista;
+    public void setIdArtista(Integer idArtista) {
+        this.idArtista = idArtista;
     }
 
-    public Integer getId_album() {
-        return id_album;
+    public Integer getIdAlbum() {
+        return idAlbum;
     }
 
-    public void setId_album(Integer id_album) {
-        this.id_album = id_album;
+    public void setIdAlbum(Integer idAlbum) {
+        this.idAlbum = idAlbum;
     }
 
     public String getGenere() {
@@ -62,27 +61,21 @@ public class Canzone {
         this.genere = genere;
     }
 
-    public String getTitolo() {
-        return titolo;
+    public String getNome() {
+        return nome;
     }
 
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
-
-    public LocalDateTime getData() {
-        return data;
-    }
-
-    public void setData(LocalDateTime data) {
-        this.data = data;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     public String toString(){
         StringBuilder builder = new StringBuilder()
                 .append("id: ").append(this.id)
-                .append(",id_artista: ").append(this.id_artista)
-                .append(",genere:").append(this.genere);
+                .append(", idArtista: ").append(this.idArtista)
+                .append(", idAlbum: " + this.idAlbum)
+                .append(", genere:").append(this.genere);
+
         return builder.toString();
     }
 

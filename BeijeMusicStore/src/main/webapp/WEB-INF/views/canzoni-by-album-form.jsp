@@ -20,21 +20,21 @@
   <div>
 
     <h3>Lista di Canzoni</h3>
-<%--    <ul>--%>
-<%--      <c:forEach var="canzoni" items="${canzoni}" >--%>
-<%--        <li>${canzoni.nome}</li>--%>
-<%--      </c:forEach>--%>
-<%--    </ul>--%>
+    <ul>
+      <c:forEach var="canzoni" items="${canzoni}" >
+        <li>${canzoni.nome}</li>
+      </c:forEach>
+    </ul>
 
   </div>
 
   <div >
     <h3>Lista di album</h3>
-<%--    <ul>--%>
-<%--      <c:forEach var="albums" items="${albums}" >--%>
-<%--        <li>${albums.titolo} - ${albums.data}</li>--%>
-<%--      </c:forEach>--%>
-<%--    </ul>--%>
+    <ul>
+      <c:forEach var="albums" items="${albums}" >
+        <li>${albums.titolo} - ${albums.data}</li>
+      </c:forEach>
+    </ul>
   </div>
 
 
@@ -43,12 +43,12 @@
 <div>
 
   <hr>
-<%--  <h3> Inserisci nome dell' album </h3>--%>
-<%--  <form action="./xxxx" method="GET">--%>
-<%--    <label for="albumNome">nome artista:</label><br>--%>
-<%--    <input type="text" name="albumNome" value=""><br><br>--%>
-<%--    <input type="submit" value="Submit">--%>
-<%--  </form>--%>
+  <h3> Inserisci nome dell' album </h3>
+  <form action="./canzonibyalbum" method="GET">
+    <label for="albumNome">nome artista:</label><br>
+    <input type="text" name="albumNome" value=""><br><br>
+    <input type="submit" value="Submit">
+  </form>
 
 
 </div>

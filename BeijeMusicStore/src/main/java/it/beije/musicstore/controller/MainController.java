@@ -115,20 +115,29 @@ public class MainController {
     @RequestMapping(value={ "/canzonibyalbum-form" })
     public String canzoneForm(HttpSession session, Model model, HttpServletRequest request){
 
-        if( artists == null ){
-            artists = artistaService.findAll();
-            session.setAttribute("artists", artists);
+        if( albums == null ){
+            albums = albumService.findAllAlbums();
+            session.setAttribute("albums", albums);
         }
         if(  canzoni == null){
             canzoni = canzoneService.findAll();
             session.setAttribute("canzoni", canzoni);
         }
-        List<Canzone> canzoni = canzoneService.findCanzoniFromAlbumId(5);
-        System.out.println("Canzoni: " + canzoni);
+
 
         return "canzoni-by-album-form";
     }
 
+
+    @RequestMapping(value={ "/canzonibyalbum" }, method=RequestMethod.GET)
+    public String canzoni(HttpSession session, Model model, HttpServletRequest request,
+                        @RequestParam(name ="artistNome", required=false) String artistNome){
+
+//        List<Album> albumByArtista = albumService.findAlbumByNomeArtista(artistNome);
+//        model.addAttribute("albums", albumByArtista);
+
+        return "canzoni-by-album";
+    }
 
 //
 //    @RequestMapping(value = "/hello", method = RequestMethod.GET)

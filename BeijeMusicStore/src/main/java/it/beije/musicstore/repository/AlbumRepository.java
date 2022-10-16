@@ -20,4 +20,6 @@ public interface AlbumRepository extends JpaRepository<Album, Integer> {
 
     public abstract List<Album> findAll();
 
+
+
 }

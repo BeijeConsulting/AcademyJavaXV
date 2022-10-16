@@ -10,14 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="358af9da-f7ee-4208-bc89-957351d3b3bf" name="Changes" comment="Artista e Canzone Repository create">
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/CanzoneService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album-form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/controller/MainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/welcome.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Album.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Canzone.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/model/Canzone.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/AlbumRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/repository/CanzoneRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/CanzoneService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/java/it/beije/musicstore/service/CanzoneService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album-form.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../BeijeMusicStore/src/main/webapp/WEB-INF/views/canzoni-by-album-form.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperWeb/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperWeb/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -286,7 +287,7 @@
       <workItem from="1665837177602" duration="406000" />
       <workItem from="1665837607045" duration="54000" />
       <workItem from="1665837682771" duration="402000" />
-      <workItem from="1665838335149" duration="6726000" />
+      <workItem from="1665838335149" duration="8272000" />
     </task>
     <task id="LOCAL-00001" summary="Artista e Canzone Repository create">
       <created>1665744037573</created>

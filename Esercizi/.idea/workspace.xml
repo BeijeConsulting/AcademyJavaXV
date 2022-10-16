@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Example.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/DemoMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/cap5/gruppo1/DemoMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/capitolo5/classdesign/polymorphism/polymorphisandmethodoverriding/ZooKeeper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/codetestsOCA/capitolo5/classdesign/polymorphism/polymorphisandmethodoverriding/ZooKeeper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +22,27 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="Valente" />
+                    <option name="lastUsedInstant" value="1665948070" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$/.." />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -36,10 +58,11 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/Esercizi",
+    "jdk.selected.JAVA_MODULE": "1.8",
+    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/Esercizi/src",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "preferences.lookFeel"
   }
@@ -64,9 +87,9 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Beta">
-    <configuration name="Beta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Beta" />
+  <component name="RunManager" selected="Application.ScopeTest">
+    <configuration name="ArrayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ArrayTest" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -78,8 +101,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="T (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.T" />
+    <configuration name="Ex" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.Ex" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ScopeTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.ScopeTest" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SportsCar" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.SportsCar" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -104,39 +153,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestC" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TestC" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TtClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.TestEL.TtClass" />
-      <module name="Esercizi" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.TestEL.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Beta" />
-        <item itemvalue="Application.TtClass" />
+        <item itemvalue="Application.ScopeTest" />
+        <item itemvalue="Application.ArrayTest" />
         <item itemvalue="Application.T" />
-        <item itemvalue="Application.T (1)" />
-        <item itemvalue="Application.TestC" />
+        <item itemvalue="Application.Ex" />
+        <item itemvalue="Application.SportsCar" />
       </list>
     </recent_temporary>
   </component>
@@ -168,6 +191,8 @@
       <workItem from="1665636187540" duration="5507000" />
       <workItem from="1665655452096" duration="20000" />
       <workItem from="1665720997405" duration="1871000" />
+      <workItem from="1665947882227" duration="512000" />
+      <workItem from="1665948477478" duration="3988000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

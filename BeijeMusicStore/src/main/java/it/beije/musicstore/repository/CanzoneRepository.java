@@ -19,8 +19,8 @@ public interface CanzoneRepository extends JpaRepository<Canzone, Integer> {
     public abstract List<Canzone> findAll();
 
 
-//    @Query(nativeQuery = true, value="SELECT * FROM canzone c JOIN album a WHERE c.id_album=:idAlbum")
-//    public abstract List<Canzone> findCanzoniFromAlbumId(@Param("idAlbum") Integer idAlbum);
+    @Query(nativeQuery = true, value="SELECT * FROM canzone c JOIN album a WHERE c.id_album=:idAlbum")
+    public abstract List<Canzone> findCanzoniFromAlbumId(@Param("idAlbum") Integer idAlbum);
 
 
 }

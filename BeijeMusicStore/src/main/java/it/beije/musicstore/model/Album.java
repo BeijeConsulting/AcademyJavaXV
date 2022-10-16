@@ -27,9 +27,9 @@ public class Album {
     @Column(name="genere")
     private String genere;
 
-//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id_album")
-//    private List<Canzone> canzoni;
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_album")
+    private List<Canzone> canzoni;
 
     public Integer getId() {
         return id;

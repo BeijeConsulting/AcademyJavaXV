@@ -74,6 +74,7 @@ public class Canzone {
                 .append("id: ").append(this.id)
                 .append(", idArtista: ").append(this.idArtista)
                 .append(", idAlbum: " + this.idAlbum)
+                .append(" , nome: " +this.nome)
                 .append(", genere:").append(this.genere);
 
         return builder.toString();

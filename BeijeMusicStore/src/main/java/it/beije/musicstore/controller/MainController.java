@@ -131,10 +131,13 @@ public class MainController {
 
     @RequestMapping(value={ "/canzonibyalbum" }, method=RequestMethod.GET)
     public String canzoni(HttpSession session, Model model, HttpServletRequest request,
-                        @RequestParam(name ="artistNome", required=false) String artistNome){
-
-//        List<Album> albumByArtista = albumService.findAlbumByNomeArtista(artistNome);
-//        model.addAttribute("albums", albumByArtista);
+                        @RequestParam(name ="albumNome", required=false) String albumNome){
+        List<Canzone> listCanzoni = canzoneService.findCanzoniFromAlbumId(5);
+        System.out.println("lista canzoni: " + listCanzoni);
+        System.out.println("---------------");
+        System.out.println("Id of Want Some?: " + albumService.findIdByAlbumNome("Want Some?"));
+        System.out.println("---------------");
+        System.out.println("Canzoni dell' album: " + canzoneService.findCanzoniFromAlbumNome("Want Some?"));
 
         return "canzoni-by-album";
     }

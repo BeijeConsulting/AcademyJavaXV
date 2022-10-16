@@ -17,6 +17,9 @@ public class CanzoneService {
     CanzoneRepository canzoneRepository;
 
 
+    @Autowired
+    AlbumService albumService;
+
     public CanzoneService(){
         System.out.println("Creating canzone Service...");
     }
@@ -25,8 +28,13 @@ public class CanzoneService {
         return canzoneRepository.findAll();
     }
 
-//    public List<Canzone> findCanzoniFromAlbumId(Integer idAlbum){
-//        return canzoneRepository.findCanzoniFromAlbumId(idAlbum);
-//    }
+    public List<Canzone> findCanzoniFromAlbumId(Integer idAlbum){
+        return canzoneRepository.findCanzoniFromAlbumId(idAlbum);
+    }
 
+
+    public List<Canzone> findCanzoniFromAlbumNome( String nome){
+        List<Canzone> canzoni = findCanzoniFromAlbumId( albumService.findIdByAlbumNome(nome));
+        return canzoni;
+    }
 }

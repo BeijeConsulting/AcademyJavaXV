@@ -1,4 +1,4 @@
-package it.beije.hopper.ecommerce.model;
+package it.beije.hopper.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -20,6 +20,7 @@ import javax.persistence.Transient;
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import it.beije.hopper.model.Item;
 
 /*
 CREATE TABLE `orders` (

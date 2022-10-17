@@ -8,8 +8,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import it.beije.hopper.ecommerce.model.Order;
-import it.beije.hopper.ecommerce.repository.OrderRepository;
+import it.beije.hopper.model.Order;
+import it.beije.hopper.repository.OrderRepository;
 
 
 @Controller

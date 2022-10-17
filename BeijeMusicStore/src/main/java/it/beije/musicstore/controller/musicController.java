@@ -1,5 +1,6 @@
 package it.beije.musicstore.controller;
 
+import it.beije.musicstore.dto.request.AlbumRequestDto;
 import it.beije.musicstore.model.Album;
 import it.beije.musicstore.model.Artista;
 import it.beije.musicstore.model.Canzone;
@@ -9,9 +10,7 @@ import it.beije.musicstore.service.CanzoneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -69,12 +68,23 @@ public class musicController {
     }
 
     @RequestMapping(value = {"/AltoC"}, method = RequestMethod.POST)
-    public String AltoC(HttpServletRequest request, @RequestParam(name = "album", required = false) int album, Model model) {
+    public String AltoC(HttpServletRequest request, @RequestParam(name = "album", required = false) Integer album, Model model) {
         List<Artista> Artisti = artistaService.findAll();
         model.addAttribute("artistiHome", Artisti);
         List<Album> Albums = albumService.findAll();
         model.addAttribute("albumsHome", Albums);
         List<Canzone> lista3 = canzoneService.findByIdAlbum(album);
+        model.addAttribute("canzoni1", lista3);
+        return "home"; // /WEB-INF/views/home.jsp
+    }
+
+    @PostMapping(value = "/AltoP", consumes = {"application/json"})
+    public String AltoP(@RequestBody AlbumRequestDto album, Model model) {
+        List<Artista> Artisti = artistaService.findAll();
+        model.addAttribute("artistiHome", Artisti);
+        List<Album> Albums = albumService.findAll();
+        model.addAttribute("albumsHome", Albums);
+        List<Canzone> lista3 = canzoneService.findByIdAlbum(album.getId());
         model.addAttribute("canzoni1", lista3);
         return "home"; // /WEB-INF/views/home.jsp
     }

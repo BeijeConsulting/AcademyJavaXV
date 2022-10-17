@@ -79,10 +79,10 @@ public class HelloController {
 //				userService.findById(3);
 				//lista degli utenti con lo stesso cognome
 				//List<User> stessoCognome = userService.findByLastName(loggedUser.getLastName());
-				List<User> stessoCognome = userService.findByLastName(loggedUser.getLastName());
-				System.out.println("Same lastname: " + stessoCognome);
-				System.out.println("Last name of logged user: " + loggedUser.getLastName());
-				session.setAttribute("lastNames", stessoCognome);
+//				List<User> stessoCognome = userService.findByLastName(loggedUser.getLastName());
+//				System.out.println("Same lastname: " + stessoCognome);
+//				System.out.println("Last name of logged user: " + loggedUser.getLastName());
+//				session.setAttribute("lastNames", stessoCognome);
 				return "welcome";
 			} else { //KO
 				model.addAttribute("errore", "CREDENZIALI ERRATE");

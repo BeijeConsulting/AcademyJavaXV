@@ -78,7 +78,8 @@ public class UserRestController {
 	public String deleteUser(@PathVariable(name = "id") Integer id) {
 		System.out.println("DELETE deleteUser : " + id);
 		
-		userRepository.deleteById(id);
+//		userRepository.deleteById(id);
+		userService.deleteById(id);
 		
 		return "{\"message\":\"rimosso user " + id + "\"}";
 	}

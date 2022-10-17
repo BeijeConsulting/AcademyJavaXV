@@ -24,9 +24,13 @@ public class TestController {
 	public TestController() {
 		System.out.println("creo un oggetto TestController...");
 	}
-	
 
-	@RequestMapping(value = "/test", method = RequestMethod.GET)
+	@RequestMapping(value = "/", method = RequestMethod.GET)
+	public String temp(){
+		return "hello";
+	}
+
+
 	public String test(Locale locale, Model model) {
 		System.out.println("test : " + locale);
 

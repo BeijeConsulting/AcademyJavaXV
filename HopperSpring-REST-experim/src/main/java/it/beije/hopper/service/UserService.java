@@ -50,4 +50,8 @@ public class UserService {
 	public List<User> loadLastClients(LocalDate date) {
 		return userRepository.loadLastClients(date);
 	}
+
+	public void deleteById(Integer id){
+		userRepository.deleteById(id);
+	}
 }

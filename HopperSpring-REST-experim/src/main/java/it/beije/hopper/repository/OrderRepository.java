@@ -15,4 +15,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
 		
 //	@Query(nativeQuery = true, value = "SELECT * FROM users WHERE name = :name")//JDBC
 //	public abstract List<User> loadByUser(@Param("name") String firstName);
+
+
 }

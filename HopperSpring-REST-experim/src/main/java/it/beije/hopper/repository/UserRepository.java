@@ -27,6 +27,9 @@ public interface UserRepository extends JpaRepository<User, Integer>{
 	//@Query(nativeQuery = true, value = "SELECT * FROM users u JOIN orders o ON o.user_id = u.id WHERE o.datetime > :date GROUP BY u.id")
 	@Query(nativeQuery = true, value = "SELECT * FROM orders o JOIN users u ON o.user_id = u.id WHERE o.datetime > :date GROUP BY u.id")
 	public abstract List<User> loadLastClients(@Param("date") LocalDate date);
+
+
+	public abstract void deleteById(Integer id);
 	
 	
 }

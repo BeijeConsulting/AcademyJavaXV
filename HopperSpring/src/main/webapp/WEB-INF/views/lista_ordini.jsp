@@ -5,14 +5,16 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>testosterone</title>
+<title>Lista Ordini</title>
 </head>
 <body>
-Elenco utenti che hanno fatto un ordine nell'ultimo mese:
+Elenco ordini:
 <br>
-LISTA:
-<c:forEach items="${lista}" var="user">
-	<br>- ${user.email}
+<c:forEach items="${orders}" var="order">
+	<br>- ORDINE ID ${order.id} in data ${order.datetime}, euro ${order.amount}:<br>
+	<c:forEach items="${order.items}" var="item">
+	${item.name} * ${item.quantity}<br>
+	</c:forEach>
 </c:forEach>
 </body>
 </html>

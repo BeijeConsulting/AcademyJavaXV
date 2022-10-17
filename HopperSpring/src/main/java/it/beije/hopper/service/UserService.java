@@ -1,6 +1,6 @@
 package it.beije.hopper.service;
 
-import java.util.Arrays;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -16,23 +16,29 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
 
 	public UserService() {
 		System.out.println("creo un oggetto UserService...");
+	}
+	
+	public User save(User user) {
+		return userRepository.save(user);
 	}
 	
 	public User findByEmailAndPassword(String email, String password) {
 		return userRepository.findByEmailAndPassword(email, password);
 	}
 
-	public User loadUser(String username) {
-//		User user = new User();
-//		user.setEmail(username);
-//		user.setFirstName("Pippo");
-//		user.setLastName("Rossi");
+	public User findById(Integer id) {
+		Optional<User> u = userRepository.findById(id);
+		
+		if (!u.isPresent()) throw new IllegalArgumentException("User non trovato con id " + id);
 
-//		Optional<User> u = userRepository.findById(1); 
-//		User user = u.isPresent() ? u.get() : new User();
+		return u.get();
+	}
+	
+	public User loadUser(String username) {
 		
 		User user = userRepository.findByEmail(username);
 		
@@ -41,8 +47,7 @@ public class UserService {
 		return user;
 	}
 	
-	public List<String> loadList() {
-		return Arrays.asList("qui", "quo", "qua");
+	public List<User> loadLastClients(LocalDate date) {
+		return userRepository.loadLastClients(date);
 	}
-
 }

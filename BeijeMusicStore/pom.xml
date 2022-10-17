@@ -9,7 +9,7 @@
   <properties>
     <jdk.version>1.8</jdk.version>
     <servlet.version>4.0.1</servlet.version>
-    <spring.version>5.2.14.RELEASE</spring.version>
+    <spring.version>5.2.0.RELEASE</spring.version>
     <jstl.version>1.2</jstl.version>
   </properties>
   
@@ -50,26 +50,6 @@
       <artifactId>jstl</artifactId>
       <version>${jstl.version}</version>
     </dependency>
-	<dependency>
-		<groupId>org.springframework.data</groupId>
-		<artifactId>spring-data-jpa</artifactId>
-		<version>2.3.9.RELEASE</version>
-	</dependency>
-  	<dependency>
-  		<groupId>org.hibernate</groupId>
-  		<artifactId>hibernate-core</artifactId>
-  		<version>5.4.30.Final</version>
-  	</dependency>
-  	<dependency>
-  		<groupId>mysql</groupId>
-  		<artifactId>mysql-connector-java</artifactId>
-  		<version>8.0.26</version>
-  	</dependency>
-	<dependency>
-		<groupId>com.fasterxml.jackson.core</groupId>
-		<artifactId>jackson-databind</artifactId>
-		<version>2.9.10.4</version>
-	</dependency>
   </dependencies>
     
 </project>

@@ -34,7 +34,7 @@ public class UserServiceMod {
         return userRepositoryMod.findAll();
     }
 
-    public void signUpUser(String email, String password, String lastName, String firstName){
-        userRepositoryMod.signUpUser(email, password, lastName, firstName);
-    }
+//    public void signUpUser(String email, String password, String lastName, String firstName){
+//        userRepositoryMod.signUpUser(email, password, lastName, firstName);
+//    }
 }

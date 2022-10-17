@@ -12,7 +12,7 @@ import it.beije.hopper.model.User;
 
 
 @Repository
-public interface UserRepositoryMod extends JpaRepository<User, Integer>{
+public interface UserRepositoryMod extends JpaRepository<User, Integer> {
 
     public abstract User findByEmail(String email);
 
@@ -23,7 +23,8 @@ public interface UserRepositoryMod extends JpaRepository<User, Integer>{
     ArrayList<User> findByLastNameAndFirstName(String lastName, String firstName);
 
     List<User> findAll();
-    @Query(value = "INSERT INTO User ('email', 'password', 'name', 'surname') values :email, :password, :lastName, :firstName")
-    void signUpUser(@Param("email") String email, @Param("password") String password, @Param("lastName") String lastName, @Param("firstName") String firstName);
+
+    //    @Query(value = "INSERT INTO User ('email', 'password', 'name', 'surname') values :email, :password, :lastName, :firstName")
+//    void signUpUser(@Param("email") String email, @Param("password") String password, @Param("lastName") String lastName, @Param("firstName") String firstName);
 
 }

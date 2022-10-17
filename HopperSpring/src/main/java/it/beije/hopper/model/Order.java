@@ -2,7 +2,21 @@ package it.beije.hopper.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 /*
 CREATE TABLE `orders` (
@@ -26,6 +40,7 @@ public class Order {
 	@Column(name = "id")
 	private Integer id;
 	
+	@JsonProperty(value = "user_id")
 	@Column(name = "user_id")
 	private Integer userId;
 
@@ -39,7 +54,8 @@ public class Order {
 	@Column(name = "promo")
 	private Double promo;
 
-	@Transient
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "order_id")
 	private List<Item> items;
 	
 
@@ -63,8 +79,18 @@ public class Order {
 		return datetime;
 	}
 
+	@JsonGetter(value = "datetime")
+	public String getDatetimeAsString() {
+		return datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
+	}
+
 	public void setDatetime(LocalDateTime datetime) {
 		this.datetime = datetime;
+	}
+
+	@JsonSetter(value = "datetime")
+	public void setDatetime(String datetime) {
+		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
 	}
 
 	public Double getAmount() {
@@ -89,6 +115,11 @@ public class Order {
 
 	public void setItems(List<Item> items) {
 		this.items = items;
+	}
+
+	@JsonGetter(value = "order_code")
+	public String getOrderCode() {
+		return "BJ-" + this.id;
 	}
 
 	public String toString() {

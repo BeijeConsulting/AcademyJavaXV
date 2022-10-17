@@ -29,11 +29,24 @@ public class ProductRestController {
     }
 
     @GetMapping(value="/product/{product_id}")
-    public Product product(@PathVariable(name="product_id") Integer id){
+    public Product getProduct(@PathVariable(name="product_id") Integer id){
         System.out.println("GET product: " + id);
         Product product = productService.findById(id);
         return product;
     }
+
+
+    @PostMapping(value="/product")
+    public Product insertProduct(@RequestBody Product product){
+        System.out.println("Insert Product: " + product);
+
+        productService.save(product);
+
+        System.out.println("Product post after save: " + product);
+
+        return product;
+    }
+
 //    @GetMapping(value = "/user/{id}")
 //    public User getUser(@PathVariable(name = "id") Integer id) {
 //        System.out.println("GET getUser : " + id);

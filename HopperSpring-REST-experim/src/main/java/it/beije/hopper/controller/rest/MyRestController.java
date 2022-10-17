@@ -1,4 +1,4 @@
-package it.beije.hopper.controller;
+package it.beije.hopper.controller.rest;
 
 import java.time.LocalDate;
 import java.util.List;

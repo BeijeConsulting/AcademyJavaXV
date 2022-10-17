@@ -1,4 +1,4 @@
-package it.beije.hopper.controller;
+package it.beije.hopper.controller.rest;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

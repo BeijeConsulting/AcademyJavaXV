@@ -2,6 +2,7 @@ package it.beije.musicstore.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name="album")
@@ -25,6 +26,10 @@ public class Album {
 
     @Column(name="n_canzoni")
     private Integer nCanzoni;
+
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_album")
+    private List<Canzone> canzoni;
 
     public Integer getId() {
         return id;
@@ -74,6 +79,14 @@ public class Album {
         this.nCanzoni = nCanzoni;
     }
 
+    public List<Canzone> getCanzoni() {
+        return canzoni;
+    }
+
+    public void setCanzoni(List<Canzone> canzoni) {
+        this.canzoni = canzoni;
+    }
+
     @Override
     public String toString() {
         return "Album{" +
@@ -83,6 +96,7 @@ public class Album {
                 ", data=" + data +
                 ", genere='" + genere + '\'' +
                 ", nCanzoni=" + nCanzoni +
+                ", canzoni=" + canzoni +
                 '}';
     }
 }

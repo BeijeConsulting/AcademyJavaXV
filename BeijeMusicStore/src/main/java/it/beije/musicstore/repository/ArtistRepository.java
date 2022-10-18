@@ -3,8 +3,6 @@ package it.beije.musicstore.repository;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -27,6 +25,9 @@ public interface ArtistRepository extends JpaRepository<Artist, Integer>{
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM artista")//JDBC
 	public abstract List<Artist> loadAllArtist();
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM artista WHERE id = :id")//JDBC
+	public abstract Artist loadById(@Param("id") Integer id);
 	
 	
 //	@Query(nativeQuery = true, value = "SELECT * FROM artista")//JDBC

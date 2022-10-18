@@ -8,7 +8,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import it.beije.musicstore.model.Album;
-import it.beije.musicstore.model.Artist;
+
 
 
 
@@ -20,4 +20,14 @@ public interface AlbumRepository extends JpaRepository<Album, Integer>{
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM album")//JDBC
 	public abstract List<Album> loadAllAlbum();
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM album WHERE title = :title")//JDBC
+	public abstract Album loadIdAlbumByTitle(@Param("title") String title);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM album WHERE genre = :genre")//JDBC
+	public abstract List<Album> loadAlbumByGenre(@Param("genre") String genre);
+	
+	@Query(nativeQuery = true, value = "SELECT * FROM album WHERE id = :id")//JDBC
+	public abstract Album loadById(@Param("id") int id);
+	
 }

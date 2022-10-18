@@ -13,10 +13,6 @@
 
 <p style="color: red">${errore}</p>
 
-<c:forEach items="${listArtist}" var="artist">
-	<br>- ${artist.id} ${artist.name} 
-</c:forEach>
-
 	<form action="./find_album_by_artist" method="get">
 		<label for="username">Artista </label><br> <input type="text"
 			name="artist" value=""><br> <input type="submit"

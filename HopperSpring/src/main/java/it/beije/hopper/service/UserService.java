@@ -51,4 +51,8 @@ public class UserService {
 	public List<User> loadLastClients(LocalDate date) {
 		return userRepository.loadLastClients(date);
 	}
+
+	public List<User> findAll() {
+		return userRepository.findAll();
+	}
 }

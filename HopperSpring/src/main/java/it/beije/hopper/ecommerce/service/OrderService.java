@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import it.beije.hopper.ecommerce.model.Order;
 import it.beije.hopper.ecommerce.repository.OrderRepository;
+import it.beije.hopper.model.User;
 
 
 @Service
@@ -25,4 +26,7 @@ public class OrderService {
 		return orderRepository.findByUserId(userId);
 	}
 
+	public Order save(Order order) {
+		return orderRepository.save(order);
+	}
 }

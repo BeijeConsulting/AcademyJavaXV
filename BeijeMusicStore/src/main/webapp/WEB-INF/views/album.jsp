@@ -10,9 +10,10 @@
 </head>
 <body>
 <H1 style=color:red>ALBUM BY ARTIST</H1>
+<body style="background-color:powderblue;">
 
 <c:forEach items="${album}" var="a">
-	<br><br><strong>ID ARTISTA:</strong>${a.artistaId} <strong>TITOLO:</strong>${a.titolo} 
+	<br><strong>ID ARTISTA:</strong>${a.artistaId} <strong>TITOLO:</strong>${a.titolo} 
 	<strong>DATA USCITA:</strong>${a.dataDiUscita} <strong>GENERE:</strong>${a.genere}
 </c:forEach>
 

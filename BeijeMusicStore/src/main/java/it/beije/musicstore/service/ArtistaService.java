@@ -19,7 +19,27 @@ public class ArtistaService {
 		return artistaRepository.findByGenere(genere);
 	}
 
-	public Optional<Artista> getByIdArtista(Integer id){
-		return artistaRepository.findById(id);
+	public Artista getByIdArtista(Integer id) throws Exception{
+		Optional<Artista> artista=artistaRepository.findById(id);
+		if(!artista.isPresent())
+			throw new Exception();
+		
+		return artista.get();
 	}
+	
+	public void save(Artista artista) {
+		 artistaRepository.save(artista);
+	}
+	
+	public void checkArtista(Artista artista) {
+		
+		if(artista.getNome()==null) {
+			throw new IllegalArgumentException("Il campo 'nome' non può essere null");
+		}
+		
+		if(artista.getGenere()==null) {
+			throw new IllegalArgumentException("Il campo 'genere' non può essere null");
+		}
+	}
+
 }

@@ -23,7 +23,26 @@ public class AlbumService {
 		return albumRepository.findByGenere(genere);
 	}
 	
-	public Optional<Album> getAlbumByCanzoneId(Integer album){
-		return albumRepository.findById(album);
+	public Album getAlbumByCanzoneId(Integer canzoneId){
+		return albumRepository.findById(canzoneId).get();
+	}
+
+	public void checkAlbum(Album album) {
+		if(album.getArtistaId()==null) {
+			throw new IllegalArgumentException("Il campo 'id_artista' non può essere null");
+		}
+		
+		if(album.getGenere()==null) {
+			throw new IllegalArgumentException("Il campo 'genere' non può essere null");
+		}
+		
+		if(album.getDataDiUscita()==null) {
+			throw new IllegalArgumentException("Il campo 'data_di_uscita' non può essere null");
+		}
+		
+		if(album.getTitolo()==null) {
+			throw new IllegalArgumentException("Il campo 'titolo' non può essere null");
+		}
+		
 	}
 }

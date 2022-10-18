@@ -1,5 +1,9 @@
 package it.beije.musicstore.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,11 +11,15 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 
 
 @Entity
 @Table(name = "album")
 public class Album {
+	
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -54,11 +62,11 @@ public class Album {
 		this.titolo = titolo;
 	}
 
-	
 
 	public String getDataDiUscita() {
 		return dataDiUscita;
 	}
+	
 
 	public void setDataDiUscita(String dataDiUscita) {
 		this.dataDiUscita = dataDiUscita;

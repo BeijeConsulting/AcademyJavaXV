@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 <h1>FILIPPO ANDREA</h1>
 
 <form action="artistbygenre">

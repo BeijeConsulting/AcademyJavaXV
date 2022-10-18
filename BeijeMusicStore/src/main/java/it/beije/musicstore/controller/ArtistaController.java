@@ -41,12 +41,11 @@ public class ArtistaController {
 		Optional<Canzone> canzone=canzoneService.getCanzoniById(2);
 		if(!canzone.isPresent())
 			throw new Exception();
-		Optional<Artista> artista=artistaService.getByIdArtista(canzone.get().getArtistaId());
-		if(!artista.isPresent())
-			throw new Exception();
+		Artista artista=artistaService.getByIdArtista(canzone.get().getArtistaId());
+		
 		
 		List<Artista> artistaLista=new ArrayList<>();
-		artistaLista.add(artista.get());
+		artistaLista.add(artista);
 		
 		model.addAttribute("artisti",artistaLista);
 		return "artista";

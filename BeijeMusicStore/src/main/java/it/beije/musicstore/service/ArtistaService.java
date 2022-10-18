@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ArtistaService {
@@ -18,5 +19,16 @@ public class ArtistaService {
     }
     public List<Artista> findByGenere(String genere) {
         return artistaRepository.findByGenere(genere);
+    }
+    public Artista findById(Integer id) {
+        Optional<Artista> artista = artistaRepository.findById(id);
+        return artista.get();
+    }
+    public Artista addArtista(Artista artista){
+        return artistaRepository.save(artista);
+    }
+
+    public Artista addOnlyArtista(Artista artista){
+        return artistaRepository.save(artista);
     }
 }

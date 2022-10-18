@@ -1,7 +1,14 @@
 package it.beije.musicstore.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSetter;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 @Entity
 @Table(name="canzone")
 public class Canzone {
@@ -9,10 +16,10 @@ public class Canzone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-
+    @JsonProperty(value = "id_artista")
     @Column(name="id_artista")
     private Integer idArtista;
-
+    @JsonProperty(value = "id_album")
     @Column(name="id_album")
     private Integer idAlbum;
 
@@ -40,7 +47,14 @@ public class Canzone {
     public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
     }
-
+    @JsonGetter(value = "data")
+    public String getDatetimeAsString() {
+        return data.format(DateTimeFormatter.BASIC_ISO_DATE);
+    }
+    @JsonSetter(value = "data")
+    public void setDatetime(String datetime) {
+        this.data = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+    }
     public Integer getIdAlbum() {
         return idAlbum;
     }

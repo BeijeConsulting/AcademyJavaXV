@@ -15,7 +15,7 @@ import it.beije.musicstore.model.Album;
 @Repository
 public interface AlbumRepository extends JpaRepository<Album, Integer>{
 	
-	public abstract List<Album> findByArtistaId(Integer id);
+	public abstract List<Album> findByArtistaId(Integer Artistaid);
 	public abstract List<Album> findByGenere(String genre);
-	public abstract Optional<Album> findById(Integer canzone);
+	public abstract Optional<Album> findById(Integer id);
 }

@@ -38,10 +38,8 @@ public class ArtistaController {
 	public String artistbysong(HttpServletRequest request,Model model) throws Exception {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		Optional<Canzone> canzone=canzoneService.getCanzoniById(2);
-		if(!canzone.isPresent())
-			throw new Exception();
-		Artista artista=artistaService.getByIdArtista(canzone.get().getArtistaId());
+		Canzone canzone=canzoneService.getCanzoniById(2);
+		Artista artista=artistaService.getByIdArtista(canzone.getArtistaId());
 		
 		
 		List<Artista> artistaLista=new ArrayList<>();

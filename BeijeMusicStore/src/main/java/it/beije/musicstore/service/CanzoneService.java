@@ -26,7 +26,38 @@ public class CanzoneService {
 		return canzoneRepository.findByGenere(genere);
 	}
 	
-	public Optional<Canzone> getCanzoniById(Integer id){
-		return canzoneRepository.findById(id);
+	public Canzone getCanzoniById(Integer id) throws Exception{
+		Optional<Canzone> canzone=canzoneRepository.findById(id);
+		if(!canzone.isPresent())
+			throw new Exception("Canzone non trovata");
+		return canzone.get();
+	}
+
+	public void checkCanzone(Canzone canzone) {
+		if(canzone.getArtistaId()==null) {
+			throw new IllegalArgumentException("Il campo 'id_artista' non può essere null");
+		}
+		
+		if(canzone.getGenere()==null) {
+			throw new IllegalArgumentException("Il campo 'genere' non può essere null");
+		}
+		
+		if(canzone.getDataDiUscita()==null) {
+			throw new IllegalArgumentException("Il campo 'data_di_uscita' non può essere null");
+		}
+		
+		if(canzone.getTitolo()==null) {
+			throw new IllegalArgumentException("Il campo 'titolo' non può essere null");
+		}
+		
+		if(canzone.getAlbumId()==null) {
+			throw new IllegalArgumentException("Il campo 'id_album' non può essere null");
+		}
+		
+	}
+
+	public void insert(Canzone canzone) {
+		canzoneRepository.save(canzone);
+		
 	}
 }

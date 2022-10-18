@@ -55,12 +55,11 @@ public class AlbumRestController {
 	public List<Album> albumbysong(HttpServletRequest request,Model model) throws Exception {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		Optional<Canzone> canzone=canzoneService.getCanzoniById(2);
+		Canzone canzone=canzoneService.getCanzoniById(2);
 		
-		if(!canzone.isPresent())
-			throw new Exception("Canzone non trovata");
 		
-		Album album=albumService.getAlbumByCanzoneId(canzone.get().getAlbumId());
+		
+		Album album=albumService.getAlbumById(canzone.getAlbumId());
 		
 	
 		List<Album> albumList=new ArrayList<>();
@@ -73,32 +72,31 @@ public class AlbumRestController {
 	@PostMapping(value="insert")
 	public Album insert(@RequestBody Album album,Model model){
 		
-		albumService.checkArtista(album);
+		albumService.checkAlbum(album);
 		albumService.insert(album);
 		model.addAttribute("album",album);
 		return album;
-		
 	}
-//	
-//	@PutMapping(value="update/{id}")
-//	public Album update(@RequestBody Album newAlbum,Model model,@PathVariable(value="id")Integer id) throws Exception {
-//		if(id.compareTo(newAlbum.getId())==0) {
-//			Album album = albumService.getAlbumById(id);
-//			if(newAlbum.getArtistaId()!=null)
-//				album.setArtistaId(newAlbum.getArtistaId());
-//			if(newAlbum.getDataDiUscita()!=null)
-//				album.setDataDiUscita(newAlbum.getDataDiUscita());
-//			if(newAlbum.getGenere()!=null)
-//				album.setGenere(newAlbum.getGenere());
-//			if(newAlbum.getTitolo()!=null)
-//				album.setTitolo(newAlbum.getTitolo());
-//			
-//			albumService.insert(album);
-//			
-//			return album;
-//		}
-//		else throw new IllegalArgumentException("Id non corrispondenti");
-//	}
+	
+	@PutMapping(value="update/{id}")
+	public Album update(@RequestBody Album newAlbum,Model model,@PathVariable(value="id")Integer id) throws Exception {
+		if(id.compareTo(newAlbum.getId())==0) {
+			Album album = albumService.getAlbumById(id);
+			if(newAlbum.getArtistaId()!=null)
+				album.setArtistaId(newAlbum.getArtistaId());
+			if(newAlbum.getDataDiUscita()!=null)
+				album.setDataDiUscita(newAlbum.getDataDiUscita());
+			if(newAlbum.getGenere()!=null)
+				album.setGenere(newAlbum.getGenere());
+			if(newAlbum.getTitolo()!=null)
+				album.setTitolo(newAlbum.getTitolo());
+			
+			albumService.insert(album);
+			
+			return album;
+		}
+		else throw new IllegalArgumentException("Id non corrispondenti");
+	}
 	
 	
 	

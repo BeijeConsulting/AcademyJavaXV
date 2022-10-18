@@ -50,17 +50,14 @@ public class AlbumController {
 	public String albumbysong(HttpServletRequest request,Model model) throws Exception {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 		
-		Optional<Canzone> canzone=canzoneService.getCanzoniById(2);
+		Canzone canzone=canzoneService.getCanzoniById(2);
 		
-		if(!canzone.isPresent())
-			throw new Exception("Canzone non trovata");
 		
-		Optional<Album> album=albumService.getAlbumByCanzoneId(canzone.get().getAlbumId());
 		
-		if(!album.isPresent())
-			throw new Exception("Album non trovato");
+		Album album=albumService.getAlbumById(canzone.getAlbumId());
+		
 		List<Album> albumList=new ArrayList<>();
-		albumList.add(album.get());
+		albumList.add(album);
 		model.addAttribute("album",albumList);
 		return "album";
 	}

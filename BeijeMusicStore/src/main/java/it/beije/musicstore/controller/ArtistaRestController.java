@@ -43,10 +43,9 @@ public class ArtistaRestController {
 	@GetMapping(value ="/artistbysong")
 	public List<Artista> artistbysong(Model model) throws Exception {
 		
-		Optional<Canzone> canzone=canzoneService.getCanzoniById(2);
-		if(!canzone.isPresent())
-			throw new Exception();
-		Artista artista=artistaService.getByIdArtista(canzone.get().getArtistaId());
+		Canzone canzone=canzoneService.getCanzoniById(2);
+	
+		Artista artista=artistaService.getByIdArtista(canzone.getArtistaId());
 		
 		List<Artista> artistaLista=new ArrayList<>();
 		artistaLista.add(artista);

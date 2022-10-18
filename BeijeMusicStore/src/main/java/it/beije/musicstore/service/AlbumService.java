@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.beije.musicstore.model.Album;
+import it.beije.musicstore.model.Canzone;
 import it.beije.musicstore.repository.AlbumRepository;
 
 @Service
@@ -23,8 +24,11 @@ public class AlbumService {
 		return albumRepository.findByGenere(genere);
 	}
 	
-	public Album getAlbumByCanzoneId(Integer canzoneId){
-		return albumRepository.findById(canzoneId).get();
+	public Album getAlbumById(Integer id) throws Exception{
+		Optional<Album> album=albumRepository.findById(id);
+		if(!album.isPresent())
+			throw new Exception("Canzone non trovata");
+		return album.get();
 	}
 
 	public void checkAlbum(Album album) {
@@ -44,5 +48,9 @@ public class AlbumService {
 			throw new IllegalArgumentException("Il campo 'titolo' non può essere null");
 		}
 		
+	}
+
+	public void insert(Album album) {
+		albumRepository.save(album);	
 	}
 }

@@ -47,6 +47,26 @@ public class ProductRestController {
         return product;
     }
 
+    @PutMapping(value="/product/{id}")
+    public Product updateProduct( @PathVariable(name="id") Integer id,
+                                  @RequestBody Product newData){
+        System.out.println("POST update product id: " + id + " : " + newData);
+        if( id.compareTo(newData.getId()) == 0){
+            Product product = productService.findById(id);
+            BeanUtils.copyProperties(newData, product, "id");
+            productService.save(product);
+            System.out.println("POST update product with new data: " + product);
+        }else{
+            throw new IllegalArgumentException("Product not present");
+        }
+        return newData;
+    }
+
+    @DeleteMapping(value="/product/{id}")
+    public String deleteProduct(@PathVariable(name="id") Integer id){
+        System.out.println("Delete delete user: " + id);
+        productService.
+    }
 //    @GetMapping(value = "/user/{id}")
 //    public User getUser(@PathVariable(name = "id") Integer id) {
 //        System.out.println("GET getUser : " + id);

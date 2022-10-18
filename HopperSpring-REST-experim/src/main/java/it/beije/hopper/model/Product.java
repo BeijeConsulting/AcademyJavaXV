@@ -1,5 +1,7 @@
 package it.beije.hopper.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -63,14 +65,16 @@ public class Product {
 	public String getDesc() {
 		return desc;
 	}
-
+	@JsonProperty("descrizione")
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
 
+
 	public Double getPrice() {
 		return price;
 	}
+
 
 	public void setPrice(Double price) {
 		this.price = price;

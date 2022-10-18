@@ -16,4 +16,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
         public abstract Optional<Product> findById(Integer id);
 
         public abstract Product save(Product product);
+
+        public abstract void deleteById(Integer id);
 }

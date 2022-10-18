@@ -51,8 +51,8 @@ public class LoginServlet extends HttpServlet {
 				
 				User user = new User();
 				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
+				user.setName("Pippo");
+				user.setSurname("Rossi");
 				
 				System.out.println(user);
 						

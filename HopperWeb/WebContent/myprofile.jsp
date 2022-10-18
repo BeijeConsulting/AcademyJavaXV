@@ -28,8 +28,8 @@ System.out.println("loggedUser : " + loggedUser);
 
 <br>
 QUESTE LE TUE CREDENZIALI<br><br>
-FIRST NAME : <%= loggedUser.getFirstName() %><br>
-LAST NAME : <%= loggedUser.getLastName() %>
+FIRST NAME : <%= loggedUser.getName() %><br>
+LAST NAME : <%= loggedUser.getSurname() %>
 
 </body>
 </html>

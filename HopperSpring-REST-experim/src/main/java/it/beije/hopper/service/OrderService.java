@@ -26,6 +26,16 @@ public class OrderService {
 	}
 
 
+	public Order findById(Integer id){
+			Order order = orderRepository.findById(id).get();
+			return order;
+	}
+	public List<Order> findAll(){
+		return orderRepository.findAll();
+	}
 
 
+	public Order save(Order order){
+		return orderRepository.save(order);
+	}
 }

@@ -266,12 +266,18 @@ class Super{
 class One{
     static {  System.out.print("one "); }
 }
-class Two extends Super{
+class Two extends One{
     static {  System.out.print("two "); }
 }
 class Test{
     public static void main(String[] args){
-        One o = null;
-        Two t = new Two();
+//        One o = null;
+//        Two t = new Two();
+
+//        Two two = (Two)new One();
+        One one = (One)new Two();
+        Two two = (Two)one;
+
+
     }
 }

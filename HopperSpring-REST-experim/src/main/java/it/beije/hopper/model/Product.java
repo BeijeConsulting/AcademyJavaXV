@@ -34,6 +34,7 @@ public class Product {
 	private String name;
 
 	@Column(name = "description")
+	@JsonProperty("description")
 	private String desc;
 
 	@Column(name = "price")
@@ -61,11 +62,13 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-
+	@JsonProperty("description")
 	public String getDesc() {
 		return desc;
 	}
-	@JsonProperty("descrizione")
+
+
+	@JsonProperty("description")
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}

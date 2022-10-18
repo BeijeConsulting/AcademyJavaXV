@@ -1,5 +1,7 @@
 package it.beije.hopper.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +53,7 @@ public class Item {
 	private String name;
 
 	@Column(name = "description")
+	@JsonProperty("description")
 	private String desc;
 
 	@Column(name = "price")

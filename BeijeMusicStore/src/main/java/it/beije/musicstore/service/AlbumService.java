@@ -1,6 +1,7 @@
 package it.beije.musicstore.service;
 
 import it.beije.musicstore.model.Album;
+import it.beije.musicstore.model.Artista;
 import it.beije.musicstore.repository.AlbumRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,10 @@ public class AlbumService {
 
     public List<Album> findByGenere(String genere){
         List<Album> albums = albumRepository.findByGenere(genere);
+        return albums;
+    }
+    public List<Album> loadAlbumByCanzone(String canzone){
+        List<Album> albums = albumRepository.loadAlbumByCanzone(canzone);
         return albums;
     }
 

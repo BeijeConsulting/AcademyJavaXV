@@ -1,11 +1,13 @@
 package it.beije.hopper.controller;
 
-import it.beije.hopper.model.Item;
 import it.beije.hopper.model.Order;
 import it.beije.hopper.service.OrderServiceMod;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @RestController
 @RequestMapping(value = "/rest")
@@ -20,7 +22,8 @@ public class OrderRestControllerMod {
 
     @PostMapping(value = "/order")
     public Order addOrder(@RequestBody Order order) {
-    return orderServiceMod.save(order);
+//        order.setDatetime(LocalDateTime.now());
+        return orderServiceMod.save(order);
     }
 
     @PutMapping(value = "/order/{id}")

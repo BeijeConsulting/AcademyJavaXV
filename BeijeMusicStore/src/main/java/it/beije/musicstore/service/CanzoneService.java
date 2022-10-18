@@ -14,5 +14,7 @@ public class CanzoneService {
     public List<Canzone> findByIdAlbum(Integer id){
         return canzoneRepository.findByIdAlbum(id);
     }
-
+    public Canzone save(Canzone canzone) {
+        return canzoneRepository.save(canzone);
+    }
 }

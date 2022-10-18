@@ -78,16 +78,17 @@ public class musicController {
         return "home"; // /WEB-INF/views/home.jsp
     }
 
-    @PostMapping(value = "/AltoP", consumes = {"application/json"})
-    public String AltoP(@RequestBody AlbumRequestDto album, Model model) {
-        List<Artista> Artisti = artistaService.findAll();
-        model.addAttribute("artistiHome", Artisti);
-        List<Album> Albums = albumService.findAll();
-        model.addAttribute("albumsHome", Albums);
-        List<Canzone> lista3 = canzoneService.findByIdAlbum(album.getId());
-        model.addAttribute("canzoni1", lista3);
-        return "home"; // /WEB-INF/views/home.jsp
-    }
+//    @PostMapping(value = "/AltoP")    /////////////// METODO PROVA POST REQUEST
+//    @ResponseBody public List<Canzone> AltoP(@RequestBody AlbumRequestDto album, Model model) {
+//        List<Artista> Artisti = artistaService.findAll();
+//        model.addAttribute("artistiHome", Artisti);
+//        List<Album> Albums = albumService.findAll();
+//        model.addAttribute("albumsHome", Albums);
+//        List<Canzone> lista3 = canzoneService.findByIdAlbum(album.getId());
+//        model.addAttribute("canzoni1", lista3);
+//
+//        return lista3; // /WEB-INF/views/home.jsp
+//    }
 
     @RequestMapping(value = {"/ArtoC"}, method = RequestMethod.POST)
     public String ArtoC(HttpServletRequest request, @RequestParam(name = "artistaC", required = false) int artista, Model model) {

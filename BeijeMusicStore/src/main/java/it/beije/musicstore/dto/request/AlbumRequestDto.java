@@ -1,7 +1,6 @@
 package it.beije.musicstore.dto.request;
 
 public class AlbumRequestDto {
-
     private Integer id;
 
     public Integer getId() {

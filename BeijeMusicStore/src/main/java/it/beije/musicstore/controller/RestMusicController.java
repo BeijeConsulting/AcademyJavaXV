@@ -95,4 +95,21 @@ public class RestMusicController {
         model.addAttribute("canzoni3", lista5);
         return lista5; // /WEB-INF/views/home.jsp
     }
+
+    @PostMapping(value = "/CtoAr")
+    public List<Artista> CtoAr(@RequestBody Canzone canzone) {
+
+        List<Artista> lista5 = artistaService.loadArtistaByCanzone(canzone.getTitolo());
+
+        return lista5; // /WEB-INF/views/home.jsp
+    }
+
+    @PostMapping(value = "/CtoAl")
+    public List<Album> CtoAl(@RequestBody Canzone canzone) {
+
+        List<Album> lista5 = albumService.loadAlbumByCanzone(canzone.getTitolo());
+
+        return lista5; // /WEB-INF/views/home.jsp
+    }
+
 }

@@ -27,7 +27,6 @@ public class AlbumService {
         return albums;
     }
 
-//
     public List<Album> findAll(){
         return albumRepository.findAll();
     }

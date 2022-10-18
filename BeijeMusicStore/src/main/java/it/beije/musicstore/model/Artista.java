@@ -1,5 +1,6 @@
 package it.beije.musicstore.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import it.beije.musicstore.enums.Genere;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class Artista {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "id")
+    @JsonProperty(value = "id")
     private Integer id;
 
     @Column(name = "nome")

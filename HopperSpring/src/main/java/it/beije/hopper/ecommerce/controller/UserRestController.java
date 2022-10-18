@@ -77,7 +77,7 @@ public class UserRestController {
 	@DeleteMapping(value = "/user/{id}")
 	public String deleteUser(@PathVariable(name = "id") Integer id) {
 		System.out.println("DELETE deleteUser : " + id);
-		
+
 		userRepository.deleteById(id);
 		
 		return "{\"message\":\"rimosso user " + id + "\"}";

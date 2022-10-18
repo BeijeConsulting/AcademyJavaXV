@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(value = "rest")
-public class RestControllerMod {
+public class ProductRestController {
 
     @Autowired
     ProductServiceMod productServiceMod;
 
-    public RestControllerMod() {
+    public ProductRestController() {
         System.out.println("creo un oggetto RestControllerMod");
     }
 

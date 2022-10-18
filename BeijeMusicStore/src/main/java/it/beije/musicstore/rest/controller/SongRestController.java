@@ -28,7 +28,7 @@ public class SongRestController {
 	private SongService songService;
 	
 	@GetMapping(value = "/find_song_by_album/{album}")
-	public List<Song> index(@PathVariable(name = "album") String album) {
+	public List<Song> findSongByAlbum(@PathVariable(name = "album") String album) {
 		
 		if(album != null && album.length() > 0) {
 			Integer id_album = albumService.getIdByTitleAlbum(album);
@@ -40,7 +40,7 @@ public class SongRestController {
 	
 	
 	@GetMapping(value = "/find_song_by_artist/{artist}")
-	public List<Song> index2(@PathVariable(name = "artist") String artist){
+	public List<Song> findSongByArtist(@PathVariable(name = "artist") String artist){
 
 		if(artist != null && artist.length() > 0) {
 			Integer id_artist = artistService.getIdByNameArtist(artist);
@@ -52,7 +52,7 @@ public class SongRestController {
 	
 	
 	@GetMapping(value = "/find_song_by_genre/{genre}")
-	public List<Song> index3(@PathVariable(name = "genre") String genre){
+	public List<Song> findSongByGenre(@PathVariable(name = "genre") String genre){
 
 		if(genre != null && genre.length() > 0) {
 			List<Song> songs = songService.listSongByGenre(genre);

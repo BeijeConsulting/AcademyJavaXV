@@ -1,15 +1,11 @@
 package it.beije.musicstore.controller;
 
-import com.sun.xml.bind.util.AttributesImpl;
 import it.beije.musicstore.model.Album;
 import it.beije.musicstore.service.AlbumService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -58,4 +54,54 @@ public class AlbumRestController {
 
         return lista;
     }
+
+
+    @PostMapping(value = "/album")
+    public Album insertAlbum(@RequestBody Album album) {
+        System.out.println("POST insertAlbum : " + album);
+
+        albumService.save(album);
+        System.out.println("album post save : " + album);
+
+        return album;
+    }
+
+    @PutMapping(value = "/album/{id}")
+    public Album updateAlbum(@PathVariable(name = "id") Integer id, @RequestBody Album newData) {
+        System.out.println("POST updateAlbum id : " + id + " : " + newData);
+
+        if (id.compareTo(newData.getId()) == 0) {//OK modifico
+
+            Optional<Album> album = albumService.findById(id);
+
+            Album a;
+            if (album.isPresent())
+                a = album.get();
+            else throw new IllegalArgumentException("id non valido");
+
+            a.setData(newData.getData());
+            a.setGenere(newData.getGenere());
+            a.setTitolo(newData.getTitolo());
+            a.setCanzoni(newData.getCanzoni());
+
+            BeanUtils.copyProperties(newData, album, "id");
+
+            albumService.save(a);
+            System.out.println("album with new data : " + album);
+
+            return a;
+        } else
+            throw new IllegalArgumentException("id non corrispondenti");
+    }
+
+    @DeleteMapping(value = "/album/{id}")
+    public String deleteAlbum(@PathVariable(name = "id") Integer id) {
+        System.out.println("DELETE deleteAlbum : " + id);
+
+        Optional<Album> c = albumService.findById(id);
+        albumService.delete(c.get());
+
+        return "{\"message\":\"rimosso album " + id + "\"}";
+    }
+
 }

@@ -40,7 +40,13 @@ public class AlbumService {
         return albumRepository.findById(id);
     }
 
+    public void save(Album album) {
+        albumRepository.save(album);
+    }
 
+    public void delete(Album album) {
+        albumRepository.delete(album);
+    }
     //public List<album> findByCanzone(String canzone) {
     // return AlbumRepository.findByCanzone(canzone);
     //}

@@ -2,6 +2,7 @@ package it.beije.musicstore.controller;
 
 import it.beije.musicstore.model.Canzone;
 import it.beije.musicstore.service.CanzoneService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -52,4 +53,46 @@ public class CanzoneRestController {
 		return lista;
 	}
 
+	@PostMapping(value = "/canzone")
+	public Canzone insertCanzone(@RequestBody Canzone canzone) {
+		System.out.println("POST insertCanzone : " + canzone);
+
+		canzoneService.save(canzone);
+		System.out.println("canzone post save : " + canzone);
+
+		return canzone;
+	}
+
+	@PutMapping(value = "/canzone/{id}")
+	public Canzone updateCanzone(@PathVariable(name = "id") Integer id, @RequestBody Canzone newData) {
+		System.out.println("POST updateCanzone id : " + id + " : " + newData);
+
+		if (id.compareTo(newData.getId()) == 0) {//OK modifico
+
+			Canzone canzone = canzoneService.findById(id);
+
+			canzone.setAlbum_id(newData.getAlbum_id());
+			canzone.setGenere(newData.getGenere());
+			canzone.setData(newData.getData());
+			canzone.setTitolo(newData.getTitolo());
+
+			BeanUtils.copyProperties(newData, canzone, "id");
+
+			canzoneService.save(canzone);
+			System.out.println("canzone with new data : " + canzone);
+
+			return canzone;
+		} else
+			throw new IllegalArgumentException("id non corrispondenti");
+	}
+
+	@DeleteMapping(value = "/canzone/{id}")
+	public String deleteCanzone(@PathVariable(name = "id") Integer id) {
+		System.out.println("DELETE deleteCanzone : " + id);
+
+		Canzone c = canzoneService.findById(id);
+		canzoneService.delete(c);
+
+		return "{\"message\":\"rimosso canzone " + id + "\"}";
+	}
 }

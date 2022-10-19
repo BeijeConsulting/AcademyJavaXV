@@ -28,3 +28,36 @@
       <!-- property name="hibernate.show_sql">true</property -->
    </session-factory>
 </hibernate-configuration>
+
+
+
+<!--        <!DOCTYPE hibernate-configuration PUBLIC-->
+<!--                "-//Hibernate/Hibernate Configuration DTD 3.0//EN"-->
+<!--                "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">-->
+
+<!--<hibernate-configuration>-->
+
+<!--<session-factory>-->
+
+<!--   &lt;!&ndash; JDBC Database connection settings &ndash;&gt;-->
+<!--   <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>-->
+<!--   &lt;!&ndash;property name="connection.url">jdbc:mysql://localhost:3306/hb_student_tracker?useSSL=false&amp;serverTimezone=UTC</property&ndash;&gt;-->
+<!--   <property name="connection.url">jdbc:mysql://127.0.0.1:3306/hb_student_tracker?useSSL=false</property>-->
+<!--   <property name="connection.username">hbstudent</property>-->
+<!--   <property name="connection.password">hbstudent</property>-->
+
+<!--   &lt;!&ndash; JDBC connection pool settings ... using built-in test pool &ndash;&gt;-->
+<!--   <property name="connection.pool_size">1</property>-->
+
+<!--   &lt;!&ndash; Select our SQL dialect &ndash;&gt;-->
+<!--   <property name="dialect">org.hibernate.dialect.MySQLDialect</property>-->
+
+<!--   &lt;!&ndash; Echo the SQL to stdout &ndash;&gt;-->
+<!--   <property name="show_sql">true</property>-->
+
+<!--   &lt;!&ndash; Set the current session context &ndash;&gt;-->
+<!--   <property name="current_session_context_class">thread</property>-->
+
+<!--</session-factory>-->
+
+<!--</hibernate-configuration>-->

@@ -1,11 +1,14 @@
 package it.beije.hopper.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /*
 CREATE TABLE `hopper`.`users` (
@@ -20,6 +23,7 @@ CREATE TABLE `hopper`.`users` (
 
 @Entity
 @Table(name = "users")
+@JsonInclude(Include.NON_NULL)
 public class User {
 
 	@Id
@@ -39,7 +43,9 @@ public class User {
 	@Column(name = "name")
 	private String firstName;
 
-	
+
+
+
 	public Integer getId() {
 		return id;
 	}

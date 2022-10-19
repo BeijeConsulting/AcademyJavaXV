@@ -21,4 +21,6 @@ public interface OrderRepository extends JpaRepository<Order, Integer>{
 
 	public abstract List<Order> findAll();
 	public abstract Order save(Order order);
+
+	public abstract void deleteById(Integer id);
 }

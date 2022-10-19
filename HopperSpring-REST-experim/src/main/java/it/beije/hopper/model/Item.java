@@ -1,5 +1,6 @@
 package it.beije.hopper.model;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.Column;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /*
 CREATE TABLE `hopper`.`order_items` (
@@ -36,6 +38,7 @@ CREATE TABLE `hopper`.`order_items` (
 
 @Entity
 @Table(name = "order_items")
+@JsonInclude(Include.NON_NULL)
 public class Item {
 
 	@Id

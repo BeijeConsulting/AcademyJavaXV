@@ -36,6 +36,12 @@ public class OrderService {
 
 
 	public Order save(Order order){
+		System.out.println("Inside save orderService: " + order.getItems());
 		return orderRepository.save(order);
+	}
+
+	public void deleteById(Integer id){
+		System.out.println("Inside deleteById Service, id of order: " + id);
+		orderRepository.deleteById(id);
 	}
 }

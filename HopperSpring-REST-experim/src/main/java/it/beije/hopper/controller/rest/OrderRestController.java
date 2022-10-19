@@ -3,7 +3,9 @@ package it.beije.hopper.controller.rest;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import it.beije.hopper.model.Product;
 import it.beije.hopper.service.OrderService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -49,15 +51,31 @@ public class OrderRestController {
 
 	}
 
-//	@PutMapping(value="/order/{id}")
-//	public Order updateOrder(@PathVariable(name="id") Integer id,@RequestBody Order order ){
-//		System.out.println("Post update order");
-//
-//	}
+	@PutMapping(value="/order/{id}")
+	public Order updateProduct(@PathVariable(name="id") Integer id,
+								 @RequestBody Order newData){
+		System.out.println("POST update order id: " + id + " : " + newData);
+		if( id.compareTo(newData.getId()) == 0){
+			Order order = orderService.findById(id);
+			BeanUtils.copyProperties(newData, order, "id");
 
-//	@DeleteMapping(value="/order/{id}")
-//	public String deleteOrder(@PathVariable(name="id") Integer id){
-//
-//
-//	}
+			orderService.save(order);
+			System.out.println("POST update order with new data: " + order);
+		}else{
+			throw new IllegalArgumentException("Order not present");
+		}
+		return newData;
+	}
+
+
+
+	@DeleteMapping(value="/order/{id}")
+	public String deleteOrder(@PathVariable(name="id") Integer id){
+		System.out.println("Delete order: " + id);
+		orderService.deleteById(id);
+		//TODO:have to manage with exception case when order is being used by ITEM (ORDER-ITEM)
+		System.out.println("Deletion completed...");
+		return "{\"message\":\"rimosso order " + id + "\"}";
+
+	}
 }

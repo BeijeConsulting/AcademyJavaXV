@@ -1,6 +1,8 @@
 package it.beije.hopper.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -16,8 +18,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 
 /*
 CREATE TABLE `orders` (
@@ -34,6 +38,7 @@ CREATE TABLE `orders` (
 
 @Entity
 @Table(name = "orders")
+@JsonInclude(Include.NON_NULL)
 public class Order {
 	
 	@Id
@@ -57,6 +62,7 @@ public class Order {
 
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
 	@JoinColumn(name = "order_id")
+	@JsonProperty("items")
 	private List<Item> items;
 	
 
@@ -80,19 +86,32 @@ public class Order {
 		return datetime;
 	}
 
-	@JsonGetter(value = "datetime")
-	public String getDatetimeAsString() {
-		return datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
+//	@JsonGetter(value = "datetime")
+//	public String getDatetimeAsString() {
+//		return datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
+//	}
+
+	@JsonGetter(value="datetime")
+	public String getDatetimeAsString(){
+		return datetime == null ? null : datetime.format( DateTimeFormatter.BASIC_ISO_DATE);
 	}
 
 	public void setDatetime(LocalDateTime datetime) {
 		this.datetime = datetime;
 	}
 
+//	@JsonSetter(value = "datetime")
+//	public void setDatetime(String datetime) {
+//		System.out.println("DATE TIME: " + datetime);
+//		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+//	}
+
+
 	@JsonSetter(value = "datetime")
 	public void setDatetime(String datetime) {
-		System.out.println("DATE TIME: " + datetime);
-		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+		System.out.println("datetime pre: " + datetime);
+		this.datetime = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+		System.out.println("datetime post: " + datetime);
 	}
 
 	public Double getAmount() {
@@ -111,6 +130,7 @@ public class Order {
 		this.promo = promo;
 	}
 
+	@JsonSetter(value="item") //?? works??
 	public List<Item> getItems() {
 		return items;
 	}

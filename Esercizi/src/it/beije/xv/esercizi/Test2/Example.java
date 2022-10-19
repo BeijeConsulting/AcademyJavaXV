@@ -260,24 +260,94 @@ package it.beije.xv.esercizi.Test2;
 //    }
 //}
 
-class Super{
-    static{ System.out.print("super "); }
-}
-class One{
-    static {  System.out.print("one "); }
-}
-class Two extends One{
-    static {  System.out.print("two "); }
-}
-class Test{
+//class Super{
+//    static{ System.out.print("super "); }
+//}
+//class One{
+//    static {  System.out.print("one "); }
+//}
+//class Two extends One{
+//    static {  System.out.print("two "); }
+//}
+//class Test{
+//    public static void main(String[] args){
+////        One o = null;
+////        Two t = new Two();
+//
+////        Two two = (Two)new One();
+//        One one = (One)new Two();
+//        Two two = (Two)one;
+//s
+//
+//    }
+//}
+
+//class TestClass {
+//    public static void main(String[] args) {
+//        int i = 0;
+//        loop:         // 1
+//
+//            System.out.println("Loop Lable line");
+//            try{
+//                for (  ;  true ;  i++ ){
+//                    if( i >5) break loop;       // 2
+//                }
+//            }
+//            catch(Exception e){
+//                System.out.println("Exception in loop.");
+//            }
+//            finally{
+//                System.out.println("In Finally");      // 3
+//            }
+//
+//    }
+//}
+//class Wrapper{
+//    int w = 10;
+//}
+//
+//class TestClass{
+//
+//    static Wrapper changeWrapper(Wrapper w){
+//        w = new Wrapper();
+//        w.w += 9;
+//        return w;
+//    }
+//
+//
+//
+////    public long methodX( byte by){
+////        double d = 10.0;
+////        return (long) by/d*3;
+////    }
+//
+//    public static void main(String[] args){
+//        byte b = 2;
+//        double d = 31.2;
+//        long d2 = (long) ( d/b);
+//        System.out.println();
+//    }
+//}
+
+//class DatabaseWrapper {
+//    static String url = "jdbc://derby://localhost:1527//mydb";
+//
+//    static DatabaseWrapper getDatabase() {
+//        System.out.println("Getting DB");
+//        return null;
+//    }
+//
+//    public static void main(String[] args) {
+//        System.out.println(getDatabase().url);
+//    }
+//}
+
+class TestClass{
     public static void main(String[] args){
-//        One o = null;
-//        Two t = new Two();
+        new TestClass().sayHello(); }   //1
 
-//        Two two = (Two)new One();
-        One one = (One)new Two();
-        Two two = (Two)one;
+    public static void sayHello(){
+        System.out.println("Static Hello World"); }  //2
 
-
-    }
+    public void sayHello() { System.out.println("Hello World "); }  //3
 }

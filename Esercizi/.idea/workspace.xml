@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change afterPath="$PROJECT_DIR$/../HopperSpring-REST-experim/src/main/java/it/beije/hopper/controller/rest/OrderItemsRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../HopperSpring/src/main/java/it/beije/hopper/ecommerce/functionalities/Cart.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/it/beije/xv/esercizi/Test2/Example.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/Test2/Example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../HopperSpring-REST-experim/src/main/java/it/beije/hopper/controller/rest/ProductRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../HopperSpring-REST-experim/src/main/java/it/beije/hopper/controller/rest/ProductRestController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,21 +53,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "1.8",
-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/Esercizi",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/Esercizi&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\TestEL" />
@@ -91,7 +88,7 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
+  <component name="RunManager" selected="Application.DatabaseWrapper">
     <configuration name="BreakTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.BreakTest" />
       <module name="Esercizi" />
@@ -105,8 +102,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FinallyTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.FinallyTest" />
+    <configuration name="DatabaseWrapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.DatabaseWrapper" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -158,19 +155,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.DatabaseWrapper" />
       <item itemvalue="Application.BreakTest" />
       <item itemvalue="Application.Sample" />
       <item itemvalue="Application.TestClass" />
-      <item itemvalue="Application.FinallyTest" />
       <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DatabaseWrapper" />
+        <item itemvalue="Application.TestClass" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Sample" />
         <item itemvalue="Application.BreakTest" />
-        <item itemvalue="Application.TestClass" />
-        <item itemvalue="Application.FinallyTest" />
       </list>
     </recent_temporary>
   </component>
@@ -207,6 +204,7 @@
       <workItem from="1665998194550" duration="2097000" />
       <workItem from="1666001939126" duration="4481000" />
       <workItem from="1666094290453" duration="1205000" />
+      <workItem from="1666114781295" duration="2671000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>

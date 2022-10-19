@@ -29,7 +29,6 @@ public class RubricaComandoFinale {
 		refresh();
 		menu();
 		
-
 	}
 	
 	public static void menu() throws IOException, SQLException

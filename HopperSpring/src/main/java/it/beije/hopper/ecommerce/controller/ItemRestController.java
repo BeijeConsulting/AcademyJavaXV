@@ -80,5 +80,8 @@ public class ItemRestController {
 		
 		return "{\"message\":\"rimosso item " + id + "\"}";
 	}
+	
+	
+	
 
 }

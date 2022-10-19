@@ -7,19 +7,12 @@
 <meta charset="ISO-8859-1">
 <title>WELCOME PAGE</title>
 </head>
-<body style="text-align: center" bgcolor="#7fffd4" topmargin="200px">
+<body style="text-align: center" bgcolor="#7fffd4">
 
 <br>
 <h1>BENVENUTO : ${loggedUser.firstName} ${loggedUser.lastName}!!!</h1>
 <br>
 <br>
-
-<%--
-<c:choose>
-	<c:when test=""></c:when>
-	<c:otherwise></c:otherwise>
-</c:choose>
---%>
 <br>
 <table style="margin: auto" >
 	<tr>

@@ -36,4 +36,13 @@ public class ProductService {
         List<Product> products = productRepository.findAll();
         return products;
     }
+
+    public Product saveProduct(Product product){
+        Product p = productRepository.save(product);
+        return p;
+    }
+
+    public void deleteProduct(Product product){
+        productRepository.delete(product);
+    }
 }

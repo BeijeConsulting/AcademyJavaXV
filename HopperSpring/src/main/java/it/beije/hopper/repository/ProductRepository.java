@@ -11,4 +11,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
     public abstract Product findById(int id);
     public abstract List<Product> findAll();
 
+    //public abstract Product addProduct(Product product);
+
 }

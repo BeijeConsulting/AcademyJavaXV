@@ -42,6 +42,7 @@ public class Recapito {
 	public void setRubrica_id(int rubrica_id) {
 		this.rubricaId = rubrica_id;
 	}
+	
 	public String getRecapito() {
 		return recapito;
 	}

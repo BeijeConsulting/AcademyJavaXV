@@ -1,5 +1,6 @@
 package it.beije.rubrica.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,7 +37,13 @@ public class ContattoRestController {
 		
 		Contatto contatto=contattoService.getById(id);
 		List<Recapito> recapiti=recapitoService.getByRubricaId(id);
-		contatto.setRecapiti(recapiti);
+		List<String> stringa = new ArrayList<String>();
+		
+		for(int i=0;i<recapiti.size();i++)
+			stringa.add(recapiti.get(i).getRecapito());
+		
+//		System.out.println(recapiti);
+		contatto.setRecapiti(stringa);
 		
 		return contatto;	
 	}

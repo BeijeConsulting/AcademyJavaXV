@@ -1,5 +1,6 @@
 package it.beije.rubrica.model;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -9,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
 
 
 @Entity
@@ -38,16 +41,26 @@ public class Contatto {
 	private String note;
 	
 	@Transient
-	private List<Recapito> recapiti;
+	private List<String> recapiti;
 	
-	public List<Recapito> getRecapiti() {
+	public List<String> getRecapiti() {
 		return recapiti;
 	}
 	
-	public void setRecapiti(List<Recapito> recapiti) {
+	public void setRecapiti(List<String> recapiti) {
 		this.recapiti = recapiti;
 	}
 	
+//	@Transient
+//	private List<Recapito> recapiti;
+//	
+//	public List<Recapito> getRecapiti() {
+//		return recapiti;
+//	}
+//	
+//	public void setRecapiti(List<Recapito> recapiti) {
+//		this.recapiti = recapiti;
+//	}
 	
 	public int getId() {
 		return id;

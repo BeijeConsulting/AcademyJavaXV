@@ -1,5 +1,8 @@
 package it.beije.hopper.web;
 
+import it.beije.hopper.web.beans.User;
+import it.beije.hopper.web.controller.Controller;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,6 +17,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private final Controller controller = new Controller();
        
 //	/**
 //	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,21 +43,13 @@ public class LoginServlet extends HttpServlet {
 		
 		if (username != null && username.length() > 0 && password != null && password.length() > 0) {
 			//verifico credenziali su DB...
-			if (username.equalsIgnoreCase("pippo@beije.it") && password.equalsIgnoreCase("1234")) { //OK
+			User loginUser = controller.LogIn(username, password);
+			if (loginUser != null) { //OK
 //				response.sendRedirect("welcome.jsp?fname=Pippo&lname=Rossi");
-//				session.setAttribute("fname", "Pippo");
-//				session.setAttribute("lname", "Rossi");
-				
-				User user = new User();
-				user.setEmail(username);
-				user.setFirstName("Pippo");
-				user.setLastName("Rossi");
-				
-				System.out.println(user);
-						
-				session.setAttribute("loggedUser", user);
-				
-				page = "welcome.jsp";
+				session.setAttribute("User", loginUser);
+
+				session.setAttribute("ProdList", controller.getProduct());
+				page = "itemlist.jsp";
 			} else { //KO
 				//response.sendRedirect("login.jsp?error=1");
 				session.setAttribute("errore", "CREDENZIALI ERRATE");

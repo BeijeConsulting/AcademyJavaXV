@@ -1,11 +1,22 @@
 package it.beije.hopper.model;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonSetter;
 
 /*
 CREATE TABLE `hopper`.`users` (
@@ -42,7 +53,30 @@ public class User {
 	@Column(name = "admin")
 	private int admin;
 
-	
+	@Transient
+	private LocalDateTime datetime;
+
+	public LocalDateTime getDatetime() {
+		return datetime;
+	}
+
+	@JsonGetter(value = "datetime")
+	public String getDatetimeAsString() {
+		return datetime == null ? null : datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
+	}
+
+	public void setDatetime(LocalDateTime datetime) {
+		this.datetime = datetime;
+	}
+
+	@JsonSetter(value = "datetime")
+	public void setDatetime(String datetime) {
+		System.out.println("datetime pre: " + datetime);
+		this.datetime = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+		System.out.println("datetime post: " + datetime);
+	}
+
+
 	public Integer getId() {
 		return id;
 	}

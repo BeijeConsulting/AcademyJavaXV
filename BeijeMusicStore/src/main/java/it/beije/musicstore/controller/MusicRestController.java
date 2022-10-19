@@ -20,10 +20,12 @@ public class MusicRestController {
     @Autowired
     private AlbumService albumService;
 
+    @Autowired
+    private CanzoneService canzoneService;
     public MusicRestController() {
         System.out.println("creazione oggetto MusicController...");
     }
-
+    /* Stampa dei dati presenti sul database */
     /* Restituisce la canzone, dato l'album in input via metodo GET*/
     @GetMapping(value="/album/canzone/nomeAlbum/{nomeAlbum}")
     public Album findSongByAlbum(@PathVariable(name="nomeAlbum") String nomeAlbum){
@@ -41,5 +43,21 @@ public class MusicRestController {
     public List<Album> albumByArtist(@PathVariable(name="nomeArtista") String nomeArtista){
         return artistaService.findByNome(nomeArtista).getAlbumArtista();
     }
-
+    /* Inserimento dati nel database */
+    /* Inserisce la canzone, data una canzone in input via metodo POST*/
+    @PostMapping(value="/album/canzone")
+    public Canzone insertSong(@RequestBody Canzone canzone){
+        System.out.println("Inserimento dati tramite POST della canzone:"+canzone);
+        canzoneService.save(canzone);
+        System.out.println("Inserimento salvato con i senguenti dati:"+canzone);
+        return canzone;
+    }
+    /* Inserisce l'album, dato un album in input via metodo POST*/
+    @PostMapping(value="/album")
+    public Album insertAlbum(@RequestBody Album album){
+        System.out.println("Inserimento dati tramite POST dell'album:"+album);
+        albumService.save(album);
+        System.out.println("Inserimento salvato con i senguenti dati:"+album);
+        return album;
+    }
 }

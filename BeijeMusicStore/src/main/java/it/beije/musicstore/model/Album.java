@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
@@ -18,7 +20,7 @@ public class Album {
     @Column(name="id")
     private Integer id;
 
-    @JsonIgnore
+    @JsonProperty(value="id_artista")
     @Column(name="id_artista")
     private Integer idArtista;
 
@@ -45,7 +47,7 @@ public class Album {
     public void setCanzoni(List<Canzone> canzoni) {
         this.canzoni = canzoni;
     }
-
+    @JsonIgnore
     public Integer getId() {
         return id;
     }
@@ -53,7 +55,7 @@ public class Album {
     public void setId(Integer id) {
         this.id = id;
     }
-
+    @JsonIgnore
     public Integer getIdArtista() {
         return idArtista;
     }
@@ -75,7 +77,7 @@ public class Album {
     }
     @JsonGetter(value = "data")
     public String getDateTimeAsString(){
-        return data.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        return data.format(DateTimeFormatter.BASIC_ISO_DATE);
     }
 
     public void setData(LocalDateTime data) {
@@ -83,7 +85,9 @@ public class Album {
     }
     @JsonSetter(value = "data")
     public void setDateTimeAsString(String data){
-        this.data= LocalDateTime.parse(data,DateTimeFormatter.ISO_LOCAL_DATE);
+        System.out.println("datetime pre: " + data);
+        this.data = LocalDateTime.of(LocalDate.parse(data, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+        System.out.println("datetime post: " + data);
     }
     public String getGenere() {
         return genere;

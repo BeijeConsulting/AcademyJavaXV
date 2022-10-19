@@ -20,5 +20,8 @@ public class ArtistaService{
     public List<Artista> findByGenere(String genere) {
         return artistaRepository.findByGenere(genere);
     }
+    public Artista save(Artista artista) {
+        return artistaRepository.save(artista);
+    }
 
 }

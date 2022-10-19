@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
@@ -16,12 +18,11 @@ public class Canzone {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-
-    @JsonIgnore
+    @JsonProperty(value="id_artista")
     @Column(name="id_artista")
     private Integer idArtista;
 
-    @JsonIgnore
+    @JsonProperty(value="id_album")
     @Column(name="id_album")
     private Integer idAlbum;
 
@@ -33,7 +34,7 @@ public class Canzone {
 
     @Column(name="genere")
     private String genere;
-
+    @JsonIgnore
     public Integer getId() {
         return id;
     }
@@ -42,7 +43,7 @@ public class Canzone {
         this.id = id;
     }
 
-
+    @JsonIgnore
     public Integer getIdArtista() {
         return idArtista;
     }
@@ -50,7 +51,7 @@ public class Canzone {
     public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
     }
-
+    @JsonIgnore
     public Integer getIdAlbum() {
         return idAlbum;
     }
@@ -73,15 +74,17 @@ public class Canzone {
 
     @JsonGetter(value = "data")
     public String getDateTimeAsString(){
-        return data.format(DateTimeFormatter.ISO_LOCAL_DATE);
+        return data == null ? null : data.format(DateTimeFormatter.BASIC_ISO_DATE);
     }
 
     public void setData(LocalDateTime data) {
         this.data = data;
     }
     @JsonSetter(value = "data")
-    public void setDateTimeAsString(String data){
-        this.data= LocalDateTime.parse(data,DateTimeFormatter.ISO_LOCAL_DATE);
+    public void setDateTime(String data){
+        System.out.println("datetime pre: " + data);
+        this.data = LocalDateTime.of(LocalDate.parse(data, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+        System.out.println("datetime post: " + data);
     }
 
     public String getGenere() {

@@ -1,8 +1,9 @@
 package it.beije.hopper.ecommerce.model;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.time.format.FormatStyle;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -18,6 +19,8 @@ import javax.persistence.Table;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
@@ -36,6 +39,7 @@ CREATE TABLE `orders` (
 
 @Entity
 @Table(name = "orders")
+@JsonInclude(Include.NON_NULL)
 public class Order {
 	
 	@Id
@@ -93,7 +97,9 @@ public class Order {
 
 	@JsonSetter(value = "datetime")
 	public void setDatetime(String datetime) {
-		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+		System.out.println("datetime pre: " + datetime);
+		this.datetime = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+		System.out.println("datetime post: " + datetime);
 	}
 
 	public Double getAmount() {

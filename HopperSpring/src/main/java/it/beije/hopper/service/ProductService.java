@@ -1,6 +1,7 @@
 package it.beije.hopper.service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,13 @@ public class ProductService {
 	public List<Product> loadProducts() {
 		return productRepository.findAll();
 	}
+	
+	public List<Product> searchProducts(String name_product){
+		List<Product> product = productRepository.loadByName(name_product);
+		for(Product p : product) System.out.println(p.getName());
+		return product;
+	}
+	
 	
 //	public User registerUser(String email, String password, String name, String surname) throws Exception {
 //		User user = new User();

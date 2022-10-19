@@ -48,6 +48,14 @@ public class Artist {
 		this.genre = genre;
 	}
 	
-	
+	public boolean isEmpy() {
+		boolean isEmpy = true;
+		
+		if(this.id != null && this.id > -1) isEmpy = false;
+		if(this.name != null && this.name.length() > 0) isEmpy = false;
+		if(this.genre != null && this.genre.length() > 0) isEmpy = false;
+		
+		return isEmpy;
+	}
 
 }

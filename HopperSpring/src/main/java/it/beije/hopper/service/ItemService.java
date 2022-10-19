@@ -6,16 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.beije.hopper.ecommerce.model.Item;
-import it.beije.hopper.ecommerce.model.Product;
-import it.beije.hopper.repository.ProductRepository;
-import it.beije.hopper.repository.UserRepository;
+import it.beije.hopper.ecommerce.repository.ItemRepository;
+
 
 
 @Service
 public class ItemService {
 
 	@Autowired
-	private ProductRepository productRepository;
+	private ItemRepository itemRepository;
 	
 	
 //	public List<Item> addProduct(List<Item> products, String id, String quantity) {
@@ -37,4 +36,17 @@ public class ItemService {
 //		return products;
 //	}
 	
+	public List<Item> loadBestSellingProducts(){
+		List<Item> products = itemRepository.loadBestSellingOrderDesc();
+		List<Integer> quantity = itemRepository.loadBestSellingQuantityDesc();
+		
+		for(int i = 0 ;  i < products.size(); i++) {
+			products.get(i).setOrderId(null); //Le informazioni sul numero di ordine sono private
+			products.get(i).setQuantity(quantity.get(i));
+		}
+	
+		return products;
+	}
 }
+
+

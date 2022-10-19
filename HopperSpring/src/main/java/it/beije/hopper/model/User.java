@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
+
+//import it.beije.hopper.ecommerce.model.Cart;
 
 /*
 CREATE TABLE `hopper`.`users` (
@@ -39,6 +42,8 @@ public class User {
 	@Column(name = "name")
 	private String firstName;
 
+//	@Transient
+//	private Cart cart;
 	
 	public Integer getId() {
 		return id;

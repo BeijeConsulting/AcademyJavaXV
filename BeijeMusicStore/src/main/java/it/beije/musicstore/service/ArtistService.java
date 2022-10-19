@@ -4,6 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+
 import it.beije.musicstore.model.Artist;
 import it.beije.musicstore.model.Song;
 import it.beije.musicstore.repository.ArtistRepository;
@@ -43,6 +46,32 @@ public class ArtistService {
 		Song song = songRepository.findByTitle(title);
 		if(song == null) return null;
 		return artistRepository.loadById(song.getId_artist());
+	}
+	
+	public boolean addArtist(Artist artist) {
+		if(!artist.isEmpy()) {
+			Artist checkArtist = artistRepository.loadByName(artist.getName());
+			
+			if(checkArtist == null) {
+					artistRepository.save(artist);
+					return true;
+				}		
+			}
+		
+		return false;
+	}
+	
+	public boolean deleteArtist(String name) {
+		
+		if(name != null && name.length() > 0) {
+			Artist artist = artistRepository.loadByName(name);
+			if(artist != null && artist.getId() != null && artist.getId() > -1) {
+				artistRepository.deleteById(artist.getId());
+				return true;
+			}
+		}
+		return false;
+		
 	}
 	
 }

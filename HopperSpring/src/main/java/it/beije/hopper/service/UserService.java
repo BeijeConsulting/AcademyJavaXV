@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import it.beije.hopper.model.User;
-import it.beije.hopper.repository.ProductRepository;
 import it.beije.hopper.repository.UserRepository;
 
 

@@ -14,5 +14,17 @@
 	<button>ProdottoById</button>
 </form>
 
+<form action="getprodotti">
+	<button>Tutti i prodotti</button>
+</form>
+
+<form action="insertprodotto">
+	<button>Inserisci prodotto</button>
+</form>
+
+<form action="updateprodotto">
+	<button>Aggiorna prodotto</button>
+</form>
+
 </body>
 </html>

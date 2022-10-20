@@ -18,10 +18,20 @@ public class Product {
     private String typology;
 
     @Column(name = "quantity")
-    private String quantity;
+    private Integer quantity;
 
     @Column(name = "description")
     private String description;
+
+    public Product() {
+    }
+
+    public Product(String name, String typology, Integer quantity, String description) {
+        this.name = name;
+        this.typology = typology;
+        this.quantity = quantity;
+        this.description = description;
+    }
 
     public Integer getId() {
         return id;
@@ -47,11 +57,11 @@ public class Product {
         this.typology = typology;
     }
 
-    public String getQuantity() {
+    public Integer getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(String quantity) {
+    public void setQuantity(Integer quantity) {
         this.quantity = quantity;
     }
 

@@ -1,5 +1,15 @@
 package it.beije.magazzino.model;
 
+//REATE TABLE `prodotti` (
+//		  `id` int NOT NULL AUTO_INCREMENT,
+//		  `nome` varchar(100) NOT NULL,
+//		  `tipologia` varchar(100) NOT NULL,
+//		  `quantità` int NOT NULL,
+//		  `descrizione` varchar(2000) DEFAULT NULL,
+//		  PRIMARY KEY (`id`)
+//		) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

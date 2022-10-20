@@ -11,14 +11,25 @@
 
     <p style="font-family:Comic Sans MS" >
         <a href="/Magazzino/product">Prodotti</a> |
-        <a href="#" onclick="document.getElementById('prodottoById').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Prodotto tamite Id</a> |
-        <a href="#" onclick="document.getElementById('addProd').removeAttribute('hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Aggiungi prodotto</a> |
-   	 	<a href="#" onclick="document.getElementById('modProd').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Modifica prodotto</a> |
+        <a href="#" onclick="document.getElementById('prodottoById').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden');document.getElementById('spedizioneContenuto').setAttribute('hidden','hidden')">Prodotto tamite Id</a> |
+        <a href="#" onclick="document.getElementById('addProd').removeAttribute('hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden');document.getElementById('spedizioneContenuto').setAttribute('hidden','hidden')">Aggiungi prodotto</a> |
+   	 	<a href="#" onclick="document.getElementById('modProd').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden');document.getElementById('spedizioneContenuto').setAttribute('hidden','hidden')">Modifica prodotto</a> |
    	 	<a href="/Magazzino/delete" >Elimina prodotto</a> |
-   	 	<a href="#" onclick="document.getElementById('prodottoByTipo').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Prodotti per tipologia</a> |
-   	 	<a href="#" onclick="document.getElementById('prodottoByNomeDesc').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden')">Prodotti per nome o desc</a> |
+   	 	<a href="#" onclick="document.getElementById('prodottoByTipo').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden');document.getElementById('spedizioneContenuto').setAttribute('hidden','hidden')">Prodotti per tipologia</a> |
+   	 	<a href="#" onclick="document.getElementById('prodottoByNomeDesc').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('spedizioneContenuto').setAttribute('hidden','hidden')">Prodotti per nome o desc</a> |
    	 	<a href="/Magazzino/spedizioni" >Lista Spedizioni</a> |
+   	 	<a href="#" onclick="document.getElementById('spedizioneContenuto').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Contenuto Spedizioni</a> |
+   	 	
     </p>
+    
+    
+    <div id="spedizioneContenuto" hidden="hidden">
+    <form action="./spedizioneContenuto" method="get">
+        <label for="id">Id spedizione:</label>
+        <input type="text" name="id" value="" id="id">
+        <input type="submit" value="Cerca">
+    </form>
+</div>
 
 <div id="prodottoByNomeDesc" hidden="hidden">
     <form action="./prodottoByNomeDesc" method="get">

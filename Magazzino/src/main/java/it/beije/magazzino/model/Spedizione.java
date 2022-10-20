@@ -1,13 +1,29 @@
 package it.beije.magazzino.model;
 
+
+//CREATE TABLE `spedizione` (
+//		  `id` int NOT NULL AUTO_INCREMENT,
+//		  `codice` varchar(45) NOT NULL,
+//		  `destinatario` varchar(100) NOT NULL,
+//		  `indirizzo` varchar(100) NOT NULL,
+//		  `data_spedizione` datetime NOT NULL,
+//		  `data_ricezione` datetime NOT NULL,
+//		  PRIMARY KEY (`id`)
+//		) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+		
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonGetter;
@@ -38,7 +54,18 @@ public class Spedizione {
 	
 	@Column(name = "data_ricezione")
 	private LocalDateTime data_ricezione;
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name = "spedizione_id")
+	private List<ContenutoProdotto> contenuto;
+	
+	public List<ContenutoProdotto> getContenuto() {
+		return contenuto;
+	}
 
+	public void setContenuto(List<ContenutoProdotto> contenuto) {
+		this.contenuto = contenuto;
+	}
 	
 	public Integer getId() {
 		return id;
@@ -119,6 +146,7 @@ public class Spedizione {
 				.append(", indirizzo : ").append(this.indirizzo)
 				.append(", data_spedizione : ").append(this.data_spedizione)
 				.append(", data_ricezione : ").append(this.data_ricezione)
+				.append(", contenuto : ").append(this.contenuto)
 				.append(" }");
 		
 		return builder.toString();

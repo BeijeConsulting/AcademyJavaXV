@@ -9,15 +9,16 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-
+import it.beije.magazzino.model.ContenutoProdotto;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.model.Spedizione;
 import it.beije.magazzino.repository.ProductRepository;
+import it.beije.magazzino.service.ContenutoService;
 import it.beije.magazzino.service.ProductService;
 import it.beije.magazzino.service.SpedizioneService;
 
@@ -28,6 +29,8 @@ public class ProductController {
 	@Autowired
 	private SpedizioneService spedizioneService;
 	
+	@Autowired
+	private ContenutoService contenutoService;
 	
 	
 	@Autowired
@@ -153,6 +156,16 @@ public class ProductController {
 	        return "spedizioni"; 
 
 	    }
+	  
+	  
+	  @RequestMapping(value="spedizioneContenuto",method=RequestMethod.GET)		
+			public String getspedizioneContenuto(HttpServletRequest request, @RequestParam(name = "id", required = false) Integer id, Model model) {
+		  List<ContenutoProdotto> contenuto=contenutoService.findBySpedizioneId(id);
+				Spedizione spedizione=spedizioneService.findById(id);
+				spedizione.setContenuto(contenuto);
+				model.addAttribute("spedizione",spedizione);
+				return "contenuto";
+		}
 	  
 	 
 

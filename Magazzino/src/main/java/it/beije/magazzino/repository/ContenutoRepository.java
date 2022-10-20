@@ -7,15 +7,18 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import org.springframework.stereotype.Repository;
 
+import it.beije.magazzino.model.ContenutoProdotto;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.model.Spedizione;
 
 
 @Repository
-public interface SpedizioneRepository extends JpaRepository<Spedizione, Integer>{
+public interface ContenutoRepository extends JpaRepository<ContenutoProdotto, Integer>{
 	
-	public abstract List<Spedizione> findAll();
+
 	
-	 public abstract Spedizione findById(int id);
+	 
+
+	public abstract List<ContenutoProdotto> findBySpedizioneId(Integer id);
 	
 }

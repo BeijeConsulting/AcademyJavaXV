@@ -85,6 +85,14 @@ public class ControllerRest {
 
         return listaProdotti;
     }
+    @GetMapping(value = "/findbynameordesc/{nome}/{desc}")
+    public List<Prodotto> findByNomeOrDescRest(@PathVariable(name ="nome", required = true) String nome
+                ,@PathVariable(name ="desc", required = false) String desc){
+        System.out.println("/findbynameordesc GET REST");
 
+        List <Prodotto> listaProdotti = prodottoRepository.findProdottoByNomeOrDescrizione(nome, desc);
+
+        return listaProdotti;
+    }
 
 }

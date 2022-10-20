@@ -163,7 +163,29 @@ public class ProductController {
 		return "productbytype";
 	}
 
+	//  Pagina che restituisce la lista dei prodotti di una ricerca per nome e/o descrizione
+	@RequestMapping(value="/productbynameordescription-form", method=RequestMethod.GET)
+	public String productbynameordescriptionform(@ModelAttribute("product") Product product, Model model){
+		List<Product> products = productService.findAll();
+		model.addAttribute("products", products);
+		return "productbynameordescription-form";
+	}
 
-
+	@RequestMapping(value="/productbynameordescription", method=RequestMethod.POST)
+	public String productbynameordescription(@ModelAttribute("product") Product product, Model model){
+		String description = product.getDescription() == null ? "":product.getDescription();
+		String name = product.getName() == null ? "":product.getName();
+		model.addAttribute("name", name);
+		model.addAttribute("description", description);
+//		if( product.getDescription() != null )
+		List<Product> productsByNameOrDesc = productService.findByNameOrDescription(product.getName(), product.getDescription());
+		model.addAttribute("products", productsByNameOrDesc);
+//		System.out.println("product by type:" + product);
+//		List<Product> products = productService.findByType(product.getType());
+//		System.out.println("Products by type: " + products);
+//		model.addAttribute("products", products);
+//		model.addAttribute("type", products.get(0).getType());
+		return "productbynameordescription";
+	}
 
 }

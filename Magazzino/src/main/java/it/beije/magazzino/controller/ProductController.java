@@ -16,12 +16,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 
 import it.beije.magazzino.model.Product;
+import it.beije.magazzino.model.Spedizione;
 import it.beije.magazzino.repository.ProductRepository;
 import it.beije.magazzino.service.ProductService;
+import it.beije.magazzino.service.SpedizioneService;
 
 
 @Controller
 public class ProductController {
+	
+	@Autowired
+	private SpedizioneService spedizioneService;
 	
 	@Autowired
 	private ProductService productService;
@@ -135,6 +140,17 @@ public class ProductController {
 
 	    }
 	  
+	  @RequestMapping(value = "/spedizioni", method = RequestMethod.GET)
+	    public String spedizioni(HttpServletRequest request, Model model) {
+	        System.out.println("Hello Page Requested : " + request.getRequestURI());
+
+	        List<Spedizione> spedizioni = spedizioneService.findAll();
+	        model.addAttribute("spedizioni", spedizioni);
+	       
+
+	        return "spedizioni"; 
+
+	    }
 
 
 }

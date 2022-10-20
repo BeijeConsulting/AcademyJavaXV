@@ -17,7 +17,7 @@
    	 	<a href="/Magazzino/delete" >Elimina prodotto</a> |
    	 	<a href="#" onclick="document.getElementById('prodottoByTipo').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Prodotti per tipologia</a> |
    	 	<a href="#" onclick="document.getElementById('prodottoByNomeDesc').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden')">Prodotti per nome o desc</a> |
-   	 	
+   	 	<a href="/Magazzino/spedizioni" >Lista Spedizioni</a> |
     </p>
 
 <div id="prodottoByNomeDesc" hidden="hidden">

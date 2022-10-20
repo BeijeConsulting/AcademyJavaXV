@@ -17,8 +17,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.beije.magazzino.model.Product;
+import it.beije.magazzino.model.Spedizione;
 import it.beije.magazzino.repository.ProductRepository;
 import it.beije.magazzino.service.ProductService;
+import it.beije.magazzino.service.SpedizioneService;
 
 
 @RestController
@@ -28,7 +30,9 @@ public class ProductRestController {
 	public ProductRestController() {
 		System.out.println("creo un oggetto MyRestController...");
 	}
-
+	@Autowired
+	private SpedizioneService spedizioneService;
+	
 	@Autowired
 	private ProductService productService;
 	
@@ -104,6 +108,14 @@ public class ProductRestController {
 		 }
 	   
 	      return prodotti; 
+	  }
+	 
+	 @GetMapping(value = "/spedizioni")
+	  public  List<Spedizione> spedizioni() {      
+	      List<Spedizione> spedizioni = spedizioneService.findAll();
+	     
+	   
+	      return spedizioni; 
 	  }
 
 }

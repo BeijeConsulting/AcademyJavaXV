@@ -5,6 +5,7 @@ package it.beije.magazzino.service;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -39,6 +40,10 @@ public class ProductService {
 
     public List<Product> findByType(String type){
         return productRepository.findByType(type);
+    }
+
+    public List<Product>  findByNameOrDescription(String name, String description){
+        return productRepository.findByNameOrDescription(name,description);
     }
 
 }

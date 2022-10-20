@@ -54,6 +54,16 @@ public class ProductRestController {
         return products;
     }
 
+    @GetMapping(value="/productbydesc-name/{name}/{desc}")
+    public List<Product> findbynameordesc(@PathVariable(name="name") String name, @PathVariable(name="desc") String desc){
+        System.out.println("Name: " + name);
+        System.out.println("Desc: " + desc);
+        List<Product> products = productService.findByNameOrDescription(name, desc);
+        System.out.println("Products found");
+
+        return products;
+    }
+
     @PutMapping(value="/product/{id}")
     public Product updateProduct( @PathVariable(name="id") Integer id,
                                   @RequestBody Product newData){

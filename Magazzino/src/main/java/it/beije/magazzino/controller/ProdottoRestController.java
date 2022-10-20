@@ -59,6 +59,7 @@ public class ProdottoRestController {
 		
 		return prodotto;
 	}
+
 	
 	@PostMapping(value = "/insertprodotto")
 	public Prodotto insertUser(@RequestBody Prodotto prodotto) {
@@ -97,6 +98,45 @@ public class ProdottoRestController {
 		
 		return "{\"message\":\"rimosso prodotto " + id + "\"}";
 	}
+	
+	@GetMapping(value = "/prodotto/tipologia/{tipologia}")
+	public List<Prodotto> tipologia(@PathVariable(name = "tipologia") String tipologia) {
+		System.out.println("GET getProdotto : " + tipologia);
+		
+		List<Prodotto> prodotti = prodottoService.findByTipologia(tipologia);
+		System.out.println("prodotti : " + prodotti);
+		
+		return prodotti;
+	}
+	
+//	@GetMapping(value = "/prodotto/{nome}/{descrizione}")
+//	public List<Prodotto> nomedescr(@PathVariable(name = "nome") String nome, @PathVariable(name = "descrizione") String descrizione) {
+//		
+//		List<Prodotto>prodottivuoti=null;
+//		if (!nome.isBlank() && descrizione.isBlank())
+//		{
+//			List<Prodotto>prodotti = prodottoService.findByNome(nome);
+//			System.out.println(prodotti);
+//			return prodotti;
+//		}
+//		
+//		if (nome.isBlank() && !descrizione.isBlank())
+//		{
+//			List<Prodotto>prodotti = prodottoService.findByDescrizione(descrizione);
+//			System.out.println(prodotti);
+//			return prodotti;
+//		}
+//		
+//		if (!nome.isBlank() && !descrizione.isBlank())
+//		{
+//			List<Prodotto>prodotti = prodottoService.findByNomeAndDescrizione(nome,descrizione);
+//			System.out.println(prodotti);
+//			return prodotti;
+//		}
+//		return prodottivuoti;
+//		
+//		
+//	}
 	
 	
 

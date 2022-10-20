@@ -30,6 +30,25 @@ public class ProdottoService {
 		return prodottoRepository.findAll();
 	}
 
+	public List<Prodotto> findByTipologia(String tipologia) {
+		return prodottoRepository.findByTipologia(tipologia);
+	}
+
+	public List<Prodotto> findByNome(String nome) {
+		return prodottoRepository.findByNome(nome);
+	}
+
+	public List<Prodotto> findByNomeAndDescrizione(String nome, String descrizione) {
+		return prodottoRepository.findByNomeAndDescrizione(nome,descrizione);
+	}
+
+	public List<Prodotto> findByDescrizione(String descrizione) {
+		return prodottoRepository.findByDescrizione(descrizione);
+	}
+
+
+
+
 
 
 }

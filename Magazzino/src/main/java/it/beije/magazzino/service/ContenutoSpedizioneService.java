@@ -17,4 +17,8 @@ public class ContenutoSpedizioneService {
 	public List<ContenutoSpedizione> getBySpedId(Integer id){
 		return contenutoSapedizioneRepository.findByIdSpedizione(id);
 	}
+	
+	public List<ContenutoSpedizione> getByContId(Integer id){
+		return contenutoSapedizioneRepository.findByIdProdotto(id);
+	}
 }

@@ -1,5 +1,6 @@
 package it.beije.magazzino.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -47,4 +48,27 @@ public class SpedizioneController {
 		model.addAttribute("spedizione",spedizione);
 		return "spedizionecontenuto";
 	}
+	
+	@RequestMapping(value="idprodotto",method=RequestMethod.GET)
+	public String idProdotto(HttpServletRequest request, Model model) throws Exception {
+		
+		
+		return "idprodotto";
+	}
+	
+	@RequestMapping(value="spedizioneprodotto",method=RequestMethod.GET)
+	public String getspedizioneProdotto(HttpServletRequest request, Model model,@RequestParam(value="id") Integer id) throws Exception {
+	
+		List<ContenutoSpedizione> contenuto=contenutoSpedizioneService.getByContId(id);
+		System.out.println(contenuto);
+		List<Spedizione>spedizione=new ArrayList<>();
+		
+		spedizione.add(spedizioneService.getById(contenuto.get(0).getId()));
+		
+		model.addAttribute("spedizione",spedizione);
+		return "spedizione";
+		
+	}
+	
+	
 }

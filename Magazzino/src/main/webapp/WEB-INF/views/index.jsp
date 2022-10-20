@@ -40,5 +40,11 @@
 	<button>Singola spedizione con contenuto</button>
 </form>
 
+<form action="idprodotto">
+	<button>Spedizioni per prodotto</button>
+</form>
+
+
+
 </body>
 </html>

@@ -10,4 +10,5 @@ import it.beije.magazzino.model.Spedizione;
 @Repository
 public interface SpedizioneRepository extends JpaRepository<Spedizione, Integer>{
 
+	
 }

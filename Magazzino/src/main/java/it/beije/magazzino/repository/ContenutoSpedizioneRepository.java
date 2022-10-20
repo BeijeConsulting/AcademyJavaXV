@@ -12,4 +12,5 @@ import it.beije.magazzino.model.ContenutoSpedizione;
 public interface ContenutoSpedizioneRepository extends JpaRepository<ContenutoSpedizione, Integer> {
 
 	public abstract List<ContenutoSpedizione> findByIdSpedizione(Integer id);
+	public abstract List<ContenutoSpedizione> findByIdProdotto(Integer id);
 }

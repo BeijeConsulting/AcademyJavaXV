@@ -15,7 +15,9 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 
     public abstract Optional<Prodotto> findById(Integer id);
 
-    @Query(nativeQuery = true, value = "SELECT * FROM prodotto")
-    public abstract List<Prodotto> loadAll();
+    public abstract List<Prodotto> findAll();
+
+    public abstract List<Prodotto> findProdottoByTipologia(String tipo);
+
 
 }

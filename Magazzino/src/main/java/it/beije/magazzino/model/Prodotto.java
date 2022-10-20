@@ -32,7 +32,57 @@ public class Prodotto {
     @Column(name = "descrizione")
     private String descrizione;
 
-    public int getId() {
+    public Prodotto(){}
+
+    public Prodotto(String nome, String tipo, int quantita, String descrizione){
+        if (nome == null || nome.equals("")) {
+           throw  new IllegalArgumentException("Nome cannot be empty");
+        } else {
+           this.nome = nome;
+        }
+        if (tipo == null || tipo.equals("")) {
+            throw new IllegalArgumentException("Tipologia cannot be empty");
+        } else {
+            this.tipologia = tipo;
+        }
+       if(quantita < 0){
+            throw new IllegalArgumentException("Quantità cannot be less than 0");
+        }else{
+            this.quantita = quantita;
+        }
+        if (descrizione == null || descrizione.equals("")) {
+            this.descrizione = "Descrizione non disponibile";
+        } else {
+            this.descrizione = descrizione;
+        }
+    }
+
+    public Prodotto(Integer id, String nome, String tipo, int quantita, String descrizione){
+        if (nome == null || nome.equals("")) {
+            throw  new IllegalArgumentException("Nome cannot be empty");
+        } else {
+            this.nome = nome;
+        }
+        if (tipo == null || tipo.equals("")) {
+            throw new IllegalArgumentException("Tipologia cannot be empty");
+        } else {
+            this.tipologia = tipo;
+        }
+        if(quantita < 0){
+            throw new IllegalArgumentException("Quantità cannot be less than 0");
+        }else{
+            this.quantita = quantita;
+        }
+        if (descrizione == null || descrizione.equals("")) {
+            this.descrizione = "Descrizione non disponibile";
+        } else {
+            this.descrizione = descrizione;
+        }
+
+        this.id = id;
+    }
+
+    public Integer getId() {
         return id;
     }
 

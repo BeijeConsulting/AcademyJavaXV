@@ -22,8 +22,8 @@ public class ProdottoService {
         System.out.println("DEBUG: ProdottoService has been instanced");
     }
 
-    public List<Prodotto> loadAll(){
-        return prodottoRepository.loadAll();
+    public List<Prodotto> findAll(){
+        return prodottoRepository.findAll();
     }
 
     public Prodotto findById(Integer id){
@@ -32,6 +32,12 @@ public class ProdottoService {
 
         return prodotto.get();
     }
+
+    public Prodotto save(Prodotto prodotto){
+        return prodottoRepository.saveAndFlush(prodotto);
+    }
+
+
 
 
 }

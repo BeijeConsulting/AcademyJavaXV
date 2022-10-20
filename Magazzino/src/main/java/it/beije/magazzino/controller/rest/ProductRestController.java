@@ -34,18 +34,18 @@ public class ProductRestController {
         Product product = productService.findById(id);
         return product;
     }
-//
-//
-//    @PostMapping(value="/product")
-//    public Product insertProduct(@RequestBody Product product){
-//        System.out.println("Insert Product: " + product);
-//
-//        productService.save(product);
-//
-//        System.out.println("Product post after save: " + product);
-//
-//        return product;
-//    }
+
+
+    @PostMapping(value="/product")
+    public Product insertProduct(@RequestBody Product product){
+        System.out.println("Insert Product: " + product);
+
+        productService.save(product);
+
+        System.out.println("Product post after save: " + product);
+
+        return product;
+    }
 //
 //    @PutMapping(value="/product/{id}")
 //    public Product updateProduct( @PathVariable(name="id") Integer id,

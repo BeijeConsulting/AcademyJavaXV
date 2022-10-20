@@ -27,12 +27,15 @@
 
   </div>
     <div>
-      <form:form action="./productbyid" modelAttribute="product" method="GET">
-      Product id: <form:input path="id"/>
-      <br><br>
+      <h2>Modify product</h2>
+      <form:form action="./modifyproduct" modelAttribute="product" method="GET">
+        <c:forEach var="productL" items="${products}" >
+          ${productL} - <form:radiobutton path="id" value="${productL.id}"/>
+          <br>
+        </c:forEach>
 
-
-      <input type="submit" value="Submit"/>
+        <br><br>
+        <input type="submit" value="Submit"/>
       </form:form>
     </div>
 

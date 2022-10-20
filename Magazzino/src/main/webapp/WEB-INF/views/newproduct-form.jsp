@@ -15,7 +15,7 @@
 </head>
 <body>
 <%--<title>${product.name}</title>--%>
-<h2> Pagina che restituisce il dettaglio del prodotto tramite id - FORM </h2>
+<h2> Pagina per la creazione di un nuovo prodotto </h2>
 
   <div>
       <h3>Lista di prodotti</h3>
@@ -26,15 +26,23 @@
     </ul>
 
   </div>
-    <div>
-      <form:form action="./productbyid" modelAttribute="product" method="GET">
-      Product id: <form:input path="id"/>
-      <br><br>
 
+    <div>
+      <h3>New Product:</h3>
+      <form:form action="./newproduct" modelAttribute="product" method="GET">
+      Product name: <form:input path="name"/>
+      <br><br>
+      Product type: <form:input path="type"/>
+      <br><br>
+      Product quantity: <form:input path="quantity"/>
+      <br><br>
+      Product description: <form:input path="description"/>
+      <br><br>
 
       <input type="submit" value="Submit"/>
       </form:form>
     </div>
+
 
 
 <hr>

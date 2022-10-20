@@ -114,4 +114,32 @@ public class ProdottoController {
 		model.addAttribute("delete",stringa);
 		return "insertedprodotto";
 	}
+	
+	@RequestMapping(value = "tipo", method = RequestMethod.GET)
+	public String tipo(HttpServletRequest request, Model model) throws Exception {
+
+		return "findbytipologia";
+	}
+	
+	@RequestMapping(value = "tipologia", method = RequestMethod.GET)
+	public String findByTipologia(HttpServletRequest request, Model model,@RequestParam(name = "tipologia") String tipologia) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByTipologia(tipologia);
+		model.addAttribute("prodotti",prodotti);
+		return "prodotti";
+	}
+	
+	@RequestMapping(value = "nomedesc", method = RequestMethod.GET)
+	public String nomedesc(HttpServletRequest request, Model model) throws Exception {
+
+		return "findbynomedesc";
+	}
+	@RequestMapping(value = "nomeedesc", method = RequestMethod.GET)
+	public String findByNomeAndCognome(HttpServletRequest request, Model model,@RequestParam(name = "nome") String nome,@RequestParam(name = "descrizione") String descrizione) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByNomeAndDescrizione(nome,descrizione);
+		
+		model.addAttribute("prodotti",prodotti);
+		return "prodotti";
+	}
 }

@@ -81,5 +81,21 @@ public class ProdottoRestController {
 		return "Prodotto eliminato";
 	}
 	
+	@GetMapping(value = "tipologia")
+	public List<Prodotto> findByTipologia(HttpServletRequest request, Model model,@RequestParam("tipologia") String tipologia) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByTipologia(tipologia);
+		return prodotti;
+	}
+	
+	@GetMapping(value = "nomeedesc")
+	public List<Prodotto> findByNomeAndCognome(HttpServletRequest request, Model model,@RequestParam(name = "nome") String nome,@RequestParam(name = "descrizione") String descrizione) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByNomeAndDescrizione(nome,descrizione);
+		
+		model.addAttribute("prodotti",prodotti);
+		return prodotti;
+	}
+	
 	
 }

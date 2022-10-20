@@ -31,6 +31,14 @@
 	<button>Elimina prodotto</button>
 </form>
 
+<form action="tipo">
+	<button>Tipologia</button>
+</form>
+
+<form action="nomedesc">
+	<button>Nome e desc</button>
+</form>
+
 <h1>SPEDIZIONI</h1>
 <form action="getspedizioni">
 	<button>Tutte le spedizioni</button>
@@ -47,6 +55,8 @@
 <form action="insertspedizione">
 	<button>Inserire prodotto</button>
 </form>
+
+
 
 
 

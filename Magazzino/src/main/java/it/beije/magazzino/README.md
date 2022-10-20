@@ -1,2 +1,0 @@
-# AcademyJavaXV - Magazzino
-Autore: 

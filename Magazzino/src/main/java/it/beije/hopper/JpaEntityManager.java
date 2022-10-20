@@ -1,8 +1,11 @@
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Component;
+package it.beije.hopper;
+
 
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 
 @Component
@@ -14,10 +17,9 @@ public class JpaEntityManager {
 	
 	@Bean(name = "entityManagerFactory")
 	public static synchronized EntityManagerFactory getInstance() {
-		System.out.println("###########################################  CIAOO");
 		try {
 			if (emfactory == null) {
-				emfactory = Persistence.createEntityManagerFactory("magazzino");
+				emfactory = Persistence.createEntityManagerFactory("hopper");
 			}
 			return emfactory;
 		} catch(Exception e) {

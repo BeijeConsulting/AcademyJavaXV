@@ -1,3 +1,6 @@
+package it.beije.hopper;
+
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -9,9 +12,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(value = {"it.beije.magazzino.repository"})
+@EnableJpaRepositories(value = {"it.beije.hopper.repository", "it.beije.hopper.repository"})
 public class ConfigurationClass {
-
+	
     @Primary
     @Bean(name="transactionManager")
     public PlatformTransactionManager dbTransactionManager() {
@@ -19,5 +22,5 @@ public class ConfigurationClass {
         transactionManager.setEntityManagerFactory(JpaEntityManager.getInstance());
         return transactionManager;
     }
-
+	
 }

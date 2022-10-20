@@ -28,12 +28,12 @@ public class ProductRestController {
         return products;
     }
 
-//    @GetMapping(value="/product/{product_id}")
-//    public Product getProduct(@PathVariable(name="product_id") Integer id){
-//        System.out.println("GET product: " + id);
-//        Product product = productService.findById(id);
-//        return product;
-//    }
+    @GetMapping(value="/product/{product_id}")
+    public Product getProduct(@PathVariable(name="product_id") Integer id){
+        System.out.println("GET product: " + id);
+        Product product = productService.findById(id);
+        return product;
+    }
 //
 //
 //    @PostMapping(value="/product")

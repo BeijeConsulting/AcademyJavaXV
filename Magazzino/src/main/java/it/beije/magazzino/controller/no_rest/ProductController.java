@@ -30,7 +30,7 @@ public class ProductController {
 
 
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
-	public String test(Locale locale, Model model) {
+	public String products(Locale locale, Model model) {
 		System.out.println("test : " + locale);
 		List<Product> products = productService.findAll();
 		System.out.println("Inside products() | .../products: " + products);
@@ -38,6 +38,15 @@ public class ProductController {
 		return "product-list";
 	}
 
+
+	@RequestMapping(value = "/products", method = RequestMethod.GET)
+	public String productsbyid(Locale locale, Model model) {
+		System.out.println("test : " + locale);
+		List<Product> products = productService.findAll();
+		System.out.println("Inside products() | .../products: " + products);
+		model.addAttribute("products",products);
+		return "productbyid";
+	}
 	
 //	@RequestMapping(value = "/test_rest", method = RequestMethod.GET)
 //	@ResponseBody public List<User> testRest() {

@@ -1,10 +1,8 @@
 package it.beije.magazzino.controller.no_rest;
 
 
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.service.ProductService;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -94,9 +92,9 @@ public class ProductController {
 
 	@RequestMapping(value="/modifyproduct", method = RequestMethod.GET)
 	public String modifyproductform(@ModelAttribute("product") Product product, Model model ){
-//		List<Product> products = productService.findAll();
+
 		System.out.println("Selected Product: " + product);
-//		System.out.println("Inside products() | .../products: " + products);
+
 		Product productToMod = productService.findById(product.getId()); // TODO: Fix --> USE PARAM INSTEAD OF MODEL!
 		model.addAttribute("productToMod", productToMod);
 		System.out.println("Product to MOD: " + productToMod);
@@ -120,8 +118,9 @@ public class ProductController {
 	@RequestMapping(value="/modifyingproduct", method = RequestMethod.POST )
 	public String modifyingproduct(@ModelAttribute("product") Product product, @ModelAttribute("newProduct") Product newProduct, Model model){
 		System.out.println("Modified Product: " + product);
+		System.out.println();
 		productService.save(product);
-		return "hello";//TODO: confirmation page
+		return "main";//TODO: confirmation page
 	}
 
 
@@ -140,7 +139,7 @@ public class ProductController {
 
 		System.out.println("Product to be deleted: " + product);
 		productService.deleteById(product.getId());
-		return "hello";
+		return "main";
 	}
 
 	// Pagina che restituisce la lista di tutti i prodotti di una specifica tipologia
@@ -180,11 +179,6 @@ public class ProductController {
 //		if( product.getDescription() != null )
 		List<Product> productsByNameOrDesc = productService.findByNameOrDescription(product.getName(), product.getDescription());
 		model.addAttribute("products", productsByNameOrDesc);
-//		System.out.println("product by type:" + product);
-//		List<Product> products = productService.findByType(product.getType());
-//		System.out.println("Products by type: " + products);
-//		model.addAttribute("products", products);
-//		model.addAttribute("type", products.get(0).getType());
 		return "productbynameordescription";
 	}
 

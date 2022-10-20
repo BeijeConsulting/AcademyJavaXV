@@ -30,7 +30,7 @@
       <form:form action="./productbynameordescription" modelAttribute="product" method="POST">
       Product Name: <form:input path="name"/>
       <br><br>
-      Product Name: <form:input path="description"/>
+      Product Description: <form:input path="description"/>
       <br><br>
       <input type="submit" value="Submit"/>
       </form:form>

@@ -14,7 +14,16 @@
 </head>
 <body>
     <h3>Modifying Product ${productToMod.name}</h3>
-<%--    <br>--%>
+
+    Type: ${productToMod.type}
+    <br>
+    Quantity: ${productToMod.name}
+    <br>
+    Description:${productToMod.description}
+    <br>
+
+    <hr>
+    <h4>Modifications....</h4>
     <div>
 
         Id: ${productToMod.id}

@@ -14,22 +14,20 @@ import java.util.List;
 
 
 @Controller
-public class HelloController {
+public class MainController {
 
-	public HelloController() {
-		System.out.println("creo un oggetto HelloController...");
+	public MainController() {
+		System.out.println("creo un oggetto MainController...");
 	}
 
 	@Autowired
 	ProductService productService;
 
-	@RequestMapping(value = {"/", "index"}, method = RequestMethod.GET)
+	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public String index(HttpServletRequest request, Model model) {
-		System.out.println("Hello Page Requested : " + request.getRequestURI());
+		System.out.println("Main Page Requested : " + request.getRequestURI());
 		List<Product> products = productService.findAll();
-		System.out.println("Products:" + products);
-
-		return "hello"; // /WEB-INF/views/beije.jsp
+		return "main"; // /WEB-INF/views/beije.jsp
 	}
 
 

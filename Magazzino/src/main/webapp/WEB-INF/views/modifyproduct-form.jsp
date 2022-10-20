@@ -15,7 +15,7 @@
 </head>
 <body>
 <%--<title>${product.name}</title>--%>
-<h2> Pagina che restituisce il dettaglio del prodotto tramite id - FORM </h2>
+<h2> Pagina per la modifica di un prodotto esistente </h2>
 
   <div>
       <h3>Lista di prodotti</h3>

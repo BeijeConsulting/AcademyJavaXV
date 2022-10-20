@@ -110,4 +110,47 @@ public class ProductController {
 			return "add_new_product";
 		}
 
+		
+		//Restituisce il dettaglio del prodotto tramite ID
+		@RequestMapping(value = {"/alter_product"}, method = RequestMethod.GET)
+		public String alterProductGet(
+				HttpServletRequest request, 
+				Model model,
+				@RequestParam(name = "id_product", required = false) String id_product) {
+			
+			Product product = productService.getProductById(id_product);
+			if(product != null) {
+				model.addAttribute("product", product);
+			}else {
+				model.addAttribute("error", "Prodotto non trovato");
+			}
+			
+			return "alter_product";
+		}
+		
+		//Restituisce il dettaglio del prodotto tramite ID
+				@RequestMapping(value = {"/alter_product"}, method = RequestMethod.POST)
+				public String alterProductPost(
+						HttpServletRequest request, 
+						Model model,
+						@RequestParam(name = "id", required = false) String id,
+						@RequestParam(name = "name", required = false) String name,
+						@RequestParam(name = "typology", required = false) String typology,
+						@RequestParam(name = "quantity", required = false) String quantity,
+						@RequestParam(name = "name", required = false) String description){
+					
+					Product product = productService.setProduct(id, name, typology, quantity, description);
+					product = productService.alterProduct(product);
+					
+					if(product != null) {
+						model.addAttribute("product" , product);
+						model.addAttribute("alteredProduct", "Modifica avvenuta con successo");
+					}else{
+						model.addAttribute("error", "Errore, qualcosa è andato storto, controllare i modificati");
+					}
+					
+					return "alter_product";
+				}
+
+		
 }

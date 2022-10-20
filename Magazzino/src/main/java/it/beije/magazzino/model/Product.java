@@ -96,4 +96,9 @@ public class Product {
 		return true;
 	}
 	
+	public String toString() {
+		//String s = id + " " + name + " " + typology + " " + quantity + " " + description;
+		return id + " " + name + " " + typology + " " + quantity + " " + description;
+	}
+	
 }

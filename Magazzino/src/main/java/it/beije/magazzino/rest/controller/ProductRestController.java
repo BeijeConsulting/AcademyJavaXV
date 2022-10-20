@@ -2,11 +2,12 @@ package it.beije.magazzino.rest.controller;
 
 import java.util.List;
 
-
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,10 +35,21 @@ public class ProductRestController {
 	}
 
 	//Mostra dettaglio del prodotto avente codice ID
-	@GetMapping(value = "/add_new_product")
+	@PostMapping(value = "/add_new_product")
 	public Product addProduct(@RequestBody Product product) {	
 		return productService.addProduct(product);		
 	}
 	
+	@PutMapping(value = "/alter_product/{id}")
+	public Product alterProduct(
+			@PathVariable(name = "id") Integer id,
+			@RequestBody Product product) {	
+		
+	if (id.compareTo(product.getId()) == 0) {//OK modifico
+		return productService.alterProduct(product);	
+
+		} else
+			throw new IllegalArgumentException("id non corrispondenti");		
+	}
 	
 }

@@ -89,11 +89,59 @@ public class ProductService {
 		return null;	
 	}
 	
+	//Metodo per il controllo dei parametri
 	public boolean checkParameters(String name, String typology, String quantity) {	
 		if( !(name != null && name.length() > 0)) return false;
 		if( !(typology != null && typology.length() > 0)) return false;
-		if( !(quantity != null && quantity.length() > 0)) return false;
+		if( !(quantity != null && quantity.length() >= 0)) return false;
 		
 		return true;
+	}
+
+	public Product setProduct(String id, String name, String typology, String quantity, String description) {
+		Product product = new Product();
+		
+		try {
+			product.setId(Integer.parseInt(id));
+			product.setName(name);
+			product.setTypology(typology);
+			
+			if(Integer.parseInt(quantity) >= 0) {
+				product.setQuantity(Integer.parseInt(quantity));
+			}else {
+				return null;
+			}
+			
+			product.setDescription(description);	
+		}catch(NumberFormatException ex) {
+			return null;
+		}
+		
+		return product;
+	}
+
+	public Product alterProduct(Product product) {	
+		if(checkForAlterProduct(product)) {
+			productRepository.save(product);
+			return product;
+		}else {
+			return null;
+		}	
+	}
+	
+	public boolean checkForAlterProduct(Product product) {
+		Product checkProduct = productRepository.loadById(product.getId());
+		int different = 0;
+		
+		if(!product.getName().equals(checkProduct.getName())) different++;
+		if(!product.getTypology().equals(checkProduct.getTypology())) different++;
+		if(!product.getQuantity().equals(checkProduct.getQuantity())) different++;
+		if(!product.getDescription().equals(checkProduct.getDescription())) different++;
+		
+		if(different > 0) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 }

@@ -1,10 +1,13 @@
 package it.beije.hopper.controller;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 
+import it.beije.hopper.model.Contenuto;
 import it.beije.hopper.model.Product;
+import it.beije.hopper.model.Spedizione;
+import it.beije.hopper.service.ContenutoService;
 import it.beije.hopper.service.ProductService;
+import it.beije.hopper.service.SpedizioneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,6 +24,10 @@ public class HelloController {
 
 	@Autowired
 	private ProductService productService;
+	@Autowired
+	private ContenutoService contenutoService;
+	@Autowired
+	private SpedizioneService spedizioneService;
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -32,6 +38,19 @@ public class HelloController {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());
 
 		return "home"; // /WEB-INF/views/home.jsp
+	}
+
+	@RequestMapping(value = {"/listS"}, method = RequestMethod.GET)
+	public String listS(HttpServletRequest request, Model model) {
+		System.out.println("Lista spedizioni : " + request.getRequestURI());
+		try{
+			List<Spedizione> lista = spedizioneService.findAll();
+			model.addAttribute("spedizioni", lista);
+			return "listP";
+		}catch(Exception e){
+			model.addAttribute("error", "Qualcosa è andato storto! Riprova");
+			return "home";
+		}
 	}
 
 	@RequestMapping(value = {"/listP"}, method = RequestMethod.GET)
@@ -53,9 +72,27 @@ public class HelloController {
 		try{
 			Product p = productService.findById(id);
 			if(p == null){throw new Exception();}
-			model.addAttribute("dettaglio", p);
+			model.addAttribute("dettaglioP", p);
 			System.out.println(p);
-			return "infoP";
+			return "info";
+		}catch (Exception e) {
+			model.addAttribute("error", "Qualcosa è andato storto! Riprova inserendo un ID valido");
+			return "home";
+		}
+	}
+
+	@RequestMapping(value = {"/infoS"}, method = RequestMethod.GET)
+	public String infoS(HttpServletRequest request, Model model,  @RequestParam(name = "id", required = false) Integer id) {
+		System.out.println("Info spedizione: " + id);
+		try{
+			Spedizione s = spedizioneService.findById(id);
+			if(s == null){throw new Exception();}
+			List<Contenuto> c = contenutoService.findByIdSpedizione(id);
+			model.addAttribute("dettaglioS", s);
+			model.addAttribute("contenutoS", c);
+			System.out.println("spedizione: "+s);
+			System.out.println("contenuto: "+c);
+			return "info";
 		}catch (Exception e) {
 			model.addAttribute("error", "Qualcosa è andato storto! Riprova inserendo un ID valido");
 			return "home";
@@ -102,7 +139,7 @@ public class HelloController {
 			System.out.println(p);
 			model.addAttribute("editP", p);
 			productService.saveProduct(p);
-			return "infoP";
+			return "info";
 		}catch (Exception e){
 			model.addAttribute("error", "Qualcosa è andato storto! Riprova inserendo un valori validi");
 			return "home";
@@ -117,7 +154,7 @@ public class HelloController {
 			productService.deleteProduct(p);
 			model.addAttribute("deleteP", p);
 			System.out.println(p);
-			return "infoP";
+			return "info";
 		}catch (Exception e){
 			model.addAttribute("error", "Qualcosa è andato storto! Riprova inserendo un ID valido");
 			return "home";

@@ -5,8 +5,12 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
+import it.beije.hopper.model.Contenuto;
 import it.beije.hopper.model.Product;
+import it.beije.hopper.model.Spedizione;
+import it.beije.hopper.service.ContenutoService;
 import it.beije.hopper.service.ProductService;
+import it.beije.hopper.service.SpedizioneService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -21,11 +25,28 @@ public class MyRestController {
 	@Autowired
 	private ProductService productService;
 
+	@Autowired
+	private SpedizioneService spedizioneService;
+
+	@Autowired
+	private ContenutoService contenutoService;
+
+
 	@GetMapping(value = "/restListP")
 	public List<Product> restListP() {
 		System.out.println("GET restListP...");
 
 		List<Product> lista = productService.findAll();
+		System.out.println("lista : " + lista);
+
+		return lista;
+	}
+
+	@GetMapping(value = "/restListS")
+	public List<Spedizione> restListS() {
+		System.out.println("GET restListS...");
+
+		List<Spedizione> lista = spedizioneService.findAll();
 		System.out.println("lista : " + lista);
 
 		return lista;
@@ -39,6 +60,16 @@ public class MyRestController {
 		System.out.println("info prodotto : " + prodotto);
 
 		return prodotto;
+	}
+
+	@GetMapping(value = "/restInfoS/{id}")
+	public Spedizione restInfoS(@PathVariable(name = "id") Integer id) {
+		System.out.println("GET restInfoS...");
+
+		Spedizione spedizione = spedizioneService.findById(id);
+		System.out.println("info spedizione : " + spedizione);
+
+		return spedizione;
 	}
 
 	@PostMapping(value = "/restNewP")

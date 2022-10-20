@@ -12,18 +12,29 @@
     <title>DETTAGLIO</title>
 </head>
 <body style="text-align: center" bgcolor="#7fffd4" topmargin="200px">
-<c:if test="${not empty dettaglio}">
-    <h1>Dettaglio:</h1>
+<c:if test="${not empty dettaglioP}">
+    <h1>Dettaglio Prodotto:</h1>
+    ${dettaglioP}
 </c:if>
 <c:if test="${not empty editP}">
     <h1>Dettaglio Prodotto Modificato:</h1>
+    ${editP}
 </c:if>
 <c:if test="${not empty deleteP}">
     <h1>Prodotto Eliminato:</h1>
+    ${deleteP}
 </c:if>
 
-${dettaglio}
-${editP}
-${deleteP}
+<c:if test="${not empty dettaglioS}">
+    <h1>Dettaglio Spedizione:</h1>
+    ${dettaglioS}
+    <h3>Contenuto:</h3>
+    ${contenutoS}
+</c:if>
+
+
+
+
+
 </body>
 </html>

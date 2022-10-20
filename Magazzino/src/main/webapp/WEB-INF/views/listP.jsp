@@ -12,9 +12,22 @@
     <title>Lista Prodotti</title>
 </head>
 <body style="text-align: center" bgcolor="#7fffd4" topmargin="200px">
-<h1>Lista Prodotti:</h1><br><br>
+
+<c:if test="${not empty prodotti}">
+    <h1>Lista Prodotti:</h1><br><br>
+</c:if>
+
+<c:if test="${not empty spedizioni}">
+    <h1>Lista Spedizioni:</h1><br><br>
+</c:if>
+
+
 <c:forEach items="${prodotti}" var="prodotto">
   ${prodotto}<br>
+</c:forEach>
+
+<c:forEach items="${spedizioni}" var="spedizione">
+    ${spedizione}<br>
 </c:forEach>
 
 </body>

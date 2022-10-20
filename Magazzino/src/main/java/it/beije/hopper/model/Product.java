@@ -2,6 +2,18 @@ package it.beije.hopper.model;
 
 import javax.persistence.*;
 
+/*
+CREATE TABLE prodotto
+		(
+		id          INT AUTO_INCREMENT NOT NULL,
+		nome        VARCHAR(255)       NULL,
+		tipologia   VARCHAR(255)       NULL,
+		quantita    INT                NULL,
+		descrizione VARCHAR(255)       NULL,
+		CONSTRAINT pk_prodotto PRIMARY KEY (id)
+		);
+*/
+
 @Entity
 @Table(name = "prodotto")
 public class Product {

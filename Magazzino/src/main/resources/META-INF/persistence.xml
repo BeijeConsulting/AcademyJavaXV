@@ -6,6 +6,8 @@
 <!--		<class>it.beije.hopper.ecommerce.model.Item</class>-->
 <!--		<class>it.beije.hopper.ecommerce.model.Product</class>-->
 <!--		<class>it.beije.hopper.ecommerce.model.Order</class>-->
+
+		<class>it.beije.magazzino.model.Product</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 

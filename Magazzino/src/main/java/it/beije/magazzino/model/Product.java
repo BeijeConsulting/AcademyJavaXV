@@ -4,11 +4,12 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+
 import javax.persistence.*;
 
 
 /*
-CREATE TABLE `warehouse`.`product` (
+CREATE TABLE `warehouse`.`products` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `name` VARCHAR(100) NULL,
   `type` VARCHAR(100) NULL,
@@ -33,15 +34,14 @@ public class Product {
 	@Column(name = "type")
 	private String type;
 
+	@Column(name = "quantity")
+	private Integer quantity;
+
 	@Column(name = "description")
 	@JsonProperty("description")
 	private String description;
 
-	@Column(name = "price")
-	private Double price;
 
-	@Column(name = "quantity")
-	private Integer quantity;
 
 
 	public Integer getId() {
@@ -76,13 +76,6 @@ public class Product {
 		this.description = description;
 	}
 
-	public Double getPrice() {
-		return price;
-	}
-
-	public void setPrice(Double price) {
-		this.price = price;
-	}
 
 	public Integer getQuantity() {
 		return quantity;
@@ -98,13 +91,12 @@ public class Product {
 				"id=" + id +
 				", name='" + name + '\'' +
 				", type='" + type + '\'' +
-				", description='" + description + '\'' +
-				", price=" + price +
 				", quantity=" + quantity +
+				", description='" + description + '\'' +
 				'}';
 	}
 
-	//
+//
 //	public String toString() {
 //		StringBuilder builder = new StringBuilder()
 //				.append("{ id : ").append(this.id)

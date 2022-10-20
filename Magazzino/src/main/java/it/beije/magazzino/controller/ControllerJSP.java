@@ -143,7 +143,6 @@ public class ControllerJSP {
 
         List <Prodotto> lista = prodottoRepository.findProdottoByTipologia(tipoProdotto);
 
-        System.out.println("Lista:" + lista + "\n");
         model.addAttribute("lista", lista);
 
         return "find_by_tipo";

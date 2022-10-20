@@ -16,18 +16,17 @@ public class OrderRestControllerMod {
     OrderServiceMod orderServiceMod;
 
     @GetMapping(value = "/order/{id}")
-    public Order getOrder(@PathVariable (name = "id") Integer id) {
+    public Order getOrder(@PathVariable(name = "id") Integer id) {
         return orderServiceMod.findOrderById(id);
     }
 
     @PostMapping(value = "/order")
     public Order addOrder(@RequestBody Order order) {
-//        order.setDatetime(LocalDateTime.now());
         return orderServiceMod.save(order);
     }
 
     @PutMapping(value = "/order/{id}")
-    public Order updateOrder(@PathVariable (name = "id") Integer id, @RequestBody Order newOrder){
+    public Order updateOrder(@PathVariable(name = "id") Integer id, @RequestBody Order newOrder) {
         Order order = orderServiceMod.findOrderById(id);
         BeanUtils.copyProperties(newOrder, order, "id", "datetime", "items");
         orderServiceMod.save(order);
@@ -36,6 +35,6 @@ public class OrderRestControllerMod {
 
     @DeleteMapping(value = "/order/{id}")
     public boolean deleteOrder(@PathVariable(name = "id") Integer id) {
-    return orderServiceMod.deleteItem(id);
+        return orderServiceMod.deleteItem(id);
     }
 }

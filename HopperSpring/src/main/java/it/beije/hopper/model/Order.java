@@ -1,8 +1,11 @@
 package it.beije.hopper.model;
 
 import java.time.LocalDateTime;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -17,10 +20,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.*;
 import it.beije.hopper.model.Item;
 
 /*
@@ -38,106 +38,110 @@ CREATE TABLE `orders` (
 
 @Entity
 @Table(name = "orders")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class Order {
-	
-	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "id")
-	private Integer id;
-	
-	@JsonProperty(value = "user_id")
-	@Column(name = "user_id")
-	private Integer userId;
 
-	@Column(name = "datetime")
-	private LocalDateTime datetime;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
 
-	//totale (item1.price * item1.quantity - item1.promo) + (item2.price * item2.quantity - item2.promo) + ...
-	@Column(name = "amount")
-	private Double amount;
+    @JsonProperty(value = "user_id")
+    @Column(name = "user_id")
+    private Integer userId;
 
-	@Column(name = "promo")
-	private Double promo;
+    @Column(name = "datetime")
+    private LocalDateTime datetime;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "order_id")
-	private List<Item> items;
-	
+    //totale (item1.price * item1.quantity - item1.promo) + (item2.price * item2.quantity - item2.promo) + ...
+    @Column(name = "amount")
+    private Double amount;
 
-	public Integer getId() {
-		return id;
-	}
+    @Column(name = "promo")
+    private Double promo;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name = "order_id")
+    private List<Item> items;
 
-	public Integer getUserId() {
-		return userId;
-	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public LocalDateTime getDatetime() {
-		return datetime;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	@JsonGetter(value = "datetime")
-	public String getDatetimeAsString() {
-		return datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
-	}
+    public Integer getUserId() {
+        return userId;
+    }
 
-	public void setDatetime(LocalDateTime datetime) {
-		this.datetime = datetime;
-	}
+    public void setUserId(Integer userId) {
+        this.userId = userId;
+    }
 
-	@JsonSetter(value = "datetime")
-	public void setDatetime(String datetime) {
-		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
-	}
+    public LocalDateTime getDatetime() {
+        return datetime;
+    }
 
-	public Double getAmount() {
-		return amount;
-	}
+    @JsonGetter(value = "datetime")
+    public String getDatetimeAsString() {
+        return datetime.format(DateTimeFormatter.BASIC_ISO_DATE);
+    }
 
-	public void setAmount(Double amount) {
-		this.amount = amount;
-	}
+    public void setDatetime(LocalDateTime datetime) {
+        this.datetime = datetime;
+    }
 
-	public Double getPromo() {
-		return promo;
-	}
+    @JsonSetter(value = "datetime")
+    public void setDatetime(String datetime) {
+        System.out.println(datetime + "prova");
+//		this.datetime = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+        this.datetime = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
+        System.out.println("settato " + datetime);
+    }
 
-	public void setPromo(Double promo) {
-		this.promo = promo;
-	}
+    public Double getAmount() {
+        return amount;
+    }
 
-	public List<Item> getItems() {
-		return items;
-	}
+    public void setAmount(Double amount) {
+        this.amount = amount;
+    }
 
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
-	
-	@JsonGetter(value = "order_code")
-	public String getOrderCode() {
-		return "BJ-" + this.id;
-	}
+    public Double getPromo() {
+        return promo;
+    }
 
-	public String toString() {
-		StringBuilder builder = new StringBuilder()
-				.append("{ id : ").append(this.id)
-				.append(", userId : ").append(this.userId)
-				.append(", datetime : ").append(this.datetime)
-				.append(", amount : ").append(this.amount)
-				.append(", promo : ").append(this.promo)
-				.append(", items : ").append(this.items)
-				.append(" }");
-		
-		return builder.toString();
-	}
+    public void setPromo(Double promo) {
+        this.promo = promo;
+    }
+
+    public List<Item> getItems() {
+        return items;
+    }
+
+    public void setItems(List<Item> items) {
+        this.items = items;
+    }
+
+    @JsonGetter(value = "order_code")
+    public String getOrderCode() {
+        return "BJ-" + this.id;
+    }
+
+    public String toString() {
+        StringBuilder builder = new StringBuilder()
+                .append("{ id : ").append(this.id)
+                .append(", userId : ").append(this.userId)
+                .append(", datetime : ").append(this.datetime)
+                .append(", amount : ").append(this.amount)
+                .append(", promo : ").append(this.promo)
+                .append(", items : ").append(this.items)
+                .append(" }");
+
+        return builder.toString();
+    }
 
 }

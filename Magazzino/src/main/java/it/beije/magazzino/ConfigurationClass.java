@@ -1,4 +1,4 @@
-package it.beije.hopper;
+package it.beije.magazzino;
 
 
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories(value = {"it.beije.hopper.repository", "it.beije.hopper.ecommerce.repository","it.beije.magazzino.repository"})
+@EnableJpaRepositories(value = {"it.beije.magazzino.repository"})
 public class ConfigurationClass {
 	
     @Primary

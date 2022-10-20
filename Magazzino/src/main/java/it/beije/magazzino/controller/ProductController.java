@@ -158,7 +158,7 @@ public class ProductController {
 	    }
 	  
 	  
-	  @RequestMapping(value="spedizioneContenuto",method=RequestMethod.GET)		
+	  @RequestMapping(value="/spedizioneContenuto",method=RequestMethod.GET)		
 			public String getspedizioneContenuto(HttpServletRequest request, @RequestParam(name = "id", required = false) Integer id, Model model) {
 		  List<ContenutoProdotto> contenuto=contenutoService.findBySpedizioneId(id);
 				Spedizione spedizione=spedizioneService.findById(id);

@@ -19,6 +19,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import it.beije.hopper.model.User;
 import it.beije.hopper.service.UserService;
 
+import java.security.ProtectionDomain;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -32,6 +36,8 @@ public class HelloController {
 	private OrderService orderService;
 	@Autowired
 	private ProductService productService;
+
+	private static List<Item> carrello = new ArrayList<>();
 
 	public HelloController() {
 		System.out.println("creo un oggetto HelloController...");
@@ -74,7 +80,7 @@ public class HelloController {
 				//carico dettaglio utente...
 				//User loggedUser = userService.loadUser(username);
 				
-				model.addAttribute("loggedUser", loggedUser);
+				session.setAttribute("loggedUser", loggedUser);
 
 				List<Product> listaProdotti = productService.findAll();
 				System.out.println("lista prodotti: " + listaProdotti);
@@ -90,6 +96,7 @@ public class HelloController {
 					List<Order> listaOrdini = orderService.findByUserId(loggedUser.getId());
 					System.out.println("lista ordini: " + listaOrdini);
 					session.setAttribute("orders", listaOrdini);
+					session.setAttribute("carrello", carrello);
 					return "welcomeUser";
 				}
 			} else { //KO
@@ -108,11 +115,10 @@ public class HelloController {
 							  @RequestParam(name = "prezzo", required = false) Double prezzo,
 							  @RequestParam(name = "quantita", required = false) Integer quantita,
 							  @RequestParam(name = "rate", required = false) Integer rate,
-							  @RequestParam(name = "promo", required = false) Integer promo,
+							  @RequestParam(name = "promo", required = false) Double promo,
 							  HttpSession session,
 							  Model model) {
-
-		System.out.println("Inserisco nuovo Prodotto...");
+		System.out.println("INSERISCO Prodotto...");
 		Product newP = new Product();
 		newP.setName(nome);
 		newP.setDesc(descrizione);
@@ -135,8 +141,7 @@ public class HelloController {
 								@RequestParam(name = "valore") String valore,
 								HttpSession session,
 								Model model) {
-
-		System.out.println("Modifico un Prodotto");
+		System.out.println("MODIFICO  Prodotto...");
 		Product p = productService.loadProduct(id);
 		switch (campo){
 			case "nome": p.setName(valore);break;
@@ -144,7 +149,7 @@ public class HelloController {
 			case "prezzo": p.setPrice(Double.parseDouble(valore));break;
 			case "quantita": p.setQuantity(Integer.parseInt(valore));break;
 			case "rating": p.setRating(Integer.parseInt(valore));break;
-			case "promo": p.setPromo(Integer.parseInt(valore));break;
+			case "promo": p.setPromo(Double.parseDouble(valore));break;
 		}
 
 		productService.saveProduct(p);
@@ -160,7 +165,7 @@ public class HelloController {
 	public String deleteProduct( @RequestParam(name = "id") Integer id,
 								 HttpSession session,
 								 Model model) {
-		System.out.println("GET login...");
+		System.out.println("ELIMINO Prodotto...");
 		Product p = productService.loadProduct(id);
 		productService.deleteProduct(p);
 
@@ -172,18 +177,85 @@ public class HelloController {
 		
 		return "welcomeAdmin";
 	}
-	@RequestMapping(value = "/infOrdine", method = RequestMethod.POST)
-	public String infOrdine( @RequestParam(name = "id") Integer id,
+	@RequestMapping(value = "/viewOrder", method = RequestMethod.POST)
+	public String viewOrderAdmin( @RequestParam(name = "id") Integer id,
 							 Model model) {
-		
-		System.out.println("GET login...");
+		System.out.println("DETTAGLIO Ordine...");
+
 		Order order = orderService.loadOrder(id);
 		String dettaglio = "";
 		for (Item i: order.getItems()) {
 			dettaglio +="- " + i.getName() + " " + i.getDesc() + " " + i.getPrice() + " " + i.getQuantity() + " " + i.getPromo() + " [TOT: "+ i.getPrice()*i.getQuantity() +"]\n";
 		}
-		model.addAttribute("result", "DETTAGLIO ORDINE "+id+":\n" + dettaglio);
+		model.addAttribute("order", "DETTAGLIO ORDINE "+id+":\n" + dettaglio);
 		return "welcomeAdmin";
+	}
+
+	@RequestMapping(value = "/addCarrello", method = RequestMethod.POST)
+	public String addCarrello( @RequestParam(name = "id") Integer id,
+							   @RequestParam(name = "quantita") Integer quantita,
+							   HttpSession session) {
+		System.out.println("AGGIUNGO Prodotto al carrello...");
+
+		Product p = productService.loadProduct(id);
+		Item i = new Item();
+		i.setName(p.getName());
+		i.setDesc(p.getDesc());
+		i.setPrice(p.getPrice());
+		i.setQuantity(quantita);
+		i.setPromo(p.getPromo());
+		i.setProductId(p.getId());
+
+		//String itemString ="Nome: " + p.getName() + " - Descrizione: " + p.getDesc() + " - Quantità: " + quantita +" - Prezzo: " + p.getPrice() + " - Promo: " + p.getPromo() + "      [TOT: " + p.getPrice()*quantita + "]\n";
+		carrello.add(i);
+		session.setAttribute("carrello", carrello);
+
+		return "welcomeUser";
+	}
+
+	@RequestMapping(value = "/confirmOrder", method = RequestMethod.POST)
+	public String confirmOrder(HttpSession session, Model model) {
+		System.out.println("CONFERMO Ordine...");
+		double importo=0;
+		for (Item i: carrello) {
+			importo += i.getPrice();
+		}
+		User u = (User)session.getAttribute("loggedUser");
+		Order order = new Order();
+		order.setDatetime(LocalDateTime.now());
+		order.setUserId(u.getId());
+		order.setAmount(importo);
+		//order.setItems(carrello);
+		order = orderService.addOrder(order);
+
+		for (Item i: carrello) {
+			i.setOrderId(order.getId());
+		}
+		order.setItems(carrello);
+		orderService.addOrder(order);
+
+
+		List<Order> orders = orderService.findByUserId(u.getId());
+		session.setAttribute("orders", orders);
+		model.addAttribute("result", "COMPLIMENTI, HAI CONFERMATO L'ORDINE!!!");
+		return "welcomeUser";
+	}
+
+	@RequestMapping(value = "/deleteCarrello", method = RequestMethod.POST)
+	public String deleteCarrello() {
+		System.out.println("CANCELLO Carrello...");
+		carrello.clear();
+
+		return "welcomeUser";
+	}
+
+	@RequestMapping(value = "/viewOrderUser", method = RequestMethod.POST)
+	public String viewOrder(@RequestParam(name = "id") Integer id, Model model) {
+		System.out.println("CANCELLO Carrello...");
+		Order order = orderService.loadOrder(id);
+		model.addAttribute("result", order);
+
+		return "welcomeUser";
 	}
 
 }

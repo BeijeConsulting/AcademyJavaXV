@@ -35,7 +35,7 @@ public class Item {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "id")
 	private Integer id;
-	
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	@Column(name = "order_id")
 	private Integer orderId;
 
@@ -45,7 +45,7 @@ public class Item {
 	@Column(name = "name")
 	private String name;
 
-	@Column(name = "desc")
+	@Column(name = "description")
 	private String desc;
 
 	@Column(name = "price")

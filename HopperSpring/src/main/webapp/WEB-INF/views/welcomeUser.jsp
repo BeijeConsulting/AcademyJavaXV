@@ -32,10 +32,53 @@
 		</td>
 	</tr>
 	<tr>
-		<td><a href="#"  onclick="win = window.open('newOrder.html', 'Nuovo Ordine', 'location=yes,width=400,height=400')">Effettua un nuovo ordine</a></td>
-		<td><a href="#"  onclick="win = window.open('viewOrder.html', 'Visualizza Ordine', 'location=yes,width=400,height=400')">Visualizza uno dei tuoi ordini</a></td>
+		<td><a href="#"  onclick="document.getElementById('addC').removeAttribute('hidden');document.getElementById('carrello').removeAttribute('hidden');document.getElementById('infO').setAttribute('hidden','hidden')">Effettua un nuovo ordine</a></td>
+		<td><a href="#"  onclick="document.getElementById('infO').removeAttribute('hidden');document.getElementById('addC').setAttribute('hidden','hidden');document.getElementById('carrello').setAttribute('hidden','hidden')">Visualizza uno dei tuoi ordini</a></td>
 	</tr>
 </table>
+
+<c:if test="${not empty carrello}">
+	<div id="addC">
+</c:if>
+<c:if test="${empty carrello}">
+	<div id="addC" hidden="hidden">
+</c:if>
+	<form action="./addCarrello" method="post">
+		<label for="id">Id Prodotto:</label><br>
+		<input type="text" name="id" value=""><br><br>
+		<label for="quantita">Quantità:</label><br>
+		<input type="text" name="quantita" value=""><br><br>
+		<input type="submit" value="Aggiungi">
+	</form>
+</div>
+
+<div id="infO" hidden="hidden">
+	<form action="./viewOrderUser" method="post">
+		<label for="id">Id Ordine:</label><br>
+		<input type="text" name="id" value=""><br><br>
+		<input type="submit" value="Visualizza">
+	</form>
+</div>
+
+<div id="carrello">
+	<p style="color: mediumvioletred">
+		<b>
+			<c:forEach items="${carrello}" var="item">
+				${item}<br>
+			</c:forEach>
+		</b>
+	</p>
+
+	<c:if test="${not empty carrello}">
+		<form action="./confirmOrder" method="post">
+			<input type="submit" value="Conferma">
+		</form>
+		<form action="./deleteCarrello" method="post">
+			<input type="submit" value="Cancella">
+		</form>
+	</c:if>
+</div>
+	<p style="color: green"><b>${result}</b></p>
 
 </body>
 </html>

@@ -39,7 +39,7 @@ public class Product {
 	private Integer rating;
 
 	@Column(name = "promo")
-	private Integer promo;
+	private Double promo;
 
 	
 	public Integer getId() {
@@ -104,11 +104,11 @@ public class Product {
 		return builder.toString();
 	}
 
-	public Integer getPromo() {
+	public Double getPromo() {
 		return promo;
 	}
 
-	public void setPromo(Integer promo) {
+	public void setPromo(Double promo) {
 		this.promo = promo;
 	}
 }

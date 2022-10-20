@@ -94,7 +94,7 @@
 </div>
 
 <div id="infP" hidden="hidden">
-    <form action="./infOrdine" method="post">
+    <form action="./viewOrder" method="post">
         <label for="id">Id:</label><br>
         <input type="text" name="id" value=""><br><br>
         <input type="submit" value="Visualizza">

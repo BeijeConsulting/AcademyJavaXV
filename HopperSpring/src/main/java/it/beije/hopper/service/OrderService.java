@@ -46,4 +46,7 @@ public class OrderService {
         List<Order> order = orderRepository.findAll();
         return order;
     }
+    public Order addOrder(Order order){
+        return orderRepository.save(order);
+    }
 }

@@ -4,6 +4,7 @@ package it.beije.magazzino.controller.no_rest;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.service.ProductService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -161,6 +162,8 @@ public class ProductController {
 		model.addAttribute("type", products.get(0).getType());
 		return "productbytype";
 	}
+
+
 
 
 }

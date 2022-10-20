@@ -11,18 +11,34 @@
 
     <p style="font-family:Comic Sans MS" >
         <a href="/Magazzino/product">Prodotti</a> |
-        <a href="#" onclick="document.getElementById('prodottoById').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden')">Prodotto tamite Id</a> |
-        <a href="#" onclick="document.getElementById('addProd').removeAttribute('hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden')">Aggiungi prodotto</a> |
-   
+        <a href="#" onclick="document.getElementById('prodottoById').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Prodotto tamite Id</a> |
+        <a href="#" onclick="document.getElementById('addProd').removeAttribute('hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Aggiungi prodotto</a> |
+   	 	<a href="#" onclick="document.getElementById('modProd').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Modifica prodotto</a> |
+   	 	<a href="/Magazzino/delete" >Elimina prodotto</a> |
+   	 	<a href="#" onclick="document.getElementById('prodottoByTipo').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByNomeDesc').setAttribute('hidden','hidden')">Prodotti per tipologia</a> |
+   	 	<a href="#" onclick="document.getElementById('prodottoByNomeDesc').removeAttribute('hidden');document.getElementById('addProd').setAttribute('hidden','hidden');document.getElementById('prodottoById').setAttribute('hidden','hidden');document.getElementById('modProd').setAttribute('hidden','hidden');document.getElementById('prodottoByTipo').setAttribute('hidden','hidden')">Prodotti per nome o desc</a> |
+   	 	
     </p>
 
-<div id="product" hidden="hidden">
-    <form action="./product" method="get">
-        <label for="prodotti">Prodotti:</label>
-        <input type="text" name="prodotti" value="" id="prodotti">
+<div id="prodottoByNomeDesc" hidden="hidden">
+    <form action="./prodottoByNomeDesc" method="get">
+        <label for="name">Nome Prodotto:</label>
+        <input type="text" name="name" value="" id="name">
+        <label for="desc">descrizione Prodotto:</label>
+        <input type="text" name="desc" value="" id="desc">
         <input type="submit" value="Cerca">
     </form>
 </div>
+
+
+<div id="prodottoByTipo" hidden="hidden">
+    <form action="./prodottoByTipo" method="get">
+        <label for="tipo">Tipo Prodotto:</label>
+        <input type="text" name="tipo" value="" id="tipo">
+        <input type="submit" value="Cerca">
+    </form>
+</div>
+
 
 <div id="prodottoById" hidden="hidden">
     <form action="./prodottoById" method="post">
@@ -45,6 +61,23 @@
   <input type="submit" value="Submit">
 </form>
 </div>
+
+<div id="modProd" hidden="hidden">
+    <form action="./modProd" method="post">
+     <label for="id">ID:</label><br>
+  <input type="text" name="id" value=""><br>
+  <label for="name">NOME:</label><br>
+  <input type="text" name="name" value=""><br>
+  <label for="tipo">TIPOLOGIA:</label><br>
+  <input type="text" name="tipo" value=""><br><br>
+  <label for="quantity">QUANTITà:</label><br>
+  <input type="text" name="quantity" value=""><br><br>
+  <label for="desc">DESCRIZIONE:</label><br>
+  <input type="text" name="desc" value=""><br><br>
+  <input type="submit" value="Submit">
+</form>
+</div>
+
 
 
 

@@ -14,5 +14,14 @@ import it.beije.magazzino.model.Product;
 public interface ProductRepository extends JpaRepository<Product, Integer>{
 	
 	public abstract List<Product> findAll();
+	 
 	 public abstract List<Product> findById(int id);
+
+	 public abstract List<Product> findByTipo(String tipo);
+	 
+	 public abstract List<Product> findByName(String nome);
+	 
+	 public abstract List<Product> findByDesc(String desc);
+	 
+	 public abstract List<Product> findByNameAndDesc(String name, String desc);
 }

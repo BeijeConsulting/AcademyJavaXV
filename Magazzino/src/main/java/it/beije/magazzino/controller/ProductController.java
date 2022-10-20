@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -65,7 +66,7 @@ public class ProductController {
 	    }
 	  
 	  @RequestMapping(value = "/addProd", method = RequestMethod.POST)
-		public String insertUser(Product prodotto, Model model) {
+		public String insertProduct(Product prodotto, Model model) {
 				
 			productRepository.save(prodotto);
 			System.out.println("prodotto post save : " + prodotto);
@@ -73,6 +74,67 @@ public class ProductController {
 			
 			return "home";
 		}
+	  
+	  @RequestMapping(value = "/modProd", method = RequestMethod.POST)
+		public String modProduct(@RequestParam(name = "id", required = false) int id, Product prodotto, Model model) {
+		  List<Product> product = productService.findById(id);
+		  BeanUtils.copyProperties(prodotto, product, "id");
+			productRepository.save(prodotto);
+			System.out.println("prodotto post save : " + prodotto);
+			model.addAttribute("addProd", prodotto);
+			
+			return "home";
+		}
+	  
+	  
+	  @RequestMapping(value = "/delete", method = RequestMethod.GET)
+		public String delProduct(HttpServletRequest request) {
+	        return "delete"; 
+
+	    }
+	  
+	  @RequestMapping(value = "/delete", method = RequestMethod.POST)
+		public String delete(Product prodotto, Model model) {
+				
+			productRepository.delete(prodotto);
+			System.out.println("prodotto post save : " + prodotto);
+			
+			
+			return "home";
+		}
+	  
+	  
+	  @RequestMapping(value = "/prodottoByTipo", method = RequestMethod.GET)
+	  public String tipologia(HttpServletRequest request, @RequestParam(name = "tipo", required = false) String tipo, Model model) {	       
+
+	        List<Product> product = productService.findByTipo(tipo);
+	        model.addAttribute("product", product);
+	       
+
+	        return "tipologia"; 
+
+	    }
+	  
+	  @RequestMapping(value = "/prodottoByNomeDesc", method = RequestMethod.GET)
+	  public String nomeDesc(HttpServletRequest request, @RequestParam(name = "name", required = false)String name, @RequestParam( name = "desc", required = false) String desc, Model model) {	       
+
+		  if (name != null && name.length() > 0 ) {
+	       
+			  List<Product> product = productService.findByName(name);
+		        model.addAttribute("product", product);
+		       
+		  }  if ( desc != null && desc.length() > 0) {  
+			  List<Product> product = productService.findByDesc(desc);
+		        model.addAttribute("product", product);
+		       
+		  }  if (name != null && name.length() > 0 && desc != null && desc.length() > 0) {  
+			  List<Product> product = productService.findByNameAndDesc(name,desc);
+		        model.addAttribute("product", product);
+		  }
+	        return "nomeDesc"; 
+
+	    }
+	  
 
 
 }

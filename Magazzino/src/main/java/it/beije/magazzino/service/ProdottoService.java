@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class ProdottoService {
+
     @Autowired
     private ProdottoRepository prodottoRepository;
 
@@ -16,11 +17,11 @@ public class ProdottoService {
         System.out.println("creo un oggetto ProdottoService...");
     }
 
-    public List<Prodotto> findAll(){
-        return prodottoRepository.findAll();
-    }
-
-    public Prodotto findById(int id){
-        return prodottoRepository.findById(id);
-    }
+//    public List<Prodotto> findAll(){
+//        return prodottoRepository.findAll();
+//    }
+//
+//    public Prodotto findById(int id){
+//        return prodottoRepository.findById(id);
+//    }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 @Repository
 public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 
-    public abstract Prodotto findById(int id);
-    public abstract List<Prodotto> findAll();
+//    public abstract Prodotto findById(int id);
+//    public abstract List<Prodotto> findAll();
 
 }

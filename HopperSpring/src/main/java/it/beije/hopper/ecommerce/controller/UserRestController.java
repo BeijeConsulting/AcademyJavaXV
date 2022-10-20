@@ -71,7 +71,7 @@ public class UserRestController {
 			throw new IllegalArgumentException("id non corrispondenti");
 	}
 	
-	@DeleteMapping(value = "/user/{id}")
+	@DeleteMapping(value = "/delete_product/{id}")
 	public String deleteUser(@PathVariable(name = "id") Integer id) {
 		System.out.println("DELETE deleteUser : " + id);
 		

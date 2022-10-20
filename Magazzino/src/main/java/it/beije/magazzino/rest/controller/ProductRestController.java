@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import it.beije.magazzino.model.Product;
+import it.beije.magazzino.repository.ProductRepository;
 import it.beije.magazzino.service.ProductService;
 
 @RestController
@@ -50,6 +52,18 @@ public class ProductRestController {
 
 		} else
 			throw new IllegalArgumentException("id non corrispondenti");		
+	}
+	
+	@DeleteMapping(value = "/user/{id}")
+	public String deleteUser(@PathVariable(name = "id") Integer id) {
+		System.out.println("DELETE deleteUser : " + id);
+		
+		if(productService.deleteProduct(id)) {
+			return "{\"message\":\"rimosso user " + id + "\"}";
+		}else {
+			throw new IllegalArgumentException("id non corrispondenti");
+		}
+		
 	}
 	
 }

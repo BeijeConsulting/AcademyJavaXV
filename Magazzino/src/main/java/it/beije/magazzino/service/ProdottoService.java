@@ -21,4 +21,10 @@ public class ProdottoService {
 		return p.get();
 	}
 
+	public Prodotto save(Prodotto prodotto) {
+		return prodottoRepository.save(prodotto);
+	}
+
+
+
 }

@@ -26,5 +26,9 @@
 	<button>Aggiorna prodotto</button>
 </form>
 
+<form action="deleteprodotto">
+	<button>Elimina prodotto</button>
+</form>
+
 </body>
 </html>

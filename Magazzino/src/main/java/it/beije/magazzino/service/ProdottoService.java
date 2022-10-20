@@ -26,4 +26,8 @@ public class ProdottoService {
 	public void insert(Prodotto prodotto) {
 		prodottoRepository.save(prodotto);
 	}
+
+	public void delete(Integer id) {
+		prodottoRepository.deleteById(id);
+	}
 }

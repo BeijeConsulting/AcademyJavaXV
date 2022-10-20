@@ -55,7 +55,8 @@ public class ProdottoController {
 
 		prodottoService.insert(prodotto);
 
-		model.addAttribute("prodotto", prodotto);
+		String stringa="insert";
+		model.addAttribute("insert",stringa);
 		return "insertedprodotto";
 	}
 
@@ -88,6 +89,26 @@ public class ProdottoController {
 		model.addAttribute("prodotto", prodotto);
 		String stringa="update";
 		model.addAttribute("update",stringa);
+		return "insertedprodotto";
+	}
+	
+	@RequestMapping(value = "deleteprodotto", method = RequestMethod.GET)
+	public String deleteprodotto(HttpServletRequest request, Model model) throws Exception {
+
+		List<Prodotto> prodotti = prodottoService.getAll();
+		
+		model.addAttribute("prodotti", prodotti);
+
+		return "deleteprodotto";
+	}
+	
+	@RequestMapping(value = "delprodotto", method = RequestMethod.POST)
+	public String deletedProdotto(HttpServletRequest request, Model model, @RequestParam(name = "id") Integer id) throws Exception {
+		
+		prodottoService.delete(id);
+		
+		String stringa="delete";
+		model.addAttribute("delete",stringa);
 		return "insertedprodotto";
 	}
 }

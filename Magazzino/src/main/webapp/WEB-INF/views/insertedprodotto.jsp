@@ -10,14 +10,18 @@
 <body>
 
 <c:choose>
-    <c:when test="${stringa!='null'}">
+    <c:when test="${stringa=='update'}">
         Prodotto aggiornato
         <br />
-    </c:when>    
-    <c:otherwise>
-        Prodotto aggiunto 
+    </c:when>
+    <c:when test="${stringa=='delete'}">
+        Prodotto eliminato
         <br />
-    </c:otherwise>
+    </c:when>     
+    <c:when test="${stringa=='insert'}">
+        Prodotto eliminato
+        <br />
+    </c:when>
 </c:choose>
 
 

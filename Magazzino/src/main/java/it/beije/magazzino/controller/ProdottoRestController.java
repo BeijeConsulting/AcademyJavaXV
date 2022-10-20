@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,6 +72,13 @@ public class ProdottoRestController {
 		prodottoService.insert(prodotto);
 
 		return prodotto;
+	}
+	
+	@DeleteMapping(value = "delete/{id}")
+	public String deletedProdotto(HttpServletRequest request, Model model, @PathVariable Integer id) throws Exception {
+		
+		prodottoService.delete(id);
+		return "Prodotto eliminato";
 	}
 	
 	

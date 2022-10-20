@@ -5,13 +5,23 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Prodotti</title>
+<title></title>
 </head>
 <body>
+
+<p>Lista prodotti presenti nel database</p>
 <c:forEach items="${prodotti}" var="p">
-	<br><strong>Nome:</strong>${p.nome} <strong>TIPOLOGIA:</strong>${p.tipologia} 
+	<br><strong>Id:</strong>${p.id}<strong>Nome:</strong>${p.nome} <strong>TIPOLOGIA:</strong>${p.tipologia} 
 	<strong>QUANTITA':</strong>${p.quantita} <strong>DESCRIZIONE:</strong>${p.descrizione}
 </c:forEach>
+
+<br><br>
+<form action="delprodotto" method="post">
+	<label for="id">Id prodotto da voler eliminare:</label><br>
+  	<input type="text" name="id" value=""><br>
+  	<input type="submit" value="Submit">
+</form>
+
 
 </body>
 </html>

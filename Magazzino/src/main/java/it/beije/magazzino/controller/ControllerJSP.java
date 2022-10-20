@@ -7,14 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Optional;
 
 import  it.beije.magazzino.service.ProdottoService;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class ControllerJSP {
@@ -132,22 +131,30 @@ public class ControllerJSP {
     }
 
     @RequestMapping(value = "/findbytipo", method = RequestMethod.GET)
-    public String findProdottoWithTipo(Model model){
-        System.out.println("FIND BY TIPO GET");
-
-        return "find_by_tipo";
-    }
-    @RequestMapping(value = "/findbytipo", method = RequestMethod.POST)
     public String findProdottoWithTipo(HttpSession session, @RequestParam(name = "tipoProdotto", required = false) String tipoProdotto, Model model){
         System.out.println("Cerca prodotti con tipologia: " + tipoProdotto);
 
         List <Prodotto> lista = prodottoRepository.findProdottoByTipologia(tipoProdotto);
 
-        model.addAttribute("lista", lista);
+        model.addAttribute("listaProdotti", lista);
 
-        return "find_by_tipo";
+        return "findbytipo";
     }
 
+    @RequestMapping(value = "/findbynameordesc", method = RequestMethod.GET)
+    public String findProdottoWithNameOrDesc(HttpSession session, @RequestParam(name = "nomeProdotto", required = false) String nomeProdotto
+            ,@RequestParam(name = "descProdotto", required = false) String descProdotto, Model model){
+        System.out.println("Cerca prodotti con nome: " + nomeProdotto);
+        System.out.println("Cerca prodotti con descrizione: " + descProdotto);
+
+        List <Prodotto> lista = prodottoRepository.findProdottoByNomeOrDescrizione(nomeProdotto, descProdotto);
+
+        System.out.println(lista);
+
+        model.addAttribute("listaProdotti", lista);
+        return "findbynameordesc";
+
+    }
 
 
 

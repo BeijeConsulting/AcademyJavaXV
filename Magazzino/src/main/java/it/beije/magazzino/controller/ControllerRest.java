@@ -77,5 +77,14 @@ public class ControllerRest {
 
     }
 
+    @GetMapping(value = "/findbytipo/{tipologia}")
+    public List<Prodotto> findByTipoRest(@PathVariable(name ="tipologia") String tipologia){
+        System.out.println("/findbytipo GET REST");
+
+        List <Prodotto> listaProdotti = prodottoRepository.findProdottoByTipologia(tipologia);
+
+        return listaProdotti;
+    }
+
 
 }

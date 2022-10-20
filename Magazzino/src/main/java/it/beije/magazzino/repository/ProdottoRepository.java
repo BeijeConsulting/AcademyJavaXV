@@ -19,5 +19,7 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Integer> {
 
     public abstract List<Prodotto> findProdottoByTipologia(String tipo);
 
+    public abstract List<Prodotto> findProdottoByNomeOrDescrizione(String nome, String descrizione);
+
 
 }

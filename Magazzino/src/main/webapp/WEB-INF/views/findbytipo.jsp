@@ -12,12 +12,12 @@
     <title>Find by tipo</title>
 </head>
 <body>
-<form action = "find_by_tipo" method = "post">
+<form action = "findbytipo" method = "get">
    tipo: <input type = "text" name = "tipoProdotto" value = "">
     <input type="submit" value="Cerca">
 </form>
-Lista di tutti i prodotti per il tipo selezionato
-<c:forEach items="${lista}" var = "prodotto">
+Lista di tutti i prodotti per il tipo selezionato <br>
+<c:forEach items="${listaProdotti}" var = "prodotto">
     <br> ${prodotto.nome}
 </c:forEach>
 </body>

@@ -1,5 +1,6 @@
 package it.beije.magazzino.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,10 @@ public class ProdottoService {
 
 	public Prodotto save(Prodotto prodotto) {
 		return prodottoRepository.save(prodotto);
+	}
+
+	public List<Prodotto> findAll() {
+		return prodottoRepository.findAll();
 	}
 
 

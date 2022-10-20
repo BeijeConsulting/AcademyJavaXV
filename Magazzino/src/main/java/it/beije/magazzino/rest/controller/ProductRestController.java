@@ -91,10 +91,11 @@ public class ProductRestController {
 		return  productService.listByNameDescription(null, description);
 	}
 	
-	@GetMapping(value = "/list_product_by_description/{name}/conf/{description}")
+	@GetMapping(value = "/list_product_by_name_description")
 	public List<Product> listProductByNameDescription(
-			@PathVariable(name = "name") String name,
-			@PathVariable(name = "description") String description){
+			HttpServletRequest request,
+			@RequestParam(name = "name") String name,
+			@RequestParam(name = "description") String description){
 		return  productService.listByNameDescription(name, description);
 	}
 	

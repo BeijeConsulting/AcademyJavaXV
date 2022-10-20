@@ -78,6 +78,36 @@ public class ProductController {
 
 		return "show_description";
 	}
-	
+
+	//Metodo per la registrazione di un prodotto a magazzino
+		@RequestMapping(value = {"/add_new_product"}, method = RequestMethod.POST)
+		public String addProductPost(
+				HttpServletRequest request, 
+				Model model,
+				@RequestParam(name = "name", required = false) String name,
+				@RequestParam(name = "typology", required = false) String typology,
+				@RequestParam(name = "quantity", required = false) String quantity,
+				@RequestParam(name = "description", required = false) String description){
+
+			if(productService.checkParameters(name, typology, quantity)) {
+				Product product = productService.addProduct(name, typology, quantity, description);
+				if(product != null) {
+					model.addAttribute("product", product);
+					model.addAttribute("registered" , "Prodotto aggiunto correttamente");
+				}else {
+					model.addAttribute("error", "Attenzione, qualcosa è andato storto. Controllare i dati inseriti e che il prodotto non sia gia' presente in magazzino");	
+				}
+			}else {
+				model.addAttribute("error", "Attenzione, inserire tutti i campi obbligatori (nome, password e quantità)");
+				
+			}		
+			return "add_new_product";
+		}
+		
+		@RequestMapping(value = {"/add_new_product"}, method = RequestMethod.GET)
+		public String addProductGet(HttpServletRequest request) {
+
+			return "add_new_product";
+		}
 
 }

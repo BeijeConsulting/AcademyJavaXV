@@ -78,6 +78,22 @@ public class Product {
 		this.description = description;
 	}
 	
+	public boolean isEmpy() {
+		boolean isEmpy = true;
 	
+		if(this.name != null ) isEmpy  = false;		
+		if(this.typology != null && isEmpy == true) isEmpy  = false;				
+		if(this.quantity > -1 && isEmpy == true) isEmpy  = false;
+
+		return isEmpy;
+	}
+	
+	public boolean checkParameters() {
+		if(name.length() <= 0) return false;	
+		if(typology.length() <= 0) return false;
+		if(quantity < 0) return false;
+		
+		return true;
+	}
 	
 }

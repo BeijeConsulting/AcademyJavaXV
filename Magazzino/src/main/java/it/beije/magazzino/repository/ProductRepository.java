@@ -15,9 +15,14 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 
 	public abstract List<Product> findAll();
 	
+	public abstract Product findByNameAndTypology(String name, String typology);
+	
 	@Query(nativeQuery = true, value = "SELECT * FROM products WHERE id = :id")//JDBC
 	public abstract Product loadById(@Param("id") Integer id);
 	
 	@Query(nativeQuery = true, value = "SELECT * FROM products")//JDBC
 	public abstract List<Product> loadAllProducts();
+	
+//	@Query(nativeQuery = true, value = "SELECT * FROM products WHERE name = :name AND ")//JDBC
+//	public abstract List<Product> loadAllProducts();
 }

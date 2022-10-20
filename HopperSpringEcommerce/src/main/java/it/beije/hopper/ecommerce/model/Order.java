@@ -17,6 +17,9 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
@@ -57,9 +60,9 @@ public class Order {
 	@Column(name = "promo")
 	private Double promo;
 
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name = "order_id")
-	private List<Item> items;
+//	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinColumn(name = "order_id")
+//	private List<Item> items;
 	
 
 	public Integer getId() {
@@ -112,13 +115,13 @@ public class Order {
 		this.promo = promo;
 	}
 
-	public List<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(List<Item> items) {
-		this.items = items;
-	}
+//	public List<Item> getItems() {
+//		return items;
+//	}
+//
+//	public void setItems(List<Item> items) {
+//		this.items = items;
+//	}
 	
 	@JsonGetter(value = "order_code")
 	public String getOrderCode() {
@@ -132,7 +135,7 @@ public class Order {
 				.append(", datetime : ").append(this.datetime)
 				.append(", amount : ").append(this.amount)
 				.append(", promo : ").append(this.promo)
-				.append(", items : ").append(this.items)
+//				.append(", items : ").append(this.items)
 				.append(" }");
 		
 		return builder.toString();

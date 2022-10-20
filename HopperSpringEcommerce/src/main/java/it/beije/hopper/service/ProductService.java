@@ -26,7 +26,18 @@ public class ProductService {
 	public List<Product> findAll() {
 		return productRepository.findAll();
 	}
+	
+	public Product findById(Integer id) {
+		Optional<Product> u = productRepository.findById(id);
+		
+		if (!u.isPresent()) throw new IllegalArgumentException("Prodotto non trovato con id " + id);
 
+		return u.get();
+	}
+	
+	public Product save(Product product) {
+		return productRepository.save(product);
+	}
 
 	public List<Product> loadProduct() {
 

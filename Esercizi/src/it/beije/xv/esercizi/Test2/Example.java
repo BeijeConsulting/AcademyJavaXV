@@ -342,12 +342,156 @@ package it.beije.xv.esercizi.Test2;
 //    }
 //}
 
-class TestClass{
+//class TestClass{
+//    public static void main(String[] args){
+//        new TestClass().sayHello(); }   //1
+//
+//    public static void sayHello(){
+//        System.out.println("Static Hello World"); }  //2
+//
+//    public void sayHello() { System.out.println("Hello World "); }  //3
+//}
+
+//class InitTest{
+//    public InitTest(){
+//        s1 = sM1("1");
+//    }
+//    static String s1 = sM1("a");
+//    String s3 = sM1("2");{
+//        s1 = sM1("3");
+//    }
+//    static{
+//        s1 = sM1("b");
+//        System.out.println("Fanculo!");
+//    }
+//    static String s2 = sM1("c");
+//    String s4 = sM1("4");
+//    public static void main(String args[]){
+//        InitTest it = new InitTest();
+//    }
+//    private static String sM1(String s){
+//        System.out.println(s);  return s;
+//    }
+//}
+
+
+//class TestClass{
+//    char c;
+//    public void m1(){
+//        char[ ] cA = { 'a' , 'b'};
+//        m2(c, cA);
+//        System.out.println( ( (int)c)  + "," + cA[1] );
+//    }
+//    public void m2(char c, char[ ] cA){
+//        c = 'b';
+//        cA[1] = cA[0] = 'm';
+//    }
+//    public static void main(String args[]){
+//        new TestClass().m1();
+//    }
+//}
+
+
+//class TestClass {
+//    static TestClass ref;
+//    String[] arguments;
+//
+//
+//    public void tester(int a){
+//        System.out.println("Awoos");
+//    }
+////    public void tester(int a){
+////        System.out.println("Awoos222");
+////    }
+//    public static void main(String args[]) {
+//        ref = new TestClass();
+//        ref.func(args);
+//    }
+//
+//    public void func(String[] args) {
+//        ref.arguments = args;
+//    }
+//}
+
+//class XXX {
+//    public void m() throws Exception {
+//        throw new Exception();
+//    }
+//}
+//
+//class YYY extends XXX {
+//    public void m() {
+//    }
+//    public int m(int a){
+//        return 1;
+//    }
+//
+//    public static void main(String[] args) {
+//        XXX obj = new YYY();
+//        try{
+//            obj.m();
+//        }catch(Exception exc){
+//            System.out.println("sssss");
+//        }
+//
+//    }
+//}
+
+
+//class Holder{
+//    int value = 1;
+//    Holder link;
+//    public Holder(int val){ this.value = val; }
+//    public static void main(String[] args){
+//        final Holder a = new Holder(5);
+//        Holder b = new Holder(10);
+//        a.link = b;
+//        b.link = setIt(a, b);
+//        System.out.println(a.link.value+" "+b.link.value);
+//    }
+//
+//    public static Holder setIt(final Holder x, final Holder y){
+//        x.link = y.link;
+//        return x;
+//    }
+//
+//}
+
+abstract class A {
+
+    public abstract void yo();
+
+    public abstract void yo2();
+
+    public void yo3(){
+        System.out.println("Yo 3");
+    }
+
+}
+
+abstract class  AA extends A {
+    public abstract void yo4();
+}
+class B extends AA{
+//    public static void yo(){
+//        System.out.println("Wazzup 2");
+//    }
+
+    public void yo(){
+        System.out.println("Wazzup");
+    }
+
+    @Override
+    public void yo2() {
+
+    }
+    @Override
+    public void yo4() {
+
+    }
     public static void main(String[] args){
-        new TestClass().sayHello(); }   //1
+       new B().yo3();
+    }
 
-    public static void sayHello(){
-        System.out.println("Static Hello World"); }  //2
 
-    public void sayHello() { System.out.println("Hello World "); }  //3
 }

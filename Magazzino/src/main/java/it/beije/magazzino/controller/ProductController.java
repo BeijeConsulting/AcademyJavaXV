@@ -28,6 +28,8 @@ public class ProductController {
 	@Autowired
 	private SpedizioneService spedizioneService;
 	
+	
+	
 	@Autowired
 	private ProductService productService;
 	
@@ -151,6 +153,7 @@ public class ProductController {
 	        return "spedizioni"; 
 
 	    }
-
+	  
+	 
 
 }

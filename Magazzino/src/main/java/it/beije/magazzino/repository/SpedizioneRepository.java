@@ -15,6 +15,7 @@ import it.beije.magazzino.model.Spedizione;
 public interface SpedizioneRepository extends JpaRepository<Spedizione, Integer>{
 	
 	public abstract List<Spedizione> findAll();
+	
 	 
 	
 }

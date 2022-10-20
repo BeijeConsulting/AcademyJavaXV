@@ -6,6 +6,7 @@
 
 		<class>it.beije.magazzino.model.Product</class>
 		<class>it.beije.magazzino.model.Spedizione</class>
+		
 		<class>it.beije.magazzino.model.ContenutoProdotto</class>
 		
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>

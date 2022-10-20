@@ -71,10 +71,31 @@ public class ProductRestController {
 		
 	}
 	
-	@RequestMapping(value = {"/list_product_by_typology/{typology}"}, method = RequestMethod.GET)
+	//@RequestMapping(value = {"/list_product_by_typology/{typology}"}, method = RequestMethod.GET)
+	@GetMapping(value = "/list_product_by_typology/{typology}")
 	public List<Product> listProductByTypology(@PathVariable(name = "typology") String typology) {
-
 		return productService.listByTypology(typology);
+	}
+	
+	
+	//@RequestMapping(value = {"/list_product_by_name_description"}, method = RequestMethod.GET)
+	@GetMapping(value = "/list_product_by_name/{name}")
+	public List<Product> listProductByName(
+			@PathVariable(name = "name") String name){
+		return  productService.listByNameDescription(name, null);
+	}
+	
+	@GetMapping(value = "/list_product_by_description/{description}")
+	public List<Product> listProductByDescription(
+			@PathVariable(name = "description") String description){
+		return  productService.listByNameDescription(null, description);
+	}
+	
+	@GetMapping(value = "/list_product_by_description/{name}/conf/{description}")
+	public List<Product> listProductByNameDescription(
+			@PathVariable(name = "name") String name,
+			@PathVariable(name = "description") String description){
+		return  productService.listByNameDescription(name, description);
 	}
 	
 }

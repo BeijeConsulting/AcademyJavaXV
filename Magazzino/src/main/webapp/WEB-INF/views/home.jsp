@@ -17,5 +17,25 @@
 		<input type="submit" value="Cerca descrizione tramite id">
 	</form>
 	
+	<form action="./add_new_product" method="get">
+		<input type="submit" value="Crea nuovo prodotto">
+	</form>
+	
+	<form action="./alter_product" method="get">
+		<input type="submit" value="Modifica prodotto">
+	</form>
+
+	<form action="./delete_product" method="get">
+		<input type="submit" value="Cancella Prodotto">
+	</form>
+	
+	<form action="./list_product_by_typology" method="get">
+		<input type="submit" value="Lista prodotti by tipologia">
+	</form>
+	
+	<form action="./list_product_by_name_description" method="get">
+		<input type="submit" value="Lista prodotti by nome o/e descrizione">
+	</form>
+
 </body>
 </html>

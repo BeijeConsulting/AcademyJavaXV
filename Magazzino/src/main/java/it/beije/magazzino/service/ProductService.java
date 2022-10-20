@@ -161,9 +161,23 @@ public class ProductService {
 			return false;
 		}
 	}
-	
+
 	public List<Product> listByTypology(String typology){
 		return productRepository.findByTypology(typology);
+	}
+
+
+	public List<Product> listByNameDescription(String name, String description){
+
+		if(name != null && description != null) {
+			if(name.length() > 0 && description.length() > 0) return productRepository.findByNameAndDescription(name, description);		
+		}
+		
+		if(name != null && name.length() > 0) return productRepository.findByName(name);
+		
+		if(description != null && description.length() > 0) return productRepository.findByDescription(description);
+		
+		return null;
 	}
 
 }

@@ -4,6 +4,8 @@
 
 		
 		<class>it.beije.magazzino.model.Prodotto</class>
+		<class>it.beije.magazzino.model.Spedizione</class>
+		<class>it.beije.magazzino.model.ContenutoSpedizione</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>

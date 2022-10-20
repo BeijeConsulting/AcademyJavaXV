@@ -10,12 +10,13 @@
 <body>
 <body style="background-color:powderblue;">
 
-<form action="findprodotto">
-	<button>ProdottoById</button>
-</form>
-
+<h1>PRODOTTI</h1>
 <form action="getprodotti">
 	<button>Tutti i prodotti</button>
+</form>
+
+<form action="findprodotto">
+	<button>ProdottoById</button>
 </form>
 
 <form action="insertprodotto">
@@ -28,6 +29,15 @@
 
 <form action="deleteprodotto">
 	<button>Elimina prodotto</button>
+</form>
+
+<h1>SPEDIZIONI</h1>
+<form action="getspedizioni">
+	<button>Tutte le spedizioni</button>
+</form>
+
+<form action="idspedizione">
+	<button>Singola spedizione con contenuto</button>
 </form>
 
 </body>

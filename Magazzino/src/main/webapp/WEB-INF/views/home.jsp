@@ -13,5 +13,9 @@
 		<input type="submit" value="Lista di tutti i prodotti">
 	</form>
 	
+		<form action="./show_description" method="get">
+		<input type="submit" value="Cerca descrizione tramite id">
+	</form>
+	
 </body>
 </html>

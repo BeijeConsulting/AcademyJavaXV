@@ -24,4 +24,10 @@ public class ProductRestController {
 		return productService.listAllProduct();			
 	}
 	
+	@GetMapping(value = "/show_description/{id}")
+	public Product showDescription(@PathVariable(name = "id") String id) {	
+		return productService.getProductById(id);			
+	}
+	
+	
 }

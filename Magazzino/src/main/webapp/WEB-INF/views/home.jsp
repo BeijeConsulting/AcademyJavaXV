@@ -9,43 +9,84 @@
       <h1 style="color: blue">Benvenuto in Magazzino</h1>
 
 
-      <p style="color: red">${errore}</p>
+      <p style="color: red">${error}</p>
 
+      <p style="font-family:Comic Sans MS" >
+         <a href="#" onclick="document.getElementById('listP').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden')">Lista Prodotti</a> |
+         <a href="#" onclick="document.getElementById('infoP').removeAttribute('hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden')">Dettaglio Prodotto</a> |
+         <a href="#" onclick="document.getElementById('newP').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden')">Nuovo Prodotto</a> |
+         <a href="#" onclick="document.getElementById('editP').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden')">Modifica Prodotto</a> |
+         <a href="#" onclick="document.getElementById('deleteP').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden')">Elimina Prodotto</a> |
+         <a href="#" onclick="document.getElementById('findPbyTipo').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyNome_Desc').setAttribute('hidden','hidden')">Lista Prodotti per Tipo</a> |
+         <a href="#" onclick="document.getElementById('findPbyNome_Desc').removeAttribute('hidden');document.getElementById('infoP').setAttribute('hidden','hidden');document.getElementById('listP').setAttribute('hidden','hidden');document.getElementById('newP').setAttribute('hidden','hidden');document.getElementById('editP').setAttribute('hidden','hidden');document.getElementById('deleteP').setAttribute('hidden','hidden');document.getElementById('findPbyTipo').setAttribute('hidden','hidden')">Lista Prodotto per Nome |& Desc</a>
+
+      </p>
+
+      <div id="listP" hidden="hidden">
          <form action="./listP" method="get">
-            <input type="submit" value="Lista Prodotti">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="infoP" hidden="hidden">
          <form action="./infoP" method="get">
-            <input type="text" name="id" value="id">
-            <input type="submit" value="Dettaglio Prodotto">
+            <label for="id">ID:</label>
+            <input type="text" name="id" value="">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="newP" hidden="hidden">
          <form action="./newP" method="post">
-            <input type="text" name="nome" value="nome">
-            <input type="text" name="tipo" value="tipo">
-            <input type="text" name="quantita" value="quantita">
-            <input type="text" name="descrizione" value="descrizione">
-            <input type="submit" value="Inserisci Prodotto">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="">
+            <label for="tipo">Tipo:</label>
+            <input type="text" name="tipo" value="">
+            <label for="quantita">Quantità:</label>
+            <input type="text" name="quantita" value="">
+            <label for="descrizione">Descrizione:</label>
+            <input type="text" name="descrizione" value="">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="editP" hidden="hidden">
          <form action="./editP" method="post">
-            <input type="text" name="id" value="id">
-            <input type="text" name="campo" value="campo">
-            <input type="text" name="valore" value="valore">
-            <input type="submit" value="Modifica Prodotto">
+            <label for="id">ID:</label>
+            <input type="text" name="id" value="">
+            <label for="campo">Campo:</label>
+            <input type="text" name="campo" value="">
+            <label for="valore">Valore:</label>
+            <input type="text" name="valore" value="">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="deleteP" hidden="hidden">
          <form action="./deleteP" method="get">
-            <input type="text" name="id" value="id">
-            <input type="submit" value="Elimina Prodotto">
+            <label for="id">ID:</label>
+            <input type="text" name="id" value="">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="findPbyTipo" hidden="hidden">
          <form action="./findPbyTipo" method="get">
-            <input type="text" name="tipo" value="tipo">
-            <input type="submit" value="Lista Prodotti(tipo)">
+            <label for="tipo">Tipo:</label>
+            <input type="text" name="tipo" value="">
+            <input type="submit" value="Conferma">
          </form>
+      </div>
+
+      <div id="findPbyNome_Desc" hidden="hidden">
          <form action="./findPbyNome_Desc" method="get">
-            <input type="text" name="nome" value="nome">
-            <input type="text" name="descrizione" value="descrizione">
-            <input type="submit" value="Lista Prodotti(nome o/e desc)">
+            <label for="nome">Nome:</label>
+            <input type="text" name="nome" value="">
+            <label for="descrizione">Descrizione:</label>
+            <input type="text" name="descrizione" value="">
+            <input type="submit" value="Conferma">
          </form>
-
-
+      </div>
 
    </body>
 </html>

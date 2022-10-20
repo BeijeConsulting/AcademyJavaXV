@@ -214,14 +214,10 @@ public class ProductController {
 			@RequestParam(name = "name", required = false) String name,
 			@RequestParam(name = "description", required = false) String description) {
 
-		System.out.println("Ciao");
 		//Mostra la lista dei prodotti presenti in magazzino
-		if(name != null) System.out.println(name);
-		if(description != null) System.out.println(description);
 		List<Product> products = productService.listByNameDescription(name, description);
-		if(products != null) for(Product p : products) System.out.println(p);
+	
 		if(products != null && products.size() > 0) {
-			System.out.println(name + " " + description);
 			model.addAttribute("products" , products);
 		}else {
 			model.addAttribute("error" , "Non ci sono oggeti nel magazzino con questi parametri");

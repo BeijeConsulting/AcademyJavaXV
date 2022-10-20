@@ -9,12 +9,27 @@ CREATE TABLE `hopper`.`prodotto` (
  */
 package it.beije.magazzino.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "prodotto")
 public class Prodotto {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Integer id;
+
+    @Column(name = "nome")
     private String nome;
+
+    @Column(name = "tipologia")
     private String tipologia;
-    private int quantita;
+
+    @Column(name = "quantita")
+    private Integer quantita;
+
+    @Column(name = "descrizione")
     private String descrizione;
 
     public int getId() {
@@ -55,5 +70,16 @@ public class Prodotto {
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
+    }
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", tipologia='" + tipologia + '\'' +
+                ", quantita=" + quantita +
+                ", descrizione='" + descrizione + '\'' +
+                '}';
     }
 }

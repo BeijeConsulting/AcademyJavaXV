@@ -142,13 +142,25 @@ public class ProductController {
 		return "hello";
 	}
 
-//	@RequestMapping(value = "/test_rest", method = RequestMethod.GET)
-//	@ResponseBody public List<User> testRest() {
-//		System.out.println("GET test_rest...");
-//
-//		List<User> lista = userService.loadLastClients(LocalDate.now().minusMonths(1));
-//		System.out.println("lista : " + lista);
-//
-//		return lista;
-//	}
+	// Pagina che restituisce la lista di tutti i prodotti di una specifica tipologia
+	@RequestMapping(value="/productbytype-form", method=RequestMethod.GET)
+	public String productbytypeform(@ModelAttribute("product") Product product, Model model){
+		List<Product> products = productService.findAll();
+		model.addAttribute("products", products);
+		return "productbytype-form";
+	}
+
+
+	@RequestMapping(value="/productbytype", method=RequestMethod.POST)
+	public String productbytype(@ModelAttribute("product") Product product, Model model){
+
+		System.out.println("product by type:" + product);
+		List<Product> products = productService.findByType(product.getType());
+		System.out.println("Products by type: " + products);
+		model.addAttribute("products", products);
+		model.addAttribute("type", products.get(0).getType());
+		return "productbytype";
+	}
+
+
 }

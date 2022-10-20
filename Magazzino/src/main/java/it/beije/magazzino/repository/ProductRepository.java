@@ -19,4 +19,7 @@ public interface ProductRepository extends JpaRepository<Product, Integer> {
         public abstract Product save(Product product);
 
         public abstract void deleteById(Integer id);
+
+
+        public abstract List<Product> findByType(String type);
 }

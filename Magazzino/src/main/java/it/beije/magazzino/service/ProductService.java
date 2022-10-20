@@ -37,4 +37,8 @@ public class ProductService {
 
     public void deleteById(Integer id){ productRepository.deleteById(id);}
 
+    public List<Product> findByType(String type){
+        return productRepository.findByType(type);
+    }
+
 }

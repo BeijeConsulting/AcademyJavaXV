@@ -14,6 +14,9 @@
          <li><a href="./modifyproduct-form"> Pagina per la modifica di un prodotto esistente</a></li>
 
          <li><a href="./deleteproduct-form"> Pagina per la cancellazione di un prodotto</a></li>
+
+         <li><a href="./productbytype-form">Pagina che restituisce la lista di tutti i prodotti di una specifica tipologia</a></li>
+
       </ul>
 
 

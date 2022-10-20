@@ -14,6 +14,7 @@ public class JpaEntityManager {
 	
 	@Bean(name = "entityManagerFactory")
 	public static synchronized EntityManagerFactory getInstance() {
+		System.out.println("###########################################  CIAOO");
 		try {
 			if (emfactory == null) {
 				emfactory = Persistence.createEntityManagerFactory("magazzino");

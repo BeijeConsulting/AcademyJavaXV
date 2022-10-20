@@ -6,7 +6,7 @@ import javax.persistence.*;
    CREATE TABLE `magazzino`.`products` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(45) NOT NULL,
-  `tipologia` VARCHAR(12) NOT NULL,
+  `tipologia` VARCHAR(20) NOT NULL,
   `quantita` INT NOT NULL,
   `descrizione` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`id`));
@@ -68,5 +68,16 @@ public class Prodotto {
 
     public void setDescrizione(String descrizione) {
         this.descrizione = descrizione;
+    }
+
+    @Override
+    public String toString() {
+        return "Prodotto{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", tipologia='" + tipologia + '\'' +
+                ", quantita=" + quantita +
+                ", descrizione='" + descrizione + '\'' +
+                '}';
     }
 }

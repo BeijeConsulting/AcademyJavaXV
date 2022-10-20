@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProdottoService {
@@ -23,6 +24,13 @@ public class ProdottoService {
 
     public List<Prodotto> loadAll(){
         return prodottoRepository.loadAll();
+    }
+
+    public Prodotto findById(Integer id){
+        Optional<Prodotto> prodotto = prodottoRepository.findById(id);
+        if(!prodotto.isPresent()) throw new IllegalArgumentException("Prodotto non trovato id: " + id);
+
+        return prodotto.get();
     }
 
 

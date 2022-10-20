@@ -161,5 +161,9 @@ public class ProductService {
 			return false;
 		}
 	}
+	
+	public List<Product> listByTypology(String typology){
+		return productRepository.findByTypology(typology);
+	}
 
 }

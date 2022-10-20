@@ -189,5 +189,23 @@ public class ProductController {
 		return "delete_product";
 	}
 
+	
+	@RequestMapping(value = {"/list_product_by_typology"}, method = RequestMethod.GET)
+	public String listProductByTypology(
+			HttpServletRequest request, 
+			Model model,
+			@RequestParam(name = "typology", required = false) String typology) {
+
+		//Mostra la lista dei prodotti presenti in magazzino
+		List<Product> products = productService.listByTypology(typology);
+		if(products != null) for(Product p : products) System.out.println(p);
+		if(products != null && products.size() > 0) {
+			model.addAttribute("products" , products);
+		}else {
+			model.addAttribute("error" , "Non ci sono oggeti nel magazzino con questa tipologia");
+		}
+
+		return "list_product_by_typology";
+	}
 
 }

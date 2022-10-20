@@ -1,35 +1,36 @@
 package it.beije.musicstore.model;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonGetter;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSetter;
+import com.fasterxml.jackson.annotation.*;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
 @Entity
-@Table(name="canzone")
+@Table(name = "canzone")
+@JsonInclude(JsonInclude.Include.NON_NULL)
+
 public class Canzone {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Integer id;
     @JsonProperty(value = "id_artista")
-    @Column(name="id_artista")
+    @Column(name = "id_artista")
     private Integer idArtista;
     @JsonProperty(value = "id_album")
-    @Column(name="id_album")
+    @Column(name = "id_album")
     private Integer idAlbum;
 
-    @Column(name="titolo")
+    @Column(name = "titolo")
     private String titolo;
 
-    @Column(name="data_uscita")
+    @Column(name = "data_uscita")
     private LocalDateTime data;
 
-    @Column(name="genere")
+    @Column(name = "genere")
     private String genere;
 
     public Integer getId() {
@@ -47,14 +48,17 @@ public class Canzone {
     public void setIdArtista(Integer idArtista) {
         this.idArtista = idArtista;
     }
+
     @JsonGetter(value = "data")
     public String getDatetimeAsString() {
         return data.format(DateTimeFormatter.BASIC_ISO_DATE);
     }
+
     @JsonSetter(value = "data")
     public void setDatetime(String datetime) {
-        this.data = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+        this.data = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
     }
+
     public Integer getIdAlbum() {
         return idAlbum;
     }

@@ -13,8 +13,23 @@ public class CanzoneService {
     @Autowired
     private CanzoneRepository canzoneRepository;
 
-    public Canzone getCanzoneById (Integer id) {
+    public Canzone getCanzoneById(Integer id) {
         Optional<Canzone> canzone = canzoneRepository.findById(id);
         return canzone.get();
+    }
+
+    public Canzone save(Canzone canzone) {
+        return canzoneRepository.save(canzone);
+    }
+
+    public boolean deleteCanzone(Integer id) {
+        boolean status;
+        if (canzoneRepository.findById(id).isPresent()) {
+            status = true;
+            canzoneRepository.deleteById(id);
+        } else {
+            status = false;
+        }
+        return status;
     }
 }

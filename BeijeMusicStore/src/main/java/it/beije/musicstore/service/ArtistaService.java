@@ -15,20 +15,34 @@ public class ArtistaService {
     private ArtistaRepository artistaRepository;
 
     public Artista findByNome(String nome) {
-       return artistaRepository.findByNome(nome);
+        return artistaRepository.findByNome(nome);
     }
+
     public List<Artista> findByGenere(String genere) {
         return artistaRepository.findByGenere(genere);
     }
+
     public Artista findById(Integer id) {
         Optional<Artista> artista = artistaRepository.findById(id);
         return artista.get();
     }
-    public Artista addArtista(Artista artista){
+
+    public Artista addArtista(Artista artista) {
         return artistaRepository.save(artista);
     }
 
-    public Artista addOnlyArtista(Artista artista){
+    public Artista addOnlyArtista(Artista artista) {
         return artistaRepository.save(artista);
+    }
+
+    public boolean deleteArtista(Integer id) {
+        boolean status;
+        if (artistaRepository.findById(id).isPresent()) {
+            status = true;
+            artistaRepository.deleteById(id);
+        } else {
+            status = false;
+        }
+        return status;
     }
 }

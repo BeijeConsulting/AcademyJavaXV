@@ -6,31 +6,33 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSetter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @Entity
-@Table(name="album")
+@Table(name = "album")
 public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Integer id;
     @JsonProperty(value = "id_artista")
-    @Column(name="id_artista")
+    @Column(name = "id_artista")
     private Integer idArtista;
 
-    @Column(name="titolo")
+    @Column(name = "titolo")
     private String titolo;
 
-    @Column(name="data_di_uscita")
+    @Column(name = "data_di_uscita")
     private LocalDateTime data;
 
-    @Column(name="genere")
+    @Column(name = "genere")
     private String genere;
 
-    @Column(name="n_canzoni")
+    @Column(name = "n_canzoni")
     private Integer nCanzoni;
     @JsonProperty(value = "id_album")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
@@ -71,12 +73,14 @@ public class Album {
 
     @JsonSetter(value = "data")
     public void setDatetime(String datetime) {
-        this.data = LocalDateTime.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE);
+        this.data = LocalDateTime.of(LocalDate.parse(datetime, DateTimeFormatter.BASIC_ISO_DATE), LocalTime.of(0, 0));
     }
+
     @JsonGetter(value = "data")
     public String getDatetimeAsString() {
         return data.format(DateTimeFormatter.BASIC_ISO_DATE);
     }
+
     public String getGenere() {
         return genere;
     }

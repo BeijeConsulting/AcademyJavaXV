@@ -4,17 +4,17 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="artista")
+@Table(name = "artista")
 public class Artista {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
+    @Column(name = "id")
     private Integer id;
 
-    @Column(name="nome")
+    @Column(name = "nome")
     private String nome;
 
-    @Column(name="genere")
+    @Column(name = "genere")
     private String genere;
 
 //    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

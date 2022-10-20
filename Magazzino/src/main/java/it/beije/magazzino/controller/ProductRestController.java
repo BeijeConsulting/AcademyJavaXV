@@ -42,5 +42,13 @@ public class ProductRestController {
 	   
 	      return prodotto; // /WEB-INF/views/home.jsp
 	  }
+	 
+	 @PostMapping(value = "/addProd")
+	  public  Product AddProd( @RequestBody Product prod) {      
+		 productService.save(prod);
+	     
+	   
+	      return prod; // /WEB-INF/views/home.jsp
+	  }
 
 }

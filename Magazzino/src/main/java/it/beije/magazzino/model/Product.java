@@ -28,18 +28,16 @@ public class Product {
 	
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "typology")
 	private String typology;
-	
+
 	@Column(name = "quantity")
 	private Integer quantity;
-	
+
 	@Column(name = "description")
 	private String description;
 
-	
-	//Get and Set ID
 	public Integer getId() {
 		return id;
 	}
@@ -48,8 +46,6 @@ public class Product {
 		this.id = id;
 	}
 
-	
-	//Get and Set Name
 	public String getName() {
 		return name;
 	}
@@ -58,8 +54,6 @@ public class Product {
 		this.name = name;
 	}
 
-	
-	//Get and Set Typology
 	public String getTypology() {
 		return typology;
 	}
@@ -68,8 +62,6 @@ public class Product {
 		this.typology = typology;
 	}
 
-	
-	//Get and Set Quantity
 	public Integer getQuantity() {
 		return quantity;
 	}
@@ -78,8 +70,6 @@ public class Product {
 		this.quantity = quantity;
 	}
 
-	
-	//Get and Set description
 	public String getDescription() {
 		return description;
 	}

@@ -8,5 +8,10 @@
 </head>
 <body>
 	<h1>BENVENUTO NEL NOSTRO MAGAZZINO</h1>
+	
+	<form action="./all_products" method="get">
+		<input type="submit" value="Lista di tutti i prodotti">
+	</form>
+	
 </body>
 </html>

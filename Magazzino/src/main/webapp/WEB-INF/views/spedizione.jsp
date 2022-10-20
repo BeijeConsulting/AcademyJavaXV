@@ -9,8 +9,15 @@
 <title>Spedizioni</title>
 </head>
 <body>
-<c:forEach items="${spedizione}" var="p">
-	${p.id}
+<body style="background-color:powderblue;">
+<c:forEach items="${spedizione}" var="s">
+	<br><strong>Codice:</strong>${s.codice} <strong><br>DESTINATARIO:</strong>${s.destinatario}
+	<strong>INDIRIZZO:</strong>${s.indirizzo}<br> <strong>DATA SPEDIZIONE:</strong>${s.dataSpedizione}
+	<strong>DATA RICEZIONE:</strong>${s.dataRicezione}<br>
 </c:forEach>
+
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 </body>
 </html>

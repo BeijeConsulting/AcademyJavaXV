@@ -8,9 +8,14 @@
 <title>Prodotto By Id</title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 <h1>Prodotto By Id</h1>
 
-${prodotto}
+<br><strong>Nome:</strong>${prodotto.nome} <strong>TIPOLOGIA:</strong>${prodotto.tipologia} 
+	<strong>QUANTITA':</strong>${prodotto.quantita} <strong>DESCRIZIONE:</strong>${prodotto.descrizione}
 
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 </body>
 </html>

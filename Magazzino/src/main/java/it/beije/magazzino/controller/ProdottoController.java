@@ -59,11 +59,9 @@ public class ProdottoController {
 		prodotto.setTipologia(tipologia);
 		prodotto.setQuantita(quantita);
 		prodotto.setDescrizione(descrizione);
-
+		
 		prodottoService.insert(prodotto);
-
-		String stringa="insert";
-		model.addAttribute("insert",stringa);
+		model.addAttribute("prodotto", prodotto);
 		return "insertedprodotto";
 	}
 
@@ -72,7 +70,7 @@ public class ProdottoController {
 
 		List<Prodotto> prodotti = prodottoService.getAll();
 		model.addAttribute("prodotti", prodotti);
-
+		
 		return "updateprodotto";
 	}
 
@@ -94,8 +92,6 @@ public class ProdottoController {
 		prodottoService.insert(prodotto);
 
 		model.addAttribute("prodotto", prodotto);
-		String stringa="update";
-		model.addAttribute("update",stringa);
 		return "insertedprodotto";
 	}
 	

@@ -9,6 +9,7 @@
 <title></title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 
 <p>Lista prodotti presenti nel database</p>
 <c:forEach items="${prodotti}" var="p">
@@ -31,6 +32,9 @@
   <input type="submit" value="Submit">
 </form>
 
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 
 </body>
 </html>

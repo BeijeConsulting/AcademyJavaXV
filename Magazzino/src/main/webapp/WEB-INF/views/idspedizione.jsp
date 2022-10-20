@@ -14,5 +14,9 @@
   	<input type="text" name="id" value=""><br>
   	<input type="submit" value="Submit">
 </form>
+
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 </body>
 </html>

@@ -8,9 +8,14 @@
 <title></title>
 </head>
 <body>
-
+<body style="background-color:powderblue;">
 Database aggiornato
-${prodotto}
 
+<br><strong>Nome:</strong>${prodotto.nome} <strong>TIPOLOGIA:</strong>${prodotto.tipologia} 
+	<strong>QUANTITA':</strong>${prodotto.quantita} <strong>DESCRIZIONE:</strong>${prodotto.descrizione}
+
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 </body>
 </html>

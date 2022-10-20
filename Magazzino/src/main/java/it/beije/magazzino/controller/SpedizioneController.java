@@ -44,6 +44,7 @@ public class SpedizioneController {
 		
 		List<ContenutoSpedizione> contenuto=contenutoSpedizioneService.getBySpedId(id);
 		Spedizione spedizione=spedizioneService.getById(id);
+		System.out.println(contenuto);
 		spedizione.setContenuto(contenuto);
 		model.addAttribute("spedizione",spedizione);
 		return "spedizionecontenuto";

@@ -8,10 +8,14 @@
 <title>Prodotti</title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 <c:forEach items="${prodotti}" var="p">
 	<br><strong>Nome:</strong>${p.nome} <strong>TIPOLOGIA:</strong>${p.tipologia} 
 	<strong>QUANTITA':</strong>${p.quantita} <strong>DESCRIZIONE:</strong>${p.descrizione}
 </c:forEach>
 
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 </body>
 </html>

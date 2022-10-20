@@ -8,6 +8,7 @@
 <title></title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 
 <br><br>
 <form action="fprodotto">
@@ -16,6 +17,9 @@
   	<input type="submit" value="Submit">
 </form>
 
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 
 </body>
 </html>

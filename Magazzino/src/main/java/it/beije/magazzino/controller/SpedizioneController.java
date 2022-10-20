@@ -1,5 +1,8 @@
 package it.beije.magazzino.controller;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -69,6 +72,36 @@ public class SpedizioneController {
 		model.addAttribute("spedizione",spedizione);
 		return "spedizione";
 		
+	}
+	//Inserimento
+	@RequestMapping(value = "insertspedizione", method = RequestMethod.GET)
+	public String insertspedizione(HttpServletRequest request, Model model) throws Exception {
+		return "insertspedizione";
+	}
+
+	@RequestMapping(value = "inspedizione", method = RequestMethod.POST)
+	public String insertedProdotto(HttpServletRequest request, Model model, @RequestParam(name = "codice") String codice,
+			@RequestParam(name = "destinatario") String destinatario, @RequestParam(name = "indirizzo") String indirizzo,
+			@RequestParam(name = "dataSpedizione") String dataSpedizione,@RequestParam(name = "dataRicezione") String dataRicezione) {
+
+		
+		LocalDate date = LocalDate.parse(dataSpedizione);
+		LocalDateTime dataDiSpedizione = date.atStartOfDay();
+		
+		LocalDate date2 = LocalDate.parse(dataRicezione);
+		LocalDateTime dataDiRicezione = date2.atStartOfDay();
+		
+		Spedizione spedizione = new Spedizione();
+		spedizione.setCodice(codice);
+		spedizione.setDestinatario(destinatario);
+		spedizione.setIndirizzo(indirizzo);
+		spedizione.setDataSpedizione(dataDiSpedizione);
+		spedizione.setDataRicezione(dataDiRicezione);
+		
+		
+		spedizioneService.insert(spedizione);
+		model.addAttribute("spedizione", spedizione);
+		return "insertedprodotto";
 	}
 	
 	

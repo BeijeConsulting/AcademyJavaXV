@@ -44,6 +44,10 @@
 	<button>Spedizioni per prodotto</button>
 </form>
 
+<form action="insertspedizione">
+	<button>Inserire prodotto</button>
+</form>
+
 
 
 </body>

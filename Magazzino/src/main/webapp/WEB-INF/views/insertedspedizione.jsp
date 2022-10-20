@@ -9,12 +9,10 @@
 </head>
 <body>
 <body style="background-color:powderblue;">
-
 Database aggiornato
 
-<br><strong>Codice:</strong>${spedizione.codice} <strong><br>DESTINATARIO:</strong>${spedizione.destinatario}
-	<strong>INDIRIZZO:</strong>${spedizione.indirizzo}<br> <strong>DATA SPEDIZIONE:</strong>${spedizione.dataSpedizione}
-	<strong>DATA RICEZIONE:</strong>${spedizione.dataRicezione}<br>
+<br><strong>Nome:</strong>${prodotto.nome} <strong>TIPOLOGIA:</strong>${prodotto.tipologia} 
+	<strong>QUANTITA':</strong>${prodotto.quantita} <strong>DESCRIZIONE:</strong>${prodotto.descrizione}
 
 <form action="back">
 	<button>Torna alla home</button>

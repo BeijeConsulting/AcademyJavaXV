@@ -25,4 +25,8 @@ public class SpedizioneService {
 			throw new Exception();
 		return spedizione.get();
 	}
+
+	public void insert(Spedizione spedizione) {
+		spedizioneRepository.save(spedizione);
+	}
 }

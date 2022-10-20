@@ -24,7 +24,7 @@ public class ArtistaRestController {
 
 
     @GetMapping(value = "/artista_by_genere/{genere}")
-    public List artistaById(@PathVariable(name = "gemere") String genere) {
+    public List artistaById(@PathVariable(name = "genere") String genere) {
         System.out.println("GET genere : " + genere);
 
         List<Artista> lista = artistaService.findByGenere(genere);

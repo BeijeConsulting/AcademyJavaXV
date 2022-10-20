@@ -1,2 +1,2 @@
 # AcademyJavaXV - Magazzino
-Autore: 
+Autore: Musto Emanuele

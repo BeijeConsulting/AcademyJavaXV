@@ -7,10 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import it.beije.magazzino.model.Shipment;
 import it.beije.magazzino.service.ShipmentService;
@@ -34,4 +32,14 @@ public class ShipmentController {
 
 		return "list_shipment"; 
 	}
+	
+	//listItemByIdShipment
+	
+//		Restituisce la lista di tutte le spedizioni
+//		@RequestMapping(value = {"/list_detail_shipment"}, method = RequestMethod.GET)
+//		public String listDetailsShipment(HttpServletRequest request, Model model) {
+//			Shipment shipments = shipmentService.getByCode(code);
+//
+//			return "list_detail_shipment"; 
+//		}
 }

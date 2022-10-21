@@ -1,6 +1,7 @@
 package it.beije.magazzino.model;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "spedizione")
@@ -33,6 +35,9 @@ public class Shipment {
 	
 	@Column(name = "receipt_data")
 	private LocalDate receiptData;
+	
+	@Transient
+	List<Item> items;
 
 	public Integer getId() {
 		return id;
@@ -83,6 +88,15 @@ public class Shipment {
 	}
 	
 	
+	public List<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Item> items) {
+		this.items = items;
+	}
+	
+
 	public String toString() {
 		return this.id + "-" + this.code + "-" + this.consignee + "-" + this.address + "-" + this.shipmentDate + "-" + this.receiptData;
 	}

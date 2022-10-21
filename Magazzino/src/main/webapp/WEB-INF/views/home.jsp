@@ -37,5 +37,9 @@
 		<input type="submit" value="Lista prodotti by nome o/e descrizione">
 	</form>
 
+	<form action="./all_shipment" method="get">
+		<input type="submit" value="Lista spedizioni">
+	</form>
+
 </body>
 </html>

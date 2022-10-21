@@ -4,7 +4,7 @@
 	
 	<class>it.beije.magazzino.model.Product</class>
 	<class>it.beije.magazzino.model.Shipment</class>
-	<!-- <class>it.beije.magazzino.model.Item</class> -->
+	<class>it.beije.magazzino.model.Item</class>
 	<exclude-unlisted-classes>true</exclude-unlisted-classes>
 		
 		<properties>

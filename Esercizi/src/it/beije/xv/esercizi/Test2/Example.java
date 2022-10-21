@@ -457,41 +457,61 @@ package it.beije.xv.esercizi.Test2;
 //
 //}
 
-abstract class A {
-
-    public abstract void yo();
-
-    public abstract void yo2();
-
-    public void yo3(){
-        System.out.println("Yo 3");
-    }
-
-}
-
-abstract class  AA extends A {
-    public abstract void yo4();
-}
-class B extends AA{
-//    public static void yo(){
-//        System.out.println("Wazzup 2");
+//abstract class A {
+//
+//    public abstract void yo();
+//
+//    public abstract void yo2();
+//
+//    public void yo3(){
+//        System.out.println("Yo 3");
 //    }
+//
+//}
+//
+//abstract class  AA extends A {
+//    public abstract void yo4();
+//}
+//class B extends AA{
+////    public static void yo(){
+////        System.out.println("Wazzup 2");
+////    }
+//
+//    public void yo(){
+//        System.out.println("Wazzup");
+//    }
+//
+//    @Override
+//    public void yo2() {
+//
+//    }
+//    @Override
+//    public void yo4() {
+//
+//    }
+//    public static void main(String[] args){
+//       new B().yo3();
+//    }
+//
+//
+//}
 
-    public void yo(){
-        System.out.println("Wazzup");
+class LoopTest {
+    public static void main(String args[]) {
+        int counter = 0;
+        outer:
+        for (int i = 0; i < 3; i++) {
+            middle:
+            for (int j = 0; j < 3; j++) {
+                inner:
+                for (int k = 0; k < 3; k++) {
+                    if (k - j > 0) {
+                        break middle;
+                    }
+                    counter++;
+                }
+            }
+        }
+        System.out.println(counter);
     }
-
-    @Override
-    public void yo2() {
-
-    }
-    @Override
-    public void yo4() {
-
-    }
-    public static void main(String[] args){
-       new B().yo3();
-    }
-
-
 }

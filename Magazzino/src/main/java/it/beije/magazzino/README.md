@@ -1,0 +1,2 @@
+# AcademyJavaXV - Magazzino
+Autore: Bassani

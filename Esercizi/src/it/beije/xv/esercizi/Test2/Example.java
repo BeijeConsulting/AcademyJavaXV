@@ -495,23 +495,212 @@ package it.beije.xv.esercizi.Test2;
 //
 //
 //}
+//
+//class LoopTest {
+//    public static void main(String args[]) {
+//        int counter = 0;
+//        outer:
+//        for (int i = 0; i < 3; i++) {
+//            middle:
+//            for (int j = 0; j < 3; j++) {
+//                inner:
+//                for (int k = 0; k < 3; k++) {
+//                    if (k - j > 0) {
+//                        break middle;
+//                    }
+//                    counter++;
+//                }
+//            }
+//        }
+//        System.out.println(counter);
+//    }
+//}
 
-class LoopTest {
-    public static void main(String args[]) {
-        int counter = 0;
-        outer:
-        for (int i = 0; i < 3; i++) {
-            middle:
-            for (int j = 0; j < 3; j++) {
-                inner:
-                for (int k = 0; k < 3; k++) {
-                    if (k - j > 0) {
-                        break middle;
-                    }
-                    counter++;
-                }
-            }
-        }
-        System.out.println(counter);
+//class TestClass {
+//    public static void main(String args[]) {
+//        String s = "MINIMUM";
+//        System.out.println(s.substring(4, 7)); //1 --> MUM
+//        System.out.println(s.substring(5)); //2  UM
+//        System.out.println(s.substring(s.indexOf('I', 3))); //3 --> IMUM
+//        System.out.println(s.substring(s.indexOf('I', 4))); //4
+//    }
+//}
+//
+//class TestClass {
+//    public static void main(String[] args) throws Exception {
+//        String[] sa = {"a", "b", "c"};
+//        for (String s : sa) {
+//            if ("b".equals(s)) continue;
+//            System.out.println(s);
+//            if ("b".equals(s)) break;
+//            System.out.println(s + " again");
+//        }
+//    }
+//}
+
+//class A {
+//}
+//
+//class AA extends A {
+//}
+//
+//class TestClass {
+//    public static void main(String[] args) throws Exception {
+//        A a = new A();
+//        AA aa = new AA();
+//        a = aa;
+//        System.out.println("a = "+a.getClass());
+//        System.out.println("aa = "+aa.getClass());
+//    }
+//}
+
+
+//class TestClass{
+//    public static void main(String args[]){
+//        int k = 0;
+//        int m = 0;
+//        for ( int i = 0; i <= 3; i++){
+//            k++;
+//            if ( i == 2){
+//                // line 1
+////                break;
+////                continue;
+//                i = m++;
+//            }
+//            m++;
+//        }
+//        System.out.println( k + ", " + m );
+//    }
+//}
+
+
+//class TestClass {
+//    public static void main(String args[]) {
+//        int k = 0;
+//        int m = 0;
+//        for (int i = 0; i <= 3; i++) {
+//            k++;
+//            if (i == 2) {
+//                // line 1
+//                i=4;
+//            }
+//            m++;
+//        }
+//        System.out.println(k + ", " + m);
+//    }
+//}
+//
+//class X {
+//    public void m() throws Exception {
+//        throw new Exception();
+//    }
+//}
+//
+//class Y extends X {
+//    public void m() {
+//    }
+//
+//    public static void main(String[] args) {
+//        Y obj = new Y();
+//        obj.m();
+//
+//    }
+//}
+
+
+//class NewException extends Exception {
+//}
+//
+//class AnotherException extends Exception {
+//}
+//
+//class ExceptionTest {
+//    public static void main(String[] args) {
+//        try {
+//            m2();
+//        }catch(Exception e){} finally {
+//            m3();
+//        }
+//    }
+//
+//    public static void m2() throws NewException {
+//        throw new NewException();
+//    }
+//
+//    public static void m3() throws AnotherException {
+//        throw new AnotherException();
+//    }
+//}
+
+//class Test{
+//    public static void main(String args[]){
+//        int var = 20, i=0;
+//        do{
+//            while(true){
+//                if( i++ > var) break;
+//            }
+//        }while(i<var--);
+//        System.out.println(var);
+//    }
+//}
+
+//class T{
+//    public static void main(String[] args){
+//        int rate = 10;
+//        int t = 5;
+//        long amount = 1000.0;
+//        for( int i = 0; i < t; i++){
+//            amount = amount*(1-rate/100);
+//        }
+//    }
+//}
+//class BreakTest{
+//    public static void main(String[] args){
+//        int i = 0, j = 5;
+//        lab1 : for( ; ; i++){
+//            for( ; ; --j)  if( i >j ) break lab1;
+//        }
+//        System.out.println(" i = "+i+", j = "+j);
+//    }
+//}
+
+//class FunWithArgs {
+//    public static void main(String[][] args) {
+//        System.out.println(args[0][1]);
+//    }
+//
+//    public static void main(String[] args) {
+//        FunWithArgs fwa = new FunWithArgs();
+//        String[][] newargs = {args};
+//        fwa.main(newargs);
+//    }
+//}
+
+class TestClass {
+//    static int x;
+
+    public static void main(String[] args) {
+//        System.out.println( TestClass.x );
+//        String val = "ddd-ddd-dddd";
+
+//        System.out.println( hidePhone(val) );
+
+//        float d = 0 * 1.5;
+//        int i = (int) false;
+//        float f = 123;
+
     }
+
+
+
+//    public static String hidePhone(String fullPhoneNumber){   //1 Insert code here
+////        return "xxx-xxx-"+fullPhoneNumber.substring(8, 12);
+////        return "xxx-xxx-"+fullPhoneNumber.substring(8, 12);
+////        return new StringBuilder(fullPhoneNumber).replace(0, 7, "xxx-xxx-").toString();
+////
+////        String mask = "xxx-xxx-";
+////
+////        mask.append(fullPhoneNumber.substring(8));
+////        return mask;
+//    }
 }

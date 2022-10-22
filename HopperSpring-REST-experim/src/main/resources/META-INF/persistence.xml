@@ -7,7 +7,7 @@
 		<class>it.beije.hopper.model.Product</class>
 		<class>it.beije.hopper.model.Order</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
-		
+
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/hopper"/>

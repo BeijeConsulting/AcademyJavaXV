@@ -1,4 +1,4 @@
-package it.beije.musicstore;
+package it.beije.magazzino;
 
 
 import org.springframework.context.annotation.Bean;
@@ -12,10 +12,9 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-//@EnableJpaRepositories(value = {"it.beije.hopper.repository", "it.beije.hopper.ecommerce.repository"})
-@EnableJpaRepositories(value = {"it.beije.musicstore.repository"})
+@EnableJpaRepositories(value = {"it.beije.magazzino"})
 public class ConfigurationClass {
-
+	
     @Primary
     @Bean(name="transactionManager")
     public PlatformTransactionManager dbTransactionManager() {
@@ -23,5 +22,5 @@ public class ConfigurationClass {
         transactionManager.setEntityManagerFactory(JpaEntityManager.getInstance());
         return transactionManager;
     }
-
+	
 }

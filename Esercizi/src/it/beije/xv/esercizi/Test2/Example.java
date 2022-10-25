@@ -676,21 +676,21 @@ package it.beije.xv.esercizi.Test2;
 //    }
 //}
 
-class TestClass {
-//    static int x;
-
-    public static void main(String[] args) {
-//        System.out.println( TestClass.x );
-//        String val = "ddd-ddd-dddd";
-
-//        System.out.println( hidePhone(val) );
-
-//        float d = 0 * 1.5;
-//        int i = (int) false;
-//        float f = 123;
-
-    }
-
+//class TestClass {
+////    static int x;
+//
+//    public static void main(String[] args) {
+////        System.out.println( TestClass.x );
+////        String val = "ddd-ddd-dddd";
+//
+////        System.out.println( hidePhone(val) );
+//
+////        float d = 0 * 1.5;
+////        int i = (int) false;
+////        float f = 123;
+//
+//    }
+//
 
 
 //    public static String hidePhone(String fullPhoneNumber){   //1 Insert code here
@@ -703,4 +703,51 @@ class TestClass {
 ////        mask.append(fullPhoneNumber.substring(8));
 ////        return mask;
 //    }
+//}
+
+//
+//class ABCD{
+//    int x = 10;
+//    static int y = 20;
+//}
+//class MNOP extends ABCD{
+//    int x = 30;
+//    static int y = 40;
+//}
+
+//class TestClass {
+//    public static void main(String[] args) {
+////        System.out.println(new ABCD().x+", "+new ABCD().y);
+////        StringBuilder sb = new StringBuilder("abcd");
+////        System.out.println("Value: " + sb);
+////        sb.delete(0, sb.length());
+////        System.out.println("Value: " + sb);
+//
+////        String s = 'b'+63+"a";
+//        String s = 63 + new Integer(10);
+//        System.out.println(s);
+//    }
+//}
+
+
+//class Test{
+//    public static void main(String[] args){
+//        for (int i = 0; i < 10; i++) System.out.print(i + " ");  //1
+//        for (int i = 10; i > 0; i--) System.out.print(i + " ");  //2
+//        int i = 20;                  //3
+//        System.out.print(i + " ");   //4
+//    }
+//}
+
+class TestClass {
+    static String str = "Hello World";
+
+    public static void changeIt(String s) {
+        s = "Good bye world";
+    }
+
+    public static void main(String[] args) {
+        changeIt(str);
+        System.out.println(str);
+    }
 }

@@ -35,7 +35,13 @@ public class SpedizioneController {
 	private SpedizioneService spedizioneService;
 	
 	@Autowired
+	private ProdottoService prodottoService;
+	
+	@Autowired
 	private SpedizioneRepository spedizioneRepository;
+	
+	@Autowired
+	private ProdottoRepository prodottoRepository;
 	
 	public SpedizioneController() {
 		System.out.println("creo un oggetto SpedizioneController...");

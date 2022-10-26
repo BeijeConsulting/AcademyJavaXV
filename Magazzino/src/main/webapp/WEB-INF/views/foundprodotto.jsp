@@ -5,14 +5,14 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Prodotti</title>
+<title>Prodotto By Id</title>
 </head>
 <body>
 <body style="background-color:powderblue;">
-<c:forEach items="${prodotti}" var="p">
-	<br><strong>Nome:</strong>${p.nome} <strong>TIPOLOGIA:</strong>${p.tipologia} 
-	<strong>QUANTITA':</strong>${p.quantita} <strong>DESCRIZIONE:</strong>${p.descrizione}
-</c:forEach>
+<h1>Prodotto By Id</h1>
+
+<br><strong>Nome:</strong>${prodotto.nome} <strong>TIPOLOGIA:</strong>${prodotto.tipologia} 
+	<strong>QUANTITA':</strong>${prodotto.quantita} <strong>DESCRIZIONE:</strong>${prodotto.descrizione}
 
 <form action="back">
 	<button>Torna alla home</button>

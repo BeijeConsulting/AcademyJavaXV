@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,12 +21,18 @@ public class ProdottoController {
 	@Autowired
 	ProdottoService prodottoService;
 
-	@RequestMapping(value = "prodottobyid", method = RequestMethod.GET)
-	public String prodottobyid(HttpServletRequest request, Model model) throws Exception {
+	@RequestMapping(value = "findprodotto", method = RequestMethod.GET)
+	public String findprodotto(HttpServletRequest request, Model model) throws Exception {
 
-		Prodotto prodotto = prodottoService.getById(1);
-		model.addAttribute("prodotto", prodotto);
-		return "prodottobyid";
+		return "findprodotto";
+	}
+	
+	@RequestMapping(value = "fprodotto", method = RequestMethod.GET)
+	public String prodottobyid(HttpServletRequest request, Model model,@RequestParam(name="id")Integer id) throws Exception {
+
+		Prodotto prodotto=prodottoService.getById(id);
+		model.addAttribute("prodotto",prodotto);
+		return "foundprodotto";
 	}
 
 	@RequestMapping(value = "getprodotti", method = RequestMethod.GET)
@@ -52,11 +59,9 @@ public class ProdottoController {
 		prodotto.setTipologia(tipologia);
 		prodotto.setQuantita(quantita);
 		prodotto.setDescrizione(descrizione);
-
+		
 		prodottoService.insert(prodotto);
-
-		String stringa="insert";
-		model.addAttribute("insert",stringa);
+		model.addAttribute("prodotto", prodotto);
 		return "insertedprodotto";
 	}
 
@@ -65,7 +70,7 @@ public class ProdottoController {
 
 		List<Prodotto> prodotti = prodottoService.getAll();
 		model.addAttribute("prodotti", prodotti);
-
+		
 		return "updateprodotto";
 	}
 
@@ -87,8 +92,6 @@ public class ProdottoController {
 		prodottoService.insert(prodotto);
 
 		model.addAttribute("prodotto", prodotto);
-		String stringa="update";
-		model.addAttribute("update",stringa);
 		return "insertedprodotto";
 	}
 	
@@ -110,5 +113,33 @@ public class ProdottoController {
 		String stringa="delete";
 		model.addAttribute("delete",stringa);
 		return "insertedprodotto";
+	}
+	
+	@RequestMapping(value = "tipo", method = RequestMethod.GET)
+	public String tipo(HttpServletRequest request, Model model) throws Exception {
+
+		return "findbytipologia";
+	}
+	
+	@RequestMapping(value = "tipologia", method = RequestMethod.GET)
+	public String findByTipologia(HttpServletRequest request, Model model,@RequestParam(name = "tipologia") String tipologia) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByTipologia(tipologia);
+		model.addAttribute("prodotti",prodotti);
+		return "prodotti";
+	}
+	
+	@RequestMapping(value = "nomedesc", method = RequestMethod.GET)
+	public String nomedesc(HttpServletRequest request, Model model) throws Exception {
+
+		return "findbynomedesc";
+	}
+	@RequestMapping(value = "nomeedesc", method = RequestMethod.GET)
+	public String findByNomeAndCognome(HttpServletRequest request, Model model,@RequestParam(name = "nome") String nome,@RequestParam(name = "descrizione") String descrizione) throws Exception {
+		
+		List<Prodotto> prodotti=prodottoService.getByNomeAndDescrizione(nome,descrizione);
+		
+		model.addAttribute("prodotti",prodotti);
+		return "prodotti";
 	}
 }

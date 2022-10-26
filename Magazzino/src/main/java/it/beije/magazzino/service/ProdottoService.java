@@ -22,6 +22,13 @@ public class ProdottoService {
 	public List<Prodotto> getAll() {
 		return prodottoRepository.findAll();
 	}
+	
+	public List<Prodotto> getByTipologia(String tipologia) {
+		return prodottoRepository.findByTipologia(tipologia);
+	}
+	public List<Prodotto> getByNomeAndDescrizione(String nome,String descrizione){
+		return prodottoRepository.findByNomeAndDescrizione(nome,descrizione);
+	}
 
 	public void insert(Prodotto prodotto) {
 		prodottoRepository.save(prodotto);

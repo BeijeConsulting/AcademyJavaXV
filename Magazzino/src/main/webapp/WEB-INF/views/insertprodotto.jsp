@@ -7,6 +7,7 @@
 <title></title>
 </head>
 <body>
+<body style="background-color:powderblue;">
 <form action="inprodotto" method="post">
   <label for="nome">Nome prodotto:</label><br>
   <input type="text" name="nome" value=""><br>
@@ -19,6 +20,9 @@
   <input type="submit" value="Submit">
 </form>
 
+<form action="back">
+	<button>Torna alla home</button>
+</form>
 
 </body>
 </html>

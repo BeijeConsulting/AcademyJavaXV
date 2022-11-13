@@ -15,24 +15,21 @@ public class ProdottoService {
 	@Autowired
 	ProdottoRepository prodottoRepository;
 	
-	public List<Prodotto> getAllProduct(){		
-		return prodottoRepository.findAll();
+	public List<Prodotto> findAllArticles()	{ return prodottoRepository.findAll(); }
+
+	public Prodotto findSpecificArticle(Integer id){
+		return prodottoRepository.getById(id);
 	}
-	
-	public Optional<Prodotto> getProductsById(Integer id){
-		return prodottoRepository.findById(id);
+
+	public void insert(Prodotto prodotto) { prodottoRepository.save(prodotto); }
+
+	public Prodotto getArticleByType(String tipologia){
+		return prodottoRepository.getProdottoByType(tipologia);
 	}
-	
-	public void saveArticle(Prodotto prodotto) {
-		prodottoRepository.save(prodotto);
+
+	public Prodotto getArticleByName(String name) { return prodottoRepository.getProdottoByName(name); }
+
+	public void deleteSpecificArticle(Integer id){
+		prodottoRepository.deleteById(id);
 	}
-	
-	public void updateProductById(Prodotto prodotto, Integer id){
-		prodottoRepository.save(prodotto, id);
-	}
-	
-	public void deleteProduct(Prodotto prodotto) {
-		prodottoRepository.delete(prodotto);
-	}
-	
 }

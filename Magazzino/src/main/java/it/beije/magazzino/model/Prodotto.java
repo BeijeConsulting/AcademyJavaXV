@@ -20,7 +20,7 @@ CREATE TABLE `hopper`.`prodotto` (
 */
 
 @Entity
-@Table(name = "prodotti")
+@Table(name = "prodotto")
 public class Prodotto {
 	
 	@Id
@@ -28,17 +28,17 @@ public class Prodotto {
 	@Column(name = "id")
 	private Integer id;
 	
-	@Column
-	private String nome;
+	@Column(name="name")
+	private String name;
 	
-	@Column
-	private String tipologia;
+	@Column(name="type")
+	private String type;
 	
-	@Column
-	private Integer quantità;
+	@Column(name="quantity")
+	private Integer quantity;
 	
-	@Column
-	private String descrizione;
+	@Column(name="description")
+	private String description;
 
 	public Integer getId() {
 		return id;
@@ -48,46 +48,45 @@ public class Prodotto {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getTipologia() {
-		return tipologia;
+	public String getType() {
+		return type;
 	}
 
-	public void setTipologia(String tipologia) {
-		this.tipologia = tipologia;
+	public void setType(String type) {
+		this.type = type;
 	}
 
-	public Integer getQuantità() {
-		return quantità;
+	public Integer getQuantity() {
+		return quantity;
 	}
 
-	public void setQuantità(Integer quantità) {
-		this.quantità = quantità;
+	public void setQuantity(Integer quantity) {
+		this.quantity = quantity;
 	}
 
-	public String getDescrizione() {
-		return descrizione;
+	public String getDescription() {
+		return description;
 	}
 
-	public void setDescrizione(String descrizione) {
-		this.descrizione = descrizione;
+	public void setDescription(String description) {
+		this.description = description;
 	}
-	
+
 	public String toString() {
-		
-		StringBuilder prodotto = new StringBuilder()
+	StringBuilder prodotto = new StringBuilder()
 				.append("{ id = " + this.id + "; ")
-				.append("nome = " + this.nome + "; ")
-				.append("tipologia = " + this.tipologia + "; ")
-				.append("quantità = " + this.quantità + "; ")
-				.append("descrizione = " + this.descrizione + " }");
+				.append("nome = " + this.name + "; ")
+				.append("tipologia = " + this.type + "; ")
+				.append("quantità = " + this.quantity + "; ")
+				.append("descrizione = " + this.description + " }");
 		
 		return prodotto.toString();
 	}

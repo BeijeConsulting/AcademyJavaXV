@@ -10,11 +10,10 @@ import it.beije.magazzino.model.Prodotto;
 
 @Repository
 public interface ProdottoRepository extends JpaRepository<Prodotto, Integer>{
-	
-	public abstract List<Prodotto> findAll();
-	public abstract Optional<Prodotto> findById(Integer id);
-	public abstract void save(Prodotto prodotto);
-	public abstract void save(Prodotto prodotto, Integer id);
-	public abstract void delete(Prodotto prodotto);
+
+    public abstract List<Prodotto> findAll();
+    public abstract Prodotto getById(Integer id);
+    public abstract Prodotto getProdottoByType(String tipologia);
+    public abstract Prodotto getProdottoByName(String nome);
 
 }

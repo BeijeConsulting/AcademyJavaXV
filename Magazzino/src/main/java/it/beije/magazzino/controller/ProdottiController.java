@@ -129,7 +129,7 @@ public class ProdottiController {
 	@RequestMapping(value = "article_byType", method = RequestMethod.GET)
 	public String findArticleByType(HttpServletRequest request, Model model, @RequestParam(name = "type") String type){
 
-		Prodotto prodotto = prodottoService.getArticleByType(type);
+		List<Prodotto> prodotto = prodottoService.getArticleByType(type);
 		model.addAttribute("articleByType", prodotto);
 		return "showArticleByType";
 	}

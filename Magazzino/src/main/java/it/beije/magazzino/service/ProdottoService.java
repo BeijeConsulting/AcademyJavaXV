@@ -23,7 +23,7 @@ public class ProdottoService {
 
 	public void insert(Prodotto prodotto) { prodottoRepository.save(prodotto); }
 
-	public Prodotto getArticleByType(String tipologia){
+	public List<Prodotto> getArticleByType(String tipologia){
 		return prodottoRepository.getProdottoByType(tipologia);
 	}
 

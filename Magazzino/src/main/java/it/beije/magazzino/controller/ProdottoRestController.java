@@ -6,6 +6,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,13 +37,13 @@ public class ProdottoRestController {
 	}
 	
 	@GetMapping(value ="/get")
-	public List<Prodotto> prodotti(){
+	public ResponseEntity<List<Prodotto>> prodotti(){
 		List<Prodotto> prodotti=prodottoService.getAll();	
-		return prodotti;
+		return ResponseEntity.ok(prodotti);
 	}
 	
 	@PostMapping(value = "/insert")
-	public Prodotto insertedProdotto(HttpServletRequest request,Model model,@RequestBody Prodotto newProdotto){
+	public ResponseEntity<Prodotto> insertedProdotto(HttpServletRequest request,Model model,@RequestBody Prodotto newProdotto){
 
 		Prodotto prodotto=new Prodotto();
 		prodotto.setNome(newProdotto.getNome());
@@ -53,7 +53,7 @@ public class ProdottoRestController {
 		
 		prodottoService.insert(prodotto);
 		
-		return prodotto;
+		return ResponseEntity.ok(prodotto);
 	}
 	
 	@PutMapping(value = "/update/{id}")

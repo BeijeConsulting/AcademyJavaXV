@@ -23,6 +23,13 @@ public class HelloController {
 		return "index";
 	}
 	
+	@RequestMapping(value = "testing", method = RequestMethod.GET)
+	public String getAll(HttpServletRequest request,Model model) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
+		
+		return "js";
+	}
+	
 	@RequestMapping(value = "back", method = RequestMethod.GET)
 	public String backIndex(HttpServletRequest request,Model model) {
 		System.out.println("Hello Page Requested : " + request.getRequestURI());

@@ -16,12 +16,14 @@ public class RestControllerMagazzino {
     ProductService productService;
 
     //- Servizio REST che restituisce la lista di tutti i prodotti
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @GetMapping(value = "/listAllProducts")
     public List<Product> listAllProducts() {
         return productService.findAll();
     }
 
     //- Servizio REST che restituisce il dettaglio del prodotto tramite id
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @GetMapping(value = "/searchProduct/{id}")
     public Product searchProduct(@PathVariable(name = "id") Integer id) {
         if (productService.findById(id) != null) {
@@ -32,12 +34,14 @@ public class RestControllerMagazzino {
     }
 
     //- Servizio REST per la creazione di un nuovo prodotto
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @PostMapping(value = "/addProduct")
     public Product addProduct(@RequestBody Product product) {
         return productService.save(product);
     }
 
     //- Servizio REST per la modifica di un prodotto esistente
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @PutMapping(value = "/updateProduct/{id}")
     public Product updateProduct(@PathVariable(name = "id") Integer id, @RequestBody Product newProduct) {
         if (productService.findById(id) != null) {
@@ -50,6 +54,7 @@ public class RestControllerMagazzino {
     }
 
     //- Servizio REST per la cancellazione di un prodotto
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @DeleteMapping(value = "/deleteProduct/{id}")
     public boolean deleteProduct(@PathVariable(name = "id") Integer id) {
         if (productService.findById(id) != null) {
@@ -61,6 +66,7 @@ public class RestControllerMagazzino {
     }
 
     // - Servizio REST che restituisce la lista di tutti i prodotti di una specifica tipologia
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @GetMapping(value = "/findByTypology/{typology}")
     public List<Product> findByTypology(@PathVariable(name = "typology") String typology) {
         if (productService.findByTypology(typology) != null) {
@@ -71,6 +77,7 @@ public class RestControllerMagazzino {
     }
 
     //- Servizio REST che restituisce la lista dei prodotti di una ricerca per nome e/o descrizione
+    @CrossOrigin(origins = "*", allowCredentials = "true")
     @GetMapping(value = "/findByName/{name}")
     public List<Product> findByName(@PathVariable(name = "name") String name) {
         if (productService.findByName(name) != null) {

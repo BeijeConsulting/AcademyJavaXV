@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -47,6 +48,11 @@ public class ControllerMagazzino {
         return "searchProductById";
     }
 
+    @GetMapping(value = "/searchProductID/{id}")
+    public Product searchProductID(Model model, @PathVariable Integer id ) {
+        Product product = productService.findById(id);
+        return product;
+    }
     //- Pagina per la creazione di un nuovo prodotto
     @GetMapping(value = "/addProduct")
     public String addProduct() {

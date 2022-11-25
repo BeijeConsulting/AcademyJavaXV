@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: 'Gelasio', serif;
+            margin: 10px;
+        }
+
+        #form, #form2, #form3, #form4, #form5 {
+            border: 1px solid black;
+            padding: 10px;
+            background-color: #fafafa;
+        }
+
+        #form button, #form2 button, #form3 button, #form4 button, #form5 button {
+            width: 100%;
+            font-size: 1.25em;
+            height: 30px;
+            background-color: teal;
+            font-family: 'Gelasio', serif;
+            color: snow;
+        }
+
+        #form input, #form2 input, #form3 input, #form4 input, #form5 input {
+            font-size: 1.25em;
+            width: 100%;
+            background-color: antiquewhite;
+            margin-bottom: 10px;
+        }
+
+        #result, #result2, #result3, #result4, #result5 {
+            margin-top: 10px;
+            width: 100%;
+            font-size: 1.25em;
+            font-family: 'Gelasio', serif;
+        }
+    </style>
+    <title>Magazzino
+    </title>
+</head>
+<body>
+<h3>Get All Prodoct</h3>
+<div id="form">
+    <button id="btnGetData">Get Data</button>
+</div>
+<div id="result"></div>
+<h3>Get Prodoct by Tipologia</h3>
+<div id="form2">
+    <label for="textbox2">Type</label>
+    <input type="text" id="textbox2"/>
+    <button id="btnGetData2">Get Data</button>
+</div>
+<div id="result2"></div>
+
+
+<h3>Get Prodoct by Name or Description</h3>
+<div id="form4">
+    <label for="textbox4">Name:</label>
+    <input type="text" id="textbox4"/>
+    <label for="textbox42">Description:</label>
+    <input type="text" id="textbox42"/>
+    <button id="btnGetData4">Get Data</button>
+</div>
+<div id="result4"></div>
+
+
+<h3>Add product</h3>
+<div id="form3">
+    <label for="nome">Name:</label><br>
+    <input type="text" name="nome" id="nome"><br>
+    <label for="tipologia">Type:</label><br>
+    <input type="text" name="tipologia" id="tipologia"><br>
+    <label for="quantita">Quantity':</label><br>
+    <input type="number" name="quantita" id="quantita"><br>
+    <label for="descrizione">Description:</label><br>
+    <input type="text" name="descrizione" id="descrizione"><br>
+    <br>
+    <button id="btnPostData">Send Data</button>
+</div>
+<div id="result3"></div>
+
+<h3>Update product</h3>
+<div id="form5">
+    <label for="id">ID:</label><br>
+    <input type="number" name="id" id="id"><br>
+    <label for="nome2">Name:</label><br>
+    <input type="text" name="nome" id="nome2"><br>
+    <label for="tipologia2">Type:</label><br>
+    <input type="text" name="tipologia" id="tipologia2"><br>
+    <label for="quantita2">Quantity':</label><br>
+    <input type="number" name="quantita" id="quantita2"><br>
+    <label for="descrizione2">Description:</label><br>
+    <input type="text" name="descrizione" id="descrizione2"><br>
+    <br>
+    <button id="btnPutData">Send Data</button>
+</div>
+<div id="result5"></div>
+
+<script>
+
+    function deleteByID(idToDelete) {
+        console.log('prob')
+        fetch('http://localhost:8080/Magazzino_war_exploded/api/prodotto/' + idToDelete, {
+            method: 'DELETE',
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((json) => console.log(json));
+
+    }
+
+    let btnGetData = document.getElementById('btnGetData');
+    let resultArea = document.getElementById('result');
+
+    btnGetData.onclick = function () {
+        var url = 'http://localhost:8080/Magazzino_war_exploded/api/prodotti'
+        console.log(url);
+
+        fetch(url)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data);
+                let out = "<table id=\"table\" border=\"1\">" +
+                    "    <tr>" +
+                    "        <th>id</th>" +
+                    "        <th>Name</th>" +
+                    "        <th>Type</th>" +
+                    "        <th>Available quantity</th>" +
+                    "        <th>Description</th>" +
+                    "        <th>Action</th>" +
+                    "    </tr>\n";
+                for (var x = 0; x < data.length; x++) {
+                    out += "<tr>\n" +
+                        "    <td>" + data[x].id + "</td>" +
+                        "    <td>" + data[x].nome + "</td>" +
+                        "    <td>" + data[x].tipologia + "</td>" +
+                        "    <td>" + data[x].quantita + "</td>" +
+                        "    <td>" + data[x].descrizione + "</td>" +
+                        "    <td> <button onclick=\"deleteByID(" + data[x].id + ");location.reload()\">DELETE</button></td>" +
+                        "  </tr>";
+                }
+                out += "</table>";
+                resultArea.innerHTML = out;
+            })
+    }
+
+    //2
+    let btnGetData2 = document.getElementById('btnGetData2');
+    let resultArea2 = document.getElementById('result2');
+    let text2 = document.getElementById('textbox2');
+
+    btnGetData2.onclick = function () {
+        let tipologia = text2.value;
+        var url = 'http://localhost:8080/Magazzino_war_exploded/api/prodotti_by_tipologia/' + tipologia
+        console.log(url);
+
+        fetch(url)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data);
+                let out = "<table id=\"table\" border=\"1\">" +
+                    "    <tr>" +
+                    "        <th>id</th>" +
+                    "        <th>Name</th>" +
+                    "        <th>Type</th>" +
+                    "        <th>Available quantity</th>" +
+                    "        <th>Description</th>" +
+                    "    </tr>\n";
+                for (var x = 0; x < data.length; x++) {
+                    out += "<tr>\n" +
+                        "    <td>" + data[x].id + "</td>" +
+                        "    <td>" + data[x].nome + "</td>" +
+                        "    <td>" + data[x].tipologia + "</td>" +
+                        "    <td>" + data[x].quantita + "</td>" +
+                        "    <td>" + data[x].descrizione + "</td>" +
+                        "  </tr>";
+                }
+                out += "</table>";
+                resultArea2.innerHTML = out;
+            })
+    }
+
+    //3
+    let btnPostData = document.getElementById('btnPostData');
+    let resultArea3 = document.getElementById('result3');
+    let nome = document.getElementById('nome');
+    let tipologia = document.getElementById('tipologia');
+    let quantita = document.getElementById('quantita');
+    let descrizione = document.getElementById('descrizione');
+
+    btnPostData.onclick = function () {
+        var url = 'http://localhost:8080/Magazzino_war_exploded/api/prodotto';
+        console.log(url);
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                nome: nome.value,
+                tipologia: tipologia.value,
+                quantita: quantita.value,
+                descrizione: descrizione.value,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data);
+                let out = "";
+                for (var x = 0; x < data.length; x++) {
+                    out += "<strong>" + data[x].nome;
+                    out += "</strong> " + data[x].descrizione + " " + data[x].quantita + " " + data[x].tipologia + "<br/>";
+                }
+
+                resultArea3.innerHTML = out;
+            })
+    }
+
+    //4
+    let btnGetData4 = document.getElementById('btnGetData4');
+    let resultArea4 = document.getElementById('result4');
+    let text4 = document.getElementById('textbox4');
+    let text42 = document.getElementById('textbox42');
+
+
+    btnGetData4.onclick = function () {
+        let nome;
+        let descrizione;
+        if (text4 == null || text4.value === '')
+            nome = 'null'
+        else
+            nome = text4.value;
+        if (text42.value == null || text42.value === '')
+            descrizione = 'null'
+        else
+            descrizione = text42.value;
+        var url = 'http://localhost:8080/Magazzino_war_exploded/api/prodotti_by_nome_or_descrizione/' + nome + '/' + descrizione
+        console.log(url);
+
+        fetch(url)
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data);
+                let out = "<table id=\"table\" border=\"1\">" +
+                    "    <tr>" +
+                    "        <th>id</th>" +
+                    "        <th>Name</th>" +
+                    "        <th>Type</th>" +
+                    "        <th>Available quantity</th>" +
+                    "        <th>Description</th>" +
+                    "    </tr>\n";
+                for (var x = 0; x < data.length; x++) {
+                    out += "<tr>\n" +
+                        "    <td>" + data[x].id + "</td>" +
+                        "    <td>" + data[x].nome + "</td>" +
+                        "    <td>" + data[x].tipologia + "</td>" +
+                        "    <td>" + data[x].quantita + "</td>" +
+                        "    <td>" + data[x].descrizione + "</td>" +
+                        "  </tr>";
+                }
+                out += "</table>";
+                resultArea4.innerHTML = out;
+            })
+    }
+
+    //5
+    let btnPutData = document.getElementById('btnPutData');
+    let resultArea5 = document.getElementById('result5');
+    let id = document.getElementById("id");
+    let nome2 = document.getElementById('nome2');
+    let tipologia2 = document.getElementById('tipologia2');
+    let quantita2 = document.getElementById('quantita2');
+    let descrizione2 = document.getElementById('descrizione2');
+
+    btnPutData.onclick = function () {
+        var url = 'http://localhost:8080/Magazzino_war_exploded/api/prodotto/' + id.value;
+        console.log(url);
+
+        fetch(url, {
+            method: 'PUT',
+            body: JSON.stringify({
+                id: id.value,
+                nome: nome2.value,
+                tipologia: tipologia2.value,
+                quantita: quantita2.value,
+                descrizione: descrizione2.value,
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((resp) => resp.json())
+            .then(function (data) {
+                console.log(data);
+                let out = "";
+                for (var x = 0; x < data.length; x++) {
+                    out += "<strong>" + data[x].nome;
+                    out += "</strong> " + data[x].descrizione + " " + data[x].quantita + " " + data[x].tipologia + "<br/>";
+                }
+
+                resultArea5.innerHTML = out;
+            })
+    }
+
+
+</script>
+</body>
+</html>

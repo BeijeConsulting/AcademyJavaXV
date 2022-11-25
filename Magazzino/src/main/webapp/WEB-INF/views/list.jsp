@@ -50,6 +50,12 @@
             out.print("\t Cerca");
 %>
 
-
+<script>
+    fetch('api/prodotti')
+        .then((response) => response.json())
+        .then((json) => console.log(json[0]))
+        .then((json) => {testo = json[0]})
+        .then(() => display.innerHTML = testo)
+</script>
 </body>
 </html>

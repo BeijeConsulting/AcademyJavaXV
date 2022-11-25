@@ -15,6 +15,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping(value = "api")
+@CrossOrigin(origins = "*", allowCredentials = "true")
 public class ProdottoRestController {
 
     @Autowired
@@ -56,8 +57,8 @@ public class ProdottoRestController {
 
     @GetMapping(value = "/prodotti_by_nome_or_descrizione/{nome}/{descrizione}")
     public List<Prodotto> prodottoByNomeOrDescrizione(
-                                  @PathVariable(name = "nome", required = true) String nome,
-                                  @RequestParam(name = "descrizione", required = true) String descrizione) {
+                                  @PathVariable(name = "nome", required = false) String nome,
+                                  @PathVariable(name = "descrizione", required = false) String descrizione) {
         System.out.println("test : " + nome);
 
         List<Prodotto> lista = prodottoService.findByNomeOrDescrizione(nome, descrizione);

@@ -21,6 +21,11 @@
     <option name="BRANCH" value="origin/main" />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="magazzino_Valente" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="GitToolBoxStore">
@@ -33,7 +38,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="Valente" />
-                    <option name="lastUsedInstant" value="1665948070" />
+                    <option name="lastUsedInstant" value="1667669536" />
                   </RecentBranch>
                 </list>
               </option>
@@ -88,9 +93,9 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestClass (1)">
-    <configuration name="BreakTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.BreakTest" />
+  <component name="RunManager" selected="Application.ClownFish">
+    <configuration name="ClownFish" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.ClownFish" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -102,10 +107,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunWithArgs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.FunWithArgs" />
+    <configuration name="DatabaseWrapper" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.DatabaseWrapper" />
       <module name="Esercizi" />
-      <option name="PROGRAM_PARAMETERS" value="a b c" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="it.beije.xv.esercizi.Test2.*" />
@@ -116,8 +120,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.T" />
+    <configuration name="Teacher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.Teacher" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
@@ -156,19 +160,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ClownFish" />
+      <item itemvalue="Application.DatabaseWrapper" />
+      <item itemvalue="Application.Teacher" />
       <item itemvalue="Application.TestClass (1)" />
       <item itemvalue="Application.TestClass" />
-      <item itemvalue="Application.FunWithArgs" />
-      <item itemvalue="Application.BreakTest" />
-      <item itemvalue="Application.T" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ClownFish" />
+        <item itemvalue="Application.Teacher" />
+        <item itemvalue="Application.DatabaseWrapper" />
         <item itemvalue="Application.TestClass (1)" />
         <item itemvalue="Application.TestClass" />
-        <item itemvalue="Application.FunWithArgs" />
-        <item itemvalue="Application.BreakTest" />
-        <item itemvalue="Application.T" />
       </list>
     </recent_temporary>
   </component>

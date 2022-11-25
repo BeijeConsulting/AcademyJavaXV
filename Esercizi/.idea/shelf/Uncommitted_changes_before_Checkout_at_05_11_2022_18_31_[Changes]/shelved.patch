@@ -1,0 +1,128 @@
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -32,6 +32,10 @@
+               <option name="branches">
+                 <list>
+                   <RecentBranch>
++                    <option name="branchName" value="magazzino_Valente" />
++                    <option name="lastUsedInstant" value="1666682508" />
++                  </RecentBranch>
++                  <RecentBranch>
+                     <option name="branchName" value="Valente" />
+                     <option name="lastUsedInstant" value="1665948070" />
+                   </RecentBranch>
+@@ -53,21 +57,21 @@
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+-    "WebServerToolWindowFactoryState": "false",
+-    "jdk.selected.JAVA_MODULE": "1.8",
+-    "last_opened_file_path": "C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/Esercizi",
+-    "nodejs_package_manager_path": "npm",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.15",
+-    "project.structure.side.proportion": "0.2",
+-    "settings.editor.selected.configurable": "preferences.pluginManager"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
++    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
++    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;1.8&quot;,
++    &quot;last_opened_file_path&quot;: &quot;C:/Users/Michael Angelo/IdeaProjects/Beije-Academy/AcademyJavaXV/Esercizi&quot;,
++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
++    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
++    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
++    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
++    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+   }
+-}]]></component>
++}</component>
+   <component name="RecentsManager">
+     <key name="CopyFile.RECENT_KEYS">
+       <recent name="C:\Users\Michael Angelo\IdeaProjects\Beije-Academy\Esercizi\src\it\beije\xv\esercizi\TestEL" />
+@@ -88,7 +92,7 @@
+       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
+     </key>
+   </component>
+-  <component name="RunManager" selected="Application.B">
++  <component name="RunManager" selected="Application.ChangeTest">
+     <configuration name="B" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.B" />
+       <module name="Esercizi" />
+@@ -128,7 +132,7 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++    <configuration name="TestClass (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.TestClass" />
+       <module name="Esercizi" />
+       <extension name="coverage">
+@@ -141,8 +145,8 @@
+         <option name="Make" enabled="true" />
+       </method>
+     </configuration>
+-    <configuration name="YYY" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.YYY" />
++    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
++      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.TestClass" />
+       <module name="Esercizi" />
+       <extension name="coverage">
+         <pattern>
+@@ -155,19 +159,19 @@
+       </method>
+     </configuration>
+     <list>
++      <item itemvalue="Application.TestClass (1)" />
+       <item itemvalue="Application.B" />
+       <item itemvalue="Application.ChangeTest" />
+       <item itemvalue="Application.Holder" />
+-      <item itemvalue="Application.YYY" />
+       <item itemvalue="Application.TestClass" />
+     </list>
+     <recent_temporary>
+       <list>
++        <item itemvalue="Application.ChangeTest" />
++        <item itemvalue="Application.TestClass (1)" />
+         <item itemvalue="Application.B" />
+         <item itemvalue="Application.Holder" />
+         <item itemvalue="Application.TestClass" />
+-        <item itemvalue="Application.YYY" />
+-        <item itemvalue="Application.ChangeTest" />
+       </list>
+     </recent_temporary>
+   </component>
+@@ -208,6 +212,7 @@
+       <workItem from="1666199739819" duration="4231000" />
+       <workItem from="1666206369447" duration="12000" />
+       <workItem from="1666239892897" duration="1576000" />
++      <workItem from="1667640866844" duration="3574000" />
+     </task>
+     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
+       <created>1664184716686</created>
+@@ -264,12 +269,6 @@
+           <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/TestEL/Test.java</url>
+           <line>331</line>
+           <option name="timeStamp" value="4" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-field">
+-          <url>file://$PROJECT_DIR$/src/it/beije/xv/esercizi/Test2/Example.java</url>
+-          <line>442</line>
+-          <properties field="link" class="it.beije.xv.esercizi.Test2.Holder" />
+-          <option name="timeStamp" value="6" />
+         </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>

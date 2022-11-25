@@ -739,15 +739,144 @@ package it.beije.xv.esercizi.Test2;
 //    }
 //}
 
-class TestClass {
-    static String str = "Hello World";
+//class TestClass {
+//    static String str = "Hello World";
+//
+//    public static void changeIt(String s) {
+//        s = "Good bye world";
+//    }
+//
+//    public static void main(String[] args) {
+//        changeIt(str);
+//        System.out.println(str);
+//    }
+//}
 
-    public static void changeIt(String s) {
-        s = "Good bye world";
-    }
+//public class TestClass{
+//    public TestClass(int a, int b) { } // 1
+//    public void TestClass(int a) { }   // 2
+//    public TestClass(String s); // 3
+//    private TestClass(String s, int a) { }     //4
+//    public TestClass(String s1, String s2) { }; //5
+//}
 
-    public static void main(String[] args) {
-        changeIt(str);
-        System.out.println(str);
-    }
-}
+//interface Movable {
+//    int offset = 100;
+//
+//    public void move(int dx);
+//}
+//
+//interface Growable {
+//    public void grow(int dy);
+//}
+//
+//class Animal implements Movable, Growable {
+//    public void move(int dx) {
+//    }
+//
+//    public void grow(int dy) {
+//    }
+//}
+
+//class TestClass {
+//    static TestClass ref;
+//    String[] arguments;
+//
+//    public static void main(String args[]) {
+//        ref = new TestClass();
+//        ref.func(args);
+//    }
+//
+//    public void func(String[] args) {
+//        ref.arguments = args;
+//    }
+//}
+
+//class DatabaseWrapper {
+//    static String url = "jdbc://derby://localhost:1527//mydb";
+//
+//    static DatabaseWrapper getDatabase() {
+//        System.out.println("Getting DB");
+//        return null;
+//    }
+//
+//    public static void main(String[] args) {
+//        System.out.println(getDatabase().url);
+//    }
+//}
+
+
+//class Teacher{
+//
+//    public static void main(String[] args){
+////        Teacher X = new Teacher("123", "456");
+////        Teacher X = new X("aaa", "bbb");
+////        Teacher x = new X();
+//        Teacher t = new Teacher("abc", "efg");
+//    }
+//
+//    void teach(String student){
+//        /* lots of code */
+//
+//    }
+//
+//    public Teacher(){
+//        System.out.println("Inside Teacher()");
+//    }
+//    public Teacher(String s1, String s2){
+//        System.out.println("Inside Teacher( String s1, String s2 )");
+//    }
+//}
+//
+////class X extends Teacher{
+////
+////    public X(){
+////        System.out.println("Inside X()");
+////    }
+////
+////    public X(String x1, String x2){
+////        System.out.println("Inside X(String x1, String x2)");
+////    }
+////
+////}
+
+//public class Discounter {
+//    static double percent; //1
+//    int offset = 10, base = 50; //2
+//
+//    public static double calc(double value) {
+//        int coupon, offset, base; //3
+//        if (percent < 10) { //4
+//            coupon = 15;
+//            offset = 20;
+//            base = 10;
+//        }
+//        return coupon * offset * base * value / 100; //5
+//    }
+//
+//    public static void main(String[] args) {
+//        System.out.println(calc(100));
+//    }
+//}
+
+//interface Aquatic {
+//    public default int getNumberOfGills(int input) {
+//        return 2;
+//    }
+//}
+//
+//class ClownFish implements Aquatic {
+//    public String getNumberOfGills() {
+//        return "4";
+//    }
+//
+//    public int getNumberOfGills(int input) {
+//        return 6;
+//    }
+//
+//    public static void main(String[] args) {
+//        System.out.println(new ClownFish().getNumberOfGills(-1));
+//    }
+//}
+
+

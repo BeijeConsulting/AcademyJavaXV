@@ -1,0 +1,186 @@
+Index: src/it/beije/xv/esercizi/Test2/Example.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/it/beije/xv/esercizi/Test2/Example.java b/src/it/beije/xv/esercizi/Test2/Example.java
+--- a/src/it/beije/xv/esercizi/Test2/Example.java	
++++ b/src/it/beije/xv/esercizi/Test2/Example.java	
+@@ -457,41 +457,149 @@
+ //
+ //}
+ 
+-abstract class A {
+ 
+-    public abstract void yo();
++//abstract class A {
++//
++//    public abstract void yo();
++//
++//    public abstract void yo2();
++//
++//    public void yo3(){
++//        System.out.println("Yo 3");
++//    }
++//
++//}
++//
++//abstract class  AA extends A {
++//    public abstract void yo4();
++//}
++//class B extends AA{
++////    public static void yo(){
++////        System.out.println("Wazzup 2");
++////    }
++//
++//    public void yo(){
++//        System.out.println("Wazzup");
++//    }
++//
++//    @Override
++//    public void yo2() {
++//
++//    }
++//    @Override
++//    public void yo4() {
++//
++//    }
++//    public static void main(String[] args){
++//       new B().yo3();
++//    }
++//
++//
++//}
+ 
+-    public abstract void yo2();
++//class TestClass {
++//    int x;
++//    public static void main(String[] args) {
++////        System.out.println(this.x);
++//    }
++//
++//    public double numa(int a, int b, int c){
++//        return 2.0;
++//    }
++//    public int numa(int a, int b){
++//        return 2;
++//    }
++//}
+ 
+-    public void yo3(){
+-        System.out.println("Yo 3");
+-    }
+ 
+-}
+ 
+-abstract class  AA extends A {
+-    public abstract void yo4();
+-}
+-class B extends AA{
+-//    public static void yo(){
+-//        System.out.println("Wazzup 2");
++//class OverloadingTest{
++//
++//    void m1(int x){
++//        System.out.println("m1 int");
+ //    }
++//
++//    void m1(double x){
++//        System.out.println("m1 double");
++//    }
++//
++//    void m1(String x){
++//        System.out.println("m1 String");
++//    }
++//
++//}
++//
++//class TestClass {
++//    public static void main(String[] args) throws Exception {
++//        OverloadingTest ot = new OverloadingTest();
++//        ot.m1(1.0);
++//    }
++//}
+ 
+-    public void yo(){
+-        System.out.println("Wazzup");
+-    }
+ 
+-    @Override
+-    public void yo2() {
++//class ChangeTest {
++//
++//    private int myValue = 0;
++//
++//    public void showOne(int myValue){
++//        myValue = myValue;
++//    }
++//
++//    public void showTwo(int myValue){
++//        this.myValue = myValue;
++//    }
++//    public static void main(String[] args) {
++//        ChangeTest ct = new ChangeTest();
++//        ct.showOne(100);
++//        System.out.println(ct.myValue);
++//        ct.showTwo(200);
++//        System.out.println(ct.myValue);
++//    }
++//}
+ 
+-    }
+-    @Override
+-    public void yo4() {
+ 
+-    }
+-    public static void main(String[] args){
+-       new B().yo3();
+-    }
++//class Data {
++//    int x = 0, y = 0;
++//    public Data(int x, int y){
++//        this.x = x; this.y = y;
++//    }
++//}
++//class TestClass {
++//    public static void main(String[] args) throws Exception {
++//        Data d = new Data(1, 1);
++//        //add code here
++//        d + 1;
++//    }
++//}
++
+ 
++//class OverloadTest{
++//    public int sum(int i1, int i2) { return i1 + i2; }
++//    // 1
++////    public int sum(int a, int b) { return a + b; }
++////    public int sum(long i1, long i2) { return (int) i1; }
++////    public int sum(int i1, long i2) { return (int) i2; }
++////    public long sum(long i1, int i2) { return i1 + i2; }
++//
++////    public long sum(int i1, int i2) { return i1 + i2; }
++//
++//}
+ 
+-}
+\ No newline at end of file
++//class LoadTest{
++//
++//    public static void main(String[] args) throws Exception {
++//        LoadTest t = new LoadTest();
++//        int i = t.getLoad();
++//        double d = t.getLoad();
++//        System.out.println( i + d );
++//    }
++//
++//    public int getLoad() {
++//        return 1;
++//    }
++//
++//    public double getLoad(){
++//        return 3.0;
++//    }
++//
++//}
+\ No newline at end of file

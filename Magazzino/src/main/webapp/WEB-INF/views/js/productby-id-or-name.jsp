@@ -15,7 +15,7 @@
 </head>
 <body>
 <%--<title>${product.name}</title>--%>
-<h2> Pagina che restituisce il dettaglio del prodotto tramite id (JS) </h2>
+<h2> Pagina che restituisce il dettaglio del prodotto tramite id o Nome (JS) </h2>
 
   <div>
       <h3>Lista di prodotti</h3>
@@ -59,16 +59,24 @@
 
         </script>
 
-      <form  method="GET">
-<%--      Product id: <form:input path="id"/>--%>
-<%--      <br><br>--%>
-        <label for="productId">Id del prodotto:</label><br>
-        <input type="text" id="productId" value=""><br>
-        <button onclick="getData(productId)" value="Submit">Submit</button>
-      </form>
+        <div>
+            <label for="productname">Product Name:</label>
+            <input type="text" id="productname" name="productname"><br>
+            <input type="submit" value="Submit" onclick="newProduct()">
+        </div>
+        <br><br>
+        <div>
+            <label for="type">Product type:</label>
+            <input type="text" id="type" name="lname"><br>
+            <input type="submit" value="Submit" onclick="newProduct()">
+        </div>
+
 
 
     </div>
+
+
+
 
 
 <hr>

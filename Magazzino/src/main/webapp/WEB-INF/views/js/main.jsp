@@ -13,7 +13,7 @@
         <ul>
             <li><a href="./products-html">Pagina che restituisce la lista di tutti i prodotti</a></li>
 
-            <li><a href="./productbyid-html">Pagina che restituisce il dettaglio del prodotto tramite id</a></li>
+            <li><a href="./productbyname-id-html">Pagina che restituisce il dettaglio del prodotto tramite id o nome</a></li>
 
             <li><a href="./modifyproduct-form"> Pagina per la modifica di un prodotto esistente</a></li>
 
@@ -25,6 +25,7 @@
             <li><a href="./productbynameordescription-form"> Pagina che restituisce la lista dei prodotti di una ricerca per
                 nome e/o descrizione</a></li>
 
+            <li><a href="./newproduct-form-html"> Pagina che inserisce un nuovo prodotto </a></li>
 
         </ul>
 

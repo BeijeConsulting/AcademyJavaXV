@@ -39,9 +39,11 @@ public class ProductController {
 	}
 
 	//TODO: UNFINISHED
-	@RequestMapping(value = "/productbyid-html", method = RequestMethod.GET)
+	@RequestMapping(value = "/productbyname-id-html", method = RequestMethod.GET)
 	public String productsbyid() {
-		return "js/productbyid";
+
+		System.out.println("Inside productbyname-id-html");
+		return "js/productby-id-or-name";
 	}
 
 
@@ -69,7 +71,8 @@ public class ProductController {
 		return "productbyid";
 	}
 
-	@RequestMapping(value="/newproduct-form-html", method=RequestMethod.GET)
+
+	@GetMapping(value="/newproduct-form-html")
 	public String newproductform(){
 //		productService.save(product);
 

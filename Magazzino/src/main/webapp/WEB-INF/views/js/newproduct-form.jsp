@@ -17,28 +17,34 @@
 <%--<title>${product.name}</title>--%>
 <h2> Pagina per la creazione di un nuovo prodotto (JS) </h2>
 
-  <div>
-    <script>
-      // let productId = -9;
 
-      let urlById = "http://localhost:8080/Magazzino_war_exploded/api/product/"
-      function getData( productId ){
+    <div>
+      <h3>Lista di prodotti</h3>
 
-        console.log("value: ", document.getElementById('productId').value)
-        // urlById += document.getElementById('productId').value
-        console.log("new Url: " , urlById)
-        fetch(urlById)
-                .then((response) => response.json())
-                .then((json) => console.log(json));
+      <ul id="list">
 
-      }
+      </ul>
 
-    </script>
-  </div>
+
+      <script>
+        const url = "http://localhost:8080/Magazzino_war_exploded/api/products"
+        let ul = document.getElementById("list");
+        fetch(url).then( response => response.json()).then( data => {
+          data.forEach( function(object) {
+            let li = document.createElement('li')
+            li.innerHTML = object.name + ' - ' + object.id
+            ul.append(li);
+
+          })
+        })
+
+      </script>
+    </div>
+
 
     <div>
       <h3>New Product:</h3>
-      <form action="/action_page.php" method="POST">
+      <div>
         <label for="productname">Product Name:</label>
         <input type="text" id="productname" name="productname"><br><br>
 
@@ -50,10 +56,34 @@
 
         <label for="description">Product description:</label>
         <input type="text" id="description" name="description"><br><br>
-        <input type="submit" value="Submit">
-      </form>
+        <input type="submit" value="Submit" onclick="newProduct()">
+      </div>
 
     </div>
+    <script>
+      function newProduct(){
+        console.log("product Name: " , document.getElementById("productname").value);
+
+
+        fetch('http://localhost:8080/Magazzino_war_exploded/api/product', {
+          method: 'POST',
+          body: JSON.stringify({
+            name: document.getElementById("productname").value,
+            type: document.getElementById("quantity").value,
+            quantity: Number(document.getElementById("quantity").value),
+            description: document.getElementById("description").value
+          }),
+          headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+          },
+        })
+        .then((response) => response.json())
+        .then((json) => console.log(json));
+
+
+
+      }
+    </script>
 
 
 

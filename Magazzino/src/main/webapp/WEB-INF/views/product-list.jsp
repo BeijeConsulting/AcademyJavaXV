@@ -15,6 +15,9 @@
 <body>
 <title>Products</title>
 <h3> Pagina che restituisce la lista di tutti i prodotti </h3>
+<div>
+    <button onclick="home()">Home</button>
+</div>
 <table border="1">
     <tr>
         <th>id</th>

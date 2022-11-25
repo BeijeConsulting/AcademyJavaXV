@@ -23,13 +23,18 @@ public class MainController {
 	@Autowired
 	ProductService productService;
 
+//	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
+//	public String index(HttpServletRequest request, Model model) {
+//		System.out.println("Main Page Requested : " + request.getRequestURI());
+//		List<Product> products = productService.findAll();
+//		return "main"; // /WEB-INF/views/beije.jsp
+//	}
+
 	@RequestMapping(value = {"/"}, method = RequestMethod.GET)
 	public String index(HttpServletRequest request, Model model) {
-		System.out.println("Main Page Requested : " + request.getRequestURI());
-		List<Product> products = productService.findAll();
-		return "main"; // /WEB-INF/views/beije.jsp
-	}
 
+		return "js/main";
+	}
 
 
 }

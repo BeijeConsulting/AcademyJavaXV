@@ -13,7 +13,7 @@
 
 </head>
 <body>
-<title>Products by type</title>
+<title>Products by type (JS)</title>
 <h3> Pagina che restituisce la lista di tutti i prodotti di una specifica tipologia </h3>
 <h2> Products of type ${type}</h2>
 <table border="1">
@@ -24,16 +24,16 @@
         <th>Available quantity</th>
         <th>Description</th>
     </tr>
-    <c:forEach var="tempProduct" items="${products}" >
-        <tr>
-            <td>${tempProduct.id}</td>
-            <td>${tempProduct.name}</td>
-            <td>${tempProduct.type}</td>
-            <td>${tempProduct.quantity}</td>
-            <td>${tempProduct.description}</td>
+<%--    <c:forEach var="tempProduct" items="${products}" >--%>
+<%--        <tr>--%>
+<%--            <td>${tempProduct.id}</td>--%>
+<%--            <td>${tempProduct.name}</td>--%>
+<%--            <td>${tempProduct.type}</td>--%>
+<%--            <td>${tempProduct.quantity}</td>--%>
+<%--            <td>${tempProduct.description}</td>--%>
 
-        </tr>
-    </c:forEach>
+<%--        </tr>--%>
+<%--    </c:forEach>--%>
 
 </table>
 <hr>

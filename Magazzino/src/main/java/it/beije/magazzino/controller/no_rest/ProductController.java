@@ -23,7 +23,11 @@ public class ProductController {
 	}
 
 
-
+	@RequestMapping(value = "/products-html", method = RequestMethod.GET)
+	public String products() {
+		System.out.println("Inside js/producthtml");
+		return "js/product-list";
+	}
 
 	@RequestMapping(value = "/products", method = RequestMethod.GET)
 	public String products(Locale locale, Model model) {
@@ -32,6 +36,11 @@ public class ProductController {
 		System.out.println("Inside products() | .../products: " + products);
 		model.addAttribute("products",products);
 		return "product-list";
+	}
+
+	@RequestMapping(value = "/productbyid-html", method = RequestMethod.GET)
+	public String productsbyid() {
+		return "js/productbyid";
 	}
 
 

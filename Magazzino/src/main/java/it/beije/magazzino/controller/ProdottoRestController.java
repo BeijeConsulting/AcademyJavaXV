@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 import it.beije.magazzino.model.Prodotto;
 import it.beije.magazzino.service.ProdottoService;
 
-
+@CrossOrigin(origins = "*", allowCredentials = "true")
 @RestController
 @RequestMapping(value="/prodotto")
 public class ProdottoRestController {
@@ -58,15 +59,19 @@ public class ProdottoRestController {
 	
 	@PutMapping(value = "/update/{id}")
 	public Prodotto updatedProdotto(HttpServletRequest request, Model model, @RequestBody Prodotto newProdotto,@PathVariable Integer id) throws Exception {
-
+		
+		System.out.println("Nome: "+newProdotto.getNome());
+		if(newProdotto.getNome().equals("")){
+			System.out.println("ciao");
+		}
 		Prodotto prodotto =prodottoService.getById(id);
-		if(newProdotto.getNome()!=null)
+		if(!newProdotto.getNome().equals("") || newProdotto.getNome()!=null)
 			prodotto.setNome(newProdotto.getNome());
-		if(newProdotto.getTipologia()!=null)
+		if(newProdotto.getTipologia()!="" || newProdotto.getTipologia()!=null)
 			prodotto.setTipologia(newProdotto.getTipologia());
-		if(newProdotto.getQuantita()!=null)
+		if(newProdotto.getQuantita()!=null || newProdotto.getQuantita()!=null)
 			prodotto.setQuantita(newProdotto.getQuantita());
-		if(newProdotto.getDescrizione()!=null)
+		if(newProdotto.getDescrizione()!="" || newProdotto.getDescrizione()!=null)
 			prodotto.setDescrizione(newProdotto.getDescrizione());
 
 		prodottoService.insert(prodotto);

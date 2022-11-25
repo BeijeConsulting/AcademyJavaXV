@@ -15,7 +15,7 @@
 </head>
 <body>
 <%--<title>${product.name}</title>--%>
-<h2> Pagina che restituisce il dettaglio del prodotto tramite id o Nome (JS) </h2>
+<h2> Pagina che restituisce il dettaglio del prodotto tramite id, nome o descrizione (JS) </h2>
 
   <div>
       <h3>Lista di prodotti</h3>
@@ -42,41 +42,99 @@
     </script>
   </div>
     <div>
-        <script>
-            // let productId = -9;
-
-            let urlById = "http://localhost:8080/Magazzino_war_exploded/api/product/"
-            function getData( productId ){
-
-                console.log("value: ", document.getElementById('productId').value)
-                // urlById += document.getElementById('productId').value
-                console.log("new Url: " , urlById)
-                fetch(urlById)
-                    .then((response) => response.json())
-                    .then((json) => console.log(json));
-
-            }
-
-        </script>
 
         <div>
             <label for="productname">Product Name:</label>
             <input type="text" id="productname" name="productname"><br>
-            <input type="submit" value="Submit" onclick="newProduct()">
+            <input type="submit" value="Submit" onclick="productByName()">
         </div>
-        <br><br>
+        <br>
         <div>
-            <label for="type">Product type:</label>
-            <input type="text" id="type" name="lname"><br>
-            <input type="submit" value="Submit" onclick="newProduct()">
+            <label for="productDesc">Product description:</label>
+            <input type="text" id="productDesc" name="productDesc"><br>
+            <input type="submit" value="Submit" onclick="productByDesc()">
         </div>
+        <br>
+        <div>
+            <label for="productId">Product id:</label>
+            <input type="text" id="productId" name="productId"><br>
+            <input type="submit" value="Submit" onclick="productById()">
+        </div>
+        <br>
+
 
 
 
     </div>
 
+    <div id="productFound">
+
+    </div>
 
 
+<script>
+
+
+    function productById( productId ){
+        let newUrl = "http://localhost:8080/Magazzino_war_exploded/api/product/"
+        newUrl += document.getElementById("productId").value
+        console.log("new Url: " + newUrl)
+        fetch(newUrl).then(response => response.json())
+            .then( data => {
+                let productDiv = document.getElementById("productFound");
+                console.log("DATA: ", data);
+                productDiv.innerHTML =
+                    '<div>'+
+                    '<h3>'+ data.name+'</h3>'+
+                    '<div>'+ data.id +'</div>'+
+                    '<div>'+ data.description +'</div>'+
+                    '<div>'+ data.quantity +'</div>'+
+                    '<div>'+ data.type +'</div>'
+                    +'</h4>'
+            })
+    }
+
+    function productByName( ){
+
+        let newUrl = "http://localhost:8080/Magazzino_war_exploded/api/productbydesc-name/"+document.getElementById("productname").value+"/s"
+        console.log("new Url: " + newUrl)
+        fetch(newUrl).then(response => response.json())
+            .then( data => {
+                let productDiv = document.getElementById("productFound");
+                console.log("DATA: ", data);
+                productDiv.innerHTML =
+                    '<div>'+
+                    '<h3>'+ data[0].name+'</h3>'+
+                    '<div>'+ data[0].id +'</div>'+
+                    '<div>'+ data[0].description +'</div>'+
+                    '<div>'+ data[0].quantity +'</div>'+
+                    '<div>'+ data[0].type +'</div>'
+                    +'</h4>'
+            })
+    }
+
+    function productByDesc( ){
+
+        let newUrl = "http://localhost:8080/Magazzino_war_exploded/api/productbydesc-name/s/"+document.getElementById("productDesc").value
+        console.log("new Url: " + newUrl)
+        fetch(newUrl).then(response => response.json())
+            .then( data => {
+                let productDiv = document.getElementById("productFound");
+                console.log("DATA: ", data);
+                productDiv.innerHTML =
+                    '<div>'+
+                    '<h3>'+ data[0].name+'</h3>'+
+                    '<div>'+ data[0].id +'</div>'+
+                    '<div>'+ data[0].description +'</div>'+
+                    '<div>'+ data[0].quantity +'</div>'+
+                    '<div>'+ data[0].type +'</div>'
+                    +'</h4>'
+            })
+    }
+
+
+
+</script>
 
 
 <hr>

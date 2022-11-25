@@ -25,8 +25,8 @@
       </p>
 
       <div id="listP" hidden="hidden">
-         <form action="./listP" method="get">
-            <input type="submit" value="Conferma">
+         <form>
+            <input type="submit" value="Conferma" onclick="getListaP()">
          </form>
       </div>
 
@@ -91,8 +91,8 @@
       </div>
 
       <div id="listS" hidden="hidden">
-         <form action="./listS" method="get">
-            <input type="submit" value="Conferma">
+         <form>
+            <input type="submit" value="Conferma" onclick="getListaS()">
          </form>
       </div>
 
@@ -103,6 +103,63 @@
             <input type="submit" value="Conferma">
          </form>
       </div>
+
+      <div id="display">
+      </div>
+
+   <script>
+      function getListaP(){
+         let products
+         fetch('http://localhost:8080/Magazzino_war/listP')
+            .then(response => response.json())
+            .then(json => products = json)
+            .then(show => showProducts(products))
+
+      }
+
+      function getListaS(){
+         let shipments
+         fetch('http://localhost:8080/Magazzino_war/listS')
+                 .then(response => response.json())
+                 .then(json => shipments = json)
+                 .then(show => showShipments(shipments))
+      }
+
+
+      function showProducts(products){
+         let count = 1;
+
+         let stampa = "<table style='text-align: center'>"
+         stampa += "<tr> <td></td> <td>NAME</td> <td>TYPOLOGY</td> <td>QUANTITY</td>  <td>DESCRIPTION</td> </tr>"
+
+         products.forEach(el => {
+            stampa += "<tr> <td>" + count + "</td> <td>"+el.nome+"</td> <td>"
+                    +el.tipo +"</td> <td>"+el.quantita+"</td>  <td>"+el.descrizione+"</td> </tr>";
+            count++;
+         });
+
+         stampa += "</table>";
+
+         document.getElementById('display').innerHTML = stampa
+      }
+
+      function showShipments(shipments){
+         let count = 1;
+
+         let stampa = "<table style='text-align: center'>"
+         stampa += "<tr> <td></td> <td>CODICE</td> <td>DESTINATARIO</td> <td>INDIRIZZO</td>  <td>DATA SPEDIZIONE</td> <td>DATA RICEZIONE</td> </tr>"
+
+         shipments.forEach(el => {
+            stampa += "<tr> <td>" + count + "</td> <td>"+ el.codice+"</td> <td>"
+                    +el.destinatario +"</td> <td>"+el.indirizzo+"</td>  <td>"+el.data_spedizione+"</td> <td>"+el.data_ricezione+"</td></tr>";
+            count++;
+         });
+
+         stampa += "</table>";
+
+         document.getElementById('display').innerHTML = stampa
+      }
+   </script>
 
    </body>
 </html>

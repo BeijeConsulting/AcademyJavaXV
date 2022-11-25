@@ -9,6 +9,7 @@ import it.beije.hopper.service.ContenutoService;
 import it.beije.hopper.service.ProductService;
 import it.beije.hopper.service.SpedizioneService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -41,29 +42,29 @@ public class HelloController {
 	}
 
 	@RequestMapping(value = {"/listS"}, method = RequestMethod.GET)
-	public String listS(HttpServletRequest request, Model model) {
+	public ResponseEntity<List<Spedizione>> listS(HttpServletRequest request, Model model) {
 		System.out.println("Lista spedizioni : " + request.getRequestURI());
-		try{
+//		try{
 			List<Spedizione> lista = spedizioneService.findAll();
 			model.addAttribute("spedizioni", lista);
-			return "listP";
-		}catch(Exception e){
-			model.addAttribute("error", "Qualcosa è andato storto! Riprova");
-			return "home";
-		}
+			return ResponseEntity.ok(lista);
+//		}catch(Exception e){
+//			model.addAttribute("error", "Qualcosa è andato storto! Riprova");
+//			return "home";
+//		}
 	}
 
 	@RequestMapping(value = {"/listP"}, method = RequestMethod.GET)
-	public String listP(HttpServletRequest request, Model model) {
+	public ResponseEntity<List<Product>> listP(HttpServletRequest request, Model model) {
 		System.out.println("Lista prodotti : " + request.getRequestURI());
-		try{
+//		try{
 			List<Product> lista = productService.findAll();
 			model.addAttribute("prodotti", lista);
-			return "listP";
-		}catch(Exception e){
-			model.addAttribute("error", "Qualcosa è andato storto! Riprova");
-			return "home";
-		}
+			return ResponseEntity.ok(lista);
+//		}catch(Exception e){
+//			model.addAttribute("error", "Qualcosa è andato storto! Riprova");
+//			return "home";
+//		}
 	}
 
 	@RequestMapping(value = {"/infoP"}, method = RequestMethod.GET)

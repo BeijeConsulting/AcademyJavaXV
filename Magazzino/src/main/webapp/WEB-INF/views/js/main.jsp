@@ -14,16 +14,16 @@
             <li><a href="./products-html">Pagina che restituisce la lista di tutti i prodotti</a></li>
 
             <li><a href="./productbyname-id-html">Pagina che restituisce il dettaglio del prodotto tramite id, nome o descrizione</a></li>
+<%--            ./modifyproduct-form--%>
+            <li><a href=""> Pagina per la modifica di un prodotto esistente</a></li>
 
-            <li><a href="./modifyproduct-form"> Pagina per la modifica di un prodotto esistente</a></li>
-
-            <li><a href="./deleteproduct-form"> Pagina per la cancellazione di un prodotto</a></li>
+            <li><a href="./deleteproduct-form-html"> Pagina per la cancellazione di un prodotto</a></li>
 
             <li><a href="./productbytype-form">Pagina che restituisce la lista di tutti i prodotti di una specifica
                 tipologia</a></li>
 
-            <li><a href="./productbynameordescription-form"> Pagina che restituisce la lista dei prodotti di una ricerca per
-                nome e/o descrizione</a></li>
+<%--            <li><a href="./productbynameordescription-form"> Pagina che restituisce la lista dei prodotti di una ricerca per--%>
+<%--                nome e/o descrizione</a></li>--%>
 
             <li><a href="./newproduct-form-html"> Pagina che inserisce un nuovo prodotto </a></li>
 

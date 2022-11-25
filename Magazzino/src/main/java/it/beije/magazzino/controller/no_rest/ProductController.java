@@ -143,6 +143,12 @@ public class ProductController {
 	}
 
 
+	@RequestMapping(value="/deleteproduct-form-html", method=RequestMethod.GET)
+	public String deleteproductform( ){
+		return "js/deleteproduct-form";
+	}
+
+
 	//DELETE
 	@RequestMapping(value="/deleteproduct-form", method=RequestMethod.GET)
 	public String deleteproductform( @ModelAttribute("product") Product product, Model model ){

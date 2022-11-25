@@ -85,6 +85,9 @@ public class ProductRestController {
         productService.deleteById(id);
         return "{\"message\":\"rimosso prodotto " + id + "\"}"; // NON DA FARE!
     }
+
+
+
 //
 //    @PutMapping(value="/product/{id}")
 //    public Product updateProduct( @PathVariable(name="id") Integer id,

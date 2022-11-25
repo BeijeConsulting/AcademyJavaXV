@@ -1,0 +1,57 @@
+<html>
+
+<head>
+	<title>HomePage</title>
+</head>
+
+<body style="text-align: center" topmargin="200px">
+	<h1>MODIFICA PRODOTTO</h1><br>
+
+	<table style="margin: auto">
+		<div>	
+			  <label for="name">ID:</label><br>
+			  <input type="text"  id="id"><br>		
+			  <label for="name">NOME:</label><br>
+			  <input type="text"  id="name"><br>
+			  <label for="tipo">TIPOLOGIA:</label><br>
+			  <input type="text"  id="type"><br><br>
+			  <label for="quantity">QUANTITà:</label><br>
+			  <input type="text"  id="quantity"><br><br>
+			  <label for="desc">DESCRIZIONE:</label><br>
+			  <input type="text"  id="desc"><br><br>
+			  <button onclick="modProd()"></button>		
+		</div>
+		<tr>
+			<td style="border-style: solid">
+				<h3 id="prodotto" style="text-align: center"></h3>
+		<script>
+
+			function modProd() {
+				fetch('http://localhost:8080/Magazzino/api/modProd/'+document.getElementById("id").value, {
+					method: 'PUT',
+					body: JSON.stringify({
+						id: document.getElementById("id").value,
+						name: document.getElementById("name").value,
+						tipo: document.getElementById("type").value,
+						quantity: document.getElementById("quantity").value,
+						desc: document.getElementById("desc").value,
+					}),
+					headers: {
+						"Content-type": "application/json; charset=UTF-8",
+					},
+				})
+					.then((response) => response.json())
+					.then(prod => {
+						document.getElementById("prodotto").innerHTML=JSON.stringify(prod);
+						console.log(prod);
+					})
+			}
+		</script>	   
+	</td>
+</tr>
+
+
+	</table>
+</body>
+
+</html>

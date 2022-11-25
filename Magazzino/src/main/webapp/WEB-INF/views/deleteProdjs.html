@@ -1,0 +1,45 @@
+<html>
+
+<head>
+	<title>HomePage</title>
+</head>
+
+<body style="text-align: center" topmargin="200px">
+	<h1>ELIMINA PRODOTTO</h1><br>
+
+	<table style="margin: auto">
+		<div>
+
+			<label>ID:</label>
+			<input type="text" id="id">
+			<button onclick="deleteProd()"></button>
+
+		</div>
+		<tr>
+			<td style="border-style: solid">
+				<h3 id="prodotto" style="text-align: center"></h3>
+		<script>
+
+			function deleteProd() {
+				fetch('http://localhost:8080/Magazzino/api/delete/'+document.getElementById("id").value, {
+					method: 'DELETE',
+					
+					headers: {
+						"Content-type": "application/json; charset=UTF-8",
+					},
+				})
+					.then((response) => response.json())
+					.then(prod => {
+						document.getElementById("prodotto").innerHTML=JSON.stringify("Rimosso il prodotto "+document.getElementById("id").value);
+						console.log(prod);
+					})
+			}
+		</script>	   
+	</td>
+</tr>
+
+
+	</table>
+</body>
+
+</html>

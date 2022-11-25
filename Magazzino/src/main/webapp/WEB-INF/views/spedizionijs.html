@@ -1,0 +1,30 @@
+
+<html>
+<head>
+    <title>HomePage</title>
+</head>
+<body  style="text-align: center" topmargin="200px">
+<h1>SPEDIZIONI</h1><br>
+
+<table style="margin: auto">
+    
+    
+    <tr>
+        <td style="border-style: solid">
+            <h3 id="spedizioni" style="text-align: center"></h3>
+          <script>
+
+           	fetch('http://localhost:8080/Magazzino/api/spedizioni')
+		.then(response => response.json())
+		.then(sped => {
+            document.getElementById("spedizioni").innerHTML=JSON.stringify(sped);
+            console.log(sped);
+         })
+
+           </script>
+           
+        </td>
+    </tr>
+</table>
+</body>
+</html>

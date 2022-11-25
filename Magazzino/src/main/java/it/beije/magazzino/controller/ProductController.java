@@ -54,6 +54,12 @@ public class ProductController {
 		return "home";
 	}
 	
+	@RequestMapping(value = "test" , method = RequestMethod.GET)
+	public String getAll(HttpServletRequest request) {
+		System.out.println("Hello Page Requested : " + request.getRequestURI());
+
+		return "j";
+	}
 	
 	  @RequestMapping(value = "/product", method = RequestMethod.GET)
 	    public String index(HttpServletRequest request, Model model) {
@@ -63,7 +69,7 @@ public class ProductController {
 	        model.addAttribute("product", product);
 	       
 
-	        return "prodotti"; // /WEB-INF/views/home.jsp
+	        return "prodotti"; 
 
 	    }
 	  
@@ -72,7 +78,7 @@ public class ProductController {
 	       
 	        List<Product> prod = productService.findById(prodotto);
 	        model.addAttribute("prodotto", prod);
-	        return "prodotto"; // /WEB-INF/views/home.jsp
+	        return "prodotto";
 	    }
 	  
 	  @RequestMapping(value = "/addProd", method = RequestMethod.POST)

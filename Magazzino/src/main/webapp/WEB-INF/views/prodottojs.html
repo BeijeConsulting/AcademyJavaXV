@@ -1,0 +1,47 @@
+<html>
+
+<head>
+	<title>HomePage</title>
+</head>
+
+<body style="text-align: center" topmargin="200px">
+	<h1>PRODOTTO</h1><br>
+
+	<table style="margin: auto">
+		<div>
+
+			<label>Id Prodotto:</label>
+			<input type="text" id="id">
+			<button onclick="ricercaId()"></button>
+
+		</div>
+		<tr>
+			<td style="border-style: solid">
+				<h3 id="prodotto" style="text-align: center"></h3>
+		<script>
+
+			function ricercaId() {
+				fetch('http://localhost:8080/Magazzino/api/prodottoById', {
+					method: 'POST',
+					body: JSON.stringify({
+						id: document.getElementById("id").value,
+					}),
+					headers: {
+						"Content-type": "application/json; charset=UTF-8",
+					},
+				})
+					.then((response) => response.json())
+					.then(prod => {
+						document.getElementById("prodotto").innerHTML=JSON.stringify(prod);
+						console.log(prod);
+					})
+			}
+		</script>	   
+	</td>
+</tr>
+
+
+	</table>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<html>
+
+<head>
+	<title>HomePage</title>
+</head>
+
+<body style="text-align: center" topmargin="200px">
+	<h1>PRODOTTO TRAMITE TIPO</h1><br>
+
+	<table id="table" border="2" style="margin: auto">
+		<div>
+
+			<label>Tipo Prodotti:</label>
+			<input type="text" id="type">
+			<button onclick="ricercaType()"></button>
+
+		</div>
+		
+			<tr>
+				<th>Name</th>
+				<th>Type</th>
+				<th>Quantity</th>
+				<th>Description</th>
+			</tr>
+			<tr>
+				<td id="nome"></td>
+				<td id="tipologia"></td>
+				<td id="quantita"></td>
+				<td id="descrizione"></td>
+		
+			</tr>
+		<script>
+
+			function ricercaType() {
+				fetch('http://localhost:8080/Magazzino/api/prodottoByTipo', {
+					method: 'POST',
+					body: JSON.stringify({
+						tipo: document.getElementById("type").value,
+					}),
+					headers: {
+						"Content-type": "application/json; charset=UTF-8",
+					},
+				})
+					.then((response) => response.json())
+					.then(data => {
+                    for (let i = 0; i < data.length; i++) {
+                        console.log(data[i]);
+                        document.getElementById('nome').innerHTML += data[i].name + "</br>";
+                        document.getElementById('tipologia').innerHTML += data[i].tipo + "</br>";
+                        document.getElementById('quantita').innerHTML += data[i].quantity + "</br>";
+                        document.getElementById('descrizione').innerHTML += data[i].desc + "</br>";
+                    }
+                })
+			}
+		</script>	   
+	</td>
+</tr>
+
+
+	</table>
+</body>
+
+</html>

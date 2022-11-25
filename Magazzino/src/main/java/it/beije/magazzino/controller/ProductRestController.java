@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +29,7 @@ import it.beije.magazzino.service.SpedizioneService;
 
 @RestController
 @RequestMapping(value = "api")
+@CrossOrigin(origins = "*", allowCredentials = "true")
 public class ProductRestController {
 
 	public ProductRestController() {
@@ -45,11 +48,11 @@ public class ProductRestController {
 	private ProductRepository productRepository;
 
 	 @GetMapping(value = "/product")
-	  public  List<Product> prodotti() {      
+	  public  ResponseEntity<List<Product>>prodotti() {      
 	      List<Product> prodotti = productService.findAll();
 	     
 	   
-	      return prodotti; 
+	      return ResponseEntity.ok(prodotti); 
 	  }
 	 
 	 @PostMapping(value = "/prodottoById")
@@ -61,11 +64,11 @@ public class ProductRestController {
 	  }
 	 
 	 @PostMapping(value = "/addProd")
-	  public  Product addProd( @RequestBody Product prod) {      
+	  public  ResponseEntity<Product> addProd( @RequestBody Product prod) {      
 		 productService.save(prod);
 	     
 	   
-	      return prod; 
+	      return ResponseEntity.ok(prod); 
 	  }
 	 
 	 @PutMapping(value = "/modProd/{id}")
@@ -104,11 +107,11 @@ public class ProductRestController {
 	 @PostMapping(value = "/prodottoByNomeDesc")
 	  public  List<Product> prodottiByNomeDesc(@RequestBody Product prodotto) { 
 		 List<Product> prodotti = null;
-		 if (prodotto.getDesc()== null) {
+		 if (prodotto.getDesc()== null||prodotto.getDesc()== "") {
 			  prodotti = productService.findByName(prodotto.getName());
-		 }else  if (prodotto.getName()== null) {
+		 }else  if (prodotto.getName()== null||prodotto.getName()== "") {
 			 prodotti = productService.findByDesc(prodotto.getDesc());
-		 }else if (prodotto.getName()!= null && prodotto.getDesc()!= null){
+		 }else if ((prodotto.getName()!= null && prodotto.getDesc()!= null)||(prodotto.getName()!= "" && prodotto.getDesc()!= "")){
 	       prodotti = productService.findByNameAndDesc(prodotto.getName(), prodotto.getDesc());
 		 }
 	   

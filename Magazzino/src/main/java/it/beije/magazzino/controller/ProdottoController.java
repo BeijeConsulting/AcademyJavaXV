@@ -31,7 +31,8 @@ public class ProdottoController {
 		System.out.println("creo un oggetto ProdottoController...");
 	}
 	
-	@RequestMapping(value = "/listaprodotti", method = RequestMethod.GET)
+	//@RequestMapping(value = "/listaprodotti", method = RequestMethod.GET)
+	@RequestMapping(value = "/ajax", method = RequestMethod.GET)				//test ajax
 	public String test(Locale locale, Model model) {
 		System.out.println("test : " + locale);
 
@@ -39,7 +40,8 @@ public class ProdottoController {
 		System.out.println("lista : " + lista);
 		model.addAttribute("lista", lista);
 		
-		return "lista_prodotti";
+//		return "lista_prodotti";
+		return "ajax";
 	}
 	
 	

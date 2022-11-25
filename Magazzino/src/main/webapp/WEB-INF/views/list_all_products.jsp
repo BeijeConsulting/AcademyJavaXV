@@ -12,10 +12,20 @@
 	<h1>Lista dei prodotti presenti in magazzino</h1>
 	
 	<p style="color: red">${error}</p>
-	
+	<!--  
 	<c:forEach items="${products}" var="product">
 		<br>- ${product.name}  ${product.typology}  ${product.quantity}
 </c:forEach>
+-->
+
+<script>
+
+
+fetch('./all_products_api')
+	  .then((response) => response.json())
+	  .then((json) => console.log(json));
+
+</script>
 
 </body>
 </html>

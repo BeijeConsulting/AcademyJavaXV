@@ -34,8 +34,24 @@
 		${product.typology} <br>  
 		${product.quantity} <br>
 		${product.description} <br>
-	
+		
+<script>
 
+fetch('./add_new_product_api', {
+	  method: 'POST',
+	  body: JSON.stringify({
+	    name:"NuovoProdotto",
+	    typology:"Libro",
+	    quantity:10,
+	    description:"NuovoLibro"
+	  }),
+	  headers: {
+	    'Content-type': 'application/json; charset=UTF-8',
+	  },
+	})
+	  .then((response) => response.json())
+	  .then((json) => console.log(json));
 
+</script>
 </body>
 </html>

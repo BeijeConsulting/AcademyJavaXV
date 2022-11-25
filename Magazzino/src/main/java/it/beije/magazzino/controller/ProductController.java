@@ -5,9 +5,11 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +43,12 @@ public class ProductController {
 		}
 
 		return "list_all_products"; 
+	}
+
+	//Restituisce la lista di tutti i prodotti
+	@RequestMapping(value = {"/all_products_api"}, method = RequestMethod.GET)
+	public ResponseEntity<List<Product>> listAllProductsAPI(HttpServletRequest request, Model model) {
+		return ResponseEntity.ok(productService.listAllProduct());
 	}
 
 	//Restituisce il dettaglio del prodotto tramite ID
@@ -103,6 +111,13 @@ public class ProductController {
 		}		
 		return "add_new_product";
 	}
+	
+//	//Metodo per la registrazione di un prodotto a magazzino
+//		@RequestMapping(value = {"/add_new_product_api"}, method = RequestMethod.POST)
+//		public ResponseEntity<Product> addProductPostApi(@RequestBody Product product){
+//			Product addProduct = productService.addProduct(product.getName(), product.getTypology(), product.getQuantity(), product.getDescription());	
+//			return ResponseEntity.ok(addProduct);
+//		}
 
 	@RequestMapping(value = {"/add_new_product"}, method = RequestMethod.GET)
 	public String addProductGet(HttpServletRequest request) {
@@ -189,7 +204,7 @@ public class ProductController {
 		return "delete_product";
 	}
 
-	
+
 	@RequestMapping(value = {"/list_product_by_typology"}, method = RequestMethod.GET)
 	public String listProductByTypology(
 			HttpServletRequest request, 
@@ -206,7 +221,7 @@ public class ProductController {
 
 		return "list_product_by_typology";
 	}
-	
+
 	@RequestMapping(value = {"/list_product_by_name_description"}, method = RequestMethod.GET)
 	public String listProductByNameDescription(
 			HttpServletRequest request, 
@@ -216,7 +231,7 @@ public class ProductController {
 
 		//Mostra la lista dei prodotti presenti in magazzino
 		List<Product> products = productService.listByNameDescription(name, description);
-	
+
 		if(products != null && products.size() > 0) {
 			model.addAttribute("products" , products);
 		}else {

@@ -38,6 +38,7 @@ public class ProductController {
 		return "product-list";
 	}
 
+	//TODO: UNFINISHED
 	@RequestMapping(value = "/productbyid-html", method = RequestMethod.GET)
 	public String productsbyid() {
 		return "js/productbyid";
@@ -68,6 +69,12 @@ public class ProductController {
 		return "productbyid";
 	}
 
+	@RequestMapping(value="/newproduct-form-html", method=RequestMethod.GET)
+	public String newproductform(){
+//		productService.save(product);
+
+		return "js/newproduct-form";
+	}
 
 	@RequestMapping(value="/newproduct-form", method=RequestMethod.GET)
 	public String newproductform(@ModelAttribute("product") Product product, Model model){

@@ -42,26 +42,32 @@
     </script>
   </div>
     <div>
+        <script>
+            // let productId = -9;
 
+            let urlById = "http://localhost:8080/Magazzino_war_exploded/api/product/"
+            function getData( productId ){
+
+                console.log("value: ", document.getElementById('productId').value)
+                // urlById += document.getElementById('productId').value
+                console.log("new Url: " , urlById)
+                fetch(urlById)
+                    .then((response) => response.json())
+                    .then((json) => console.log(json));
+
+            }
+
+        </script>
 
       <form  method="GET">
 <%--      Product id: <form:input path="id"/>--%>
 <%--      <br><br>--%>
-
-
-        Product id: <input type="submit" id="" />
-<%--        <button onclick="getData(id)"></button>--%>
+        <label for="productId">Id del prodotto:</label><br>
+        <input type="text" id="productId" value=""><br>
+        <button onclick="getData(productId)" value="Submit">Submit</button>
       </form>
 
-        <script>
-            let productId = -9;
-            let urlById = "http://localhost:8080/Magazzino_war_exploded/product/productId"
 
-            function getData( productId ){
-                console.log("value: ", productId)
-            }
-
-        </script>
     </div>
 
 

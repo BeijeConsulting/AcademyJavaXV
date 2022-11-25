@@ -29,9 +29,15 @@ public class AjaxControllerCh {
         return "ajaxHome";
     }
 
-    @PostMapping(value = "searchProductCh")
+    @PostMapping(value = "/searchProductCh")
     public String getAjaxCh(Model model, @RequestParam(name="id", required = false) Integer id) {
         model.addAttribute("id", id);
         return "ajaxHome";
     }
+    @PostMapping(value = "/deleteProduct")
+    public String deleteAjaxCh(Model model, @RequestParam(name="id", required = false) Integer id) {
+        model.addAttribute("idDelete", id);
+        return "ajaxHome";
+    }
+
 }

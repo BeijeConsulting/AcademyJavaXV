@@ -7,6 +7,7 @@ import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/*
 @Entity
 @Table(name = "spedizione")
 public class Spedizione {
@@ -104,3 +105,4 @@ public class Spedizione {
                 '}';
     }
 }
+*/

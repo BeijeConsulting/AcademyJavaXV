@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.*;
 
-@Controller
+/*@Controller
 public class SpedizioneController {
 
     @Autowired
@@ -86,4 +86,4 @@ public class SpedizioneController {
 
         return "add_spedizione";
     }
-}
+}*/

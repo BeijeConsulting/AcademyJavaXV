@@ -1,3 +1,4 @@
+/*
 package it.beije.magazzino.service;
 
 
@@ -44,3 +45,4 @@ public class ContenutoSpedizioneService {
 
 
 }
+*/

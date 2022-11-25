@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+/*@RestController
 @RequestMapping(value = "api")
 public class SpedizioneRestController {
     @Autowired
@@ -41,4 +41,4 @@ public class SpedizioneRestController {
         return lista;
     }
     
-}
+}*/

@@ -1,3 +1,4 @@
+/*
 package it.beije.magazzino.model;
 
 import javax.persistence.*;
@@ -62,3 +63,4 @@ public class ContenutoSpedizione {
                 '}';
     }
 }
+*/

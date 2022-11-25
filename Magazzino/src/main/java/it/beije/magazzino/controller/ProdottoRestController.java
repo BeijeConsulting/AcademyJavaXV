@@ -16,6 +16,7 @@ import java.util.List;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,23 +42,24 @@ public class ProdottoRestController {
 	}
 	
 	@GetMapping(value="/prodotti")
-	public List<Prodotto> prodotti() {
+	
+	public ResponseEntity<List<Prodotto>> prodotti() {
 		System.out.println("ENTRATO IN PRODOTTI");
 		
 		List<Prodotto> prodotti = prodottoRepository.findAll();
 		
-		return prodotti;
+		return ResponseEntity.ok(prodotti);
 	}
 	
 	
-	@GetMapping(value = "/prodotto/{id}")
-	public Prodotto getProdotto(@PathVariable(name = "id") Integer id) {
+	@PostMapping(value = "/prodotto/{id}") //cambiato in post per test chiamate ajax
+	public ResponseEntity<Prodotto> getProdotto(@PathVariable(name = "id") Integer id) {
 		System.out.println("GET getProdotto : " + id);
 		
 		Prodotto prodotto = prodottoService.findById(id);
 		System.out.println("prodotto : " + prodotto);
 		
-		return prodotto;
+		return ResponseEntity.ok(prodotto);
 	}
 
 	
@@ -72,7 +74,7 @@ public class ProdottoRestController {
 	}
 	
 	@PutMapping(value = "/prodotto/{id}")
-	public Prodotto updateProdotto(@PathVariable(name = "id") Integer id, @RequestBody Prodotto newData) {
+	public ResponseEntity<Prodotto> updateProdotto(@PathVariable(name = "id") Integer id, @RequestBody Prodotto newData) {
 		System.out.println("POST updateProdotto id : " + id + " : " + newData);
 		
 		if (id.compareTo(newData.getId()) == 0) {//OK modifico
@@ -85,7 +87,7 @@ public class ProdottoRestController {
 			prodottoService.save(prodotto);
 			System.out.println("prodotto with new data : " + prodotto);
 
-			return prodotto;
+			return ResponseEntity.ok(prodotto);
 		} else
 			throw new IllegalArgumentException("id non corrispondenti");
 	}
@@ -99,14 +101,14 @@ public class ProdottoRestController {
 		return "{\"message\":\"rimosso prodotto " + id + "\"}";
 	}
 	
-	@GetMapping(value = "/prodotto/tipologia/{tipologia}")
-	public List<Prodotto> tipologia(@PathVariable(name = "tipologia") String tipologia) {
+	@PostMapping(value = "/prodotto/tipologia/{tipologia}")	//cambiato in post per test chiamate ajax
+	public ResponseEntity<List<Prodotto>> tipologia(@PathVariable(name = "tipologia") String tipologia) {
 		System.out.println("GET getProdotto : " + tipologia);
 		
 		List<Prodotto> prodotti = prodottoService.findByTipologia(tipologia);
 		System.out.println("prodotti : " + prodotti);
 		
-		return prodotti;
+		return ResponseEntity.ok(prodotti);
 	}
 	
 //	@GetMapping(value = "/prodotto/{nome}/{descrizione}")

@@ -41,7 +41,7 @@ public class ProdottoController {
 		model.addAttribute("lista", lista);
 		
 //		return "lista_prodotti";
-		return "ajax";
+		return "ProvaAjax";
 	}
 	
 	

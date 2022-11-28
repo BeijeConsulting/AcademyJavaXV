@@ -1,6 +1,7 @@
 package it.beije.magazzino.controller;
 
 import it.beije.magazzino.ProductCriteria;
+import it.beije.magazzino.SpedizioniCriteria;
 import it.beije.magazzino.model.ContenutoSpedizione;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.model.Spedizione;
@@ -46,7 +47,7 @@ public class ControllerSpedizioni {
     @PostMapping(value = "findSpedizioneById")
     public String findSpedizioneById(Model model, @RequestParam(name = "id") Integer id) {
         if (spedizioneService.findSpedizioneById(id) != null) {
-            model.addAttribute("spedizioneTrovata", spedizioneService.findSpedizioneById(id));
+            model.addAttribute("spedizioneTrovata", SpedizioniCriteria.spedizioneByIdCriteria(id));
             model.addAttribute("spedizioniList", SpedizioniCriteria.allSpedizioniCriteria());
             return "findSpedizioneById";
         } else {
@@ -97,7 +98,7 @@ public class ControllerSpedizioni {
 
     @PostMapping(value = "findSpedizioneByProduct")
     public String findSpedizioneByProduct(Model model, @RequestParam(name = "id") Integer id) {
-        model.addAttribute("spedizioneTrovata", SpedizioniCriteria.productByIdCriteria(id));
+        model.addAttribute("spedizioneTrovata", SpedizioniCriteria.spedizioneByProductId(id));
         return "findSpedizioneByProduct";
     }
 }

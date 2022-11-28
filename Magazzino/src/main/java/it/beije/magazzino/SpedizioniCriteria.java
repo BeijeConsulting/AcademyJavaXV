@@ -1,5 +1,6 @@
-package it.beije.magazzino.controller;
+package it.beije.magazzino;
 
+import it.beije.magazzino.model.ContenutoSpedizione;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.model.Spedizione;
 
@@ -10,6 +11,7 @@ import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
+import java.util.ArrayList;
 import java.util.List;
 
 public class SpedizioniCriteria {
@@ -27,12 +29,26 @@ public class SpedizioniCriteria {
         return spedizioni;
     }
 
-    public static Spedizione productByIdCriteria(Integer id) {
+    public static Spedizione spedizioneByIdCriteria(Integer id) {
         CriteriaBuilder cb = entityManager.getCriteriaBuilder();
         CriteriaQuery<Spedizione> q = cb.createQuery(Spedizione.class);
         Root<Spedizione> c = q.from(Spedizione.class);
         q.select(c).where(cb.equal(c.get("id"), id));
         Spedizione spedizione = entityManager.createQuery(q).getSingleResult();
         return spedizione;
+    }
+
+    public static List<Spedizione> spedizioneByProductId(Integer id) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<ContenutoSpedizione> q = cb.createQuery(ContenutoSpedizione.class);
+        Root<ContenutoSpedizione> c = q.from(ContenutoSpedizione.class);
+        q.select(c).where(cb.equal(c.get("prodottoId"), id));
+        List<ContenutoSpedizione> listaContenuti = entityManager.createQuery(q).getResultList();
+        List<Spedizione> listaSpedizioni = new ArrayList<>();
+        for (ContenutoSpedizione cS : listaContenuti) {
+            listaSpedizioni.add(spedizioneByIdCriteria(cS.getSpedizioneId()));
+        }
+
+        return listaSpedizioni;
     }
 }

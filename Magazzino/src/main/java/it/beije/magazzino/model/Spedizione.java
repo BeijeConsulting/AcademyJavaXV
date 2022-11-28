@@ -49,7 +49,7 @@ public class Spedizione {
     private LocalDateTime dataRicezione;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JsonProperty(value="spedizione_details")
+    @JsonProperty(value = "spedizione_details")
     @JoinColumn(name = "spedizione_id")
     private List<ContenutoSpedizione> contenutoSpedizione;
 

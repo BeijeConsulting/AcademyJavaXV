@@ -62,11 +62,6 @@ public class ContenutoSpedizione {
 
     @Override
     public String toString() {
-        return "ContenutoSpedizione{" +
-                "id=" + id +
-                ", spedizioneId=" + spedizioneId +
-                ", prodottoId=" + prodottoId +
-                ", quantita=" + quantita +
-                '}';
+        return "ContenutoSpedizione{" + "id=" + id + ", spedizioneId=" + spedizioneId + ", prodottoId=" + prodottoId + ", quantita=" + quantita + '}';
     }
 }

@@ -75,7 +75,7 @@
 <script>
 
 
-    function productById( productId ){
+    function productById( ){
         let newUrl = "http://localhost:8080/Magazzino_war_exploded/api/product/"
         newUrl += document.getElementById("productId").value
         console.log("new Url: " + newUrl)

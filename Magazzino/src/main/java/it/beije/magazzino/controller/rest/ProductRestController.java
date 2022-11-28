@@ -72,7 +72,7 @@ public class ProductRestController {
     }
 
 
-    @GetMapping(value={"/productbydesc-name-c/{name}/{desc}", "/productbydesc-name-c/{name}","/productbydesc-name-c/{desc}"} )
+    @GetMapping(value={"/productbydesc-name-c/{name}/{desc}", "/productby-name-c/{name}","/productbydesc-c/{desc}"} )
     public List<Product> findbynameordescCriteria(@PathVariable(name="name") String name, @PathVariable(name="desc") String desc){
         System.out.println("Name: " + name);
         System.out.println("Desc: " + desc);

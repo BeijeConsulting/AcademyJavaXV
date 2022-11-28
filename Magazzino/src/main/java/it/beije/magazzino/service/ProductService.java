@@ -18,8 +18,7 @@ public class ProductService {
     @Autowired
     ProductRepository productRepository;
 
-    @Autowired
-    EntityManager em;
+
 
 
 //        public List<Product> findAll(){

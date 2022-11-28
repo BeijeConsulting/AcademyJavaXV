@@ -31,24 +31,25 @@
       </div>
 
       <div id="infoP" hidden="hidden">
-         <form action="./infoP" method="get">
+         <form>
             <label for="id">ID:</label>
-            <input type="text" name="id" value="">
-            <input type="submit" value="Conferma">
+            <input type="text" name="id" id="inputP" value="">
+            <input type="submit" value="Conferma" onclick="getInfoP(document.getElementById('inputP').value)">
          </form>
       </div>
 
       <div id="newP" hidden="hidden">
-         <form action="./newP" method="post">
+         <form>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" value="">
+            <input type="text" id="newNome" name="nome" value="">
             <label for="tipo">Tipo:</label>
-            <input type="text" name="tipo" value="">
+            <input type="text" id="newTipo" name="tipo" value="">
             <label for="quantita">Quantità:</label>
-            <input type="text" name="quantita" value="">
+            <input type="text" id="newQuantita" name="quantita" value="">
             <label for="descrizione">Descrizione:</label>
-            <input type="text" name="descrizione" value="">
-            <input type="submit" value="Conferma">
+            <input type="text" id="newDescrizione" name="descrizione" value="">
+            <input type="submit" value="Conferma" onclick="postNewP(document.getElementById('newNome').value, document.getElementById('newTipo').value,
+                                                            document.getElementById('newQuantita').value, document.getElementById('newDescrizione').value)">
          </form>
       </div>
 
@@ -65,10 +66,10 @@
       </div>
 
       <div id="deleteP" hidden="hidden">
-         <form action="./deleteP" method="get">
+         <form>
             <label for="id">ID:</label>
-            <input type="text" name="id" value="">
-            <input type="submit" value="Conferma">
+            <input type="text" id="delete" name="id" value="">
+            <input type="submit" value="Conferma" onclick="deleteP(document.getElementById('delete').value)">
          </form>
       </div>
 
@@ -97,10 +98,10 @@
       </div>
 
       <div id="infoS" hidden="hidden">
-         <form action="./infoS" method="get">
+         <form>
             <label for="id">ID:</label>
-            <input type="text" name="id" value="">
-            <input type="submit" value="Conferma">
+            <input type="text" name="id" id="inputS" value="">
+            <input type="submit" value="Conferma" onclick="getInfoS(document.getElementById('inputS').value)">
          </form>
       </div>
 
@@ -110,7 +111,7 @@
    <script>
       function getListaP(){
          let products
-         fetch('http://localhost:8080/Magazzino_war/listP')
+         fetch('http://localhost:8080/Magazzino_war/restListP')
             .then(response => response.json())
             .then(json => products = json)
             .then(show => showProducts(products))
@@ -119,10 +120,67 @@
 
       function getListaS(){
          let shipments
-         fetch('http://localhost:8080/Magazzino_war/listS')
+         fetch('http://localhost:8080/Magazzino_war/restListS')
                  .then(response => response.json())
                  .then(json => shipments = json)
                  .then(show => showShipments(shipments))
+      }
+
+      function getInfoP(id){
+         console.log(id)
+         let products
+         fetch('http://localhost:8080/Magazzino_war/restInfoP/'+id.toString())
+                 .then(response => response.json())
+                 .then(json => products = json)
+                 .then(show => showProducts(products))
+      }
+
+      function getInfoS(id){
+         console.log(id)
+         let details
+         fetch('http://localhost:8080/Magazzino_war/restInfoS/'+id.toString())
+                 .then(response => response.json())
+                 .then(json => details = json)
+                 .then(show => showShipmentsDetails(details))
+      }
+
+      function postNewP(nome, tipo, quantita, descrizione){
+         console.log(nome)
+         console.log(tipo)
+         console.log(quantita)
+         console.log(descrizione)
+         let newProduct
+         fetch('http://localhost:8080/Magazzino_war/restNewP', {
+            method: 'POST', // or 'PUT'
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+               nome: nome,
+               tipo: tipo,
+               quantita: quantita,
+               descrizione: descrizione
+            }),
+         })
+                 .then((response) => response.json())
+                 .then(json => newProduct = json)
+                 .then(show => showProducts(newProduct))
+      }
+
+      function deleteP(id){
+         let deletedProduct
+         fetch('http://localhost:8080/Magazzino_war/restDeleteP/'+id, {
+            method: 'DELETE', // or 'PUT'
+            headers: {
+               'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+               id: id
+            }),
+         })
+                 .then((response) => response.json())
+                 .then(json => deletedProduct = json)
+                 .then(show => showProducts(deletedProduct))
       }
 
 
@@ -131,12 +189,17 @@
 
          let stampa = "<table style='text-align: center'>"
          stampa += "<tr> <td></td> <td>NAME</td> <td>TYPOLOGY</td> <td>QUANTITY</td>  <td>DESCRIPTION</td> </tr>"
+         if(products.length >1){
+            products.forEach(el => {
+               stampa += "<tr> <td>" + count + "</td> <td>"+el.nome+"</td> <td>"
+                       +el.tipo +"</td> <td>"+el.quantita+"</td>  <td>"+el.descrizione+"</td> </tr>";
+               count++;
+            });
+         }   else{
+            stampa += "<tr> <td>" + count + "</td> <td>"+products.nome+"</td> <td>"
+                    +products.tipo +"</td> <td>"+products.quantita+"</td>  <td>"+products.descrizione+"</td> </tr>";
+         }
 
-         products.forEach(el => {
-            stampa += "<tr> <td>" + count + "</td> <td>"+el.nome+"</td> <td>"
-                    +el.tipo +"</td> <td>"+el.quantita+"</td>  <td>"+el.descrizione+"</td> </tr>";
-            count++;
-         });
 
          stampa += "</table>";
 
@@ -149,14 +212,40 @@
          let stampa = "<table style='text-align: center'>"
          stampa += "<tr> <td></td> <td>CODICE</td> <td>DESTINATARIO</td> <td>INDIRIZZO</td>  <td>DATA SPEDIZIONE</td> <td>DATA RICEZIONE</td> </tr>"
 
-         shipments.forEach(el => {
-            stampa += "<tr> <td>" + count + "</td> <td>"+ el.codice+"</td> <td>"
-                    +el.destinatario +"</td> <td>"+el.indirizzo+"</td>  <td>"+el.data_spedizione+"</td> <td>"+el.data_ricezione+"</td></tr>";
+            shipments.forEach(el => {
+               stampa += "<tr> <td>" + count + "</td> <td>"+ el.codice+"</td> <td>"
+                       +el.destinatario +"</td> <td>"+el.indirizzo+"</td>  <td>"+el.data_spedizione+"</td> <td>"+el.data_ricezione+"</td></tr>";
+               count++;
+            });
+
+
+
+
+         stampa += "</table>";
+
+         document.getElementById('display').innerHTML = stampa
+      }
+
+      function showShipmentsDetails(details){
+         let count = 1;
+
+         let stampa = "<table style='text-align: center'>"
+         stampa += "<tr> <td></td> <td>CODICE</td> <td>SPEDIZIONE</td> <td>RICEZIONE</td><td>DESTINATARIO</td> <td>INDIRIZZO</td></tr>"
+
+
+               stampa += "<tr> <td>" + count + "</td> <td>"+ details.codice+"</td> <td>"+details.data_spedizione +"</td> <td>"+details.data_ricezione+"</td>" +
+                       "<td>"+details.destinatario+"</td><td>"+details.indirizzo+"</td> </tr>";
+
+         stampa += "</table >";
+         stampa += "<table style='text-align: center'><tr> <td> DETTAGLIO ORDINE: </td></tr><tr></tr>+" +
+                 "<tr><td></td><td>ID PRODOTTO</td><td>QUANTITA'</td></tr>"
+
+         details["contenuto"].forEach(el => {
+            stampa += "<tr> <td>" + count + "</td> <td>"+ el.id_prodotto+"</td> <td>" +el.quantita +"</td></tr>";
             count++;
          });
 
          stampa += "</table>";
-
          document.getElementById('display').innerHTML = stampa
       }
    </script>

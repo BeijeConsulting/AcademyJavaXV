@@ -106,7 +106,7 @@ public class MyRestController {
 		return p;
 	}
 
-	@GetMapping(value = "/restDeleteP/{id}")
+	@DeleteMapping(value = "/restDeleteP/{id}")
 	public Product restDeleteP(@PathVariable(name = "id") Integer id) {
 		System.out.println("GET restDeleteP...");
 

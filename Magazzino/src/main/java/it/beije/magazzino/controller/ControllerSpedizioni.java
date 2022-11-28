@@ -39,7 +39,7 @@ public class ControllerSpedizioni {
     //- Pagina che restituisce il dettaglio della spedizione e del relativo contenuto
     @GetMapping(value = "findSpedizioneById")
     public String findSpedizioneById(Model model) {
-        model.addAttribute("spedizioniList", spedizioneService.findAllSpedizioni());
+        model.addAttribute("spedizioniList", SpedizioniCriteria.allSpedizioniCriteria());
         return "findSpedizioneById";
     }
 
@@ -47,11 +47,11 @@ public class ControllerSpedizioni {
     public String findSpedizioneById(Model model, @RequestParam(name = "id") Integer id) {
         if (spedizioneService.findSpedizioneById(id) != null) {
             model.addAttribute("spedizioneTrovata", spedizioneService.findSpedizioneById(id));
-            model.addAttribute("spedizioniList", spedizioneService.findAllSpedizioni());
+            model.addAttribute("spedizioniList", SpedizioniCriteria.allSpedizioniCriteria());
             return "findSpedizioneById";
         } else {
             model.addAttribute("error", "Id errato");
-            model.addAttribute("spedizioniList", spedizioneService.findAllSpedizioni());
+            model.addAttribute("spedizioniList", SpedizioniCriteria.allSpedizioniCriteria());
             return "findSpedizioneById";
         }
     }
@@ -63,40 +63,41 @@ public class ControllerSpedizioni {
     }
 
     @PostMapping(value = "addSpedizione")
-    public String addSpedizione(Model model, @RequestParam (name="name") String nome, @RequestParam(name = "indirizzo") String indirizzo){
-    Spedizione spedizione = new Spedizione();
-    spedizione.setDestinatario(nome);
-    spedizione.setIndirizzo(indirizzo);
-    spedizioneService.addSpedizione(spedizione);
-    BeanUtils.copyProperties(spedizione,spedizione);
-    spedizione.setCodice();
-    spedizioneService.addSpedizione(spedizione);
-    model.addAttribute("spedizione",spedizione.getId());
-    return "addSpedizioneCont";
+    public String addSpedizione(Model model, @RequestParam(name = "name") String nome, @RequestParam(name = "indirizzo") String indirizzo) {
+        Spedizione spedizione = new Spedizione();
+        spedizione.setDestinatario(nome);
+        spedizione.setIndirizzo(indirizzo);
+        spedizioneService.addSpedizione(spedizione);
+        BeanUtils.copyProperties(spedizione, spedizione);
+        spedizione.setCodice();
+        spedizioneService.addSpedizione(spedizione);
+        model.addAttribute("spedizione", spedizione.getId());
+        return "addSpedizioneCont";
     }
+
     @PostMapping(value = "addSpedizioneCont")
-    public String addSpedizione(Model model, @RequestParam(name="idProdotto") Integer idProdotto, @RequestParam(name = "quantita") Integer quantita, @RequestParam(name = "id")Integer id){
+    public String addSpedizione(Model model, @RequestParam(name = "idProdotto") Integer idProdotto, @RequestParam(name = "quantita") Integer quantita, @RequestParam(name = "id") Integer id) {
         ContenutoSpedizione contenuto = new ContenutoSpedizione();
         contenuto.setSpedizioneId(id);
         contenuto.setQuantita(quantita);
         contenuto.setProdottoId(idProdotto);
-        model.addAttribute("spedizione",contenuto.getSpedizioneId());
+        model.addAttribute("spedizione", contenuto.getSpedizioneId());
         contenutoSpedizioneService.addContenuto(contenuto);
-        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
-    return "addSpedizioneCont";
+        return "addSpedizioneCont";
     }
 
-@GetMapping(value = "findSpedizioneByProduct")
-    public String findSpedizioneByProduct(Model model){
-        List<Product> listaProdotti = productService.findAll();
+    @GetMapping(value = "findSpedizioneByProduct")
+    public String findSpedizioneByProduct(Model model) {
+        List<Product> listaProdotti = ProductCriteria.allProductsCriteria();
         model.addAttribute("list", listaProdotti);
         return "findSpedizioneByProduct";
-}
+    }
 
     @PostMapping(value = "findSpedizioneByProduct")
-    public String findSpedizioneByProduct (Model model, @RequestParam(name = "id") Integer id) {
-model.addAttribute("spedizioneTrovata", ProductCriteria.productByIdCriteria(id));
-return "findSpedizioneByProduct";
+    public String findSpedizioneByProduct(Model model, @RequestParam(name = "id") Integer id) {
+        model.addAttribute("spedizioneTrovata", SpedizioniCriteria.productByIdCriteria(id));
+        return "findSpedizioneByProduct";
     }
 }

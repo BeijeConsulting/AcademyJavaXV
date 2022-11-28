@@ -38,7 +38,10 @@ public class ProductController {
 		return "product-list";
 	}
 
-	//TODO: UNFINISHED
+
+
+
+	//TODO: DONE( to be tested better )
 	@RequestMapping(value = "/productbyname-id-html", method = RequestMethod.GET)
 	public String productsbyid() {
 

@@ -3,6 +3,7 @@ package it.beije.magazzino.controller.rest;
 
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.service.ProductService;
+import it.beije.magazzino.service.ProductServiceCriteriaApi;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +17,9 @@ public class ProductRestController {
     @Autowired
     ProductService productService;
 
+    @Autowired
+    ProductServiceCriteriaApi productServiceCriteriaApi;
+
 
     public ProductRestController(){
         System.out.println("creo un oggetto ProductRestController");
@@ -25,6 +29,12 @@ public class ProductRestController {
     @GetMapping(value="/products")
     public List<Product> products(){
         List<Product> products = productService.findAll();
+        return products;
+    }
+    @GetMapping(value="/products-c")
+    public List<Product> productsCriteria(){
+//        System.out.println("Inside Products Criteria");
+        List<Product> products = productServiceCriteriaApi.findAll();
         return products;
     }
 

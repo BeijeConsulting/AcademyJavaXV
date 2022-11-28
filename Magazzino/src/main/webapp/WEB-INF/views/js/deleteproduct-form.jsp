@@ -49,13 +49,6 @@
 <div>
 
   <div>
-    <label for="productname">Product Name:</label>
-    <input type="text" id="productname" name="productname"><br>
-    <input type="submit" value="Submit" onclick="deleteByName()">
-  </div>
-  <br>
-
-  <div>
     <label for="productId">Product id:</label>
     <input type="text" id="productId" name="productId"><br>
     <input type="submit" value="Submit" onclick="deleteById()">
@@ -63,7 +56,12 @@
   <br>
 
 <script>
-
+  function deleteByName(){
+    let url = "http://localhost:8080/Magazzino_war_exploded/api/product/"+ document.getElementById("productId")
+    fetch(url, {
+      method: 'DELETE',
+    });
+  }
 
 
 </script>

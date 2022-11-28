@@ -19,14 +19,16 @@ public class ProductServiceCriteria {
 //    @Autowired
     EntityManagerFactory emf;
 
+    EntityManager em;
 
 
     public ProductServiceCriteria(){
         emf = JpaEntityManager.getInstance();
+        em = emf.createEntityManager();
     }
 
     public List<Product> findAll(){
-        EntityManager em = emf.createEntityManager();
+//        EntityManager em = emf.createEntityManager();
 //         em.getTransaction().begin() --> begin???
         CriteriaBuilder builder = em.getCriteriaBuilder();
 
@@ -43,10 +45,10 @@ public class ProductServiceCriteria {
         return result;
     }
 
-    //SELECT p FROM Product p WHERE p.quantity > 1000;
+    //SELECT p FROM Product p WHERE p.quantity > :quantity; ---> TODO:HOW TO USE PARAMETERS IN CRITERIA QUERIES??
     public List<Product> findWhereQuantityGreaterThan(int quanitity){
 
-        EntityManager em = emf.createEntityManager();
+//        EntityManager em = emf.createEntityManager();
 
         CriteriaBuilder builder = em.getCriteriaBuilder();
 
@@ -63,6 +65,17 @@ public class ProductServiceCriteria {
         List<Product> products = tq.getResultList();
         return products;
     }
+
+    public List<Product> findByNameOrDescription(String name, String desc) {
+
+
+    }
+
+//    private static CriteriaQuery<Product> buildProductCriteriaQuery(){
+//        CriteriaBuilder builder = em.getCriteriaBuilder();
+//        CriteriaQuery<Product> query = builder.createQuery(Product.class);
+//
+//    }
 //
 //    public Product findById(Integer id){
 //        Optional<Product> product = productRepository.findById(id);

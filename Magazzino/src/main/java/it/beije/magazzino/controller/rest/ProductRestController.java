@@ -44,6 +44,7 @@ public class ProductRestController {
         List<Product> products = productServiceCriteriaApi.findWhereQuantityGreaterThan(quantity);
         return products;
     }
+
     @GetMapping(value="/product/{product_id}")
     public Product getProduct(@PathVariable(name="product_id") Integer id){
         System.out.println("GET product: " + id);
@@ -67,6 +68,17 @@ public class ProductRestController {
     public List<Product> productsbytype(@PathVariable(name="product_type") String product_type){
         System.out.println("product_type: " + product_type);
         List<Product> products = productService.findByType( product_type);
+        return products;
+    }
+
+
+    @GetMapping(value="/productbydesc-name/{name}/{desc}-c")
+    public List<Product> findbynameordescCriteria(@PathVariable(name="name") String name, @PathVariable(name="desc") String desc){
+        System.out.println("Name: " + name);
+        System.out.println("Desc: " + desc);
+        List<Product> products = productServiceCriteriaApi.findByNameOrDescription(name, desc);
+        System.out.println("Products found");
+
         return products;
     }
 

@@ -9,6 +9,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.TypedQuery;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
 import javax.persistence.criteria.Root;
 import java.util.List;
 
@@ -46,7 +47,7 @@ public class ProductServiceCriteria {
     }
 
     //SELECT p FROM Product p WHERE p.quantity > :quantity; ---> TODO:HOW TO USE PARAMETERS IN CRITERIA QUERIES??
-    public List<Product> findWhereQuantityGreaterThan(int quanitity){
+    public List<Product> findWhereQuantityGreaterThan(int quantity){
 
 //        EntityManager em = emf.createEntityManager();
 
@@ -57,7 +58,7 @@ public class ProductServiceCriteria {
         Root<Product> product = query.from(Product.class);
 
         query.select(product).where(
-                builder.greaterThan(product.get("quantity"), quanitity)
+                builder.greaterThan(product.get("quantity"), quantity)
         );
 
 
@@ -66,9 +67,31 @@ public class ProductServiceCriteria {
         return products;
     }
 
-    public List<Product> findByNameOrDescription(String name, String desc) {
+
+    public List<Product> findByNameOrDescription(String name, String description) {
+
+        CriteriaBuilder builder = em.getCriteriaBuilder();
 
 
+        //Use builder to create a query
+        CriteriaQuery<Product> query = builder.createQuery(Product.class);
+        Root<Product> product = query.from(Product.class);
+
+
+        Predicate p1 = builder.equal(product.get("name"), name);
+
+        Predicate p2 = builder.equal(product.get("description"), description);
+
+        Predicate finalPredicate = builder.or(p1, p2);
+        System.out.println("finalPredicate: " + finalPredicate );
+
+        query.select(product).where(finalPredicate);
+//        query.select(product).where(p1);
+        TypedQuery<Product> tq = em.createQuery(query);
+        List<Product> products = tq.getResultList();
+//        System.out.println("inside findByName --> Products: " + products);
+
+        return products;
     }
 
 //    private static CriteriaQuery<Product> buildProductCriteriaQuery(){

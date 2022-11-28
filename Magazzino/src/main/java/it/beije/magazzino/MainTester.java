@@ -12,7 +12,9 @@ public class MainTester {
         ProductServiceCriteria psca = new ProductServiceCriteria();
 //        List<Product> result = psca.findAll();
 
-        List<Product> result = psca.findWhereQuantityGreaterThan(1000);
+//        List<Product> result = psca.findWhereQuantityGreaterThan(1000);
+
+        List<Product> result = psca.findByNameOrDescription("Pencil","Toys for kids");
         result.forEach(System.out::println);
     }
 }

@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
+import static it.beije.magazzino.repository.ProdottoRepository.hasQuantita;
+import static it.beije.magazzino.repository.ProdottoRepository.nomeContains;
+import static org.springframework.data.jpa.domain.Specification.where;
+
 
 @Service
 public class ProdottoService {
@@ -41,4 +45,10 @@ public class ProdottoService {
 	public List<Prodotto> findByNomeOrDescrizione(String nome, String descrizione) {
 		return prodottoRepository.findByNomeOrDescrizione(nome, descrizione);
 	}
+
+	public List<Prodotto> findByNomeAndDescrizione(String nome, String descrizione) {
+		return prodottoRepository.findByNomeAndDescrizione(nome, descrizione);
+	}
+
+	public List<Prodotto> findAllContains(String nome, Integer quantita) {return prodottoRepository.findAll(where(hasQuantita(quantita)).and(nomeContains(nome)));}
 }

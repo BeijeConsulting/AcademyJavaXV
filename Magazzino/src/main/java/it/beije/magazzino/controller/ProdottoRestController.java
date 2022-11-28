@@ -67,6 +67,30 @@ public class ProdottoRestController {
         return lista;
     }
 
+    @GetMapping(value = "/prodotti_by_nome_and_descrizione/{nome}/{descrizione}")
+    public List<Prodotto> prodottoByNomeAndDescrizione(
+            @PathVariable(name = "nome", required = false) String nome,
+            @PathVariable(name = "descrizione", required = false) String descrizione) {
+        System.out.println("test : " + nome);
+
+        List<Prodotto> lista = prodottoService.findByNomeAndDescrizione(nome, descrizione);
+        System.out.println("lista : " + lista);
+
+        return lista;
+    }
+
+    @GetMapping(value = "/prodotti_contains_nome_quantita/{nome}/{quantita}")
+    public List<Prodotto> prodottoByNomeAndDescrizione(
+            @PathVariable(name = "nome", required = false) String nome,
+            @PathVariable(name = "quantita", required = false) Integer quantita) {
+        System.out.println("test : " + nome);
+
+        List<Prodotto> lista = prodottoService.findAllContains(nome, quantita);
+        System.out.println("lista : " + lista);
+
+        return lista;
+    }
+
     @PostMapping(value = "/prodotto")
     public Prodotto insertProdotto(@RequestBody Prodotto prodotto) {
         System.out.println("POST insertProdotto : " + prodotto);

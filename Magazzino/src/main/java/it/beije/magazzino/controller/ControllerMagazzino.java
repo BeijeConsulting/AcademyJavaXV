@@ -21,7 +21,7 @@ public class ControllerMagazzino {
     //- Pagina che restituisce la lista di tutti i prodotti
     @GetMapping(value = "/listAllProducts")
     public String listAllProducts(Model model) {
-//        List<Product> productList = productService.findAll();
+//        List<Product> productList = ProductCriteria.allProductsCriteria();
         List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "listAllProducts";
@@ -30,7 +30,7 @@ public class ControllerMagazzino {
     //- Pagina che restituisce il dettaglio del prodotto tramite id
     @GetMapping(value = "/searchProduct")
     public String searchProduct(Model model) {
-//        List<Product> productList = productService.findAll();
+//        List<Product> productList = ProductCriteria.allProductsCriteria();
         List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("list", productList);
         return "searchProductById";
@@ -38,7 +38,7 @@ public class ControllerMagazzino {
 
     @PostMapping(value = "/searchProduct")
     public String searchProduct(Model model, @RequestParam(name = "id", required = false) Integer id) {
-//        List<Product> productList = productService.findAll();
+//        List<Product> productList = ProductCriteria.allProductsCriteria();
         List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("list", productList);
         if (ProductCriteria.productByIdCriteria(id) != null) {
@@ -65,7 +65,7 @@ public class ControllerMagazzino {
 
         Product product = new Product(name, typology, quantity, description);
         productService.save(product);
-        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "listAllProducts";
     }
@@ -73,20 +73,20 @@ public class ControllerMagazzino {
     //- Pagina per la modifica di un prodotto esistente
     @GetMapping(value = "updateProduct")
     public String updateProduct(Model model) {
-        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "updateProduct";
     }
 
     @PostMapping(value = "updateProduct")
     public String updateProduct(Model model, @RequestParam(name = "id", required = false) Integer id) {
-        if (productService.findById(id) != null) {
+        if (ProductCriteria.productByIdCriteria(id) != null) {
             model.addAttribute("product", productService.findById(id));
-            List<Product> productList = productService.findAll();
+            List<Product> productList = ProductCriteria.allProductsCriteria();
             model.addAttribute("productList", productList);
             return "updateProductFinal";
         } else {
-            List<Product> productList = productService.findAll();
+            List<Product> productList = ProductCriteria.allProductsCriteria();
             model.addAttribute("productList", productList);
             model.addAttribute("error", "Id errato");
             return "updateProduct";
@@ -103,7 +103,7 @@ public class ControllerMagazzino {
         Product product = new Product(name, typology, quantity, description);
         product.setId(id);
         ProductCriteria.updateProductCriteria(product);
-        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "listAllProducts";
     }
@@ -111,7 +111,7 @@ public class ControllerMagazzino {
     // - Pagina per la cancellazione di un prodotto
     @GetMapping(value = "deleteProduct")
     public String deleteProduct(Model model) {
-        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "deleteProduct";
     }
@@ -120,11 +120,11 @@ public class ControllerMagazzino {
     public String deleteProduct(Model model, @RequestParam(name = "id") Integer id) {
         if (productService.findById(id) != null) {
             ProductCriteria.deleteProductCriteria(id);
-            List<Product> productList = productService.findAll();
+            List<Product> productList = ProductCriteria.allProductsCriteria();
             model.addAttribute("productList", productList);
             return "listAllProducts";
         } else {
-            List<Product> productList = productService.findAll();
+            List<Product> productList = ProductCriteria.allProductsCriteria();
             model.addAttribute("productList", productList);
             model.addAttribute("error", "Id errato");
             return "deleteProduct";
@@ -134,7 +134,7 @@ public class ControllerMagazzino {
     // - Pagina che restituisce la lista di tutti i prodotti di una specifica tipologia
     @GetMapping(value = "findByTypology")
     public String findByTypology(Model model) {
-        model.addAttribute("productList", productService.findAll());
+        model.addAttribute("productList", ProductCriteria.allProductsCriteria());
         return "searchByTypology";
     }
 
@@ -156,6 +156,18 @@ public class ControllerMagazzino {
         List<Product> productList = ProductCriteria.productByNameCriteria(name);
         model.addAttribute("listByName", productList);
         return "searchByName";
+    }
+
+    @GetMapping(value = "findbynameandtypo")
+    public String findByNameAndTypo() {
+        return "searchByNameAndTypo";
+    }
+
+    @PostMapping(value = "findbynameandtypo")
+    public String findByNameAndTypo(Model model, @RequestParam(name = "name") String name, @RequestParam(name = "typology") String typology) {
+        List<Product> productList = ProductCriteria.productByTypologyAndNameCriteria(typology, name);
+        model.addAttribute("listByName", productList);
+        return "searchByNameAndTypo";
     }
 }
 

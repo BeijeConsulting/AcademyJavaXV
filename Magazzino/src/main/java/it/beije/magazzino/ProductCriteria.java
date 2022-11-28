@@ -12,16 +12,16 @@ import java.util.List;
 public class ProductCriteria {
     static EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("magazzino");
     static EntityManager entityManager = entityManagerFactory.createEntityManager();
-    static CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
     static EntityTransaction entityTransaction = entityManager.getTransaction();
 
 
     public static List<Product> allProductsCriteria() {
-        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        EntityManager entityManagerNuovo = entityManagerFactory.createEntityManager();
+        CriteriaBuilder cb = entityManagerNuovo.getCriteriaBuilder();
         CriteriaQuery<Product> q = cb.createQuery(Product.class);
         Root<Product> c = q.from(Product.class);
         q.select(c);
-        List<Product> products = entityManager.createQuery(q).getResultList();
+        List<Product> products = entityManagerNuovo.createQuery(q).getResultList();
         return products;
     }
 
@@ -74,8 +74,14 @@ public class ProductCriteria {
         entityManager.createQuery(criteriaUpdate).executeUpdate();
         entityTransaction.commit();
     }
-    public static void saveProductCriteria(Product product) {
 
+    // multi where clause
+    public static List<Product> productByTypologyAndNameCriteria(String typology, String name) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Product> q = cb.createQuery(Product.class);
+        Root<Product> c = q.from(Product.class);
+        q.select(c).where(cb.equal(c.get("typology"), typology), cb.equal(c.get("name"), name));
+        return entityManager.createQuery(q).getResultList();
     }
     public static void main(String[] args) {
     }

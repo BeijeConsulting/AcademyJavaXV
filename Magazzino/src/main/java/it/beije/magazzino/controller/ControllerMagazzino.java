@@ -1,5 +1,6 @@
 package it.beije.magazzino.controller;
 
+import it.beije.magazzino.ProductCriteria;
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,7 +21,8 @@ public class ControllerMagazzino {
     //- Pagina che restituisce la lista di tutti i prodotti
     @GetMapping(value = "/listAllProducts")
     public String listAllProducts(Model model) {
-        List<Product> productList = productService.findAll();
+//        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("productList", productList);
         return "listAllProducts";
     }
@@ -28,17 +30,19 @@ public class ControllerMagazzino {
     //- Pagina che restituisce il dettaglio del prodotto tramite id
     @GetMapping(value = "/searchProduct")
     public String searchProduct(Model model) {
-        List<Product> productList = productService.findAll();
+//        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("list", productList);
         return "searchProductById";
     }
 
     @PostMapping(value = "/searchProduct")
     public String searchProduct(Model model, @RequestParam(name = "id", required = false) Integer id) {
-        List<Product> productList = productService.findAll();
+//        List<Product> productList = productService.findAll();
+        List<Product> productList = ProductCriteria.allProductsCriteria();
         model.addAttribute("list", productList);
-        if (productService.findById(id) != null) {
-            Product productDetail = productService.findById(id);
+        if (ProductCriteria.productByIdCriteria(id) != null) {
+            Product productDetail = ProductCriteria.productByIdCriteria(id);
             model.addAttribute("productDetail", productDetail);
         } else {
             model.addAttribute("error", "Id errato");
@@ -98,7 +102,7 @@ public class ControllerMagazzino {
 
         Product product = new Product(name, typology, quantity, description);
         product.setId(id);
-        productService.save(product);
+        ProductCriteria.updateProductCriteria(product);
         List<Product> productList = productService.findAll();
         model.addAttribute("productList", productList);
         return "listAllProducts";
@@ -115,7 +119,7 @@ public class ControllerMagazzino {
     @PostMapping(value = "deleteProduct")
     public String deleteProduct(Model model, @RequestParam(name = "id") Integer id) {
         if (productService.findById(id) != null) {
-            productService.deleteProduct(id);
+            ProductCriteria.deleteProductCriteria(id);
             List<Product> productList = productService.findAll();
             model.addAttribute("productList", productList);
             return "listAllProducts";
@@ -136,7 +140,7 @@ public class ControllerMagazzino {
 
     @PostMapping(value = "findByTypology")
     public String findByTypology(Model model, @RequestParam(name = "typology") String typology) {
-        List<Product> listByTypology = productService.findByTypology(typology);
+        List<Product> listByTypology = ProductCriteria.productByTypologyCriteria(typology);
         model.addAttribute("listByTypology", listByTypology);
         return "searchByTypology";
     }
@@ -149,7 +153,7 @@ public class ControllerMagazzino {
 
     @PostMapping(value = "findByName")
     public String findByName(Model model, @RequestParam(name = "name") String name) {
-        List<Product> productList = productService.findByName(name);
+        List<Product> productList = ProductCriteria.productByNameCriteria(name);
         model.addAttribute("listByName", productList);
         return "searchByName";
     }

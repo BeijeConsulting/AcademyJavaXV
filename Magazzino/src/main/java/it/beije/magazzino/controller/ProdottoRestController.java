@@ -79,7 +79,7 @@ public class ProdottoRestController {
         return lista;
     }
 
-    @GetMapping(value = "/prodotti_by_tipologia/{tipologia}/{quantita}")
+    @GetMapping(value = "/prodotti_by_tipologia_and_quatita/{tipologia}/{quantita}")
     public List<Prodotto> prodottoByTipologiaAndQuantita(
             @PathVariable(name = "tipologia", required = false) String tipologia,
             @PathVariable(name = "quantita", required = false) Integer quantita) {

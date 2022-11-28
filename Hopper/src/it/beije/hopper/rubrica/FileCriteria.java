@@ -11,13 +11,20 @@ import java.util.Scanner;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaUpdate;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.Session;
 
 import it.beije.hopper.Contatto;
 import it.beije.hopper.Recapito;
 
-public class FileJPA {
+public class FileCriteria {
 	public static void main(String[] args) throws IOException, SQLException, ClassNotFoundException {
-		
+
 		EntityManager entityManager = JPAEntityManagerFactory.openSession();
 		Scanner scanner = new Scanner(System.in);
 
@@ -28,20 +35,19 @@ public class FileJPA {
 		LOOP: while (!in.equalsIgnoreCase("exit")) {
 
 			if (in.equalsIgnoreCase("stampa")) {
-				stampaDB();
+				stampaDB(entityManager);
 			} else if (in.equalsIgnoreCase("aggiorna")) {
 				System.out.println("Inserire id del contatto da aggiornare: ");
 				String id = scanner.nextLine();
-				// updateDB(Integer.parseInt(id));
+				updateDB(Integer.parseInt(id),entityManager);
 			} else if (in.equalsIgnoreCase("elimina")) {
 				System.out.println("Inserire id del contatto da eliminare: ");
 				String id = scanner.nextLine();
-				removeDB(Integer.parseInt(id));
+				removeDB(Integer.parseInt(id),entityManager);
 			} else if (in.equalsIgnoreCase("aggiungi")) {
-				initializeWrite();
+				initializeWrite(entityManager);
 			} else if (in.equalsIgnoreCase("ricerca"))
-				;
-			// select();
+				select(entityManager);
 			else {
 				System.out.println("Inserimento non valido");
 				inserimento();
@@ -55,11 +61,10 @@ public class FileJPA {
 		}
 		System.out.println("Programma terminato!");
 		scanner.close();
-		
 
 	}
 
-	public static void initializeWrite() throws IOException, SQLException {
+	public static void initializeWrite(EntityManager entityManager) throws IOException, SQLException {
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -93,21 +98,20 @@ public class FileJPA {
 
 			System.out.println("Inserimento terminato...Aggiungo al database");
 
-			writeDB(contatti);
-			
+			writeDB(contatti,entityManager);
+
 		}
 
 		if (in.equals("n")) {
 			File file = new File(
 					"C:\\Users\\andre\\OneDrive\\Documents\\Beije\\Programming\\MyStuff\\RubricaEsercizioFile\\rubrica.csv");
-			initializeFile(file);
-			
+			initializeFile(file,entityManager);
+
 		}
-		
 
 	}
 
-	public static void initializeFile(File file) throws IOException, SQLException {
+	public static void initializeFile(File file,EntityManager entityManager) throws IOException, SQLException {
 
 		FileReader fileReader = new FileReader(file);
 		if (file.exists())
@@ -121,17 +125,15 @@ public class FileJPA {
 			String linea = bufferedReader.readLine();
 			if (count >= 1) {
 				String[] contatti = linea.split(";");
-				writeDB(contatti);
+				writeDB(contatti,entityManager);
 			}
 			count++;
 		}
-		
+
 		bufferedReader.close();
 	}
 
-	public static void writeDB(String[] contatti) {
-
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+	public static void writeDB(String[] contatti,EntityManager entityManager) {
 
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -185,33 +187,34 @@ public class FileJPA {
 
 	}
 
-	public static void removeDB(int id) {
+	public static void removeDB(int id,EntityManager entityManager) {
 
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+		
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaDelete<Contatto> criteriaDelete = cb.createCriteriaDelete(Contatto.class);
+		Root<Contatto> root = criteriaDelete.from(Contatto.class);
 
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
+		entityManager.getTransaction().begin();
 
 		Scanner scanner = new Scanner(System.in);
 
-		Query query = entityManager.createQuery("SELECT c FROM Contatto as c");
-		List<Contatto> contatti = query.getResultList();
+		System.out.println("Sei sicuro di voler cancellare il contatto?(Scrivere y per dare conferma)");
+		if (scanner.nextLine().toString().equalsIgnoreCase("y")) {
+			criteriaDelete.where(cb.equal(root.get("id"), id));
+			entityManager.createQuery(criteriaDelete).executeUpdate();
+			System.out.println("Contatto rimosso");
+		}
 
-			Contatto c=entityManager.find(Contatto.class,id);
-			System.out.println("Sei sicuro di voler cancellare il contatto?(Scrivere y per dare conferma)");
-			if (scanner.nextLine().toString().equalsIgnoreCase("y")) {
-				entityManager.remove(c);
-				System.out.println("Contatto rimosso");
-			}
-
-		entityTransaction.commit();
-		entityManager.close();
+		entityManager.getTransaction().commit();
 	}
 
-	public static void updateDB(int id) {
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
+	public static void updateDB(int id,EntityManager entityManager) {
+		
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaUpdate<Contatto> criteriaUpdate = cb.createCriteriaUpdate(Contatto.class);
+		Root<Contatto> root = criteriaUpdate.from(Contatto.class);
+
+		entityManager.getTransaction().begin();
 
 		Scanner scanner = new Scanner(System.in);
 
@@ -230,38 +233,36 @@ public class FileJPA {
 		String telefono = scanner.nextLine();
 
 		int count = 0;
-		Contatto contatto=entityManager.find(Contatto.class,id);
-			
-				if (!nome.equals("")) {
-					contatto.setNome(nome);
-					count++;
-				}
-				if (!cognome.equals("")) {
-					contatto.setCognome(cognome);
-					count++;
-				}
-				if (!email.equals("")) {
-					contatto.setEmail(email);
-					count++;
-				}
-				if (!telefono.equals("")) {
-					contatto.setTelefono(telefono);
-					count++;
-				}
+		criteriaUpdate.where(cb.equal(root.get("id"),id));
+		
+		if (!nome.equals("")) {
+			criteriaUpdate.set("nome", nome);
+			count++;
+		}
+		if (!cognome.equals("")) {
+			criteriaUpdate.set("cognome", cognome);
+			count++;
+		}
+		if (!email.equals("")) {
+			criteriaUpdate.set("email", email);
+			count++;
+		}
+		if (!telefono.equals("")) {
+			criteriaUpdate.set("telefono", telefono);
+			count++;
+		}
 
 		if (count > 0)
 			System.out.println("Modifiche effettuate");
 		else
 			System.out.println("Nessuna modifica effettuata");
-
-		entityTransaction.commit();
-		entityManager.close();
+		
+		entityManager.createQuery(criteriaUpdate).executeUpdate();
+		entityManager.getTransaction().commit();
 
 	}
 
-	public static void select() {
-
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+	public static void select(EntityManager entityManager) {
 
 		EntityTransaction entityTransaction = entityManager.getTransaction();
 		entityTransaction.begin();
@@ -301,48 +302,15 @@ public class FileJPA {
 		entityManager.close();
 	}
 
-	public static void stampaDB() {
-		EntityManager entityManager = JPAEntityManagerFactory.openSession();
+	public static void stampaDB(EntityManager entityManager) {
 
-		EntityTransaction entityTransaction = entityManager.getTransaction();
-		entityTransaction.begin();
+		CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+		CriteriaQuery<Contatto> cr = cb.createQuery(Contatto.class);
+		cr.from(Contatto.class);
+		Query query = entityManager.createQuery(cr);
+		System.out.println(query.getResultList());
 
-//		TEST JOIN
-//		Query query = entityManager.createQuery("SELECT c FROM Contatto as c Join Recapito as r ON r.rubrica_id=c.id");
-//		System.out.println(query.getResultList()+"\n");
 		
-//		Query query = entityManager.createQuery("SELECT c,r FROM Contatto as c JOIN Recapito as r ON r.rubrica_id=c.id");
-//		Query query = entityManager.createQuery("SELECT c,r FROM Contatto as c,Recapito as r WHERE r.rubrica_id=c.id");
-//		System.out.println(query.getResultList());
-		
-		
-		Query query = entityManager.createQuery("SELECT c FROM Contatto as c Join Recapito as r ON r.rubrica_id=c.id");
-		List<Contatto> contatti=query.getResultList();
-		
-		query=entityManager.createQuery("SELECT r FROM Recapito as r Join Contatto as c ON r.rubrica_id=c.id");
-		List<Recapito> recapiti=query.getResultList();
-			
-				
-	
-//		Query query=entityManager.createQuery("SELECT c FROM Contatto c");
-//		List<Contatto> contatto=query.getResultList();
-//		
-//		query=entityManager.createQuery("SELECT r FROM Recapito r");
-//		List<Recapito> recapito=query.getResultList();
-//		
-		for(Contatto c:contatti) {
-			System.out.println(c.toString());
-			for(Recapito r:recapiti)
-				if(c.getId()==r.getRubrica_id()) {
-					if(r.getTipo().equals("E"))
-						System.out.print("Email aggiuntiva: "+r.getRecapito());
-					else if(r.getTipo().equals("T"))
-						System.out.print("Telefono aggiuntivo: "+r.getRecapito());
-					System.out.println("");
-				}
-			
-		}
-				
 	}
 
 	public static void inserimento() {

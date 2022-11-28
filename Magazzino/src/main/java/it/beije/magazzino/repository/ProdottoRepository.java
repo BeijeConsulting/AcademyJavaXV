@@ -25,11 +25,11 @@ public interface ProdottoRepository extends JpaRepository<Prodotto, Integer>, Pr
 
     List<Prodotto> findByNomeOrDescrizione(String nome, String descrizione);
 
-    static Specification<Prodotto> hasQuantita(Integer quantita) {
-        return (book, cq, cb) -> cb.equal(book.get("quantita"), quantita);
+    static Specification<Prodotto> morethatQuantita(Integer quantita) {
+        return (prodottoRoot, cq, cb) -> cb.greaterThanOrEqualTo(prodottoRoot.get("quantita"), quantita);
     }
 
     static Specification<Prodotto> nomeContains(String nome) {
-        return (book, cq, cb) -> cb.like(book.get("nome"), "%" + nome + "%");
+        return (prodottoRoot, cq, cb) -> cb.like(prodottoRoot.get("nome"), "%" + nome + "%");
     }
 }

@@ -7,4 +7,6 @@ import java.util.List;
 public interface ProdottoRepositoryCustom {
     List<Prodotto> findByNomeAndDescrizione(String nome, String descrizione);
 
+    List<Prodotto> findByTipologiaAndQuantita(String tipologia, Integer quantita);
+
 }

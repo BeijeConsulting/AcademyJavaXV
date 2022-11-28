@@ -79,6 +79,18 @@ public class ProdottoRestController {
         return lista;
     }
 
+    @GetMapping(value = "/prodotti_by_tipologia/{tipologia}/{quantita}")
+    public List<Prodotto> prodottoByTipologiaAndQuantita(
+            @PathVariable(name = "tipologia", required = false) String tipologia,
+            @PathVariable(name = "quantita", required = false) Integer quantita) {
+        System.out.println("test : " + tipologia);
+
+        List<Prodotto> lista = prodottoService.findByTipologiaAndQuantita(tipologia, quantita);
+        System.out.println("lista : " + lista);
+
+        return lista;
+    }
+
     @GetMapping(value = "/prodotti_contains_nome_quantita/{nome}/{quantita}")
     public List<Prodotto> prodottoByNomeAndDescrizione(
             @PathVariable(name = "nome", required = false) String nome,

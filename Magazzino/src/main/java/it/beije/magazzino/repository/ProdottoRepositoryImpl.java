@@ -39,4 +39,23 @@ public class ProdottoRepositoryImpl implements ProdottoRepositoryCustom{
         return em.createQuery(cq).getResultList();
     }
 
+    @Override
+        public List<Prodotto> findByTipologiaAndQuantita(String tipologia, Integer quantita) {
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Prodotto> cq = cb.createQuery(Prodotto.class);
+
+        Root<Prodotto> prodottoRoot = cq.from(Prodotto.class);
+        List<Predicate> predicates = new ArrayList<>();
+
+        if (tipologia != null) {
+            predicates.add(cb.like(prodottoRoot.get("tipologia"),"%"  + tipologia + "%"));
+        }
+        if (quantita != null) {
+            predicates.add(cb.greaterThanOrEqualTo(prodottoRoot.get("quantita"),  quantita));
+        }
+        cq.where(predicates.toArray(new Predicate[0]));
+
+        return em.createQuery(cq).getResultList();
+    }
+
 }

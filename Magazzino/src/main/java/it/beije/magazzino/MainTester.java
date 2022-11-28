@@ -1,8 +1,7 @@
 package it.beije.magazzino;
 
 import it.beije.magazzino.model.Product;
-import it.beije.magazzino.service.ProductServiceCriteriaApi;
-import org.springframework.beans.factory.annotation.Autowired;
+import it.beije.magazzino.service.ProductServiceCriteria;
 
 import java.util.List;
 
@@ -10,8 +9,10 @@ public class MainTester {
 
     public static void main(String[] args){
 
-        ProductServiceCriteriaApi psca = new ProductServiceCriteriaApi();
-        List<Product> result = psca.findAll();
+        ProductServiceCriteria psca = new ProductServiceCriteria();
+//        List<Product> result = psca.findAll();
+
+        List<Product> result = psca.findWhereQuantityGreaterThan(1000);
         result.forEach(System.out::println);
     }
 }

@@ -2,8 +2,6 @@ package it.beije.magazzino.service;
 
 import it.beije.magazzino.JpaEntityManager;
 import it.beije.magazzino.model.Product;
-import org.hibernate.Criteria;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityManager;
@@ -13,21 +11,23 @@ import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.util.List;
-import java.util.Optional;
-
 
 
 @Service
-public class ProductServiceCriteriaApi {
+public class ProductServiceCriteria {
 
-
+//    @Autowired
     EntityManagerFactory emf;
-    public ProductServiceCriteriaApi(){
+
+
+
+    public ProductServiceCriteria(){
         emf = JpaEntityManager.getInstance();
     }
+
     public List<Product> findAll(){
         EntityManager em = emf.createEntityManager();
-
+//         em.getTransaction().begin() --> begin???
         CriteriaBuilder builder = em.getCriteriaBuilder();
 
         //Use builder to create a query
@@ -35,14 +35,33 @@ public class ProductServiceCriteriaApi {
 
         // SELECT p FROM Product p (equivalent)
 //        query.select(query.from(Product.class)); alternative to below
-        Root<Product> product = query.from(Product.class);
+        Root<Product> product = query.from(Product.class); // ROOT of the query!
         query.select(product);
-
         TypedQuery<Product> tq = em.createQuery(query);
-
         List<Product> result = tq.getResultList();
 
         return result;
+    }
+
+    //SELECT p FROM Product p WHERE p.quantity > 1000;
+    public List<Product> findWhereQuantityGreaterThan(int quanitity){
+
+        EntityManager em = emf.createEntityManager();
+
+        CriteriaBuilder builder = em.getCriteriaBuilder();
+
+        //Use builder to create a query
+        CriteriaQuery<Product> query = builder.createQuery(Product.class);
+        Root<Product> product = query.from(Product.class);
+
+        query.select(product).where(
+                builder.greaterThan(product.get("quantity"), quanitity)
+        );
+
+
+        TypedQuery<Product> tq = em.createQuery(query);
+        List<Product> products = tq.getResultList();
+        return products;
     }
 //
 //    public Product findById(Integer id){

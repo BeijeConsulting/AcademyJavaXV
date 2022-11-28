@@ -3,7 +3,7 @@ package it.beije.magazzino.controller.rest;
 
 import it.beije.magazzino.model.Product;
 import it.beije.magazzino.service.ProductService;
-import it.beije.magazzino.service.ProductServiceCriteriaApi;
+import it.beije.magazzino.service.ProductServiceCriteria;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +18,7 @@ public class ProductRestController {
     ProductService productService;
 
     @Autowired
-    ProductServiceCriteriaApi productServiceCriteriaApi;
+    ProductServiceCriteria productServiceCriteriaApi;
 
 
     public ProductRestController(){
@@ -38,6 +38,12 @@ public class ProductRestController {
         return products;
     }
 
+    @GetMapping(value="/products-quantity-c/{quantity}")
+    public List<Product> productsCriteria(@PathVariable(name="quantity") Integer quantity){
+//        System.out.println("Inside Products Criteria");
+        List<Product> products = productServiceCriteriaApi.findWhereQuantityGreaterThan(quantity);
+        return products;
+    }
     @GetMapping(value="/product/{product_id}")
     public Product getProduct(@PathVariable(name="product_id") Integer id){
         System.out.println("GET product: " + id);

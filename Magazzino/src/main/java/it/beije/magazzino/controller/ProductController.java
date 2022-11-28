@@ -9,12 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import it.beije.magazzino.model.Product;
+import it.beije.magazzino.repository.QueryCriteria;
 import it.beije.magazzino.service.ProductService;
 
 
@@ -23,10 +24,28 @@ public class ProductController {
 
 	@Autowired
 	ProductService productService;
-
+	
+	QueryCriteria q = new QueryCriteria();
+	
 	@GetMapping(value = "/home")
 	public String home() {
 		System.out.println("POST registrazione");
+
+		return "home";
+	}
+	
+	@GetMapping(value = "/prova")
+	public String prova() {
+		System.out.println("POST registrazione");
+		q.allProduct();
+
+		return "home";
+	}
+	
+	@GetMapping(value = "/prova2/{id}")
+	public String provaDue(@PathVariable(name = "id") Integer id) {
+		System.out.println("POST registrazione");
+		q.getDisponibilita(id);
 
 		return "home";
 	}

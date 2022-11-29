@@ -16,12 +16,20 @@
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< Updated upstream
 			<name>org.eclipse.wst.validation.validationbuilder</name>
+=======
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+>>>>>>> Stashed changes
 			<arguments>
 			</arguments>
 		</buildCommand>
 		<buildCommand>
+<<<<<<< Updated upstream
 			<name>org.eclipse.m2e.core.maven2Builder</name>
+=======
+			<name>org.eclipse.wst.validation.validationbuilder</name>
+>>>>>>> Stashed changes
 			<arguments>
 			</arguments>
 		</buildCommand>

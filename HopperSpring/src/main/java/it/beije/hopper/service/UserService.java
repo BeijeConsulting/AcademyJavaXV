@@ -4,6 +4,13 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +23,9 @@ public class UserService {
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	EntityManager em;
 	
 
 	public UserService() {
@@ -49,5 +59,17 @@ public class UserService {
 	
 	public List<User> loadLastClients(LocalDate date) {
 		return userRepository.loadLastClients(date);
+	}
+
+	public User getById(Integer id) {
+		CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<User> cq = cb.createQuery(User.class);
+
+        Root<User> prod = cq.from(User.class);
+        Predicate identificativo = cb.equal(prod.get("id"), id);
+        cq.where(identificativo);
+
+        TypedQuery<User> query = em.createQuery(cq);
+        return query.getSingleResult();
 	}
 }

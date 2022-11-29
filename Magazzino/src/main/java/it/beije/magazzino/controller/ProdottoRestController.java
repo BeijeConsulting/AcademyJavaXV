@@ -46,7 +46,9 @@ public class ProdottoRestController {
 	public ResponseEntity<List<Prodotto>> prodotti() {
 		System.out.println("ENTRATO IN PRODOTTI");
 		
-		List<Prodotto> prodotti = prodottoRepository.findAll();
+		//List<Prodotto> prodotti = prodottoRepository.findAll();			//namedQuery
+		List<Prodotto> prodotti = prodottoService.gottaCatchEmAll();		//criteriaQuery
+		System.out.println(prodotti);
 		
 		return ResponseEntity.ok(prodotti);
 	}
@@ -56,7 +58,8 @@ public class ProdottoRestController {
 	public ResponseEntity<Prodotto> getProdotto(@PathVariable(name = "id") Integer id) {
 		System.out.println("GET getProdotto : " + id);
 		
-		Prodotto prodotto = prodottoService.findById(id);
+		//Prodotto prodotto = prodottoService.findById(id);		//namedQuery
+		Prodotto prodotto = prodottoService.getById(id);		//criteriaQuery
 		System.out.println("prodotto : " + prodotto);
 		
 		return ResponseEntity.ok(prodotto);
@@ -79,7 +82,8 @@ public class ProdottoRestController {
 		
 		if (id.compareTo(newData.getId()) == 0) {//OK modifico
 			
-			Prodotto prodotto = prodottoService.findById(id);
+			//Prodotto prodotto = prodottoService.findById(id);
+			Prodotto prodotto = prodottoService.getById(id);
 			
 			
 			BeanUtils.copyProperties(newData, prodotto, "id");
@@ -94,7 +98,7 @@ public class ProdottoRestController {
 	
 	@DeleteMapping(value = "/prodotto/{id}")
 	public String deleteUser(@PathVariable(name = "id") Integer id) {
-		System.out.println("DELETE deleteProdotto : " + id);
+		System.out.println("DELETE deleteProdotto : " + id); 
 		
 		prodottoRepository.deleteById(id);
 		
@@ -105,7 +109,8 @@ public class ProdottoRestController {
 	public ResponseEntity<List<Prodotto>> tipologia(@PathVariable(name = "tipologia") String tipologia) {
 		System.out.println("GET getProdotto : " + tipologia);
 		
-		List<Prodotto> prodotti = prodottoService.findByTipologia(tipologia);
+		//List<Prodotto> prodotti = prodottoService.findByTipologia(tipologia);		//namedQuery
+		List<Prodotto> prodotti = prodottoService.getByTipologia(tipologia);		//criteriaQuery
 		System.out.println("prodotti : " + prodotti);
 		
 		return ResponseEntity.ok(prodotti);

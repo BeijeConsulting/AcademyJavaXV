@@ -37,7 +37,8 @@ public class UserRestController {
 	public User getUser(@PathVariable(name = "id") Integer id) {
 		System.out.println("GET getUser : " + id);
 		
-		User user = userService.findById(id);
+//		User user = userService.findById(id);			//namedQuery
+		User user = userService.getById(id);			//criteriaQuery
 		System.out.println("user : " + user);
 		
 		return user;
@@ -59,7 +60,8 @@ public class UserRestController {
 		
 		if (id.compareTo(newData.getId()) == 0) {//OK modifico
 			
-			User user = userService.findById(id);
+			//User user = userService.findById(id);
+			User user = userService.getById(id);
 			
 			user.setEmail(newData.getEmail());
 			//...

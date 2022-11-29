@@ -139,7 +139,8 @@ function deleteProduct(){		//FUNZIONA
  
  function findByTipologia(){
 	 
-	 let idt=document.getElementById("idt").value; fetch('prodotto/tipologia/'+idt,{	
+	 let idt=document.getElementById("idt").value; 
+	 fetch('prodotto/tipologia/'+idt,{	
 		 method: 'POST',
 		 body: JSON.stringify({
 			idt: document.getElementById('idt').value
@@ -150,6 +151,25 @@ function deleteProduct(){		//FUNZIONA
 		 })
 		 	.then((response) => response.json())
 		 	.then((json) => console.log(json));  
+	 
+ }
+ 
+function findByNomeOrDescrizione(){		
+	 
+	 let nomef=document.getElementById("nomef").value;
+	 let descrizionef=document.getElementById("descrizionef").value;
+	  fetch('prodotto/'{
+	 method: 'GET',
+	 body: JSON.stringify({
+		 nomef: document.getElementById('nomef').value,
+		 descrizionef: document.getElementById('descrizionef').value
+	 }),
+	 headers: {
+		 'Content-type':'application/json; charset=UTF-8',
+	 },
+	 })
+	 	.then((response) => response.json())
+	 	.then((json) => console.log(json)); 
 	 
  }
  
@@ -240,6 +260,19 @@ function deleteProduct(){		//FUNZIONA
 
 <br>
 <br>
+
+<div id = 'getByNomeOrDescrizione'>
+
+<label for = "nomef">Nome prodotto: </label><br>
+<input type = "text" id = "nomef"><br>
+<label for = "descrizionef">Descrizione prodotto: </label><br>
+<input type = "text" id = "descrizionef"><br>
+
+<!-- <button onclick = "getProduct()">Cerca prodotto con id</button> -->
+<button onclick = "getProduct()">Cerca prodotto con nome e/o descrizione</button>
+
+
+</div>
 
     
 

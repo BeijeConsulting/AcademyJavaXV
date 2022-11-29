@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import it.beije.hopper.ecommerce.model.Order;
 import it.beije.hopper.ecommerce.repository.OrderRepository;
+import it.beije.hopper.ecommerce.service.OrderService;
 
 
 @RestController
@@ -21,11 +22,13 @@ public class OrderRestController {
 
 	@Autowired
 	private OrderRepository orderRepository;
+	private OrderService orderService;
 
 	@GetMapping(value="/orders")
 	public List<Order> orders() {
 		
-		List<Order> orders = orderRepository.findAll();
+		//List<Order> orders = orderRepository.findAll();		//namedQuery
+		List<Order> orders = orderService.getAll();			//criteriaQuery
 		
 		return orders;
 	}

@@ -24,4 +24,6 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	 public abstract List<Product> findByDesc(String desc);
 	 
 	 public abstract List<Product> findByNameAndDesc(String name, String desc);
+	 
+
 }

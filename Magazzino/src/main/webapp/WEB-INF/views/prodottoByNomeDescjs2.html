@@ -22,12 +22,33 @@
     </tr>
 
 </table>
+<div>
 
+        <label>nome:</label>
+        <input type="text" id="name">
+         <label>desc:</label>
+        <input type="text" id="desc">
+        <button onclick="prodotto()">submit</button>
+
+    </div>
 <br><br>
 
           <script>
-
-           	fetch('http://localhost:8080/Magazzino/api/productCriteria') 
+		  function prodotto(){
+			  
+           	fetch('http://localhost:8080/Magazzino/api/prodottoByNomeDescCriteria', { 
+           		
+           		method: 'POST',
+				body: JSON.stringify({
+					name: document.getElementById("name").value,
+					desc: document.getElementById("desc").value,
+					
+				}),
+				
+				headers: {
+					"Content-type": "application/json; charset=UTF-8",
+				},
+			})
                 .then(response => response.json())
                 .then(data => {
                     for (let i = 0; i < data.length; i++) {
@@ -38,6 +59,7 @@
                         document.getElementById('descrizione').innerHTML += data[i].desc + "</br>";
                     }
                 })
+		  }
            </script>
            
      

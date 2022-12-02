@@ -3,6 +3,12 @@ package it.beije.magazzino.controller;
 import java.time.LocalDate;
 import java.util.List;
 
+import javax.persistence.EntityManager;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
+
+import org.hibernate.query.Query;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,6 +23,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.mysql.cj.Session;
 
 import it.beije.magazzino.model.ContenutoProdotto;
 import it.beije.magazzino.model.Product;
@@ -46,6 +54,8 @@ public class ProductRestController {
 	
 	@Autowired
 	private ProductRepository productRepository;
+	
+	
 
 	 @GetMapping(value = "/product")
 	  public  ResponseEntity<List<Product>>prodotti() {      
@@ -53,6 +63,20 @@ public class ProductRestController {
 	     
 	   
 	      return ResponseEntity.ok(prodotti); 
+	  }
+	 
+	 @GetMapping(value = "/productCriteria")
+	  public  ResponseEntity<List<Product>>prodottiCriteria() {      
+		 
+	     List<Product> prodotti = productService.getProductCriteria();
+	   
+	      return ResponseEntity.ok(prodotti); 
+	  }
+	 
+	 @GetMapping(value = "/productId/{id}")
+	  public  ResponseEntity<List<Product>>prodottoByIdCriteria(@PathVariable(name = "id", required = false) Integer id) {       
+	     List<Product> prodotto = productService.getProductIdCriteria(id);
+	      return ResponseEntity.ok(prodotto); 
 	  }
 	 
 	 @PostMapping(value = "/prodottoById")
@@ -117,6 +141,22 @@ public class ProductRestController {
 	   
 	      return prodotti; 
 	  }
+	 
+	 @PostMapping(value = "/prodottoByNomeDescCriteria")
+	  public  List<Product> prodottiByNomeDescCriteria(@RequestBody Product prodotto) { 
+		 List<Product> prodotti = null;
+		 if (prodotto.getDesc()== null||prodotto.getDesc()== "") {
+			 prodotti = productService.getProductNameCriteria(prodotto.getName());
+		 }else  if (prodotto.getName()== null||prodotto.getName()== "") {
+			 prodotti = productService.getProductDescCriteria(prodotto.getDesc());  
+		 }else if ((prodotto.getName()!= null && prodotto.getDesc()!= null)||(prodotto.getName()!= "" && prodotto.getDesc()!= "")){
+	       prodotti = productService.getProductNameDescCriteria(prodotto.getName(), prodotto.getDesc());
+		 }
+	   
+	      return prodotti; 
+	  }
+	 
+	
 	 
 	 @GetMapping(value = "/spedizioni")
 	  public  List<Spedizione> spedizioni() {      

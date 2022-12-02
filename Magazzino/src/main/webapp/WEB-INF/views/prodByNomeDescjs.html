@@ -13,7 +13,7 @@
 			<input type="text"  id="name"><br>
 			<label>DESCRIZIONE:</label><br>
 			<input type="text"  id="desc"><br><br>
-			<button onclick="ricercaType()"></button>
+			<button onclick="ricercaType()">submit</button>
 
 		</div>
 		
@@ -33,7 +33,7 @@
 		<script>
 
 			function ricercaType() {
-				fetch('http://localhost:8080/Magazzino/api/prodottoByNomeDesc', {
+				fetch('http://localhost:8080/Magazzino/api/prodottoByNomeDescCriteria', {
 					method: 'POST',
 					body: JSON.stringify({
 						name: document.getElementById("name").value,

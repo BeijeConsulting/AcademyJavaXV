@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9192bef3-c325-4e76-9d2c-191cf6687176" name="Changes" comment="Fixed more exercises from exercise folder">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lambda/example1/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lambda/example1/Printable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lambda/example1/Printable2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lambda/example2/Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/lambda/example2/Process.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/mixed/Calculator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/mixed/Exc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/mixed/ExceptionTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/mixed/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/it/beije/xv/esercizi/mixed/Prova.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +22,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -88,13 +99,13 @@
       <recent name="it.beije.xv.esercizi.codetestsOCA.lambdas.oca.capitolo3" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestClass (1)">
-    <configuration name="BreakTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.BreakTest" />
+  <component name="RunManager" selected="Application.it.beije.xv.esercizi.mixed.TestClass">
+    <configuration name="Data" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.lambda.example2.Data" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.Test2.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.lambda.example2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -102,26 +113,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FunWithArgs" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.FunWithArgs" />
-      <module name="Esercizi" />
-      <option name="PROGRAM_PARAMETERS" value="a b c" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.Test2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="T" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.T" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.lambda.example1.Main" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.Test2.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.lambda.example1.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -142,12 +139,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.Test2.TestClass" />
+    <configuration name="it.beije.xv.esercizi.mixed.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.mixed.Main" />
       <module name="Esercizi" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="it.beije.xv.esercizi.Test2.*" />
+          <option name="PATTERN" value="it.beije.xv.esercizi.mixed.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="it.beije.xv.esercizi.mixed.TestClass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="it.beije.xv.esercizi.mixed.TestClass" />
+      <module name="Esercizi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="it.beije.xv.esercizi.mixed.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,19 +166,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Data" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.it.beije.xv.esercizi.mixed.Main" />
+      <item itemvalue="Application.it.beije.xv.esercizi.mixed.TestClass" />
       <item itemvalue="Application.TestClass (1)" />
-      <item itemvalue="Application.TestClass" />
-      <item itemvalue="Application.FunWithArgs" />
-      <item itemvalue="Application.BreakTest" />
-      <item itemvalue="Application.T" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.it.beije.xv.esercizi.mixed.TestClass" />
+        <item itemvalue="Application.it.beije.xv.esercizi.mixed.Main" />
+        <item itemvalue="Application.Data" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.TestClass (1)" />
-        <item itemvalue="Application.TestClass" />
-        <item itemvalue="Application.FunWithArgs" />
-        <item itemvalue="Application.BreakTest" />
-        <item itemvalue="Application.T" />
       </list>
     </recent_temporary>
   </component>
@@ -215,7 +225,7 @@
       <workItem from="1666529390038" duration="1255000" />
       <workItem from="1666550254799" duration="1911000" />
       <workItem from="1666608472918" duration="1063000" />
-      <workItem from="1671949976689" duration="165000" />
+      <workItem from="1671949976689" duration="9833000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed more exercises from exercise folder">
       <created>1664184716686</created>
